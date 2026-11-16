@@ -25,6 +25,7 @@ VITE_BASE_URL=/slidock/ pnpm --filter @slidock/web build
 | `src/fonts/`                   | the fonts flow (`FontsController`): Local Font Access, Google Fonts, dropped files, bundled substitutes, the re-finish (see [Fonts](#fonts))           |
 | `src/media/`                   | HEIC photos: the decode worker and its decoder (`heic.ts`), the client, the open → decode → `addMedia` → finish step (see [HEIC photos](#heic-photos)) |
 | `public/fonts/core/`           | the bundled substitutes as WOFF2, their licences and `core.json`, written by `scripts/substitutes.mjs`                                                 |
+| `public/bench/`                | the fidelity bench's public report the landing links to, written by `slidock-bench report --public` (`bench/README.md`)                                |
 | `src/testing/`                 | the fake worker, fake player and sample deck the tests and the demo page use                                                                           |
 | `csp.ts`                       | the Content Security Policy the build writes into `index.html`                                                                                         |
 | `e2e/`                         | the Playwright suite (`e2e/README.md`)                                                                                                                 |

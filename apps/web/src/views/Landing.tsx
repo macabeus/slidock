@@ -5,6 +5,9 @@ import { ACCEPT } from '../compile/input';
 import type { AppError } from '../compile/session';
 import { ErrorDetails } from './ErrorDetails';
 
+/** The fidelity bench's public report, published beside the app (`apps/web/public/bench/`). */
+const BENCH_URL = `${import.meta.env.BASE_URL}bench/`;
+
 export interface LandingProps {
   compiler: CompilerStatus;
   /** Why the last input did not open. */
@@ -52,6 +55,13 @@ export function Landing({ compiler, error, onPick, onRetryCompiler, onDismissErr
         <p className="flex items-center justify-center gap-2">
           <Icon name="check-circle" className="size-4 shrink-0 text-success" />
           Converted in your browser. Your file never leaves this tab.
+        </p>
+        <p className="text-xs">
+          See how faithful each slide is in the{' '}
+          <a className="underline hover:text-fg" href={BENCH_URL}>
+            fidelity benchmark
+          </a>
+          .
         </p>
         <p className="text-xs">
           Viewing and presenting work in current browsers; using the fonts installed on this computer needs Chrome or

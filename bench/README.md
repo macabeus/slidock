@@ -13,7 +13,11 @@ contributors do not need it (see `CONTRIBUTING.md`).
   stamp's `renderer.recipe`.
 - `docker/no-fonts/fonts.conf`: the fonts lane's renderer variant: the same image with a fontconfig that sees only the
   Last Resort face at `/fonts`.
-- `fonts/fonts.lock.json`: the pinned font set the static lane renders with.
+- `fonts/fonts.lock.json`: the pinned font set the static lane renders with: open-licensed release files, and fonts
+  of the reference Mac (`host` entries, copied from their paths by `fonts sync`, never committed, and no path of
+  theirs reaches a report). A family a corpus deck names and the set lacks shows in the compile reports as MID5401 or
+  MID5402; the Mac's file of that family goes in as a `host` entry. The goldens compile with the set, so a change to
+  it takes a new recording (`cargo xtask golden --record`) as well as a new baseline.
 - `fonts/fonts-lane.lock.json`: the fonts lane's pinned files: Google Fonts as the CLI fetched it (each `css2`
   response and every `fonts.gstatic.com` file it names, with sha256), the bundled substitutes, and Unicode's Last
   Resort face. Open licences only, no host font.

@@ -437,11 +437,11 @@ mod tests {
     fn reads_the_committed_lock() {
         let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../bench/fonts/fonts.lock.json");
         let lock = load_font_lock(&path).unwrap();
-        assert_eq!(lock.fonts.len(), 58);
+        assert_eq!(lock.fonts.len(), 63);
         // The pinned font set's id.
         assert_eq!(
             font_set_id(lock.fonts.iter().map(|e| e.sha256.as_str())).unwrap(),
-            "ca2f9dbd54f6cdcd5be45a5d1cb4128dc8ae6b6fe7c245ee8dd4126065652918"
+            "f1dc33e59980dc1939f6d2b0d841c2f3b2de1e8fb33e83eec102ce2bbeaa1771"
         );
     }
 }

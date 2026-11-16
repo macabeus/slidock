@@ -385,12 +385,24 @@ impl Forbidden {
     }
 
     /// The corpus manifest's names: every presentation id outside the allowlist, every corpus file name (and, outside
-    /// the allowlist, its stem) but the public names, and every title that is not its id.
+    /// the allowlist, its stem) but the names the report publishes, and every title that is not its id.
     pub fn manifest(
         mut self,
         manifest: &CorpusManifest,
         allow: &BTreeSet<PresentationId>,
     ) -> Forbidden {
+        // The names the report gives the allowlisted sources: never a leak, even where a corpus name spells one (the
+        // oracle `shadow-probe.odp.pdf`, less its extension, is the published `shadow-probe.odp`).
+        let published: BTreeSet<String> = manifest
+            .presentations
+            .iter()
+            .filter(|p| allow.contains(&p.id))
+            .flat_map(|p| {
+                p.sources
+                    .iter()
+                    .map(|s| format!("{}.{}", p.id, extension(s.frontend)))
+            })
+            .collect();
         for presentation in &manifest.presentations {
             self.id(presentation.id.as_str(), allow);
             let mut files: Vec<&str> = presentation
@@ -413,7 +425,10 @@ impl Forbidden {
                 self.texts.insert(file.to_owned());
                 // A stem inside a public id (a probe's `gradient-probe`) names nothing private.
                 let stem = file.rsplit_once('.').map_or(file, |(stem, _)| stem);
-                if stem.chars().count() >= 4 && !allow.iter().any(|a| a.as_str().contains(stem)) {
+                if stem.chars().count() >= 4
+                    && !allow.iter().any(|a| a.as_str().contains(stem))
+                    && !published.contains(stem)
+                {
                     self.texts.insert(stem.to_owned());
                 }
             }
@@ -981,5 +996,38 @@ mod tests {
         let none = scope_results(results, &BTreeSet::new()).unwrap();
         assert!(none.rows.is_empty() && none.stamp.corpus.is_empty());
         assert!(none.summary.by_frontend.is_empty());
+    }
+
+    #[test]
+    fn a_published_name_is_no_leak_but_a_private_deck_name_is() {
+        let manifest: CorpusManifest = serde_json::from_value(serde_json::json!({
+            "version": 1,
+            "presentations": [
+                {
+                    "id": "shadow-probe",
+                    "tier": "probe",
+                    "sources": [{"frontend": "odp", "file": "shadow-probe.odp", "sha256": null, "bytes": null}],
+                    "oracle": {"kind": "pdf-file", "file": "shadow-probe.odp.pdf", "sha256": null}
+                },
+                {
+                    "id": "secret-deck",
+                    "tier": "real",
+                    "sources": [{"frontend": "pptx", "file": "Secret Talk.pptx", "sha256": null, "bytes": null}],
+                    "oracle": {"kind": "pdf-file", "file": "Secret Talk.pdf", "sha256": null}
+                }
+            ]
+        }))
+        .unwrap();
+        let allow: BTreeSet<PresentationId> = ["shadow-probe".parse().unwrap()].into();
+        let forbidden = Forbidden::default().manifest(&manifest, &allow);
+        let problems = |text: &str| {
+            let mut problems = Vec::new();
+            check_text(text, "$", &allow, &forbidden, &mut problems);
+            problems
+        };
+        assert!(problems("shadow-probe.odp").is_empty());
+        assert!(!problems("Secret Talk.pptx").is_empty());
+        assert!(!problems("from Secret Talk").is_empty());
+        assert!(!problems("secret-deck").is_empty());
     }
 }

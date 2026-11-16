@@ -4,8 +4,8 @@ import { type ReactNode, useMemo, useState } from 'react';
 import { CopyCommand, SegmentedControl, Select } from './components/Controls';
 import { Logo } from './components/Logo';
 import { Await, Empty, LoadError, Loading } from './components/States';
-import { BenchDataContext, ResourceCache, useResource } from './data/resource';
-import type { BenchSource } from './data/source';
+import { BenchDataContext, ResourceCache, useBenchData, useResource } from './data/resource';
+import type { BenchSource, ReportScope } from './data/source';
 import { formatTime, short } from './model/format';
 import { compareIds, filterRows, rowsOf, sortRows } from './model/rows';
 import { LANE_LABELS, resolveRun, runLabel } from './model/runs';
@@ -33,6 +33,28 @@ const TAB_ITEMS: { id: Tab; label: string }[] = [
   { id: 'effects', label: 'Effects' },
   { id: 'methodology', label: 'Methodology' },
 ];
+
+/** The tabs with something to show: every tab over the API; a report leaves out the views whose data it lacks. */
+export function tabsFor(index: RunsIndex, scope: ReportScope | undefined): { id: Tab; label: string }[] {
+  if (!scope) {
+    return TAB_ITEMS;
+  }
+  const holds = (lane: RunEntry['lane']) => index.runs.some((run) => run.lane === lane);
+  return TAB_ITEMS.filter(({ id }) => {
+    switch (id) {
+      case 'compare':
+        return index.runs.length > 1;
+      case 'parity':
+        return scope.parity;
+      case 'fonts':
+        return holds('fonts');
+      case 'effects':
+        return holds('motion');
+      default:
+        return true;
+    }
+  });
+}
 
 /** Whether the run's stamp is not HEAD's (local server only): the command that refreshes it. */
 function staleFor(run: RunEntry, status: Status | null): string | null {
@@ -91,38 +113,40 @@ function ContextRow({
             )}
           </p>
         </div>
-        <div className="flex min-w-0 max-w-full flex-wrap items-end gap-3">
-          <div className="flex flex-col gap-1">
-            <span className="text-xs text-muted">Data</span>
-            <SegmentedControl<'latest' | 'baseline' | 'run'>
-              label="Data"
-              value={alias}
-              onChange={(value) => {
-                if (value !== 'run') {
-                  set({ run: value, row: null });
-                }
-              }}
-              options={[
-                { value: 'latest', label: 'Latest' },
-                { value: 'baseline', label: 'Baseline' },
-                { value: 'run', label: 'A run', title: 'Pick a run from the list' },
-              ]}
-            />
+        {index.runs.length > 1 && (
+          <div className="flex min-w-0 max-w-full flex-wrap items-end gap-3">
+            <div className="flex flex-col gap-1">
+              <span className="text-xs text-muted">Data</span>
+              <SegmentedControl<'latest' | 'baseline' | 'run'>
+                label="Data"
+                value={alias}
+                onChange={(value) => {
+                  if (value !== 'run') {
+                    set({ run: value, row: null });
+                  }
+                }}
+                options={[
+                  { value: 'latest', label: 'Latest' },
+                  { value: 'baseline', label: 'Baseline' },
+                  { value: 'run', label: 'A run', title: 'Pick a run from the list' },
+                ]}
+              />
+            </div>
+            <Select
+              label="Run"
+              value={run.key}
+              onChange={(key) => set({ run: key, row: null })}
+              className="max-w-[22rem]"
+            >
+              {[...index.runs].reverse().map((entry) => (
+                <option key={entry.key} value={entry.key}>
+                  {runLabel(entry)}
+                  {entry.baseline ? ' · baseline' : ''}
+                </option>
+              ))}
+            </Select>
           </div>
-          <Select
-            label="Run"
-            value={run.key}
-            onChange={(key) => set({ run: key, row: null })}
-            className="max-w-[22rem]"
-          >
-            {[...index.runs].reverse().map((entry) => (
-              <option key={entry.key} value={entry.key}>
-                {runLabel(entry)}
-                {entry.baseline ? ' · baseline' : ''}
-              </option>
-            ))}
-          </Select>
-        </div>
+        )}
       </div>
       {stale && (
         <Banner tone="warning" title="These results are stale for HEAD">
@@ -155,6 +179,8 @@ function View({ tab, props, baseResults }: { tab: Tab; props: ViewProps; baseRes
 
 function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
   const [state, set] = useBenchState();
+  const tabs = tabsFor(index, useBenchData().source.scope);
+  const tab = tabs.some(({ id }) => id === state.tab) ? state.tab : 'overview';
   const run = resolveRun(index, state.run);
   const results = useResource<Results | null>(run ? `results:${run.key}` : null, (source) =>
     run ? source.results(run.key) : Promise.resolve(null),
@@ -209,12 +235,12 @@ function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
         label="Bench views"
         idPrefix="bench"
         panels="selected"
-        items={TAB_ITEMS}
-        value={state.tab}
+        items={tabs}
+        value={tab}
         onChange={(tab) => set({ tab })}
         className="flex-wrap"
       />
-      <TabPanel idPrefix="bench" id={state.tab} className="min-w-0">
+      <TabPanel idPrefix="bench" id={tab} className="min-w-0">
         {!loaded && (
           <div className="mb-4">
             <Banner tone="warning" title="This run's results are no longer in the bench">
@@ -222,7 +248,7 @@ function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
             </Banner>
           </div>
         )}
-        <View tab={state.tab} props={props} baseResults={baseResults.state === 'ready' ? baseResults.value : null} />
+        <View tab={tab} props={props} baseResults={baseResults.state === 'ready' ? baseResults.value : null} />
       </TabPanel>
       {state.row !== null && record && (
         <RowDrawer
@@ -233,7 +259,7 @@ function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
           record={record}
           order={order}
           thresholds={thresholds}
-          base={state.tab === 'compare' ? base : null}
+          base={tab === 'compare' ? base : null}
         />
       )}
       {state.row !== null && loaded && !record && (
@@ -247,25 +273,49 @@ function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
   );
 }
 
-function Shell({ children }: { children: ReactNode }) {
+function Shell({ published = null, children }: { published?: ReportScope['public']; children: ReactNode }) {
   return (
     <div className="mx-auto flex min-h-dvh max-w-[1400px] flex-col gap-6 px-4 py-6">
       <AppHeader
         logo={<Logo />}
         title="slidock bench"
-        subtitle="Every corpus slide, rendered and scored against its oracle"
-        right={<ThemeToggle />}
+        subtitle={
+          published
+            ? 'Published slides, rendered and scored against their oracle'
+            : 'Every corpus slide, rendered and scored against its oracle'
+        }
+        right={
+          <div className="flex items-center gap-3">
+            {published && (
+              <a className="text-sm text-muted underline hover:text-fg" href="../">
+                Open slidock
+              </a>
+            )}
+            <ThemeToggle />
+          </div>
+        }
       />
-      <main className="flex min-w-0 flex-col gap-6">{children}</main>
+      <main className="flex min-w-0 flex-col gap-6">
+        {published && (
+          <Banner tone="info" title="A published snapshot of slidock's fidelity bench">
+            Each slide of the decks cleared for publication is converted by slidock, rendered in a pinned Chromium and
+            scored against the authoring app's own PDF export. The rest of the corpus stays private, and every figure
+            here counts the published slides only.
+            {published.images.length > 0 && ` Images are included for ${published.images.join(', ')} rows.`}
+          </Banner>
+        )}
+        {children}
+      </main>
     </div>
   );
 }
 
 function Root() {
+  const published = useBenchData().source.scope?.public ?? null;
   const runs = useResource<RunsIndex>('runs', (source) => source.runs());
   const status = useResource<Status | null>('status', (source) => source.status());
   return (
-    <Shell>
+    <Shell published={published}>
       <Await resource={runs} what="the runs index">
         {(index) => <Bench index={index} status={status.state === 'ready' ? status.value : null} />}
       </Await>

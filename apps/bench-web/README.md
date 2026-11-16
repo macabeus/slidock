@@ -12,7 +12,10 @@ golden reference), Fonts (the fonts lane), Effects (the motion lane) and Methodo
   `<script type="application/json" id="slidock-bench-data">__SLIDOCK_BENCH_DATA__</script>`; `slidock-bench report`
   replaces that slot element with one holding a `slidock-bench-report@1` payload (`src/data/report.ts`), every `<`
   written as `\u003c` (`src/data/inline.ts`). The build fails unless the marker appears once in the page, inside the
-  slot. `SLIDOCK_BENCH_REPORT_DATA=<file.json>` (or `sample`) fills it at build time.
+  slot. `SLIDOCK_BENCH_REPORT_DATA=<file.json>` (or `sample`) fills it at build time. The page's Content Security
+  Policy (`scripts/report-csp.ts`) allows its one inline script by sha256 and images from its folder and `data:` only.
+  A report leaves out the views it holds no data for (Compare with one run, Parity, Fonts, Effects); a public one
+  (`slidock-bench report --public`, `bench/README.md`) also shows no command, since its readers have no bench.
 
 `pnpm build` runs both, the app first.
 

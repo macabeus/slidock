@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { ChipGroup, CopyCommand, SegmentedControl, Select } from '../components/Controls';
 import { OutcomeBadge } from '../components/OutcomeBadge';
 import { Empty } from '../components/States';
+import { useBenchData } from '../data/resource';
 import { type Movement, movement } from '../model/compare';
 import { DASH, formatDelta, formatNumber } from '../model/format';
 import { ALL_OUTCOMES, outcomeLabel, outcomeVars } from '../model/outcomes';
@@ -175,7 +176,9 @@ function ExplorerTable({
   const outcomes = ALL_OUTCOMES.filter((outcome) => counts.oc.has(outcome) || state.oc.includes(outcome));
   const extraOutcomes = state.oc.filter((outcome) => !(ALL_OUTCOMES as readonly string[]).includes(outcome));
   const frontends = [...FRONTENDS.filter((fe) => counts.fe.has(fe) || state.fe.includes(fe))];
-  const command = listCommand(state, run.baseline ? null : runResultsPath(run.key));
+  // A published report's readers have no bench to run the command on.
+  const published = Boolean(useBenchData().source.scope?.public);
+  const command = published ? null : listCommand(state, run.baseline ? null : runResultsPath(run.key));
   const m = thresholds?.match;
   const columns: Column[] = [
     { key: 'id', label: 'Row' },

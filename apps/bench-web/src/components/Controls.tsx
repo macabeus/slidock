@@ -1,7 +1,9 @@
 import { Icon, cx, focusRing } from '@slidock/ui';
 import { type ReactNode, useId, useState } from 'react';
 
+import { short } from '../model/format';
 import type { Trend } from '../model/overview';
+import { commitUrl } from '../model/runs';
 
 export interface SegmentOption<T extends string> {
   value: T;
@@ -50,6 +52,15 @@ export function SegmentedControl<T extends string>({
         );
       })}
     </div>
+  );
+}
+
+/** A commit, short, linking to its page in the repository. */
+export function CommitLink({ commit }: { commit: string }) {
+  return (
+    <a className="font-mono text-fg underline hover:text-brand-300" href={commitUrl(commit)} title={commit}>
+      {short(commit)}
+    </a>
   );
 }
 

@@ -216,7 +216,8 @@ function Lanes({ index, run, set }: Pick<ViewProps, 'index' | 'run' | 'set'>) {
 
 export function Overview({ index, run, results, base, thresholds, set }: ViewProps) {
   // A report without parity data leaves the panel out; over the API it says how to make the report.
-  const showParity = useBenchData().source.scope?.parity ?? true;
+  const { scope } = useBenchData().source;
+  const showParity = scope?.parity ?? true;
   const summary = results?.summary ?? run.summary;
   const parity = useResource<ParityView | null>(results ? `parity:${run.key}` : null, (source) =>
     source.parity(run.key),
@@ -244,7 +245,9 @@ export function Overview({ index, run, results, base, thresholds, set }: ViewPro
           subtitle={
             base
               ? `Against ${runLabel(base)}'s summary: ▲ better, ▼ worse. An SSIM move within ${FRONTEND_SSIM_DROP} (the regression guard's bound) reads as unchanged; text recall and match share show any move. Compare applies the guard over the rows both runs hold.`
-              : 'No base run to compare against.'
+              : scope?.public
+                ? "Per frontend: the median and 10th percentile of the rows' SSIM, their mean text recall and the share of matches."
+                : 'No base run to compare against.'
           }
         >
           <div className="relative overflow-x-auto">
@@ -322,7 +325,7 @@ export function Overview({ index, run, results, base, thresholds, set }: ViewPro
           )}
         </Panel>
       </div>
-      <Lanes index={index} run={run} set={set} />
+      {!scope?.public && <Lanes index={index} run={run} set={set} />}
     </div>
   );
 }

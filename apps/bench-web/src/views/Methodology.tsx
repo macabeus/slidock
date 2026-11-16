@@ -1,13 +1,13 @@
 import { Panel } from '@slidock/ui';
 import type { ReactNode } from 'react';
 
-import { CopyCommand } from '../components/Controls';
+import { CommitLink, CopyCommand } from '../components/Controls';
 import { OutcomeBadge } from '../components/OutcomeBadge';
 import { useBenchData } from '../data/resource';
 import { EROSION, FRONTEND_SSIM_DROP, GRADIENT_APPROXIMATED, SHADOW_NOT_DRAWN } from '../model/compare';
-import { DASH, formatNumber, short } from '../model/format';
+import { DASH, formatNumber, formatTime, short } from '../model/format';
 import { OUTCOMES, outcomeGloss } from '../model/outcomes';
-import { LANES, LANE_GLOSS, LANE_LABELS } from '../model/runs';
+import { LANES, LANE_GLOSS, LANE_LABELS, REPOSITORY } from '../model/runs';
 import type { ViewProps } from './context';
 
 function Prose({ children }: { children: ReactNode }) {
@@ -15,12 +15,46 @@ function Prose({ children }: { children: ReactNode }) {
 }
 
 /** The bench's documentation, for the readers of a published report. */
-const BENCH_README = 'https://github.com/macabeus/slidock/blob/main/bench/README.md';
+const BENCH_README = `${REPOSITORY}/blob/main/bench/README.md`;
 
 export function Methodology({ results, run, thresholds }: ViewProps) {
+  // A published report shows one run against no other, and holds no parity report, run key or hash.
   const published = Boolean(useBenchData().source.scope?.public);
   const stamp = results?.stamp;
   const n = formatNumber;
+  const facts: (readonly [string, ReactNode])[] = !stamp
+    ? []
+    : published
+      ? [
+          [
+            'Compiler',
+            <>
+              <CommitLink commit={stamp.compiler.commit} />
+              {stamp.compiler.dirty ? ' (+dirty)' : ''}
+            </>,
+          ],
+          ['Recorded', formatTime(run.recordedAt)],
+          ['Chromium', stamp.renderer.chromium],
+          ['Poppler', stamp.renderer.poppler],
+          ['Platform', stamp.renderer.arch],
+          ['Raster / metric size', `${stamp.renderer.rasterLongSidePx} / ${stamp.renderer.metricLongSidePx} px`],
+          ['Classifier', stamp.classifier],
+          ['Selection', stamp.selection.tiers.join(', ')],
+        ]
+      : [
+          ['Compiler', `${stamp.compiler.commit}${stamp.compiler.dirty ? ' (+dirty)' : ''}`],
+          ['Content id', stamp.compiler.content],
+          ['Harness', stamp.harness],
+          ['Chromium', stamp.renderer.chromium],
+          ['Poppler', stamp.renderer.poppler],
+          ['Renderer recipe', stamp.renderer.recipe],
+          ['Platform', `${stamp.renderer.platformDigest} (${stamp.renderer.arch})`],
+          ['Raster / metric size', `${stamp.renderer.rasterLongSidePx} / ${stamp.renderer.metricLongSidePx} px`],
+          ['Font set', stamp.fonts.fontSetId],
+          ['Selection', stamp.selection.tiers.join(', ')],
+          ['Determinism report', stamp.determinism ?? DASH],
+          ['Run key', run.key],
+        ];
   return (
     <div className="space-y-6">
       <Panel title="What a row is" subtitle="The bench's unit of measurement.">
@@ -60,7 +94,7 @@ export function Methodology({ results, run, thresholds }: ViewProps) {
         )}
       </Panel>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className={published ? 'grid grid-cols-1 gap-6' : 'grid grid-cols-1 gap-6 lg:grid-cols-2'}>
         <Panel
           title="Metrics"
           subtitle="Deterministic to the bit, held by slidock's scoring goldens; their versions are stamped in every results file."
@@ -83,81 +117,73 @@ export function Methodology({ results, run, thresholds }: ViewProps) {
             <dd className="text-fg-secondary">pixelmatch's share of equal pixels, reported only.</dd>
           </dl>
         </Panel>
+        {!published && (
+          <Panel
+            title="Regression policy"
+            subtitle="What slidock-bench regression fails on, and the tolerances the overview's deltas use."
+          >
+            <Prose>
+              <p>
+                A row regresses when its class moves down the rank (failed &lt; render error &lt; declined &lt; mismatch
+                &lt; close &lt; match), when more of its shadows go undrawn ({SHADOW_NOT_DRAWN.join(', ')}) or when more
+                of its gradients are approximated ({GRADIENT_APPROXIMATED.join(', ')}), and erodes when it keeps its
+                class but its SSIM mean drops by more than {n(-EROSION.ssimMean)}, its text recall by more than{' '}
+                {n(-EROSION.textRecall)}, its ΔE rises by more than {n(EROSION.colorMean)}, its p95 placement by more
+                than {n(EROSION.textP95Pm)}‰, the RMSE of its worst shadow ring by more than{' '}
+                {n(EROSION.shadowWorstRmse)}, the RMSE of its worst gradient region by more than{' '}
+                {n(EROSION.gradientWorstRmse)}, or a gradient region goes.
+              </p>
+              <p>
+                Per frontend, the SSIM median or p10 over the rows both runs hold, reference rows apart, may drop by at
+                most {n(FRONTEND_SSIM_DROP)}. Improved and undeclined rows fail too, so the baseline is refreshed on
+                purpose. A change to a row the baseline flags reference or known loss is reported but stays out of the
+                decision; a row the run newly flags fails. Two runs compare only when their stamps agree on everything
+                but the compiler. The overview's SSIM deltas read as unchanged within the same bound; its text recall
+                and match share deltas show any move.
+              </p>
+            </Prose>
+          </Panel>
+        )}
+      </div>
+
+      {!published && (
         <Panel
-          title="Regression policy"
-          subtitle="What slidock-bench regression fails on, and the tolerances the overview's deltas use."
+          title="Lanes"
+          subtitle="The static lane scores each slide against its oracle; the others hold the player, the fonts and the download."
+        >
+          <dl className="grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
+            {LANES.map((lane) => (
+              <div key={lane} className="contents">
+                <dt className="font-semibold text-fg">{LANE_LABELS[lane]}</dt>
+                <dd className="text-fg-secondary">{LANE_GLOSS[lane]}</dd>
+              </div>
+            ))}
+          </dl>
+        </Panel>
+      )}
+
+      {!published && (
+        <Panel
+          title="Parity with the goldens"
+          subtitle="Every compile is held to slidock's goldens: its own outputs, frozen and pinned by sha256."
         >
           <Prose>
             <p>
-              A row regresses when its class moves down the rank (failed &lt; render error &lt; declined &lt; mismatch
-              &lt; close &lt; match), when more of its shadows go undrawn ({SHADOW_NOT_DRAWN.join(', ')}) or when more
-              of its gradients are approximated ({GRADIENT_APPROXIMATED.join(', ')}), and erodes when it keeps its class
-              but its SSIM mean drops by more than {n(-EROSION.ssimMean)}, its text recall by more than{' '}
-              {n(-EROSION.textRecall)}, its ΔE rises by more than {n(EROSION.colorMean)}, its p95 placement by more than{' '}
-              {n(EROSION.textP95Pm)}‰, the RMSE of its worst shadow ring by more than {n(EROSION.shadowWorstRmse)}, the
-              RMSE of its worst gradient region by more than {n(EROSION.gradientWorstRmse)}, or a gradient region goes.
-            </p>
-            <p>
-              Per frontend, the SSIM median or p10 over the rows both runs hold, reference rows apart, may drop by at
-              most {n(FRONTEND_SSIM_DROP)}. Improved and undeclined rows fail too, so the baseline is refreshed on
-              purpose. A change to a row the baseline flags reference or known loss is reported but stays out of the
-              decision; a row the run newly flags fails. Two runs compare only when their stamps agree on everything but
-              the compiler. The overview's SSIM deltas read as unchanged within the same bound; its text recall and
-              match share deltas show any move.
+              <code className="font-mono">slidock-bench parity reference</code> renders and scores the goldens'
+              static-lane output with this bench. <strong className="text-fg">B</strong> compares each row of a run with
+              that reference: identical, pixel-identical, drifting better or in the same class, regressed, missing or
+              new. <strong className="text-fg">C</strong> names the first IR path where the run's IR departs from the
+              golden IR. An intended change records new goldens; a reviewed divergence is listed in the allowlist with a
+              reason and a review date.
             </p>
           </Prose>
         </Panel>
-      </div>
-
-      <Panel
-        title="Lanes"
-        subtitle="The static lane scores each slide against its oracle; the others hold the player, the fonts and the download."
-      >
-        <dl className="grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-[max-content_1fr]">
-          {LANES.map((lane) => (
-            <div key={lane} className="contents">
-              <dt className="font-semibold text-fg">{LANE_LABELS[lane]}</dt>
-              <dd className="text-fg-secondary">{LANE_GLOSS[lane]}</dd>
-            </div>
-          ))}
-        </dl>
-      </Panel>
-
-      <Panel
-        title="Parity with the goldens"
-        subtitle="Every compile is held to slidock's goldens: its own outputs, frozen and pinned by sha256."
-      >
-        <Prose>
-          <p>
-            <code className="font-mono">slidock-bench parity reference</code> renders and scores the goldens'
-            static-lane output with this bench. <strong className="text-fg">B</strong> compares each row of a run with
-            that reference: identical, pixel-identical, drifting better or in the same class, regressed, missing or new.{' '}
-            <strong className="text-fg">C</strong> names the first IR path where the run's IR departs from the golden
-            IR. An intended change records new goldens; a reviewed divergence is listed in the allowlist with a reason
-            and a review date.
-          </p>
-        </Prose>
-      </Panel>
+      )}
 
       <Panel title="This run" subtitle="The stamp: every input that can move a score.">
         {stamp ? (
           <dl className="grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-[max-content_1fr]">
-            {(
-              [
-                ['Compiler', `${stamp.compiler.commit}${stamp.compiler.dirty ? ' (+dirty)' : ''}`],
-                ['Content id', stamp.compiler.content],
-                ['Harness', stamp.harness],
-                ['Chromium', stamp.renderer.chromium],
-                ['Poppler', stamp.renderer.poppler],
-                ['Renderer recipe', stamp.renderer.recipe],
-                ['Platform', `${stamp.renderer.platformDigest} (${stamp.renderer.arch})`],
-                ['Raster / metric size', `${stamp.renderer.rasterLongSidePx} / ${stamp.renderer.metricLongSidePx} px`],
-                ['Font set', stamp.fonts.fontSetId],
-                ['Selection', stamp.selection.tiers.join(', ')],
-                ['Determinism report', stamp.determinism ?? DASH],
-                ['Run key', run.key],
-              ] as const
-            ).map(([term, value]) => (
+            {facts.map(([term, value]) => (
               <div key={term} className="contents">
                 <dt className="text-muted">{term}</dt>
                 <dd className="break-all font-mono text-xs leading-5 text-fg-secondary">{value}</dd>
@@ -166,7 +192,9 @@ export function Methodology({ results, run, thresholds }: ViewProps) {
           </dl>
         ) : (
           <p className="text-sm text-muted">
-            The bench no longer holds this run's results; its key is {short(run.key, 12)}.
+            {published
+              ? 'The report holds no results for this run.'
+              : `The bench no longer holds this run's results; its key is ${short(run.key, 12)}.`}
           </p>
         )}
       </Panel>

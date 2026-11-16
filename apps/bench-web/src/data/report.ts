@@ -18,7 +18,12 @@ export interface ReportPayload {
   parity: { [run: string]: ParityView };
   rows: { [key: string]: RowDetail };
   images: { [key: string]: string };
-  /** A published report: the classes whose rows carry images (`slidock-bench report --public`). */
+  /**
+   * A published report: the classes whose rows carry images (`slidock-bench report --public`). Its one run is named
+   * `public`, and its payload leaves out every run key, hash and cache key the types above name (the stamp's, the
+   * entry's, the records' and the details'), the stamp's corpus and font set, the details' source, run and commands,
+   * and the baseline mark (`crates/slidock-bench/src/public.rs`); the views read none of them in a published report.
+   */
   public?: { images: string[] };
 }
 

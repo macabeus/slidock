@@ -1,11 +1,15 @@
 //! The public report (`report --public`): the single-file report over the presentations `bench/public.json` names,
 //! and nothing of any other. The list is default-deny: a presentation it does not name has no row, id, count or share
-//! of a summary in the report, whose summaries are computed again over the rows it publishes. Only static runs are
+//! of a summary in the report, whose summaries are computed again over the rows it publishes. One static run is
 //! published, without parity (its report covers every pair of the corpus). A row names its source as
 //! `<presentation>.<extension>`, never by the corpus file name, and no path at all; the oracle, render and heatmap of
-//! the rows of the published classes are WebP files beside the page, under `images/<run>/<row>/<kind>.webp`.
-//! [`check_payload`] holds a payload to that: the generation runs it with the corpus manifest's names and writes
-//! nothing on a finding, and a test runs it over the committed report with the names the repository holds.
+//! the rows of the published classes are WebP files beside the page, under `images/<row>/<kind>.webp`.
+//!
+//! The page shows its run alone: [`strip`] leaves out the run key (the run is named [`RUN`]), every content hash and
+//! cache key, which name nothing a reader can look up, and what ties the run to a base run. The commit the run
+//! compiled stays. [`check_payload`] holds a payload to all of that: the generation runs it with the corpus manifest's
+//! names and the bench's run keys and writes nothing on a finding, and a test runs it over the committed report with
+//! the names the repository holds.
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::path::Path;
@@ -27,6 +31,12 @@ const ALLOWLIST_SCHEMA: &str = "slidock-bench-public@1";
 pub const PUBLIC_DIR: &str = "apps/web/public/bench";
 /// The page's images, relative to its folder.
 pub const IMAGES_DIR: &str = "images";
+/// The name the payload gives its run, in place of the run key.
+pub const RUN: &str = "public";
+/// The length of a SHA-256 in hex: a run of this many hex digits in a payload is a hash.
+const HASH_HEX: usize = 64;
+/// The digits of a run key the check refuses, wherever they appear.
+const RUN_KEY_PREFIX: usize = 8;
 
 /// Text no public payload holds: home and temporary folders, the private tree, installed fonts, file URLs, the
 /// holdout.
@@ -110,12 +120,8 @@ fn row_file(row: &RowId) -> String {
 }
 
 /// Where the page finds a row's image, relative to its folder.
-pub fn image_path(run: &str, row: &RowId, kind: &str) -> String {
-    format!(
-        "{IMAGES_DIR}/{}/{}/{kind}.webp",
-        run.get(..12).unwrap_or(run),
-        row_file(row)
-    )
+pub fn image_path(row: &RowId, kind: &str) -> String {
+    format!("{IMAGES_DIR}/{}/{kind}.webp", row_file(row))
 }
 
 /// A static run's results over the allowlist: its rows, its stamp's pairs and its summary.
@@ -148,11 +154,10 @@ pub fn scope_results(mut results: Results, allow: &BTreeSet<PresentationId>) -> 
     Ok(results)
 }
 
-/// A run's index entry for its scoped results: their summary, and the hash of their stamp.
-pub fn scope_entry(mut entry: RunEntry, results: &Results) -> Result<RunEntry> {
+/// A run's index entry with its scoped results' summary.
+pub fn scope_entry(mut entry: RunEntry, results: &Results) -> RunEntry {
     entry.summary = results.summary.clone();
-    entry.stamp = slidock_bench_schema::sha256_json(&results.stamp)?;
-    Ok(entry)
+    entry
 }
 
 /// A row's detail as published: its source named by [`public_file`], its oracle, render and heatmap at the paths
@@ -189,6 +194,116 @@ pub fn scope_detail(
     detail
 }
 
+/// What [`strip`] leaves out of the run's index entry: the stamp, harness and compiler content hashes, and the
+/// baseline mark.
+const ENTRY_DROPS: [&str; 4] = ["/stamp", "/harness", "/compiler/content", "/baseline"];
+/// Of the run's stamp: its hashes and cache keys, and the font set, which only hashes name.
+const STAMP_DROPS: [&str; 10] = [
+    "/compiler/content",
+    "/deps/cargoLock",
+    "/renderer/recipe",
+    "/renderer/platformDigest",
+    "/renderer/imageId",
+    "/fonts",
+    "/harness",
+    "/corpus",
+    "/determinism",
+    "/perf/wasmSha256",
+];
+/// Of a row's record: the hashes of its composed document, its render and the compiler content.
+const RECORD_DROPS: [&str; 3] = ["/html", "/render", "/content"];
+/// Of a row's detail: the results it was read from (the baseline or a run key), its commands, which name the run, and
+/// the run its findings were measured on.
+const DETAIL_DROPS: [&str; 4] = ["/source", "/run", "/commands", "/explain/run"];
+
+fn remove(value: &mut Value, pointer: &str) {
+    if let Some((parent, leaf)) = pointer.rsplit_once('/')
+        && let Some(map) = value.pointer_mut(parent).and_then(Value::as_object_mut)
+    {
+        map.remove(leaf);
+    }
+}
+
+fn values_mut<'a>(value: &'a mut Value, pointer: &str) -> impl Iterator<Item = &'a mut Value> {
+    value
+        .pointer_mut(pointer)
+        .and_then(Value::as_object_mut)
+        .into_iter()
+        .flat_map(|map| map.values_mut())
+}
+
+/// The byte ranges of the runs of at least `min` ASCII hex digits in `text`.
+fn hex_runs(text: &str, min: usize) -> Vec<std::ops::Range<usize>> {
+    let mut runs = Vec::new();
+    let mut start = 0;
+    for (at, byte) in text.bytes().enumerate().chain([(text.len(), b' ')]) {
+        if !byte.is_ascii_hexdigit() {
+            if at - start >= min {
+                runs.push(start..at);
+            }
+            start = at + 1;
+        }
+    }
+    runs
+}
+
+/// `text` with each hash in it as `…`.
+fn redact_hashes(text: &str) -> String {
+    let mut out = String::with_capacity(text.len());
+    let mut from = 0;
+    for run in hex_runs(text, HASH_HEX) {
+        out.push_str(text.get(from..run.start).unwrap_or_default());
+        out.push('…');
+        from = run.end;
+    }
+    out.push_str(text.get(from..).unwrap_or_default());
+    out
+}
+
+/// Leaves out of a public payload what shows the run's identity or ties it to another run: the run key (the entry is
+/// named [`RUN`], as the payload's maps name it), the hashes and cache keys of its entry, stamp, records and details
+/// (the drops above), the run of each image, and the hashes in diagnostic messages. The commit the run compiled stays.
+pub fn strip(payload: &mut Value) {
+    if let Some(runs) = payload
+        .pointer_mut("/runs/runs")
+        .and_then(Value::as_array_mut)
+    {
+        for entry in runs {
+            ENTRY_DROPS.iter().for_each(|p| remove(entry, p));
+            if let Some(key) = entry.get_mut("key") {
+                *key = Value::String(RUN.to_owned());
+            }
+        }
+    }
+    for results in values_mut(payload, "/results") {
+        if let Some(stamp) = results.get_mut("stamp") {
+            STAMP_DROPS.iter().for_each(|p| remove(stamp, p));
+        }
+        for record in values_mut(results, "/rows") {
+            RECORD_DROPS.iter().for_each(|p| remove(record, p));
+        }
+    }
+    for detail in values_mut(payload, "/rows") {
+        DETAIL_DROPS.iter().for_each(|p| remove(detail, p));
+        if let Some(record) = detail.get_mut("record") {
+            RECORD_DROPS.iter().for_each(|p| remove(record, p));
+        }
+        for image in values_mut(detail, "/images") {
+            remove(image, "/run");
+        }
+        for diagnostic in detail
+            .get_mut("diagnostics")
+            .and_then(Value::as_array_mut)
+            .into_iter()
+            .flatten()
+        {
+            if let Some(Value::String(message)) = diagnostic.get_mut("message") {
+                *message = redact_hashes(message);
+            }
+        }
+    }
+}
+
 /// What a payload must not hold: text anywhere, and presentation ids as whole words.
 #[derive(Clone, Debug, Default)]
 pub struct Forbidden {
@@ -209,6 +324,14 @@ impl Forbidden {
         let text = text.into();
         if !text.is_empty() {
             self.texts.insert(text);
+        }
+        self
+    }
+
+    /// The bench's run keys, by their first [`RUN_KEY_PREFIX`] digits: a key shortened that far still names its run.
+    pub fn run_keys<'a>(mut self, keys: impl IntoIterator<Item = &'a str>) -> Forbidden {
+        for key in keys {
+            self = self.text(key.get(..RUN_KEY_PREFIX).unwrap_or(key));
         }
         self
     }
@@ -342,6 +465,9 @@ fn check_text(
             problems.push(format!("{at}: names {id}"));
         }
     }
+    if !hex_runs(text, HASH_HEX).is_empty() {
+        problems.push(format!("{at}: holds a hash"));
+    }
     let punctuation = |c: char| "\"'`,;()[]{}<>".contains(c);
     for token in text.split_whitespace().map(|t| t.trim_matches(punctuation)) {
         if let Some(id) = named_presentation(token)
@@ -384,7 +510,8 @@ fn walk(
 }
 
 /// Every reason `payload` may not be published: a presentation outside the allowlist named anywhere (a row id or
-/// pair key in any key or text, a `presentation` field, a forbidden id as a word), or a forbidden text.
+/// pair key in any key or text, a `presentation` field, a forbidden id as a word), a forbidden text (a run key among
+/// them), a hash (a run of [`HASH_HEX`] hex digits) in any key or text, or runs other than the one named [`RUN`].
 pub fn check_payload(
     payload: &Value,
     allow: &BTreeSet<PresentationId>,
@@ -393,6 +520,24 @@ pub fn check_payload(
     let mut problems = Vec::new();
     if payload.get("public").is_none_or(Value::is_null) {
         problems.push("the payload is not marked public".to_owned());
+    }
+    let entries: Vec<Option<&str>> = payload
+        .pointer("/runs/runs")
+        .and_then(Value::as_array)
+        .into_iter()
+        .flatten()
+        .map(|entry| entry.get("key").and_then(Value::as_str))
+        .collect();
+    let results: Vec<&String> = payload
+        .get("results")
+        .and_then(Value::as_object)
+        .into_iter()
+        .flat_map(|map| map.keys())
+        .collect();
+    if entries != [Some(RUN)] || results != [RUN] {
+        problems.push(format!(
+            "the payload holds other runs than the one named {RUN}"
+        ));
     }
     walk(payload, "$", allow, forbidden, &mut problems);
     problems
@@ -514,6 +659,10 @@ mod tests {
         }
         assert!(payload["parity"].as_object().unwrap().is_empty());
         assert!(payload["status"].is_null());
+        let commit = payload["runs"]["runs"][0]["compiler"]["commit"]
+            .as_str()
+            .unwrap();
+        assert!(commit.len() == 40 && commit.bytes().all(|b| b.is_ascii_hexdigit()));
     }
 
     #[test]
@@ -529,10 +678,9 @@ mod tests {
         assert_eq!(named, found);
         for path in &named {
             let parts: Vec<&str> = path.split('/').collect();
-            let [_, run, row, kind] = parts.as_slice() else {
+            let [_, row, kind] = parts.as_slice() else {
                 panic!("{path}");
             };
-            assert_eq!(run.len(), 12, "{path}");
             let presentation = row.split("__").next().unwrap();
             assert!(allow.iter().any(|a| a.as_str() == presentation), "{path}");
             assert!(
@@ -571,21 +719,19 @@ mod tests {
     type Injection<'a> = (&'a str, Box<dyn Fn(&mut Value) + 'a>);
 
     #[test]
-    fn a_private_name_or_path_fails_the_check() {
+    fn a_private_name_path_hash_or_run_fails_the_check() {
         let allow = allowlist();
+        let key = "5c0ffee5".repeat(8);
         let forbidden = forbidden(&allow)
             .text("Private Deck.key")
-            .text("/opt/corpus");
+            .text("/opt/corpus")
+            .run_keys([key.as_str()]);
         let (_, payload) = committed();
         assert!(check_payload(&payload, &allow, &forbidden).is_empty());
         let private = forbidden.ids.iter().next().unwrap().clone();
-        let run = payload["results"]
-            .as_object()
-            .unwrap()
-            .keys()
-            .next()
-            .unwrap()
-            .clone();
+        let run = RUN;
+        let (row, _) = payload["rows"].as_object().unwrap().iter().next().unwrap();
+        let row = row.clone();
         let injections: Vec<Injection<'_>> = vec![
             (
                 "a row of another deck",
@@ -633,6 +779,52 @@ mod tests {
                     p["public"] = Value::Null;
                 }),
             ),
+            (
+                "a hash in a text",
+                Box::new(|p: &mut Value| {
+                    p["results"][run]["stamp"]["determinism"] = Value::String("ab".repeat(32));
+                }),
+            ),
+            (
+                "a hash inside a text",
+                Box::new(|p: &mut Value| {
+                    p["rows"][&row]["diagnostics"] = serde_json::json!([
+                        { "message": format!("Media {} is image/tiff", "0f".repeat(32)) }
+                    ]);
+                }),
+            ),
+            (
+                "a hash in a key",
+                Box::new(|p: &mut Value| {
+                    p["images"][format!("{} x render", "e".repeat(64))] = Value::Null;
+                }),
+            ),
+            (
+                "a run key",
+                Box::new(|p: &mut Value| {
+                    p["runs"]["runs"][0]["key"] = Value::String(key.clone());
+                }),
+            ),
+            (
+                "a run key, shortened",
+                Box::new(|p: &mut Value| {
+                    p["rows"][&row]["images"]["oracle"]["url"] =
+                        Value::String(format!("images/{}/x/oracle.webp", &key[..12]));
+                }),
+            ),
+            (
+                "a second run",
+                Box::new(|p: &mut Value| {
+                    let entry = p["runs"]["runs"][0].clone();
+                    p["runs"]["runs"].as_array_mut().unwrap().push(entry);
+                }),
+            ),
+            (
+                "results of another run",
+                Box::new(|p: &mut Value| {
+                    p["results"]["latest"] = p["results"][run].clone();
+                }),
+            ),
         ];
         for (what, inject) in injections {
             let mut copy = payload.clone();
@@ -642,6 +834,108 @@ mod tests {
                 "{what} passes the check"
             );
         }
+    }
+
+    #[test]
+    fn hashes_are_runs_of_64_hex_digits() {
+        let hash = "0123456789abcdef".repeat(4);
+        assert_eq!(hex_runs(&format!("a {hash}."), HASH_HEX), vec![2..66]);
+        assert!(hex_runs(&hash[1..], HASH_HEX).is_empty());
+        assert!(hex_runs("d845ddc8b258bb54f78d37e978ea14b59a3ad389", HASH_HEX).is_empty());
+        assert_eq!(
+            redact_hashes(&format!("Media {hash} is image/tiff")),
+            "Media … is image/tiff"
+        );
+    }
+
+    /// A payload as `report --public` builds it, before [`strip`]: the schema's sample run, with a row detail that
+    /// carries everything a detail can.
+    fn unstripped() -> (Value, BTreeSet<PresentationId>) {
+        let data = repo().join("crates/slidock-bench-schema/tests/data");
+        let results =
+            Results::parse(&std::fs::read_to_string(data.join("results.json")).unwrap()).unwrap();
+        let allow: BTreeSet<PresentationId> = results
+            .rows
+            .keys()
+            .map(|id| id.presentation().clone())
+            .collect();
+        let results = scope_results(results, &allow).unwrap();
+        let index: Value =
+            serde_json::from_str(&std::fs::read_to_string(data.join("runs.json")).unwrap())
+                .unwrap();
+        let mut entry = index["runs"][0].clone();
+        entry["baseline"] = Value::Bool(true);
+        let key = entry["key"].as_str().unwrap().to_owned();
+        let (id, record) = results.rows.iter().next().unwrap();
+        let detail = serde_json::json!({
+            "id": id,
+            "source": "baseline",
+            "run": { "key": key, "state": "present" },
+            "record": record,
+            "knownLoss": [],
+            "diagnostics": [{
+                "code": "MID5602",
+                "severity": "info",
+                "message": format!("Media {} is image/tiff and is transcoded to PNG", "7".repeat(64)),
+            }],
+            "images": {
+                "oracle": { "url": image_path(id, "oracle"), "from": "oracle-cache" },
+                "render": { "url": image_path(id, "render"), "from": "explain", "run": key },
+            },
+            "explain": { "run": key, "matchesRow": false, "elements": [], "missing": [] },
+            "commands": { "explain": format!("slidock-bench explain {id} --from {key}"), "run": "slidock-bench run" },
+            "viewer": { "available": false, "file": public_file(id) },
+        });
+        let payload = serde_json::json!({
+            "schema": "slidock-bench-report@1",
+            "status": null,
+            "runs": { "schema": index["schema"], "runs": [entry] },
+            "results": { RUN: results },
+            "parity": {},
+            "rows": { format!("{RUN} {id}"): detail },
+            "images": {},
+            "public": { "images": ["mismatch"] },
+        });
+        (payload, allow)
+    }
+
+    #[test]
+    fn strip_leaves_no_hash_run_key_or_baseline() {
+        let (mut payload, allow) = unstripped();
+        let key = payload["runs"]["runs"][0]["key"]
+            .as_str()
+            .unwrap()
+            .to_owned();
+        let commit = payload["runs"]["runs"][0]["compiler"]["commit"].clone();
+        let stamp_commit = payload["results"][RUN]["stamp"]["compiler"]["commit"].clone();
+        let forbidden = Forbidden::generic().run_keys([key.as_str()]);
+        assert!(!check_payload(&payload, &allow, &forbidden).is_empty());
+        strip(&mut payload);
+        let problems = check_payload(&payload, &allow, &forbidden);
+        assert!(problems.is_empty(), "{problems:#?}");
+        let entry = &payload["runs"]["runs"][0];
+        assert_eq!(entry["key"], RUN);
+        assert_eq!(entry["compiler"]["commit"], commit);
+        assert!(entry.get("baseline").is_none() && entry.get("stamp").is_none());
+        let stamp = &payload["results"][RUN]["stamp"];
+        assert_eq!(stamp["compiler"]["commit"], stamp_commit);
+        assert!(stamp.get("corpus").is_none() && stamp.get("fonts").is_none());
+        assert!(stamp["renderer"]["chromium"].is_string());
+        let detail = payload["rows"]
+            .as_object()
+            .unwrap()
+            .values()
+            .next()
+            .unwrap();
+        for gone in ["source", "run", "commands"] {
+            assert!(detail.get(gone).is_none(), "{gone}");
+        }
+        assert!(detail["explain"].get("run").is_none());
+        assert!(detail["images"]["render"].get("run").is_none());
+        assert_eq!(
+            detail["diagnostics"][0]["message"],
+            "Media … is image/tiff and is transcoded to PNG"
+        );
     }
 
     #[test]
@@ -658,11 +952,8 @@ mod tests {
         let row: RowId = "retro:kn-12:keynote".parse().unwrap();
         assert_eq!(public_file(&row), "retro.key");
         assert_eq!(
-            image_path(&"a".repeat(64), &row, "render"),
-            format!(
-                "images/{}/retro__kn-12__keynote/render.webp",
-                "a".repeat(12)
-            )
+            image_path(&row, "render"),
+            "images/retro__kn-12__keynote/render.webp"
         );
         let step: RowId = "deck:s1:pptx#t@250".parse().unwrap();
         assert_eq!(row_file(&step), "deck__s1__pptx~23t~40250");

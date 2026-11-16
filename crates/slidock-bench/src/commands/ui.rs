@@ -42,7 +42,8 @@ pub struct ReportArgs {
     /// The UI's empty report page [default: apps/bench-web/dist/report/index.html].
     #[arg(long)]
     template: Option<PathBuf>,
-    /// The runs it carries: `latest`, `baseline` or run keys [default: latest,baseline; with --public, latest].
+    /// The runs it carries: `latest`, `baseline` or run keys [default: latest,baseline; with --public, the one run
+    /// latest].
     #[arg(long)]
     runs: Option<String>,
     /// The oracle, render and heatmap of rows of these classes, at the metric size (e.g. `mismatch`) [default: none;
@@ -309,6 +310,9 @@ pub async fn report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
 /// The images of a public report, as metric-size PNGs by their path in the report.
 type Pictures = Vec<(String, Vec<u8>)>;
 
+/// A public report's payload as built, before [`public::strip`]; its images; and every run key of the bench.
+type PublicBuild = (Payload, Pictures, Vec<String>);
+
 /// The quality the public report's WebP images are encoded at (`cwebp -q`).
 const WEBP_QUALITY: &str = "85";
 
@@ -383,10 +387,16 @@ async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
     );
     let scope = allow.clone();
     let wanted_classes = classes.clone();
-    let (payload, pictures) =
-        tokio::task::spawn_blocking(move || -> Result<(Payload, Pictures)> {
+    let (payload, pictures, all_keys) =
+        tokio::task::spawn_blocking(move || -> Result<PublicBuild> {
             let index = runs_index(&data)?;
             let keys = run_keys(&index, &wanted);
+            if keys.len() != 1 {
+                return Err(BenchError::usage(format!(
+                    "the public report publishes one run, and --runs names {}",
+                    keys.len()
+                )));
+            }
             let mut payload = Payload {
                 schema: "slidock-bench-report@1",
                 status: None,
@@ -414,7 +424,7 @@ async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
                 payload
                     .runs
                     .runs
-                    .push(public::scope_entry(entry.clone(), &results)?);
+                    .push(public::scope_entry(entry.clone(), &results));
                 for (id, record) in &results.rows {
                     let mut published = BTreeMap::new();
                     if record
@@ -429,11 +439,11 @@ async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
                             else {
                                 continue;
                             };
-                            let path = public::image_path(key, id, name);
+                            let path = public::image_path(id, name);
                             if kind == ImageKind::Render {
                                 payload
                                     .images
-                                    .insert(format!("{key} {id} {name}"), path.clone());
+                                    .insert(format!("{} {id} {name}", public::RUN), path.clone());
                             }
                             published.insert(kind, path.clone());
                             pictures.push((path, png));
@@ -441,27 +451,30 @@ async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
                     }
                     if let Ok(Some(detail)) = crate::server::public_row_detail(&data, key, id) {
                         payload.rows.insert(
-                            format!("{key} {id}"),
+                            format!("{} {id}", public::RUN),
                             public::scope_detail(detail, &published, &note),
                         );
                     }
                 }
-                payload.results.insert(key.clone(), results);
+                payload.results.insert(public::RUN.to_owned(), results);
             }
-            payload.runs.runs.sort_by(|a, b| {
-                a.recorded_at
-                    .cmp(&b.recorded_at)
-                    .then_with(|| a.key.cmp(&b.key))
-            });
-            Ok((payload, pictures))
+            let all_keys = index
+                .runs
+                .iter()
+                .map(|r| r.key.as_str().to_owned())
+                .collect();
+            Ok((payload, pictures, all_keys))
         })
         .await
         .map_err(|e| BenchError::failed(e.to_string()))??;
 
-    let value = serde_json::to_value(&payload).map_err(|e| BenchError::failed(e.to_string()))?;
+    let mut value =
+        serde_json::to_value(&payload).map_err(|e| BenchError::failed(e.to_string()))?;
+    public::strip(&mut value);
     let mut forbidden = Forbidden::generic()
         .repository(&repo, &allow)?
         .manifest(&manifest, &allow)
+        .run_keys(all_keys.iter().map(String::as_str))
         .text(ctx.cache.root.to_string_lossy())
         .text(ctx.env.corpus_dir.to_string_lossy());
     for name in ["HOME", "USER"] {
@@ -497,7 +510,7 @@ async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
         image_bytes += bytes.len();
         write_atomic(&out.join(path), bytes)?;
     }
-    let json = serde_json::to_string(&payload).map_err(|e| BenchError::failed(e.to_string()))?;
+    let json = serde_json::to_string(&value).map_err(|e| BenchError::failed(e.to_string()))?;
     let index = out.join("index.html");
     write_atomic(&index, inject(&page, &json)?)?;
     let rows: usize = payload.results.values().map(|r| r.rows.len()).sum();

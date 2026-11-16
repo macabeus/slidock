@@ -408,23 +408,30 @@ slidock-bench report --public            # writes apps/web/public/bench/: index.
 What it holds:
 
 - The presentations `public.json` lists, and nothing of any other: the list is default-deny, so a deck added to the
-  corpus stays out until it is listed. Their rows only; the stamp's pairs and every summary are recomputed over those
-  rows, so no count, median or share covers an unlisted deck.
-- The `latest` static run (`--runs` names others; only static runs are published). No parity report, no status, no
-  other lane: the page leaves out the views it holds no data for.
+  corpus stays out until it is listed. Their rows only; every summary is recomputed over those rows, so no count,
+  median or share covers an unlisted deck.
+- One run: the `latest` static run (`--runs` names another; only static runs are published). No parity report, no
+  status, no other lane: the page leaves out the views it holds no data for.
+- The run alone, compared with nothing: no base run, delta, baseline mark or regression wording. It is named by the
+  slidock commit it compiled, which links to the commit on GitHub, and by the facts a reader can check (the date,
+  Chromium and poppler versions, classifier, pair count). The payload holds no run key and no hash or cache key: the
+  run is named `public`, and the stamp's hashes (content id, harness, renderer recipe and image, font set, corpus,
+  determinism report), the records' composed document and render hashes, the details' run, source and commands, and
+  the hashes in diagnostic messages (shown as `…`) are left out of it, not only of the page.
 - No corpus file name or path: a row's source is named `<presentation>.<extension>`, and its images missing from the
   report say so instead of naming a command.
 - The oracle, render and heatmap of the `mismatch` rows (`--images` names other classes), at the metric size, as
-  lossy WebP (libwebp's `cwebp -q 85 -m 6`, which must be on `PATH`), under `images/<run>/<row>/<kind>.webp`. The
+  lossy WebP (libwebp's `cwebp -q 85 -m 6`, which must be on `PATH`), under `images/<row>/<kind>.webp`. The
   scores are the run's, computed on the lossless renders; the WebP images are for reading.
 
 Before writing anything, the command checks the payload: no presentation outside the list named anywhere (as a row
 id, a pair key, a `presentation` field, or its id as a word), no corpus file name, stem or title of the manifest, no
-path (`/Users/`, `~/`, `.slidock`, the cache and corpus folders, …). A finding stops it with nothing written. The
-page's Content Security Policy allows its own inline script by hash and images from its folder and `data:` only. The
-`public` tests of `slidock-bench` run the same check over the committed report in CI, without the private data, with
-the corpus ids the repository names (`bench/budgets.json`, `tests/golden/manifest.json`), and hold its images to the
-files the payload names.
+path (`/Users/`, `~/`, `.slidock`, the cache and corpus folders, …), no hash (64 hex digits in a row, in any key or
+text), no run key of the bench (its first 8 digits, anywhere), and one run, named `public`. A finding stops it with
+nothing written. The page's Content Security Policy allows its own inline script by hash and images from its folder
+and `data:` only. The `public` tests of `slidock-bench` run the same check over the committed report in CI, without
+the private data (so with the corpus ids the repository names, `bench/budgets.json` and `tests/golden/manifest.json`,
+and no run keys but the hash rule's), and hold its images to the files the payload names.
 
 ## Known limits
 

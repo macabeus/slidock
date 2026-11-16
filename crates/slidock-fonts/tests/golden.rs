@@ -93,7 +93,7 @@ fn reads_every_file_of_the_set_as_recorded_field_for_field() {
         return;
     };
     let files = font_files();
-    assert_eq!(files.len(), 58);
+    assert_eq!(files.len(), 63);
     let mut faces = 0;
     let mut read = serde_json::Map::new();
     for (name, bytes) in &files {
@@ -101,7 +101,7 @@ fn reads_every_file_of_the_set_as_recorded_field_for_field() {
         faces += ours.len();
         read.insert(name.clone(), serde_json::to_value(&ours).unwrap());
     }
-    assert_eq!(faces, 76);
+    assert_eq!(faces, 95);
     let printed = to_canonical_json(&Value::Object(read), Layout::Indented).unwrap();
     let problem = golden.record("slidock-fonts/read-sfnt.json", printed.as_bytes());
     assert!(problem.is_none(), "{}", problem.unwrap_or_default());
@@ -280,6 +280,7 @@ fn every_face_of_the_set_that_advances_by_one_width_is_monospace() {
         }
     }
     let expected = [
+        "Courier",
         "Courier New",
         "Liberation Mono",
         "Monaco",

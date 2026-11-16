@@ -73,6 +73,18 @@
       }
     },
     {
+      "family": "Avenir Next",
+      "file": "Avenir Next.ttc",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "e03834eefdb4164c2af2c35b985285eb4fd67ff8db54aaed3bdc6d9c8b7f3c3c",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Avenir Next.ttc"
+        ]
+      }
+    },
+    {
       "family": "Barlow Condensed",
       "file": "BarlowCondensed-Bold.ttf",
       "licence": "OFL-1.1",
@@ -110,6 +122,18 @@
       "source": {
         "kind": "url",
         "url": "https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-Regular.ttf"
+      }
+    },
+    {
+      "family": "Bradley Hand",
+      "file": "Bradley Hand Bold.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "b94c10ed01e88fd8dbbee95485d3863a0719520e8637ae5a9a30cf485e18740d",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Bradley Hand Bold.ttf"
+        ]
       }
     },
     {
@@ -197,6 +221,42 @@
         "kind": "host",
         "paths": [
           "/System/Library/Fonts/Supplemental/Courier New.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Courier",
+      "file": "Courier.ttc",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "76cdad2ba4e8774223ed6184f530570261f9f7fb9beb5c68368e09234c0273ec",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Courier.ttc"
+        ]
+      }
+    },
+    {
+      "family": "DIN Alternate",
+      "file": "DIN Alternate Bold.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "e3dbba7da8bc75a8098134cc811d6ee9d6b2525be35da069f366fb94df00c73d",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/DIN Alternate Bold.ttf"
+        ]
+      }
+    },
+    {
+      "family": "DIN Condensed",
+      "file": "DIN Condensed Bold.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "932b288911011a1910a42940ed1525f4a0e7a140177d5d27ee6aae4ed8bb1233",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/DIN Condensed Bold.ttf"
         ]
       }
     },

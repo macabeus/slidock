@@ -1,0 +1,238 @@
+/*
+ * slidock design tokens. Dark is the default; light applies with `data-theme="light"` on
+ * <html>, or from the system preference when no theme is set. Components use the semantic names that `@theme inline`
+ * maps below (`bg-surface`, `text-muted`, …), never raw palette colors. The pink → orange brand is for chrome only.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --bg-root: #0f172a;
+  --bg-root-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  --bg-surface: #1e293b;
+  --bg-elevated: #334155;
+  --bg-sunken: #020617;
+  --bg-input: #0b1220;
+  --border: #334155;
+  --border-subtle: #1e293b;
+  /* The edge of a translucent panel: none in dark, where surfaces separate by alpha; a hairline in light. */
+  --panel-edge: transparent;
+  --text: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --overlay: rgb(0 0 0 / 0.6);
+
+  --brand-300: #f9a8d4;
+  --brand-400: #f472b6;
+  --brand-500: #ec4899;
+  --brand-wash: rgb(236 72 153 / 0.15);
+  --accent: #fb923c;
+  --brand-gradient: linear-gradient(to right, #f472b6, #fb7185, #fb923c);
+  --brand-fill: linear-gradient(to right, #be185d, #be123c, #c2410c);
+  --on-brand: #ffffff;
+
+  --success: #6ee7b7;
+  --warning: #fcd34d;
+  --danger: #fca5a5;
+
+  --font-embedded: #c4b5fd;
+  --font-local: #38bdf8;
+  --font-google: #34d399;
+  --font-dropped: #fbbf24;
+  --font-missing: #fca5a5;
+  --font-substituted: #fb923c;
+
+  --scrollbar: #334155;
+  --scrollbar-hover: #475569;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-root: #f8fafc;
+  --bg-root-gradient: none;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --bg-sunken: #f1f5f9;
+  --bg-input: #ffffff;
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --panel-edge: #e2e8f0;
+  --text: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #526075;
+  --text-dim: #94a3b8;
+  --overlay: rgb(15 23 42 / 0.35);
+
+  --brand-300: #9d174d;
+  --brand-400: #be185d;
+  --brand-500: #db2777;
+  --brand-wash: rgb(219 39 119 / 0.1);
+  --accent: #c2410c;
+  --brand-gradient: linear-gradient(to right, #be185d, #be123c, #c2410c);
+  --brand-fill: linear-gradient(to right, #be185d, #be123c, #c2410c);
+  --on-brand: #ffffff;
+
+  --success: #065f46;
+  --warning: #92400e;
+  --danger: #b91c1c;
+
+  --font-embedded: #6d28d9;
+  --font-local: #0369a1;
+  --font-google: #065f46;
+  --font-dropped: #92400e;
+  --font-missing: #b91c1c;
+  --font-substituted: #9a3412;
+
+  --scrollbar: #cbd5e1;
+  --scrollbar-hover: #94a3b8;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+
+    --bg-root: #f8fafc;
+    --bg-root-gradient: none;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f1f5f9;
+    --bg-sunken: #f1f5f9;
+    --bg-input: #ffffff;
+    --border: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    --panel-edge: #e2e8f0;
+    --text: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #526075;
+    --text-dim: #94a3b8;
+    --overlay: rgb(15 23 42 / 0.35);
+
+    --brand-300: #9d174d;
+    --brand-400: #be185d;
+    --brand-500: #db2777;
+    --brand-wash: rgb(219 39 119 / 0.1);
+    --accent: #c2410c;
+    --brand-gradient: linear-gradient(to right, #be185d, #be123c, #c2410c);
+    --brand-fill: linear-gradient(to right, #be185d, #be123c, #c2410c);
+    --on-brand: #ffffff;
+
+    --success: #065f46;
+    --warning: #92400e;
+    --danger: #b91c1c;
+
+    --font-embedded: #6d28d9;
+    --font-local: #0369a1;
+    --font-google: #065f46;
+    --font-dropped: #92400e;
+    --font-missing: #b91c1c;
+    --font-substituted: #9a3412;
+
+    --scrollbar: #cbd5e1;
+    --scrollbar-hover: #94a3b8;
+  }
+}
+
+@theme inline {
+  --color-root: var(--bg-root);
+  --color-surface: var(--bg-surface);
+  --color-elevated: var(--bg-elevated);
+  --color-sunken: var(--bg-sunken);
+  --color-input: var(--bg-input);
+  --color-line: var(--border);
+  --color-line-subtle: var(--border-subtle);
+  --color-panel-edge: var(--panel-edge);
+  --color-fg: var(--text);
+  --color-fg-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-dim: var(--text-dim);
+  --color-overlay: var(--overlay);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-wash: var(--brand-wash);
+  --color-accent: var(--accent);
+  --color-on-brand: var(--on-brand);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-font-embedded: var(--font-embedded);
+  --color-font-local: var(--font-local);
+  --color-font-google: var(--font-google);
+  --color-font-dropped: var(--font-dropped);
+  --color-font-missing: var(--font-missing);
+  --color-font-substituted: var(--font-substituted);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
+
+  --radius-hero: 16px;
+  --radius-card: 12px;
+  --radius-panel: 8px;
+  --radius-control: 6px;
+  --radius-chip: 4px;
+
+  --animate-indeterminate: sd-indeterminate 1.2s ease-in-out infinite;
+}
+
+@keyframes sd-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+@utility brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+/* The fill of primary actions: deep enough under white text (`--on-brand`) in both themes. */
+@utility brand-fill {
+  background-image: var(--brand-fill);
+  color: var(--on-brand);
+}
+
+@utility brand-text {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--bg-root);
+    background-image: var(--bg-root-gradient);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: var(--font-sans);
+  }
+
+  /* A field's placeholder is reader-facing text: muted, never faded below AA (Tailwind's default halves the text). */
+  ::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+  }
+}

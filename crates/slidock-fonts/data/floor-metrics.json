@@ -1,0 +1,121 @@
+{
+  "families": [
+    {
+      "faces": [
+        {
+          "metrics": {
+            "bounds": {
+              "yMax": 942,
+              "yMin": -222
+            },
+            "graveTop": 862,
+            "hhea": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "typo": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "unitsPerEm": 1000,
+            "win": {
+              "ascent": 1050,
+              "descent": 250
+            }
+          },
+          "postscriptName": "Caladea-Italic",
+          "style": "italic",
+          "variable": false,
+          "weight": 400
+        },
+        {
+          "metrics": {
+            "bounds": {
+              "yMax": 936,
+              "yMin": -222
+            },
+            "graveTop": 853,
+            "hhea": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "typo": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "unitsPerEm": 1000,
+            "win": {
+              "ascent": 1050,
+              "descent": 250
+            }
+          },
+          "postscriptName": "Caladea-Regular",
+          "style": "normal",
+          "variable": false,
+          "weight": 400
+        },
+        {
+          "metrics": {
+            "bounds": {
+              "yMax": 965,
+              "yMin": -220
+            },
+            "graveTop": 896,
+            "hhea": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "typo": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "unitsPerEm": 1000,
+            "win": {
+              "ascent": 1050,
+              "descent": 250
+            }
+          },
+          "postscriptName": "Caladea-BoldItalic",
+          "style": "italic",
+          "variable": false,
+          "weight": 700
+        },
+        {
+          "metrics": {
+            "bounds": {
+              "yMax": 961,
+              "yMin": -220
+            },
+            "graveTop": 900,
+            "hhea": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "typo": {
+              "ascender": 900,
+              "descender": -250,
+              "lineGap": 0
+            },
+            "unitsPerEm": 1000,
+            "win": {
+              "ascent": 1050,
+              "descent": 250
+            }
+          },
+          "postscriptName": "Caladea-Bold",
+          "style": "normal",
+          "variable": false,
+          "weight": 700
+        }
+      ],
+      "family": "Caladea"
+    }
+  ]
+}

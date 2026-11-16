@@ -1,0 +1,6 @@
+# Text checks out with LF line endings on every platform: builds embed text files (the player, licences, data tables)
+# byte for byte, and the player's must hold no carriage return.
+* text=auto eol=lf
+# Kept as they were written, with CRLF line endings.
+crates/slidock-fonts/tests/data/container/OFL-oswald.txt -text
+crates/slidock-fonts/tests/fonts/oswald/OFL.txt -text

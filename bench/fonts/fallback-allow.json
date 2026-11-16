@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "rows": [
+    {
+      "row": "keynote-talk:kn-3547228:keynote",
+      "glyphs": 3,
+      "reason": "Emoji: no shipped face covers emoji code points; they are left to the viewer's fallback.",
+      "tracked": "A Noto emoji and symbol fallback chain; the compiler reports them as MID5415"
+    },
+    {
+      "row": "retro:kn-4345006:keynote",
+      "glyphs": 3,
+      "reason": "Emoji: U+1F64B alone, then with ZWJ U+2640 VS16 and with ZWJ U+2642 VS16, three sequences each counted once (the colour-emoji exception); no shipped face covers emoji code points.",
+      "tracked": "A Noto emoji and symbol fallback chain; the compiler reports them as MID5415"
+    }
+  ]
+}

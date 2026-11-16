@@ -1,0 +1,40 @@
+{
+  "name": "slidock",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@9.14.4",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "player:build": "pnpm --filter @slidock/player build",
+    "player:check": "pnpm --filter @slidock/player exec node build.mjs --check",
+    "wasm:build": "pnpm player:build && wasm-pack build crates/slidock-wasm --target web --profile wasm --no-pack --out-dir ../../packages/wasm/pkg --out-name slidock_wasm",
+    "dev": "pnpm wasm:build && pnpm --filter @slidock/web dev",
+    "build": "pnpm wasm:build && pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "24.19.2",
+    "eslint": "10.13.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-unused-imports": "4.4.1",
+    "globals": "17.13.0",
+    "prettier": "3.9.10",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.1"
+  }
+}

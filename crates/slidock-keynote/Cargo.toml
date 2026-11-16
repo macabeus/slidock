@@ -1,0 +1,73 @@
+[package]
+name = "slidock-keynote"
+description = "Apple Keynote (.key) frontend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Checks the schema, the object graphs, the frontend's goldens and the Keynote corpus pairs against the recorded
+# golden files (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-color = { workspace = true }
+slidock-geometry = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-math = { workspace = true }
+slidock-presets = { workspace = true }
+indexmap = { workspace = true }
+prost = { workspace = true }
+snap = { workspace = true }
+thiserror = { workspace = true }
+
+[build-dependencies]
+prost-build = { workspace = true }
+prost-types = { workspace = true }
+protox = { workspace = true }
+
+[dev-dependencies]
+slidock-core = { workspace = true }
+slidock-format = { workspace = true }
+slidock-html = { workspace = true }
+slidock-io = { workspace = true, features = ["std-fs"] }
+slidock-passes = { workspace = true }
+miniz_oxide = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[[test]]
+name = "goldens"
+required-features = ["golden"]
+
+[[test]]
+name = "corpus"
+required-features = ["golden"]
+
+[[test]]
+name = "motion_corpus"
+required-features = ["golden"]
+
+[lints]
+workspace = true
+
+[package.metadata.golden]
+# The golden suite reads the corpus decks: about 100 s in a debug build, 11 s in release.
+release = true

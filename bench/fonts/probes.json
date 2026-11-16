@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "probes": [
+    {
+      "id": "fonts-probe",
+      "frontend": "odp",
+      "file": "probes/out/fonts-probe.odp",
+      "sha256": "8a8e196bc5b36fd173497955ced9d4663788fc2ddc6c18992533ed1475b1aaeb"
+    },
+    {
+      "id": "fonts-probe",
+      "frontend": "pptx",
+      "file": "probes/out/fonts-probe.pptx",
+      "sha256": "4d2e3057bb843affe48bebdf44cf6e59b66f9c02ee802a065faa30df72efcf04"
+    }
+  ]
+}

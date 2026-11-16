@@ -1,0 +1,8 @@
+[
+  {
+    "path": "$.slides[0].elements",
+    "reason": "slidock reads the stored line spacing literally",
+    "reviewBy": "2027-01-31",
+    "row": "demo-basics:od-p902:odp"
+  }
+]

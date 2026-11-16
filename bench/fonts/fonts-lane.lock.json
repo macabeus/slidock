@@ -1,0 +1,584 @@
+{
+  "fallback": [
+    {
+      "family": "Last Resort High-Efficiency",
+      "file": "LastResortHE-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "3a936fe2379e9e164a8f9819095cbf53d9305a2d08532d9be5b496f4be45bcde",
+      "source": {
+        "kind": "url",
+        "url": "https://github.com/unicode-org/last-resort-font/releases/download/17.000/LastResortHE-Regular.ttf"
+      }
+    }
+  ],
+  "google": {
+    "css2": [
+      {
+        "css": "@font-face {\n  font-family: 'Barlow Condensed';\n  font-style: italic;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrY3TWvA.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Barlow Condensed';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2_3E.ttf) format('truetype');\n}\n",
+        "sha256": "a69e6660c09457a287c01c5e148653e418264bd2878d2bd49addc765670ecf12",
+        "url": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Barlow Condensed';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTx3L3I-JCGChYJ8VI-L6OO_au7B2xY.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Barlow Condensed';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2_3E.ttf) format('truetype');\n}\n",
+        "sha256": "c2896c59bcd795ce4852bd0bec2daf3ca2b46f0a43df1f57d0efb467cfbdf5c0",
+        "url": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Barlow Condensed';\n  font-style: normal;\n  font-weight: 600;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873_3E.ttf) format('truetype');\n}\n",
+        "sha256": "c85fe57d9f11185653592f869d549b9806d241e5f943fe2df5b93bedfe4105c3",
+        "url": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Caveat';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SII.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Caveat';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjRV6SII.ttf) format('truetype');\n}\n",
+        "sha256": "a4c9e867d4aa053ca5cb60aa2cff867fb1f369dc1c372947e7eb098fa8333e05",
+        "url": "https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Lato';\n  font-style: italic;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHjxswWw.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Lato';\n  font-style: italic;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI5wqPHA.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHvxk.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVew8.ttf) format('truetype');\n}\n",
+        "sha256": "86f076b8b7f62e17e1b6db11b830a9bcd7af67c4369867c1f0c5c78fa295185f",
+        "url": "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 300;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USew8.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Lato';\n  font-style: normal;\n  font-weight: 900;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh50Xew8.ttf) format('truetype');\n}\n",
+        "sha256": "aa5e2c60e4249a639cf6ef5b03d081252e3cf653a9dd8a54b195d11ed7d41f22",
+        "url": "https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');\n}\n",
+        "sha256": "daa10e3e046e24c4f0c8570bf95d60030cd60ca3b9a79f856b7b0dc744841d4f",
+        "url": "https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 500;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf) format('truetype');\n}\n",
+        "sha256": "c3060350591d5710bc42ce1e4cd676c0802f2c50d9a7c9de93e09adc148cef9a",
+        "url": "https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'PT Serif';\n  font-style: italic;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/ptserif/v19/EJRTQgYoZZY2vCFuvAFTzro.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'PT Serif';\n  font-style: italic;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/ptserif/v19/EJRQQgYoZZY2vCFuvAFT9gaQVy4.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'PT Serif';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/ptserif/v19/EJRVQgYoZZY2vCFuvDFR.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'PT Serif';\n  font-style: normal;\n  font-weight: 700;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/ptserif/v19/EJRSQgYoZZY2vCFuvAnt65qV.ttf) format('truetype');\n}\n",
+        "sha256": "37dddad8e47b766178771cae92fc6ec8bc9212c989e8d0cb509cbbadd82e9fd8",
+        "url": "https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Roboto Mono';\n  font-style: normal;\n  font-weight: 400;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf) format('truetype');\n}\n",
+        "sha256": "3a68e0a9c52785c64ef3f5b1d1f23e65cbb6d3790be0c6923f90b1aef0e13076",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Roboto';\n  font-style: italic;\n  font-weight: 500;\n  font-stretch: normal;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLrPQiA8.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  font-stretch: normal;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf) format('truetype');\n}\n",
+        "sha256": "9d0f4b9c84599d64bb75997ffa700de4669fc6ac5c94469078707d4be53c49db",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  font-stretch: normal;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf) format('truetype');\n}\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  font-stretch: normal;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf) format('truetype');\n}\n",
+        "sha256": "e2e7fc6ed4b7bc42c35926b1646e314de0793afacfc58f676c967c79745a9672",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=block"
+      },
+      {
+        "css": "@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  font-stretch: normal;\n  font-display: block;\n  src: url(https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf) format('truetype');\n}\n",
+        "sha256": "5b5434ff31fa392f842d4abbd022e741d3eefbbc783e1e8d6db6e55942713163",
+        "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=block"
+      }
+    ],
+    "files": [
+      {
+        "family": "Barlow Condensed",
+        "file": "HTx3L3I-JCGChYJ8VI-L6OO_au7B2xY.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "c82d65280835cb3cd1b499863cf68cae8c6193c45ffae9495d28d01f749a9ae2",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTx3L3I-JCGChYJ8VI-L6OO_au7B2xY.ttf"
+        }
+      },
+      {
+        "family": "Barlow Condensed",
+        "file": "HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2_3E.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "7dde307fa887fc65ff5830cfada77a7decc5dae8d3c816c9d39ba3f1af1c4ed7",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2_3E.ttf"
+        }
+      },
+      {
+        "family": "Barlow Condensed",
+        "file": "HTxwL3I-JCGChYJ8VI-L6OO_au7B4873_3E.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "0d85af813fc3ed87db0c6265515689b2eef5cbaf7aab17922528dfc95a2cd73f",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxwL3I-JCGChYJ8VI-L6OO_au7B4873_3E.ttf"
+        }
+      },
+      {
+        "family": "Barlow Condensed",
+        "file": "HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrY3TWvA.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "5e5c01d3260d47223cbf28a3dc9109099a2abeb3cbf8199ddf13164f7ccf98ce",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/barlowcondensed/v13/HTxyL3I-JCGChYJ8VI-L6OO_au7B6xTrY3TWvA.ttf"
+        }
+      },
+      {
+        "family": "Caveat",
+        "file": "WnznHAc5bAfYB2QRah7pcpNvOx-pjRV6SII.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "f4365d9874c1b64026aca48786cf835a5decf2c740c06de04dbb05ce8c93ff37",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjRV6SII.ttf"
+        }
+      },
+      {
+        "family": "Caveat",
+        "file": "WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SII.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "012f33f9814bf9614973983335c3a375fe267c094e7c09a02a276cd1dcd4180a",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SII.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6u8w4BMUTPHjxswWw.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "ae2f4abf0bf802b3710c474f05d1a34f086ef57001f5751d03e428e113f5a684",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6u8w4BMUTPHjxswWw.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6u9w4BMUTPHh50Xew8.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "7a41ff951f1a5b19346850801deb745ab4c4921d7a320dc05da80845086a78a5",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh50Xew8.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6u9w4BMUTPHh6UVew8.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "02e8f4be57ddc47cb7882c41b60216b6085b1ceaf717514be2b88fa15396238d",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVew8.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6u9w4BMUTPHh7USew8.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "28c4399152f47d2699fd28e8f4021cbd897a80b07d5a4b9c74edd96532e212a6",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USew8.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6u_w4BMUTPHjxsI5wqPHA.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "0c55b8d34d395c056230c7c5741244de73d0d3cf5fe01b5a0f54cb025fb942fd",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6u_w4BMUTPHjxsI5wqPHA.ttf"
+        }
+      },
+      {
+        "family": "Lato",
+        "file": "S6uyw4BMUTPHvxk.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "f43f1c7780d69792278f04b136c934a0298fc66f2e974bac13dd2e53adc52bde",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHvxk.ttf"
+        }
+      },
+      {
+        "family": "Oswald",
+        "file": "TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "edca7f2098242ead25675251ac9c35ecd2a9d001e4bcb641e07471148b6c365b",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs18NvgUE.ttf"
+        }
+      },
+      {
+        "family": "Oswald",
+        "file": "TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "bd6ff5a83bcdc92d7aac6dbb16e4dd2b0b0320bec6402bb81f5dd9735b500e46",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf"
+        }
+      },
+      {
+        "family": "Oswald",
+        "file": "TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "a6ee8b91ec269a6f48631ba4ba1a3ab7e5039e5482dda8dc9672ee4620d7bd68",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf"
+        }
+      },
+      {
+        "family": "PT Serif",
+        "file": "EJRQQgYoZZY2vCFuvAFT9gaQVy4.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "5f929308b70cbd9dd92576f7695825130d15779d0d57f325881defd4e5100eaa",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/ptserif/v19/EJRQQgYoZZY2vCFuvAFT9gaQVy4.ttf"
+        }
+      },
+      {
+        "family": "PT Serif",
+        "file": "EJRSQgYoZZY2vCFuvAnt65qV.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "86fe68d3c03f693cfeb3bfa2410273d3f688c712581d738201bf69fb832545fc",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/ptserif/v19/EJRSQgYoZZY2vCFuvAnt65qV.ttf"
+        }
+      },
+      {
+        "family": "PT Serif",
+        "file": "EJRTQgYoZZY2vCFuvAFTzro.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "009698a23dcc4267ecabc3e0e72f30b61174fe78db20ac6172ef98d15c5f0927",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/ptserif/v19/EJRTQgYoZZY2vCFuvAFTzro.ttf"
+        }
+      },
+      {
+        "family": "PT Serif",
+        "file": "EJRVQgYoZZY2vCFuvDFR.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "6902e32186c45fd344901f936d563fe61dfd8d29133e3d97f7163c86b08ede9c",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/ptserif/v19/EJRVQgYoZZY2vCFuvDFR.ttf"
+        }
+      },
+      {
+        "family": "Roboto",
+        "file": "KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLrPQiA8.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "d6e0eea05cc710faabcd185c7c4b96974ff6f4195715761079cf27266d6b53fd",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/roboto/v51/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLrPQiA8.ttf"
+        }
+      },
+      {
+        "family": "Roboto",
+        "file": "KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "35757eaa996b3359022f47f164a67ee9eac04971af24c5b8fbd4b89e844ff190",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf"
+        }
+      },
+      {
+        "family": "Roboto",
+        "file": "KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "4d984240cefb093a74300bcae4b5dbd49f700e0af501eaaa079c56aa64142d2f",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf"
+        }
+      },
+      {
+        "family": "Roboto",
+        "file": "KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "dece7c71bbe61710787f0839c722c65e87355dd2eb4a823e6b5488121ff81e4b",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf"
+        }
+      },
+      {
+        "family": "Roboto Mono",
+        "file": "L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf",
+        "licence": "OFL-1.1",
+        "sha256": "329949c551e04130eeb43580e149a2d548090e71359d05d925329ae123fac5c9",
+        "source": {
+          "kind": "url",
+          "url": "https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf"
+        }
+      }
+    ]
+  },
+  "substitutes": [
+    {
+      "family": "Caladea",
+      "file": "Caladea-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "ae3cb2dcbc925809dd29d2a44e9802211cab66be541bacbfc9c08c74b27c3742",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/caladea/Caladea-Bold.ttf"
+      }
+    },
+    {
+      "family": "Caladea",
+      "file": "Caladea-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "ccabaa7b7e2fdf253d2b1a5fa699dd8a3df8d835a9eb285ad82631a677eb76c0",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/caladea/Caladea-BoldItalic.ttf"
+      }
+    },
+    {
+      "family": "Caladea",
+      "file": "Caladea-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "4359a8e24f748b6447b1ff6d7a174febe70961d29f8bb8634b56dacd740a3deb",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/caladea/Caladea-Italic.ttf"
+      }
+    },
+    {
+      "family": "Caladea",
+      "file": "Caladea-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f1e899278b7b4491aba5b6a8253c4b04c050cc59b21865be5c37559a775153cd",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec/ofl/caladea/Caladea-Regular.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Bold.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-BoldItalic.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Italic.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Regular.ttf"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-Bold.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-Bold.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-BoldOblique.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "eb436dca0c2594b73d8b603b892e374fdfd8d885d25ffb4f18df4c4c0b49e50f",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-BoldOblique.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-Oblique.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "4af75fa16ee6d3ad43e1ecec41862c24954af26a55c6bb1ebb27bd486a50f5f4",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-Oblique.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "bd62a0672d0b9b6710b01df434c80ad54fa5f0835207eb7b17b7a761463067bb",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "79451f3c09fe25116098853b7a2ca6e2436220ccc11af022979adbcf195be130",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "605c01c711b44480a7508d349dfbf3264e81fa43d69e61cfa7d10b86e764c4d1",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f2b83c763e8afd21709333370bed4774337fae82267937e2b5aea7e2fbd922c1",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "788abee4c806d660e8aee46689dd8540cd4bb98da03dcc9d171ce3efd99a9173",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "698da70fc191cc5f33ad4d6d3fe830fe4624b898ea2e3169955928b7c491f1ee",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "e5bae5c4cde31f22142753855f4f8fb86da6ff39955ed3c0a11248b0d16948b0",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "76d04c18ea243f426b7de1f3ad208e927008f961dc5945e5aad352d0dfde8ee8",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "d754ba427cfe0bca54ae052384baa8f842da5bd6550ad4da024ac441e7a7d5ce",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f17db8af71e24d2066b587546021d4f0b296be389512b658dec3c09affeb11a7",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "0e3dea9f8d613e006ccfa62201f33e265d19167bd0907725c3e145368b04fc2e",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "058ea80864aef09a23f45cbec2bb5400bc3dfbdea01c3f10538a21fcb497fb74",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    }
+  ],
+  "version": 2
+}

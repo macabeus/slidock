@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@import '@slidock/ui/tokens.css';
+
+@source '../../../packages/ui/src';
+
+/*
+ * The viewer's stage well letterboxes the slide on the theme's sunken color; presenting full screen
+ * keeps the player's black. Unlayered, as the player's own stylesheet is.
+ */
+[data-stage-well] .sd-player:not(.sd-fill, :fullscreen) {
+  background: var(--bg-sunken);
+}
+
+/* Its focus ring is the app's (`focusRing`, brand-400), which stays at least 3:1 on the sunken color of both themes. */
+[data-stage-well] .sd-player:not(.sd-fill, :fullscreen):focus-visible {
+  outline-color: var(--brand-400);
+}

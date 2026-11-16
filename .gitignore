@@ -1,0 +1,9 @@
+target/
+node_modules/
+dist/
+pkg/
+**/out/**/*.zip
+*.tsbuildinfo
+.DS_Store
+.vite/
+target-review/

@@ -1,0 +1,725 @@
+{
+  "motionPairs": {
+    "demo-keynote:keynote": {
+      "accepted": 1,
+      "dropped": 0,
+      "fallbackAllowed": 1,
+      "items": [
+        {
+          "expected": null,
+          "item": "step 1",
+          "native": "keynote:apple:sparkle",
+          "played": "fallback:dissolve",
+          "slide": "kn-1003",
+          "verdict": "declared"
+        },
+        {
+          "expected": "flyIn",
+          "item": "step 0",
+          "native": "keynote:apple:move in",
+          "played": "flyIn",
+          "slide": "kn-1003",
+          "verdict": "accepted",
+          "why": "an exit delivered by character leaves the shape's fill"
+        },
+        {
+          "expected": "pop",
+          "item": "step 0",
+          "native": "keynote:apple:pop",
+          "played": "pop",
+          "slide": "kn-1005",
+          "verdict": "mismatched",
+          "why": "duration 400 ms, the deck says 500 ms"
+        }
+      ],
+      "mismatched": 1,
+      "native": 1,
+      "probe": false,
+      "slides": 3,
+      "steps": 4,
+      "transitions": 1
+    }
+  },
+  "positions": {
+    "demo-keynote:kn-1003:keynote#s0": "937ca382941c13180eb12823e9dee9416317af9a5f427ab4a348079bbc378b1d",
+    "demo-keynote:kn-1003:keynote#s1": "521ea7b604eef6e16dd3a7365461333f9ff9ddc2b30d42e5c02f6a4a790dd59c",
+    "demo-keynote:kn-1003:keynote#s2": "1e95ffe94d755a5ac04c686f72fe033873ad9017e39612133c114175168f7a8b",
+    "demo-keynote:kn-1004:keynote#s0": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+    "demo-keynote:kn-1005:keynote#s0": "0a914190a5cc87ab6fea15a8cb80ac61447ee21a23957d2f5657303ba4c0f27f",
+    "demo-keynote:kn-1005:keynote#s1": "34aa787d26a0f6efff57b65dabbbb0dcfb691423c3fc8e96aaca40908870e725",
+    "demo-keynote:kn-1005:keynote#s2": "14db92a3513f4b344e90667f1b880b3800d7837413d05bd3d9ed47d5f8bad9e4"
+  },
+  "rows": {
+    "demo-keynote:kn-1003:keynote#s0": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "html": "f1c785562ccf3990dd555b1f05f85340d0b749e38204503210f65c4def720ab7",
+      "motion": {
+        "endState": {
+          "actual": "937ca382941c13180eb12823e9dee9416317af9a5f427ab4a348079bbc378b1d",
+          "expected": "937ca382941c13180eb12823e9dee9416317af9a5f427ab4a348079bbc378b1d",
+          "status": "identical"
+        },
+        "frames": {
+          "end": "819bb4c578f97104840275c8f82927c5471ef9fc4383de87a23e09f3dab7d881",
+          "mid": "ce002c64dc327aed4e40aefe682d0481a732e21663c9c43dd92f6d51fef48ce2",
+          "start": "e0d0356298161809b6259bbb64b0efeb54e99f1a3c927784a8ee8b403d18d8fb"
+        },
+        "reveal": {
+          "units": 3,
+          "wrong": []
+        },
+        "settled": {
+          "actual": "937ca382941c13180eb12823e9dee9416317af9a5f427ab4a348079bbc378b1d",
+          "expected": "937ca382941c13180eb12823e9dee9416317af9a5f427ab4a348079bbc378b1d",
+          "status": "identical"
+        },
+        "startState": true
+      },
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "56dbc53f49cf23ba4edd48f0027250b171b8cb1d98111a1d5d4adf268af6188c",
+      "scores": {
+        "color": {
+          "mean": 0.2315,
+          "p99": 2.0783
+        },
+        "pixel": 0.997,
+        "ssim": {
+          "mean": 0.9851,
+          "p1": 0.566
+        },
+        "text": {
+          "domWords": 26,
+          "heightRatioMedian": 0.9861,
+          "matched": 25,
+          "medianPm": 0.403,
+          "oracleWords": 26,
+          "p95Pm": 0.6716,
+          "precision": 0.9615,
+          "recall": 0.9615
+        }
+      },
+      "slide": "kn-1003",
+      "stage": 0
+    },
+    "demo-keynote:kn-1003:keynote#s1": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "html": "4a57691f2f47281a5eb2f694dea18fd6922f84a7e8a581093c34b0b6af00d677",
+      "motion": {
+        "endState": {
+          "actual": "521ea7b604eef6e16dd3a7365461333f9ff9ddc2b30d42e5c02f6a4a790dd59c",
+          "expected": "521ea7b604eef6e16dd3a7365461333f9ff9ddc2b30d42e5c02f6a4a790dd59c",
+          "status": "identical"
+        },
+        "frames": {
+          "end": "cf2da2823b2d89697028456861d4611b81d5ebba194ce3c37343a6502cbe400f",
+          "mid": "c79bb35fb12e15392dbb640c4012d7ed923d9fd32027cddf670cdeae2573ec23",
+          "start": "4ca8c90e9eaecc813428c18bb6153b135eea20bbdb743bd6c8a396faccbaf982"
+        },
+        "monotonic": true,
+        "reveal": {
+          "units": 3,
+          "wrong": []
+        },
+        "settled": {
+          "actual": "521ea7b604eef6e16dd3a7365461333f9ff9ddc2b30d42e5c02f6a4a790dd59c",
+          "expected": "521ea7b604eef6e16dd3a7365461333f9ff9ddc2b30d42e5c02f6a4a790dd59c",
+          "status": "identical"
+        },
+        "startState": true
+      },
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "36efce68c94a4a29d4c05293cf5a7a5e72f49098f7898bf9e296642ad4b37b1e",
+      "scores": {
+        "color": {
+          "mean": 0.5918,
+          "p99": 4.8652
+        },
+        "pixel": 0.997,
+        "ssim": {
+          "mean": 0.9827,
+          "p1": 0.4939
+        },
+        "text": {
+          "domWords": 22,
+          "heightRatioMedian": 0.9956,
+          "matched": 21,
+          "medianPm": 0.3727,
+          "oracleWords": 22,
+          "p95Pm": 0.6211,
+          "precision": 0.9545,
+          "recall": 0.9545
+        }
+      },
+      "slide": "kn-1003",
+      "stage": 1
+    },
+    "demo-keynote:kn-1003:keynote#s2": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "html": "c1ca3e8d0d5c1c1a8ff53e5c3e8fc7ea625678bf488fdc6cd88983efe06b9859",
+      "motion": {
+        "endState": {
+          "actual": "1e95ffe94d755a5ac04c686f72fe033873ad9017e39612133c114175168f7a8b",
+          "expected": "1e95ffe94d755a5ac04c686f72fe033873ad9017e39612133c114175168f7a8b",
+          "status": "identical"
+        },
+        "frames": {
+          "end": "7d915ccadaf23144b5bf6ed9534ce0ba846a1a7d872f8a7e3c53178934f08b4e",
+          "mid": "964102bb20e24a5bbba0acee6370e2ca11e48ae9d935a1023883313d28267890",
+          "start": "5b61d76954e520efcb959dbff13a11378d19396317e1d618ce4335757300b9ca"
+        },
+        "monotonic": true,
+        "reveal": {
+          "units": 3,
+          "wrong": []
+        },
+        "settled": {
+          "actual": "1e95ffe94d755a5ac04c686f72fe033873ad9017e39612133c114175168f7a8b",
+          "expected": "1e95ffe94d755a5ac04c686f72fe033873ad9017e39612133c114175168f7a8b",
+          "status": "identical"
+        },
+        "startState": true
+      },
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "2621801314a6d29afceb02db2ab773054de16d6590d3dd9e618749e2cad9dae1",
+      "scores": {
+        "color": {
+          "mean": 0.7154,
+          "p99": 3.4844
+        },
+        "pixel": 0.997,
+        "ssim": {
+          "mean": 0.987,
+          "p1": 0.6671
+        },
+        "text": {
+          "domWords": 35,
+          "heightRatioMedian": 0.9938,
+          "matched": 34,
+          "medianPm": 0.4078,
+          "oracleWords": 35,
+          "p95Pm": 0.6796,
+          "precision": 0.9714,
+          "recall": 0.9714
+        }
+      },
+      "slide": "kn-1003",
+      "stage": 2
+    },
+    "demo-keynote:kn-1004:keynote#t@250": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "effect": {
+          "fallback": "dissolve",
+          "id": "keynote:apple:dissolve",
+          "played": "native"
+        },
+        "frames": {
+          "end": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+          "mid": "75731adf85c8dbdb5fb908a42d16a85ab059b6937ad6090c158be99fcb812edd",
+          "start": "a6945a46297b5b62f0c528349a2bdacd89a16a4fd8110c46d48f1d810bc19650"
+        },
+        "moving": true
+      },
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "motion-match",
+      "presentation": "demo-keynote",
+      "render": "75731adf85c8dbdb5fb908a42d16a85ab059b6937ad6090c158be99fcb812edd",
+      "slide": "kn-1004",
+      "transitionPm": 250
+    },
+    "demo-keynote:kn-1004:keynote#t@500": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "effect": {
+          "fallback": "dissolve",
+          "id": "keynote:apple:dissolve",
+          "played": "native"
+        },
+        "frames": {
+          "end": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+          "mid": "f4ab31dcea0add0cd6511dcbb12713c699fb199d42c3c1e59ef54ac870706762",
+          "start": "a6945a46297b5b62f0c528349a2bdacd89a16a4fd8110c46d48f1d810bc19650"
+        },
+        "moving": true
+      },
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "motion-match",
+      "presentation": "demo-keynote",
+      "render": "f4ab31dcea0add0cd6511dcbb12713c699fb199d42c3c1e59ef54ac870706762",
+      "slide": "kn-1004",
+      "transitionPm": 500
+    },
+    "demo-keynote:kn-1004:keynote#t@750": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "effect": {
+          "fallback": "dissolve",
+          "id": "keynote:apple:dissolve",
+          "played": "native"
+        },
+        "frames": {
+          "end": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+          "mid": "1f30601ab8ee50c8a7b119eb50419df6ae64ecf82d31d0a243523829d7e30ad6",
+          "start": "a6945a46297b5b62f0c528349a2bdacd89a16a4fd8110c46d48f1d810bc19650"
+        },
+        "moving": false
+      },
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "motion-close",
+      "presentation": "demo-keynote",
+      "render": "1f30601ab8ee50c8a7b119eb50419df6ae64ecf82d31d0a243523829d7e30ad6",
+      "slide": "kn-1004",
+      "transitionPm": 750
+    },
+    "demo-keynote:kn-1005:keynote#s0": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "endState": {
+          "actual": "0a914190a5cc87ab6fea15a8cb80ac61447ee21a23957d2f5657303ba4c0f27f",
+          "expected": "0a914190a5cc87ab6fea15a8cb80ac61447ee21a23957d2f5657303ba4c0f27f",
+          "status": "identical"
+        },
+        "frames": {
+          "end": "97ea926a2be9227571abf6b375101889dd5905091bf47aa9ca06c575cb589b57",
+          "mid": "19c2dc3b2e43acd2f7ed9c3b089598163fe67c628dd5b9ff4dbb6939f4b52927",
+          "start": "128da1a3e5560767a7cd27d3d316c4838ab469142148054f30f0f55d8b494400"
+        },
+        "reveal": {
+          "units": 2,
+          "wrong": []
+        },
+        "settled": {
+          "actual": "0a914190a5cc87ab6fea15a8cb80ac61447ee21a23957d2f5657303ba4c0f27f",
+          "expected": "0a914190a5cc87ab6fea15a8cb80ac61447ee21a23957d2f5657303ba4c0f27f",
+          "status": "identical"
+        },
+        "startState": true
+      },
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "motion-match",
+      "presentation": "demo-keynote",
+      "render": "97ea926a2be9227571abf6b375101889dd5905091bf47aa9ca06c575cb589b57",
+      "slide": "kn-1005",
+      "stage": 0
+    },
+    "demo-keynote:kn-1005:keynote#s1": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "endState": {
+          "actual": "34aa787d26a0f6efff57b65dabbbb0dcfb691423c3fc8e96aaca40908870e725",
+          "expected": "34aa787d26a0f6efff57b65dabbbb0dcfb691423c3fc8e96aaca40908870e725",
+          "status": "identical"
+        },
+        "frames": {
+          "end": "0890b2874490b8e4b7e84b03368492879e9f6c75e1a3151f159b203ac8bf9a26",
+          "mid": "78517d48d65d8fdf1418c4db4d8966788f624ce8ffe3a865435300e57be81419",
+          "start": "df54df1c9eeaff95ab4d2b86743c0d5d6631deedbd4ce84fddfba8e7235472e5"
+        },
+        "monotonic": true,
+        "reveal": {
+          "units": 2,
+          "wrong": []
+        },
+        "settled": {
+          "actual": "34aa787d26a0f6efff57b65dabbbb0dcfb691423c3fc8e96aaca40908870e725",
+          "expected": "34aa787d26a0f6efff57b65dabbbb0dcfb691423c3fc8e96aaca40908870e725",
+          "status": "identical"
+        },
+        "startState": true
+      },
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "motion-fallback",
+      "presentation": "demo-keynote",
+      "render": "0890b2874490b8e4b7e84b03368492879e9f6c75e1a3151f159b203ac8bf9a26",
+      "slide": "kn-1005",
+      "stage": 1
+    },
+    "demo-keynote:kn-1005:keynote#s2": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {},
+      "frontend": "keynote",
+      "motion": {
+        "deltaE": 1.8424,
+        "endState": {
+          "actual": "0e97b7459757afa06023a6b858eef999b51630f03ac0bcd3f76d01c4dff1f54c",
+          "expected": "14db92a3513f4b344e90667f1b880b3800d7837413d05bd3d9ed47d5f8bad9e4",
+          "status": "differs"
+        },
+        "failures": [
+          "end-state: kn-1005.4 opacity ends at 0.6, settles at 1",
+          "reveal: kn-1005.4 ¶1 shows",
+          "moves: moves: expected motion between its ends, played no frame between its ends differs from both"
+        ],
+        "frames": {
+          "end": "0e97b7459757afa06023a6b858eef999b51630f03ac0bcd3f76d01c4dff1f54c",
+          "mid": "81412915e9eca387c916a3def0cd96c374fd26f565b1ceccd3d2baf4262c34d8",
+          "start": "8b1d2e1161cc9d6682131230fa8310cb90675a9f0467789491de65f59e7e8d33"
+        },
+        "monotonic": false,
+        "reveal": {
+          "units": 2,
+          "wrong": [
+            {
+              "actual": true,
+              "element": "kn-1005.4",
+              "expected": false,
+              "paragraph": 1
+            }
+          ]
+        },
+        "settled": {
+          "actual": "14db92a3513f4b344e90667f1b880b3800d7837413d05bd3d9ed47d5f8bad9e4",
+          "expected": "14db92a3513f4b344e90667f1b880b3800d7837413d05bd3d9ed47d5f8bad9e4",
+          "status": "identical"
+        },
+        "ssim": 0.9312,
+        "startState": true
+      },
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "motion-mismatch",
+      "presentation": "demo-keynote",
+      "render": "0e97b7459757afa06023a6b858eef999b51630f03ac0bcd3f76d01c4dff1f54c",
+      "slide": "kn-1005",
+      "stage": 2
+    }
+  },
+  "schema": "slidock-bench-results@1",
+  "stamp": {
+    "classifier": "classifier@2",
+    "compiler": {
+      "commit": "00000000000000000000000000005b05b05b05ac",
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "dirty": false
+    },
+    "corpus": {
+      "demo-keynote:keynote": "7f03d47dc6ff79bd1bd8147960f8b73eb46ef80eddd45c592ac8e9133256d267"
+    },
+    "deps": {
+      "cargoLock": "f9b103692b2ea3d30b5905345df0347122a111580a43beb22cc11aec178d7eb9",
+      "node": "24.x",
+      "rustc": "1.99.1",
+      "wasmPack": "0.13.1"
+    },
+    "fonts": {
+      "fontSetId": "ce4fddd4c69990575ebb7880c234486ea3bc203a7bf43309147b52ff4ff63371",
+      "lockSha256": "535366f6ba87c6eb5c1611f28c9707a9284300a6351eb4c09b9c9910efef81f9"
+    },
+    "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+    "host": {
+      "arch": "arm64",
+      "platform": "darwin"
+    },
+    "lane": "motion",
+    "metrics": {
+      "color": "color@1",
+      "motion": "motion@1",
+      "pixel": "pixel@1",
+      "ssim": "ssim@1",
+      "text": "text@2"
+    },
+    "partial": false,
+    "renderer": {
+      "arch": "aarch64",
+      "cdpClient": "chromiumoxide@0.9.1",
+      "chromium": "148.0.7778.0",
+      "colorProfile": "srgb",
+      "imageId": "sha256:6105d6cc76af400325e94d588ce511be5bfdbb73b437dc51eca43917d7a43e3d",
+      "metricLongSidePx": 960,
+      "platformDigest": "sha256:beddddcf96f19abec078cd2f3da676f40abd460e0e734ad5eed73627ce161d33",
+      "poppler": "24.02.0",
+      "rasterLongSidePx": 1920,
+      "recipe": "9c024e2f00b004addcb5e762e18f415d74742a7156eecbadee57eb6c84df1ff1",
+      "renderPolicy": {
+        "gif": "first-frame",
+        "video": "poster-img"
+      }
+    },
+    "selection": {
+      "tiers": [
+        "real"
+      ]
+    }
+  },
+  "summary": {
+    "byFrontend": {
+      "keynote": {
+        "close": 3,
+        "declined": 0,
+        "failed": 0,
+        "match": 0,
+        "mismatch": 0,
+        "render-error": 0,
+        "rows": 3,
+        "ssim": {
+          "median": 0.9851,
+          "p10": 0.9827
+        },
+        "textRecall": {
+          "mean": 0.9625
+        }
+      }
+    },
+    "declines": {},
+    "lanes": {
+      "motion": {
+        "keynote": {
+          "effects": {
+            "fallback": 1,
+            "native": 3,
+            "unsupported": 0
+          },
+          "endState": {
+            "differs": 1,
+            "identical": 5,
+            "rows": 6
+          },
+          "items": {
+            "accepted": 1,
+            "dropped": 0,
+            "fallbackAllowed": 1,
+            "mismatched": 1,
+            "native": 1
+          },
+          "stageChecks": {
+            "motion-close": 0,
+            "motion-fallback": 1,
+            "motion-match": 1,
+            "motion-mismatch": 1,
+            "rows": 3
+          },
+          "stages": {
+            "close": 3,
+            "declined": 0,
+            "failed": 0,
+            "match": 0,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 3,
+            "ssim": {
+              "median": 0.9851,
+              "p10": 0.9827
+            },
+            "textRecall": {
+              "mean": 0.9625
+            }
+          },
+          "timelines": {
+            "exact": 2,
+            "slides": 3
+          },
+          "transitions": {
+            "motion-close": 1,
+            "motion-fallback": 0,
+            "motion-match": 2,
+            "motion-mismatch": 0,
+            "rows": 3
+          }
+        }
+      }
+    },
+    "reference": {}
+  },
+  "timelines": {
+    "demo-keynote:kn-1003:keynote": {
+      "delaysExact": true,
+      "delivery": {
+        "chars": 0,
+        "paragraphs": 3,
+        "words": 0
+      },
+      "durationsExact": true,
+      "effects": {
+        "keynote:apple:move in": {
+          "fallback": 0,
+          "native": 1,
+          "unsupported": 0
+        },
+        "keynote:apple:sparkle": {
+          "fallback": 1,
+          "native": 0,
+          "unsupported": 0
+        }
+      },
+      "ir": true,
+      "order": true,
+      "plays": [
+        {
+          "actual": {
+            "durationMs": 500,
+            "startMs": 0
+          },
+          "delivery": "byParagraph",
+          "effect": "flyIn",
+          "expected": {
+            "durationMs": 500,
+            "startMs": 0
+          },
+          "fallback": "dissolve",
+          "group": 1,
+          "index": 0,
+          "kind": "entrance",
+          "native": "keynote:apple:move in",
+          "params": "{\"dir\":\"u\",\"distance\":\"offSlide\"}",
+          "played": "native",
+          "playedIn": 1,
+          "target": "kn-1003.3 ¶0–2",
+          "trigger": "click",
+          "units": 3
+        },
+        {
+          "actual": {
+            "durationMs": 500,
+            "startMs": 500
+          },
+          "delivery": "byParagraph",
+          "effect": null,
+          "expected": {
+            "durationMs": 500,
+            "startMs": 500
+          },
+          "fallback": "dissolve",
+          "group": 1,
+          "index": 1,
+          "kind": "entrance",
+          "native": "keynote:apple:sparkle",
+          "played": "fallback",
+          "playedIn": 1,
+          "target": "kn-1003.4 ¶0–2",
+          "trigger": "afterPrevious",
+          "units": 3
+        }
+      ],
+      "steps": {
+        "expected": 2,
+        "played": 2
+      }
+    },
+    "demo-keynote:kn-1004:keynote": {
+      "delaysExact": true,
+      "delivery": {
+        "chars": 0,
+        "paragraphs": 0,
+        "words": 0
+      },
+      "durationsExact": true,
+      "effects": {},
+      "ir": true,
+      "order": true,
+      "steps": {
+        "expected": 0,
+        "played": 0
+      },
+      "transition": {
+        "actualMs": 700,
+        "effect": {
+          "fallback": "dissolve",
+          "id": "keynote:apple:dissolve",
+          "played": "native"
+        },
+        "expectedMs": 700,
+        "from": {
+          "actual": "a6945a46297b5b62f0c528349a2bdacd89a16a4fd8110c46d48f1d810bc19650",
+          "expected": "a6945a46297b5b62f0c528349a2bdacd89a16a4fd8110c46d48f1d810bc19650",
+          "status": "identical"
+        },
+        "name": "dissolve",
+        "to": {
+          "actual": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+          "expected": "94399d37f9a1afd7000246475cc912b2aa62ccecf8448446caa75d54e94b3a6d",
+          "status": "identical"
+        }
+      }
+    },
+    "demo-keynote:kn-1005:keynote": {
+      "delaysExact": true,
+      "delivery": {
+        "chars": 0,
+        "paragraphs": 2,
+        "words": 0
+      },
+      "diagnostics": {
+        "RT0006": 1
+      },
+      "durationsExact": false,
+      "effects": {},
+      "mismatches": [
+        {
+          "actual": "400",
+          "expected": "500",
+          "field": "duration",
+          "step": 0
+        }
+      ],
+      "order": true,
+      "plays": [
+        {
+          "actual": {
+            "durationMs": 500,
+            "startMs": 0
+          },
+          "delivery": "byParagraph",
+          "effect": "pop",
+          "expected": {
+            "durationMs": 500,
+            "startMs": 0
+          },
+          "fallback": "dissolve",
+          "group": 2,
+          "index": 0,
+          "kind": "entrance",
+          "native": "keynote:apple:pop",
+          "params": "{\"dir\":\"u\",\"distance\":\"offSlide\"}",
+          "played": "native",
+          "playedIn": 2,
+          "target": "kn-1003.3 ¶0–2",
+          "trigger": "click",
+          "units": 3
+        }
+      ],
+      "steps": {
+        "expected": 2,
+        "played": 2
+      }
+    }
+  }
+}

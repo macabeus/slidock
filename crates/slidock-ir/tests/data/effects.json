@@ -1,0 +1,903 @@
+{
+  "transitions": [
+    {
+      "effect": "none"
+    },
+    {
+      "effect": "cut",
+      "params": {
+        "throughBlack": true
+      }
+    },
+    {
+      "effect": "fade",
+      "params": {
+        "through": "color",
+        "color": "#336699"
+      }
+    },
+    {
+      "effect": "dissolve"
+    },
+    {
+      "effect": "push",
+      "params": {
+        "dir": "d"
+      }
+    },
+    {
+      "effect": "cover",
+      "params": {
+        "dir": "lu"
+      }
+    },
+    {
+      "effect": "uncover",
+      "params": {
+        "dir": "rd"
+      }
+    },
+    {
+      "effect": "wipe",
+      "params": {
+        "dir": "u",
+        "soft": true
+      }
+    },
+    {
+      "effect": "split",
+      "params": {
+        "orient": "vert",
+        "inOut": "in"
+      }
+    },
+    {
+      "effect": "iris",
+      "params": {
+        "shape": "diamond",
+        "inOut": "out"
+      }
+    },
+    {
+      "effect": "wheel",
+      "params": {
+        "spokes": 3,
+        "cw": false
+      }
+    },
+    {
+      "effect": "clock",
+      "params": {
+        "cw": true,
+        "from": "9"
+      }
+    },
+    {
+      "effect": "wedge"
+    },
+    {
+      "effect": "blinds",
+      "params": {
+        "orient": "horz"
+      }
+    },
+    {
+      "effect": "checker",
+      "params": {
+        "dir": "r"
+      }
+    },
+    {
+      "effect": "randomBars",
+      "params": {
+        "orient": "vert"
+      }
+    },
+    {
+      "effect": "strips",
+      "params": {
+        "corner": "ld"
+      }
+    },
+    {
+      "effect": "comb",
+      "params": {
+        "orient": "horz"
+      }
+    },
+    {
+      "effect": "zoom",
+      "params": {
+        "inOut": "in",
+        "rotate": true
+      }
+    },
+    {
+      "effect": "flip",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "cube",
+      "params": {
+        "dir": "u"
+      }
+    },
+    {
+      "effect": "doors",
+      "params": {
+        "orient": "vert"
+      }
+    },
+    {
+      "effect": "window",
+      "params": {
+        "orient": "horz"
+      }
+    },
+    {
+      "effect": "gallery",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "conveyor",
+      "params": {
+        "dir": "r"
+      }
+    },
+    {
+      "effect": "ferris",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "pan",
+      "params": {
+        "dir": "d"
+      }
+    },
+    {
+      "effect": "switch",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "rotate3d",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "reveal",
+      "params": {
+        "dir": "r",
+        "throughBlack": true
+      }
+    },
+    {
+      "effect": "flythrough",
+      "params": {
+        "inOut": "out",
+        "bounce": true
+      }
+    },
+    {
+      "effect": "swap",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "pageFlip",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "twist",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "mosaic",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "morph",
+      "params": {
+        "by": "word"
+      }
+    },
+    {
+      "effect": "magicMove",
+      "params": {
+        "fadeUnmatched": true
+      }
+    },
+    {
+      "effect": "random"
+    }
+  ],
+  "builds": [
+    {
+      "effect": "appear"
+    },
+    {
+      "effect": "fade"
+    },
+    {
+      "effect": "dissolve"
+    },
+    {
+      "effect": "flyIn",
+      "params": {
+        "dir": "r",
+        "distance": "offSlide"
+      }
+    },
+    {
+      "effect": "floatIn",
+      "params": {
+        "dir": "u"
+      }
+    },
+    {
+      "effect": "peek",
+      "params": {
+        "dir": "u",
+        "slow": true
+      }
+    },
+    {
+      "effect": "wipe",
+      "params": {
+        "dir": "d",
+        "soft": true
+      }
+    },
+    {
+      "effect": "split",
+      "params": {
+        "orient": "horz",
+        "inOut": "out"
+      }
+    },
+    {
+      "effect": "iris",
+      "params": {
+        "shape": "plus",
+        "inOut": "in"
+      }
+    },
+    {
+      "effect": "wheel",
+      "params": {
+        "spokes": 8,
+        "cw": true
+      }
+    },
+    {
+      "effect": "wedge"
+    },
+    {
+      "effect": "clock",
+      "params": {
+        "cw": false,
+        "from": "12"
+      }
+    },
+    {
+      "effect": "blinds",
+      "params": {
+        "orient": "horz"
+      }
+    },
+    {
+      "effect": "checker",
+      "params": {
+        "dir": "d"
+      }
+    },
+    {
+      "effect": "randomBars",
+      "params": {
+        "orient": "horz"
+      }
+    },
+    {
+      "effect": "strips",
+      "params": {
+        "corner": "ru"
+      }
+    },
+    {
+      "effect": "zoom",
+      "params": {
+        "inOut": "in",
+        "origin": "slideCenter",
+        "slight": false,
+        "fade": true,
+        "overshoot": false
+      }
+    },
+    {
+      "effect": "grow",
+      "params": {
+        "axis": "both"
+      }
+    },
+    {
+      "effect": "expand",
+      "params": {
+        "axis": "horz"
+      }
+    },
+    {
+      "effect": "compress",
+      "params": {
+        "axis": "vert"
+      }
+    },
+    {
+      "effect": "stretch",
+      "params": {
+        "axis": "horz"
+      }
+    },
+    {
+      "effect": "growTurn"
+    },
+    {
+      "effect": "swivel",
+      "params": {
+        "axis": "horz"
+      }
+    },
+    {
+      "effect": "flip",
+      "params": {
+        "axis": "vert"
+      }
+    },
+    {
+      "effect": "spinIn",
+      "params": {
+        "deg": 360.0,
+        "cw": true
+      }
+    },
+    {
+      "effect": "bounce"
+    },
+    {
+      "effect": "drop"
+    },
+    {
+      "effect": "pop"
+    },
+    {
+      "effect": "boomerang"
+    },
+    {
+      "effect": "sling"
+    },
+    {
+      "effect": "whip"
+    },
+    {
+      "effect": "swish"
+    },
+    {
+      "effect": "typewriter"
+    },
+    {
+      "effect": "credits"
+    },
+    {
+      "effect": "driftAndScale",
+      "params": {
+        "dir": "l"
+      }
+    },
+    {
+      "effect": "fadeAndMove",
+      "params": {
+        "dir": "u"
+      }
+    },
+    {
+      "effect": "random"
+    },
+    {
+      "effect": "pulse",
+      "params": {
+        "scale": 1.05
+      }
+    },
+    {
+      "effect": "growShrink",
+      "params": {
+        "scale": {
+          "x": 1.5,
+          "y": 0.75
+        },
+        "hold": true
+      }
+    },
+    {
+      "effect": "spin",
+      "params": {
+        "deg": 90.0,
+        "cw": false,
+        "hold": true
+      }
+    },
+    {
+      "effect": "teeter",
+      "params": {
+        "intensity": 0.5
+      }
+    },
+    {
+      "effect": "jiggle",
+      "params": {
+        "intensity": 0.25
+      }
+    },
+    {
+      "effect": "wave",
+      "params": {
+        "intensity": 1.0
+      }
+    },
+    {
+      "effect": "blink",
+      "params": {
+        "repeat": 3
+      }
+    },
+    {
+      "effect": "flash",
+      "params": {
+        "repeat": 1
+      }
+    },
+    {
+      "effect": "boldFlash",
+      "params": {
+        "repeat": 2
+      }
+    },
+    {
+      "effect": "transparency",
+      "params": {
+        "alpha": 0.5,
+        "hold": false
+      }
+    },
+    {
+      "effect": "colorChange",
+      "params": {
+        "property": "text",
+        "to": "#ff0000"
+      }
+    },
+    {
+      "effect": "path",
+      "params": {
+        "d": [
+          [
+            "M",
+            0.0,
+            0.0
+          ],
+          [
+            "L",
+            120.5,
+            -40.0
+          ],
+          [
+            "C",
+            130.0,
+            -40.0,
+            140.0,
+            -30.0,
+            140.0,
+            -20.0
+          ],
+          [
+            "Z"
+          ]
+        ],
+        "autoRotate": true,
+        "hold": true
+      }
+    },
+    {
+      "effect": "play",
+      "params": {
+        "from": 1500
+      }
+    },
+    {
+      "effect": "pause"
+    },
+    {
+      "effect": "stop"
+    },
+    {
+      "effect": "toggle"
+    },
+    {
+      "effect": "behaviors",
+      "params": [
+        {
+          "property": "opacity",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": 0.0
+            },
+            {
+              "offset": 1.0,
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "property": "translate",
+          "beginMs": 0,
+          "durationMs": 500,
+          "easing": {
+            "accelDecel": {
+              "accel": 0.25,
+              "decel": 0.25
+            }
+          },
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": {
+                "x": -200.0,
+                "y": 0.0
+              }
+            },
+            {
+              "offset": 1.0,
+              "value": {
+                "x": 0.0,
+                "y": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "property": "rotate",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": -90.0
+            },
+            {
+              "offset": 0.5,
+              "value": 10.0
+            },
+            {
+              "offset": 1.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "property": "scale",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": {
+                "x": 0.0,
+                "y": 1.0
+              }
+            },
+            {
+              "offset": 1.0,
+              "value": {
+                "x": 1.0,
+                "y": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "property": "blur",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": 8.0
+            },
+            {
+              "offset": 1.0,
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "property": "clipPath",
+          "beginMs": 250,
+          "durationMs": 250,
+          "easing": "out",
+          "reveal": {
+            "effect": "wipe",
+            "params": {
+              "dir": "r",
+              "soft": false
+            }
+          },
+          "transition": "in"
+        },
+        {
+          "property": "text",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": {
+                "h": 0.0,
+                "s": 0.0,
+                "l": 0.0
+              }
+            },
+            {
+              "offset": 0.5,
+              "value": {
+                "h": 60.0,
+                "s": 0.0,
+                "l": -0.125
+              }
+            },
+            {
+              "offset": 1.0,
+              "value": "#333399"
+            }
+          ]
+        },
+        {
+          "property": "fill",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": "#ffffff"
+            },
+            {
+              "offset": 1.0,
+              "value": "#000000"
+            }
+          ]
+        },
+        {
+          "property": "line",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": {
+                "h": 0.0,
+                "s": 0.0,
+                "l": 0.0
+              }
+            },
+            {
+              "offset": 0.5,
+              "value": {
+                "shift": {
+                  "h": 0.0,
+                  "s": 0.0,
+                  "l": 0.0
+                },
+                "toward": "#000000",
+                "by": 0.5
+              }
+            },
+            {
+              "offset": 1.0,
+              "value": "#000000"
+            }
+          ]
+        },
+        {
+          "property": "bold",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": false
+            },
+            {
+              "offset": 0.5,
+              "value": true
+            },
+            {
+              "offset": 0.6,
+              "value": false
+            },
+            {
+              "offset": 1.0,
+              "value": false
+            }
+          ]
+        },
+        {
+          "property": "italic",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": true
+            },
+            {
+              "offset": 1.0,
+              "value": true
+            }
+          ]
+        },
+        {
+          "property": "underline",
+          "beginMs": 0,
+          "durationMs": 500,
+          "frames": [
+            {
+              "offset": 0.0,
+              "value": true
+            },
+            {
+              "offset": 1.0,
+              "value": true
+            }
+          ]
+        },
+        {
+          "property": "set",
+          "beginMs": 0,
+          "durationMs": 500,
+          "to": {
+            "property": "bold",
+            "value": true
+          }
+        },
+        {
+          "property": "set",
+          "beginMs": 100,
+          "durationMs": 1,
+          "to": {
+            "property": "text",
+            "value": "#333399"
+          }
+        },
+        {
+          "property": "set",
+          "beginMs": 0,
+          "durationMs": 500,
+          "to": {
+            "property": "opacity",
+            "value": 0.5
+          }
+        }
+      ]
+    }
+  ],
+  "timings": [
+    {},
+    {
+      "offsetMs": 1200,
+      "easing": {
+        "bezier": [
+          0.25,
+          0.1,
+          0.25,
+          1.0
+        ]
+      },
+      "stagger": {
+        "perUnit": {
+          "fraction": 0.1
+        },
+        "order": {
+          "random": 42
+        }
+      },
+      "repeat": {
+        "count": 2.5
+      },
+      "autoReverse": true,
+      "after": {
+        "dim": "#808080"
+      }
+    },
+    {
+      "easing": "in-out",
+      "stagger": {
+        "perUnit": {
+          "ms": 50
+        },
+        "order": "fromCenter"
+      },
+      "repeat": "untilNextClick",
+      "after": "hide"
+    },
+    {
+      "repeat": "untilEndOfSlide",
+      "after": "keep"
+    }
+  ],
+  "step": {
+    "target": {
+      "element": "pp-256.title",
+      "paragraphs": [
+        0,
+        2
+      ],
+      "background": true
+    },
+    "trigger": "click",
+    "delayMs": 0,
+    "durationMs": 500,
+    "kind": "entrance",
+    "effect": {
+      "id": "pptx:entr.2",
+      "fallback": "dissolve",
+      "native": {
+        "id": "pptx:entr.2/4",
+        "effect": "flyIn",
+        "params": {
+          "dir": "u",
+          "distance": "offSlide"
+        }
+      }
+    },
+    "delivery": "byParagraph",
+    "timing": {
+      "offsetMs": 500,
+      "easing": "out"
+    }
+  },
+  "transition": {
+    "effect": {
+      "id": "keynote:apple:move_in",
+      "fallback": "push",
+      "native": {
+        "id": "keynote:apple:move in",
+        "effect": "cover",
+        "params": {
+          "dir": "l"
+        }
+      }
+    },
+    "durationMs": 1000,
+    "advance": {
+      "onClick": true,
+      "afterMs": 2000
+    },
+    "easing": "in-out"
+  }
+}

@@ -1,0 +1,6 @@
+target/
+corpus/
+corpus-extra/
+corpus-private/
+artifacts/
+coverage/

@@ -1,0 +1,179 @@
+{
+  "decks": {
+    "conf-callouts:keynote": {
+      "native": {
+        "ms": 202,
+        "peakBytes": 89346868
+      },
+      "wasm": {
+        "ms": 798,
+        "peakBytes": 66604237
+      }
+    },
+    "conf-magic-move:keynote": {
+      "native": {
+        "ms": 224,
+        "peakBytes": 99462349
+      },
+      "wasm": {
+        "ms": 1002,
+        "peakBytes": 70733005
+      }
+    },
+    "google-export:odp": {
+      "native": {
+        "ms": 88,
+        "peakBytes": 73743565
+      },
+      "wasm": {
+        "ms": 390,
+        "peakBytes": 60342272
+      }
+    },
+    "google-export:pptx": {
+      "native": {
+        "ms": 111,
+        "peakBytes": 37926503
+      },
+      "wasm": {
+        "ms": 546,
+        "peakBytes": 64402228
+      }
+    },
+    "heic-pictures:keynote": {
+      "native": {
+        "ms": 114,
+        "peakBytes": 79420621
+      },
+      "wasm": {
+        "ms": 486,
+        "peakBytes": 62131405
+      }
+    },
+    "keynote-basic:keynote": {
+      "native": {
+        "ms": 114,
+        "peakBytes": 78285210
+      },
+      "wasm": {
+        "ms": 510,
+        "peakBytes": 62131405
+      }
+    },
+    "keynote-talk:keynote": {
+      "native": {
+        "ms": 2279,
+        "peakBytes": 451112960
+      },
+      "wasm": {
+        "ms": 7770,
+        "peakBytes": 333873152
+      }
+    },
+    "pptx-talk:odp": {
+      "native": {
+        "ms": 630,
+        "peakBytes": 167277364
+      },
+      "wasm": {
+        "ms": 2310,
+        "peakBytes": 96262554
+      }
+    },
+    "pptx-talk:pptx": {
+      "native": {
+        "ms": 1028,
+        "peakBytes": 200307508
+      },
+      "wasm": {
+        "ms": 3174,
+        "peakBytes": 166107546
+      }
+    },
+    "retro-fidelity:keynote": {
+      "native": {
+        "ms": 969,
+        "peakBytes": 108339200
+      },
+      "wasm": {
+        "ms": 4698,
+        "peakBytes": 70733005
+      }
+    },
+    "retro-gradients:keynote": {
+      "native": {
+        "ms": 566,
+        "peakBytes": 118489088
+      },
+      "wasm": {
+        "ms": 2034,
+        "peakBytes": 95230362
+      }
+    },
+    "retro-shadows:keynote": {
+      "native": {
+        "ms": 1379,
+        "peakBytes": 112141108
+      },
+      "wasm": {
+        "ms": 6522,
+        "peakBytes": 71077069
+      }
+    },
+    "retro:keynote": {
+      "native": {
+        "ms": 4690,
+        "peakBytes": 376846746
+      },
+      "wasm": {
+        "ms": 19386,
+        "peakBytes": 206431847
+      }
+    },
+    "tables-keynote:keynote": {
+      "native": {
+        "ms": 222,
+        "peakBytes": 98103296
+      },
+      "wasm": {
+        "ms": 918,
+        "peakBytes": 71077069
+      }
+    },
+    "tables:odp": {
+      "native": {
+        "ms": 251,
+        "peakBytes": 102386893
+      },
+      "wasm": {
+        "ms": 930,
+        "peakBytes": 72246887
+      }
+    },
+    "tables:pptx": {
+      "native": {
+        "ms": 309,
+        "peakBytes": 125129524
+      },
+      "wasm": {
+        "ms": 1158,
+        "peakBytes": 83256935
+      }
+    }
+  },
+  "player": {
+    "esm": {
+      "gzip9": 39680,
+      "raw": 119265
+    },
+    "iife": {
+      "gzip9": 39680,
+      "raw": 119437
+    }
+  },
+  "schema": "slidock-budgets@1",
+  "wasm": {
+    "brotli11": 2276354,
+    "raw": 10608500
+  }
+}

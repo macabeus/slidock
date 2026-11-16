@@ -1,0 +1,1088 @@
+{
+  "rows": {
+    "demo-basics:od-p901:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "01d7b2aa6ab688aed5195f74d53e23252b9c071234ec86cb7c36ae9f2c8534ac",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "284cd9077e6e8935ed6431a77b6f377906703a849c214319d79f860d5cb92bdf",
+      "scores": {
+        "color": {
+          "mean": 2.3099,
+          "p99": 17.0017
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9566,
+          "p1": 0.4564
+        },
+        "text": {
+          "domWords": 24,
+          "heightRatioMedian": 1.0072,
+          "matched": 23,
+          "medianPm": 1.4282,
+          "oracleWords": 24,
+          "p95Pm": 2.3804,
+          "precision": 0.9583,
+          "recall": 0.9583
+        }
+      },
+      "slide": "od-p901"
+    },
+    "demo-basics:od-p902:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "b3af2bca8e21f729d3eed988a601443a4756175f7f7f9bbff8ddb782e922d1da",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "e0067479fb72c7d2ab8c0f0bebfc175190e878501b4c4c61cc84e480d11157c8",
+      "scores": {
+        "color": {
+          "mean": 0.5945,
+          "p99": 10.3722
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9622,
+          "p1": 0.3787
+        },
+        "text": {
+          "domWords": 41,
+          "heightRatioMedian": 0.9935,
+          "matched": 40,
+          "medianPm": 1.9719,
+          "oracleWords": 41,
+          "p95Pm": 3.2865,
+          "precision": 0.9756,
+          "recall": 0.9756
+        }
+      },
+      "slide": "od-p902"
+    },
+    "demo-basics:od-p903:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "6e16927609b05345c019c77f13c8b18451d4752a0ee24082cba62df4da88014b",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "b5460bd3257a591bb58ebedd3b7a0b65e0204caf559cea0fc0edcf387c1ddf4a",
+      "scores": {
+        "color": {
+          "mean": 1.5496,
+          "p99": 2.3492
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9029,
+          "p1": 0.4241
+        },
+        "text": {
+          "domWords": 14,
+          "heightRatioMedian": 0.9949,
+          "matched": 13,
+          "medianPm": 1.175,
+          "oracleWords": 14,
+          "p95Pm": 1.9584,
+          "precision": 0.9286,
+          "recall": 0.9286
+        }
+      },
+      "slide": "od-p903"
+    },
+    "demo-basics:od-p904:odp": {
+      "code": "IR0901",
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "IR0901": 1,
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "failed",
+      "presentation": "demo-basics",
+      "reason": "slide-failed",
+      "slide": "od-p904"
+    },
+    "demo-basics:od-p905:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "35da8f5b9d17141886884037d707324d8cd3b661bd7c4190b1177318575e9846",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "543f5af07cb0afe6dd5134270c58821eaf664ad247ab3eda75f7df0583cf8a6d",
+      "scores": {
+        "color": {
+          "mean": 1.4807,
+          "p99": 3.2232
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9559,
+          "p1": 0.4806
+        },
+        "text": {
+          "domWords": 40,
+          "heightRatioMedian": 0.9897,
+          "matched": 39,
+          "medianPm": 2.0741,
+          "oracleWords": 40,
+          "p95Pm": 3.4569,
+          "precision": 0.975,
+          "recall": 0.975
+        }
+      },
+      "slide": "od-p905"
+    },
+    "demo-basics:od-p906:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "b2fc25f86f937122d7d9e1753119b20825b73a1a52ddfd7fcd8a136ffe90139e",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "57b38490532f896680d937d73ed0acc2808db008f1cc96ceec94a1ce480ea064",
+      "scores": {
+        "color": {
+          "mean": 0.6452,
+          "p99": 8.5957
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9474,
+          "p1": 0.477
+        },
+        "text": {
+          "domWords": 30,
+          "heightRatioMedian": 0.9832,
+          "matched": 27,
+          "medianPm": 1.5563,
+          "oracleWords": 30,
+          "p95Pm": 2.5938,
+          "precision": 0.9,
+          "recall": 0.9
+        }
+      },
+      "slide": "od-p906"
+    },
+    "demo-basics:pp-9001:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "pptx",
+      "html": "40211bea9c988cde4c30e588600a37c3ce214a942099c4b9da0bf8d15a271c12",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "7d924822a7e3128bd11240ee125a9dfd648f5a581a4a3a68d331fc5df8dc7eb5",
+      "scores": {
+        "color": {
+          "mean": 0.9292,
+          "p99": 4.9007
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9653,
+          "p1": 0.5663
+        },
+        "text": {
+          "domWords": 8,
+          "heightRatioMedian": 0.9994,
+          "matched": 8,
+          "medianPm": 0.8146,
+          "oracleWords": 8,
+          "p95Pm": 1.3576,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9001"
+    },
+    "demo-basics:pp-9002:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "43b9ac7bebc3ffe4c96175f3849be0967119252714154417b45b530168f31655",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "match",
+      "presentation": "demo-basics",
+      "render": "b41127e692e3a38f2e7f191de8fe77568fc0a45ad25424c740e489f4a00a4bec",
+      "scores": {
+        "color": {
+          "mean": 1.6525,
+          "p99": 7.2109
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9857,
+          "p1": 0.6759
+        },
+        "text": {
+          "domWords": 26,
+          "heightRatioMedian": 1.0142,
+          "matched": 26,
+          "medianPm": 1.0187,
+          "oracleWords": 26,
+          "p95Pm": 1.6978,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9002"
+    },
+    "demo-basics:pp-9003:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "9e779464fa8f489c7fa289ab96467e387f1a62a4d400cfa28574305630a9b957",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "match",
+      "presentation": "demo-basics",
+      "render": "ba1f8aafea4fd46be68ff2ff441fad9ed2bc5f6ec5c3dc52df7915f61b26c019",
+      "scores": {
+        "color": {
+          "mean": 1.0459,
+          "p99": 7.2353
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9823,
+          "p1": 0.6828
+        },
+        "text": {
+          "domWords": 13,
+          "heightRatioMedian": 0.9994,
+          "matched": 13,
+          "medianPm": 0.562,
+          "oracleWords": 13,
+          "p95Pm": 0.9366,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9003"
+    },
+    "demo-basics:pp-9004:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "declined": {
+        "code": "PX4001",
+        "feature": "element.chart"
+      },
+      "diagnostics": {
+        "MID5602": 1,
+        "PX4001": 1
+      },
+      "frontend": "pptx",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "declined",
+      "presentation": "demo-basics",
+      "slide": "pp-9004"
+    },
+    "demo-basics:pp-9005:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "0b876e95c0a76ebb2b078f71b5241e9eef1fb848c6b8213638216c055243de8d",
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "4eee744fa6584e0eb4e9ea5af2176d0ba2582982056a086ecf021a9cebc9cb43",
+      "scores": {
+        "color": {
+          "mean": 1.0834,
+          "p99": 3.533
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9633,
+          "p1": 0.5291
+        },
+        "text": {
+          "domWords": 11,
+          "heightRatioMedian": 1.0126,
+          "matched": 11,
+          "medianPm": 0.5396,
+          "oracleWords": 11,
+          "p95Pm": 0.8993,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9005"
+    },
+    "demo-basics:pp-9006:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "d6c45c213c58faf88ee82a1df1b4aecae8ddff894c0d99555f741e1cb9873537",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "6a8ff4a1c62b7ca04009bb9bd8eaa1a05be106eed68e1b347c272aeaebb12ae3",
+      "scores": {
+        "color": {
+          "mean": 1.084,
+          "p99": 2.2171
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9632,
+          "p1": 0.7478
+        },
+        "text": {
+          "domWords": 29,
+          "heightRatioMedian": 1.0066,
+          "matched": 28,
+          "medianPm": 0.4137,
+          "oracleWords": 29,
+          "p95Pm": 0.6895,
+          "precision": 0.9655,
+          "recall": 0.9655
+        }
+      },
+      "slide": "pp-9006"
+    },
+    "demo-keynote:kn-1001:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "de8651bc96fcc9f9992f327155ea123b685aab8f664e9f27e756f4bccc22d2bb",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "0a0ba0847dd70c32bca7da824a1b23a27084d36c3bc40fed550e0ce11e9be759",
+      "scores": {
+        "color": {
+          "mean": 0.2894,
+          "p99": 3.1477
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.98,
+          "p1": 0.7507
+        },
+        "text": {
+          "domWords": 30,
+          "heightRatioMedian": 0.9902,
+          "matched": 30,
+          "medianPm": 0.2576,
+          "oracleWords": 30,
+          "p95Pm": 0.4294,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1001"
+    },
+    "demo-keynote:kn-1002:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "ce482c378d658c8b7eed3645b04aa0e63e9ce8ddd6bc8e0b5c0b5fa8a1075d25",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "631313f53b830478f78f471e046c74770c8d120af615027e8385604c7e952137",
+      "scores": {
+        "color": {
+          "mean": 0.3962,
+          "p99": 4.5467
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9917,
+          "p1": 0.5277
+        },
+        "text": {
+          "domWords": 17,
+          "heightRatioMedian": 1.0049,
+          "matched": 17,
+          "medianPm": 0.6751,
+          "oracleWords": 17,
+          "p95Pm": 1.1251,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1002"
+    },
+    "demo-keynote:kn-1003:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "keynote",
+      "html": "81aab9335cf7bbd857e65d8f9ad1562f6daac73c17f8d7dbcd65be36dce757a2",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "render-error",
+      "presentation": "demo-keynote",
+      "reason": "oracle-font-missing",
+      "slide": "kn-1003"
+    },
+    "demo-keynote:kn-1004:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "d8f7a9f238bde31589b69ada157b0549ca9bc0db469ab0f3a42ac157f4209b0f",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "4fcb0113fb8c48ce34dbc936bec83d4602538771fb7f5615aa8ed1032b1e17e8",
+      "scores": {
+        "color": {
+          "mean": 1.0578,
+          "p99": 2.7194
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9825,
+          "p1": 0.6107
+        },
+        "text": {
+          "domWords": 16,
+          "heightRatioMedian": 1.0068,
+          "matched": 16,
+          "medianPm": 0.277,
+          "oracleWords": 16,
+          "p95Pm": 0.4617,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1004"
+    },
+    "demo-keynote:kn-1005:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "51853fd75b4d754fb135f58a451fe3e8bea93178b4a5e853108aebccb3b07b77",
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "88544be4a295c82ac8eee1647ea0064fbd9c16fbc5b73c77de070ea187df19dd",
+      "scores": {
+        "color": {
+          "mean": 0.7303,
+          "p99": 2.3829
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9864,
+          "p1": 0.6574
+        },
+        "text": {
+          "domWords": 15,
+          "heightRatioMedian": 0.9942,
+          "matched": 15,
+          "medianPm": 0.4979,
+          "oracleWords": 15,
+          "p95Pm": 0.8299,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1005"
+    },
+    "demo-keynote:kn-1006:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "keynote",
+      "html": "159d99fc960fa2ce48ebc1a9e36fd7c99c3c954567e35bdd4e32682bbd03c889",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "69b9522ad2938d6c8dd79449b2ed153161e0530a737da7ee2859a9c22d0db5a2",
+      "scores": {
+        "color": {
+          "mean": 0.9256,
+          "p99": 4.4529
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9809,
+          "p1": 0.7621
+        },
+        "text": {
+          "domWords": 20,
+          "heightRatioMedian": 1.0051,
+          "matched": 20,
+          "medianPm": 0.3308,
+          "oracleWords": 20,
+          "p95Pm": 0.5513,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1006"
+    },
+    "demo-keynote:kn-1007:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "1ae68ff802d5c9a339c79e356fd1802d539466717a2d3f8f56adbdcbea1ac91b",
+      "oracle": {
+        "page": 7
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "024320053c89d4deea7f674d7840aad2b524a18dee5c52fc622fe1137f3941d7",
+      "scores": {
+        "color": {
+          "mean": 1.1745,
+          "p99": 3.1049
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9808,
+          "p1": 0.7101
+        },
+        "text": {
+          "domWords": 39,
+          "heightRatioMedian": 1.0194,
+          "matched": 39,
+          "medianPm": 0.3838,
+          "oracleWords": 39,
+          "p95Pm": 0.6396,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1007"
+    },
+    "demo-keynote:kn-1008:keynote": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "0fead6b07e83ddea57a2ac008d69b1ac2c67292115ba562fb23fa4c2027e0fae",
+      "oracle": {
+        "page": 8
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "cdf1a1025e3e69905f97e6840a7a194faf52486314ffa7f96506b77c488f7a21",
+      "scores": {
+        "color": {
+          "mean": 1.279,
+          "p99": 3.2044
+        },
+        "pixel": 0.9972,
+        "ssim": {
+          "mean": 0.9769,
+          "p1": 0.5467
+        },
+        "text": {
+          "domWords": 28,
+          "heightRatioMedian": 1.0061,
+          "matched": 28,
+          "medianPm": 0.3982,
+          "oracleWords": 28,
+          "p95Pm": 0.6636,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1008"
+    },
+    "demo-tables:od-p911:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "28ae2fb52be99bb1f62e180e09d524281440e7a43c94d7a80cb42b731b4f4249",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "mismatch",
+      "presentation": "demo-tables",
+      "render": "f5393032b96a894d29b37120dd2c3ef4eb90735dd9eefaa652ec565c9552a408",
+      "scores": {
+        "color": {
+          "mean": 2.1938,
+          "p99": 5.6951
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9012,
+          "p1": 0.4015
+        },
+        "text": {
+          "domWords": 9,
+          "heightRatioMedian": 1.0148,
+          "matched": 8,
+          "medianPm": 1.1888,
+          "oracleWords": 9,
+          "p95Pm": 1.9814,
+          "precision": 0.8889,
+          "recall": 0.8889
+        }
+      },
+      "slide": "od-p911"
+    },
+    "demo-tables:od-p912:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "d7cb0aa1f6c760c97c09aa4516b4e50375e9664d65098b36a46c2d4e5f4abd1c",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "65e3cb59f088275425141747826e65c0797de18362e7cfd1f43cab2c77e2f4eb",
+      "scores": {
+        "color": {
+          "mean": 3.0326,
+          "p99": 8.5781
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9407,
+          "p1": 0.511
+        },
+        "text": {
+          "domWords": 22,
+          "heightRatioMedian": 0.989,
+          "matched": 20,
+          "medianPm": 0.5029,
+          "oracleWords": 22,
+          "p95Pm": 0.8382,
+          "precision": 0.9091,
+          "recall": 0.9091
+        }
+      },
+      "slide": "od-p912"
+    },
+    "demo-tables:od-p913:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "7b3585598f1b674e5447f3ab9e1c0044eddf6ecd0c1d1ccb1684add7d655fe99",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "d1caa8f66621eaab1996190e4985248f24c48678d9385cbedb5460bc20b21169",
+      "scores": {
+        "color": {
+          "mean": 4.7166,
+          "p99": 12.0708
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9207,
+          "p1": 0.6373
+        },
+        "text": {
+          "domWords": 30,
+          "heightRatioMedian": 1.0053,
+          "matched": 29,
+          "medianPm": 0.2086,
+          "oracleWords": 30,
+          "p95Pm": 0.3476,
+          "precision": 0.9667,
+          "recall": 0.9667
+        }
+      },
+      "slide": "od-p913"
+    },
+    "demo-tables:od-p914:odp": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "e6f88e7fc7d7797f51148063d8058370f31e10f6124907b802c4c2979fec458b",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "752f296183dff8703a83094f7b04a938342e2c267e904fc00bf3862cf18b6f18",
+      "scores": {
+        "color": {
+          "mean": 3.3946,
+          "p99": 13.4404
+        },
+        "pixel": 0.9872,
+        "ssim": {
+          "mean": 0.9309,
+          "p1": 0.5912
+        },
+        "text": {
+          "domWords": 27,
+          "heightRatioMedian": 0.9844,
+          "matched": 27,
+          "medianPm": 0.5359,
+          "oracleWords": 27,
+          "p95Pm": 0.8931,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "od-p914"
+    },
+    "demo-tables:pp-9101:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "ec34323d9cc4d5620684a047ed6d729580783a078a89db82cb9847939160c783",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "match",
+      "presentation": "demo-tables",
+      "render": "f56950b030dc4a16ab90393078aa22ca6735b6a5fd0db26e1227dcb1f73bc460",
+      "scores": {
+        "color": {
+          "mean": 1.2642,
+          "p99": 5.0926
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9785,
+          "p1": 0.7365
+        },
+        "text": {
+          "domWords": 13,
+          "heightRatioMedian": 1.0043,
+          "matched": 13,
+          "medianPm": 0.2855,
+          "oracleWords": 13,
+          "p95Pm": 0.4758,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9101"
+    },
+    "demo-tables:pp-9102:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "pptx",
+      "html": "4397c93a0209c71b9e21b72429ed1fa3f7b57266f80a6fce4c18fbe0cd5c0925",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "bbfbe3540d5b817167bd492d327ba7cd0e80608c9a1d07430c7158c8941dea17",
+      "scores": {
+        "color": {
+          "mean": 1.843,
+          "p99": 6.5694
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9784,
+          "p1": 0.4897
+        },
+        "text": {
+          "domWords": 23,
+          "heightRatioMedian": 1.0197,
+          "matched": 23,
+          "medianPm": 1.0073,
+          "oracleWords": 23,
+          "p95Pm": 1.6788,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9102"
+    },
+    "demo-tables:pp-9103:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "2d69ac094974c8bdd31cf629a657f173bcaa0a14bc023acccac5af51a3b14a0e",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "043ad5969208722f454efad1efbf77e438889fbb2f5467dc7f8d3980ff0b7577",
+      "scores": {
+        "color": {
+          "mean": 0.5877,
+          "p99": 2.7527
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9698,
+          "p1": 0.6366
+        },
+        "text": {
+          "domWords": 17,
+          "heightRatioMedian": 1.0062,
+          "matched": 17,
+          "medianPm": 0.5453,
+          "oracleWords": 17,
+          "p95Pm": 0.9089,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9103"
+    },
+    "demo-tables:pp-9104:pptx": {
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "f061b555cd5967e23c8eb52aebc9655eae1a062520f68c83bcf438086b42583b",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "5742f10338a5d5d74dd1752576104fdf8a86e1094e39f7c38034676931450731",
+      "scores": {
+        "color": {
+          "mean": 0.6842,
+          "p99": 6.6062
+        },
+        "pixel": 0.9952,
+        "ssim": {
+          "mean": 0.9627,
+          "p1": 0.4794
+        },
+        "text": {
+          "domWords": 31,
+          "heightRatioMedian": 0.9986,
+          "matched": 30,
+          "medianPm": 0.2314,
+          "oracleWords": 31,
+          "p95Pm": 0.3856,
+          "precision": 0.9677,
+          "recall": 0.9677
+        }
+      },
+      "slide": "pp-9104"
+    }
+  },
+  "schema": "slidock-bench-results@1",
+  "stamp": {
+    "classifier": "classifier@2",
+    "compiler": {
+      "commit": "0000000000000000000000000000369d0369d034",
+      "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+      "dirty": false
+    },
+    "corpus": {
+      "demo-basics:odp": "e0a13f4ce9576bfd3b2814445c2f62691b9d34fd845e441c075ce54a4196eb38",
+      "demo-basics:pptx": "f2dd0f51e54cbc62bc20574d2e8072c9b53d027a919776381d3afbf3f36a3933",
+      "demo-keynote:keynote": "7f03d47dc6ff79bd1bd8147960f8b73eb46ef80eddd45c592ac8e9133256d267",
+      "demo-tables:odp": "3dc9714a2bbac3ee31c131d2a53483c6c7febed27da782f2faeadf046a97d702",
+      "demo-tables:pptx": "042c59f71d55609a5d831d7a1c2367f694560090e4aea7f2c0b204db138de7b9"
+    },
+    "deps": {
+      "cargoLock": "f9b103692b2ea3d30b5905345df0347122a111580a43beb22cc11aec178d7eb9",
+      "node": "24.x",
+      "rustc": "1.99.1",
+      "wasmPack": "0.13.1"
+    },
+    "determinism": "164d6578e49e4696bbe6ef23c4219036a45d94cedd238152b27cb184780ae736",
+    "fonts": {
+      "fontSetId": "ce4fddd4c69990575ebb7880c234486ea3bc203a7bf43309147b52ff4ff63371",
+      "lockSha256": "535366f6ba87c6eb5c1611f28c9707a9284300a6351eb4c09b9c9910efef81f9"
+    },
+    "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+    "host": {
+      "arch": "arm64",
+      "platform": "darwin"
+    },
+    "lane": "static",
+    "metrics": {
+      "color": "color@1",
+      "gradient": "gradient@1",
+      "pixel": "pixel@1",
+      "shadow": "shadow@1",
+      "ssim": "ssim@1",
+      "text": "text@2"
+    },
+    "partial": false,
+    "renderer": {
+      "arch": "aarch64",
+      "cdpClient": "chromiumoxide@0.9.1",
+      "chromium": "148.0.7778.0",
+      "colorProfile": "srgb",
+      "imageId": "sha256:6105d6cc76af400325e94d588ce511be5bfdbb73b437dc51eca43917d7a43e3d",
+      "metricLongSidePx": 960,
+      "platformDigest": "sha256:beddddcf96f19abec078cd2f3da676f40abd460e0e734ad5eed73627ce161d33",
+      "poppler": "24.02.0",
+      "rasterLongSidePx": 1920,
+      "recipe": "9c024e2f00b004addcb5e762e18f415d74742a7156eecbadee57eb6c84df1ff1",
+      "renderPolicy": {
+        "gif": "first-frame",
+        "video": "poster-img"
+      }
+    },
+    "selection": {
+      "tiers": [
+        "real",
+        "smoke"
+      ]
+    }
+  },
+  "summary": {
+    "byFrontend": {
+      "keynote": {
+        "close": 2,
+        "declined": 0,
+        "failed": 0,
+        "match": 5,
+        "mismatch": 0,
+        "render-error": 1,
+        "rows": 8,
+        "ssim": {
+          "median": 0.9809,
+          "p10": 0.9769
+        },
+        "textRecall": {
+          "mean": 1
+        }
+      },
+      "odp": {
+        "close": 8,
+        "declined": 0,
+        "failed": 1,
+        "match": 0,
+        "mismatch": 1,
+        "render-error": 0,
+        "rows": 10,
+        "ssim": {
+          "median": 0.9407,
+          "p10": 0.9012
+        },
+        "textRecall": {
+          "mean": 0.9447
+        }
+      },
+      "pptx": {
+        "close": 6,
+        "declined": 1,
+        "failed": 0,
+        "match": 3,
+        "mismatch": 0,
+        "render-error": 0,
+        "rows": 10,
+        "ssim": {
+          "median": 0.9698,
+          "p10": 0.9627
+        },
+        "textRecall": {
+          "mean": 0.9926
+        }
+      }
+    },
+    "declines": {
+      "PX4001": 1
+    },
+    "reference": {}
+  }
+}

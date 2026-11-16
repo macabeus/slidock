@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@import '@slidock/ui/tokens.css';
+
+@source '../../../packages/ui/src';

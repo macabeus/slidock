@@ -1,0 +1,45 @@
+Test fonts, each under the SIL Open Font License 1.1 (the OFL.txt beside it): upstream files unmodified, except
+the one marked derived at the end. Tests also derive fonts from these in code (tests/support), under the same
+licence. Pinned sources and SHA-256 (the variable fonts are renamed from their upstream `Family[axes].ttf` names):
+
+oswald/Oswald-Regular.ttf
+  https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/ttf/Oswald-Regular.ttf
+  sha256 0d9980da817ee71ad9c34bb46950fcf15dd53e928031f39d2e11ae19178ab826
+oswald/Oswald-Regular.otf
+  https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/otf/Oswald-Regular.otf
+  sha256 c1ac0186db63f3454fa44dd17315c344f1192a164f0d0a147383afa4e1e20460
+oswald/Oswald-Variable.ttf
+  https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/variable/Oswald%5Bwght%5D.ttf
+  sha256 5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817
+oswald/OFL.txt
+  https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/OFL.txt
+  sha256 0fd731a904b729a4e02eaf5e8ebd06783edd9abe400e8882760160230675b652
+barlow-condensed/BarlowCondensed-Italic.ttf
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-Italic.ttf
+  sha256 063615da0a64f318397de2afac330dfbfbbf4cdb562a9987cb72bfdcbd37ba7c
+barlow-condensed/OFL.txt
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/OFL.txt
+  sha256 186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f
+roboto-mono/RobotoMono-Regular.ttf
+  https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/fonts/ttf/RobotoMono-Regular.ttf
+  sha256 af0bff7599c3df3831755c16e39b3c496df74b8c8d8a1161b14dc8461be17cb4
+roboto-mono/OFL.txt
+  https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/OFL.txt
+  sha256 50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215
+silkscreen/Silkscreen-Regular.ttf
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/silkscreen/Silkscreen-Regular.ttf
+  sha256 c845473330b94c2079ce9af01c51ac8ba2d99c24f4d14c039843bbb8e642ebd8
+silkscreen/OFL.txt
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/silkscreen/OFL.txt
+  sha256 86c5e9c9382cdcc5948704fdfe60f2aa164a719746931219a42736ecd9cefbd3
+noto-sans-hebrew/NotoSansHebrew-Variable.ttf
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/notosanshebrew/NotoSansHebrew%5Bwdth,wght%5D.ttf
+  sha256 7ef36a2c3593758cdb622e1bdef4f84523e92fbc3ccc667438dd80ff54c2de88
+noto-sans-hebrew/OFL.txt
+  https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/notosanshebrew/OFL.txt
+  sha256 9b9fe028b5ba74d231659a1bbaf0ed09b11e759d1ca6a070999e16d151616b47
+oswald/Oswald-Variable-MVAR.ttf
+  derived from oswald/Oswald-Variable.ttf with fontTools 4.60.1 (a Modified Version under the same OFL): subset to
+  U+0020-007E, U+00A0 and U+00C0, and an MVAR added whose deltas at wght 700 / 200 are hasc +60/-30, hdsc -40/+10,
+  hlgp +25/0, hcla +80/-20, hcld +30/-5
+  sha256 df59b5fbb76b1dc3a2b50b94fe420804d32d9602b2858373a82df30ae8324606

@@ -1,0 +1,64 @@
+name: Bug report
+description: A deck that converts, plays or downloads wrong.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. **Do not attach a deck you cannot share publicly**: issues are public. A minimal deck
+        made for the report (one slide that shows the problem) is best; otherwise describe what the slide contains.
+  - type: input
+    id: version
+    attributes:
+      label: slidock version
+      description: '`slidock --version`, or the version the web app shows at the bottom of its page.'
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - Web app
+        - CLI
+        - A downloaded deck
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Input format
+      options:
+        - PowerPoint (.pptx)
+        - Keynote (.key)
+        - OpenDocument (.odp)
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: Authoring app
+      description: The app and version that saved the deck (for example PowerPoint 16.90, Keynote 14.5, LibreOffice 25.2).
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      description: For the web app or a downloaded deck, for example Chrome 148 on macOS 15.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+      description: Screenshots of the original slide and of slidock's help a lot.
+    validations:
+      required: true
+  - type: textarea
+    id: deck
+    attributes:
+      label: A minimal deck
+      description: Attach a small deck that shows the problem and that you have the right to share, or describe the slide (its elements, effects and fonts).
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: The CLI's stderr, or the web app's list of what did not convert (its copy button).
+      render: text

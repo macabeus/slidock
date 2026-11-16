@@ -1,0 +1,149 @@
+# cargo-fuzz targets for the zip and XML readers, Keynote's IWA framing and protobuf pre-pass, the font container
+# decoders, the media decoders, and the whole compile. A workspace of its own, outside the main one: it builds with a nightly toolchain and libFuzzer
+# (`cargo +nightly-2026-10-25 fuzz run <target>`, see README.md). `seedgen` writes the generated seeds.
+[package]
+name = "slidock-fuzz"
+version = "0.0.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "=0.4.10"
+slidock-fonts = { path = "../crates/slidock-fonts" }
+slidock-io = { path = "../crates/slidock-io" }
+slidock-fuzz-support = { path = "support" }
+slidock-keynote = { path = "../crates/slidock-keynote" }
+slidock = { path = "../crates/slidock" }
+
+[workspace]
+members = [".", "seedgen", "support"]
+
+[[bin]]
+name = "sniff"
+path = "fuzz_targets/sniff.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "eot"
+path = "fuzz_targets/eot.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "woff"
+path = "fuzz_targets/woff.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "woff2"
+path = "fuzz_targets/woff2.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "ctf"
+path = "fuzz_targets/ctf.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "mtx"
+path = "fuzz_targets/mtx.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "unwrap"
+path = "fuzz_targets/unwrap.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "zip"
+path = "fuzz_targets/zip.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "xml"
+path = "fuzz_targets/xml.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "iwa"
+path = "fuzz_targets/iwa.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "proto"
+path = "fuzz_targets/proto.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "tiff"
+path = "fuzz_targets/tiff.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "bmp"
+path = "fuzz_targets/bmp.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "svg"
+path = "fuzz_targets/svg.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "image_size"
+path = "fuzz_targets/image_size.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "heif"
+path = "fuzz_targets/heif.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "movie"
+path = "fuzz_targets/movie.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "compile"
+path = "fuzz_targets/compile.rs"
+test = false
+doc = false
+bench = false

@@ -1,0 +1,30 @@
+[package]
+name = "slidock-math"
+description = "fdlibm port: deterministic transcendental maths for slidock"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Checks against the correctly rounded references in $SLIDOCK_PRIVATE/golden/fixtures and the recorded goldens
+# (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+
+[dev-dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

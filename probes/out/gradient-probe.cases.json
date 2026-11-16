@@ -1,0 +1,3299 @@
+{
+  "note": "Fractions are of the paint box (the shape's frame, the slide for a background, the declared cell for a cell), x right and y down, before the frame's turn and flips. Angles are degrees, clockwise from +x in OOXML, the ODF draw:angle as written.",
+  "decks": [
+    {
+      "file": "gradient-probe.pptx",
+      "frontend": "pptx",
+      "slides": [
+        {
+          "slide": 1,
+          "id": "G01",
+          "caption": "G01 lin ang 0 scaled 0",
+          "row": "pp-256",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 2,
+          "id": "G02",
+          "caption": "G02 lin ang 45 scaled 0",
+          "row": "pp-257",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [-0.1, 0.3],
+                "to": [1.1, 0.7]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 3,
+          "id": "G03",
+          "caption": "G03 lin ang 45 scaled 1",
+          "row": "pp-258",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": true,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0],
+                "to": [1, 1]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 4,
+          "id": "G04",
+          "caption": "G04 lin ang 30 scaled 0 on 150 x 450",
+          "row": "pp-259",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [405, 45, 150, 450],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 30,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.158494, -0.091506],
+                "to": [0.841506, 1.091506]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 5,
+          "id": "G05",
+          "caption": "G05 lin ang 90 scaled 0 on 300 x 300",
+          "row": "pp-260",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [330, 120, 300, 300],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 6,
+          "id": "G06",
+          "caption": "G06 lin ang 315 scaled 0",
+          "row": "pp-261",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 315,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [-0.1, 0.7],
+                "to": [1.1, 0.3]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 7,
+          "id": "G07",
+          "caption": "G07 lin 0, 3 stops red 0, green 40, blue 100",
+          "row": "pp-262",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.4, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 8,
+          "id": "G08",
+          "caption": "G08 lin 0, hard stop: black 0, black 50, white 50, white 100",
+          "row": "pp-263",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 0.5, "color": "000000", "alpha": 1}, {"pos": 0.5, "color": "FFFFFF", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 9,
+          "id": "G09",
+          "caption": "G09 lin 0, stops inset: black 25, white 75",
+          "row": "pp-264",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0.25, "color": "000000", "alpha": 1}, {"pos": 0.75, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 10,
+          "id": "G10",
+          "caption": "G10 lin 0, 10 stops alternating black and white at k/9",
+          "row": "pp-265",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 0.11111, "color": "FFFFFF", "alpha": 1}, {"pos": 0.22222, "color": "000000", "alpha": 1}, {"pos": 0.33333, "color": "FFFFFF", "alpha": 1}, {"pos": 0.44444, "color": "000000", "alpha": 1}, {"pos": 0.55556, "color": "FFFFFF", "alpha": 1}, {"pos": 0.66667, "color": "000000", "alpha": 1}, {"pos": 0.77778, "color": "FFFFFF", "alpha": 1}, {"pos": 0.88889, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 11,
+          "id": "G11",
+          "caption": "G11 lin 0, black at 100% to red at 20% over stripes",
+          "row": "pp-266",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Stripe 1",
+              "geometry": "rect",
+              "box": [160, 150, 640, 48],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "solid",
+                "color": "2F6FDF"
+              }
+            },
+            {
+              "element": "Stripe 2",
+              "geometry": "rect",
+              "box": [160, 198, 640, 48],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "solid",
+                "color": "F9A825"
+              }
+            },
+            {
+              "element": "Stripe 3",
+              "geometry": "rect",
+              "box": [160, 246, 640, 48],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "solid",
+                "color": "2F6FDF"
+              }
+            },
+            {
+              "element": "Stripe 4",
+              "geometry": "rect",
+              "box": [160, 294, 640, 48],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "solid",
+                "color": "F9A825"
+              }
+            },
+            {
+              "element": "Stripe 5",
+              "geometry": "rect",
+              "box": [160, 342, 640, 48],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "solid",
+                "color": "2F6FDF"
+              }
+            },
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FF0000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 12,
+          "id": "G12",
+          "caption": "G12 lin 0 on a box turned 30, rotWithShape 1",
+          "row": "pp-267",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 30,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 13,
+          "id": "G13",
+          "caption": "G13 lin 0 on a box turned 30, rotWithShape 0",
+          "row": "pp-268",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 30,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 14,
+          "id": "G14",
+          "caption": "G14 lin 45 flipH, rotWithShape 1",
+          "row": "pp-269",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": true,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [-0.1, 0.3],
+                "to": [1.1, 0.7]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 15,
+          "id": "G15",
+          "caption": "G15 lin 45 flipV, rotWithShape 1",
+          "row": "pp-270",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": true,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [-0.1, 0.3],
+                "to": [1.1, 0.7]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 16,
+          "id": "G16",
+          "caption": "G16 lin 45 flipH, rotWithShape 0",
+          "row": "pp-271",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": true,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [-0.1, 0.3],
+                "to": [1.1, 0.7]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 17,
+          "id": "G17",
+          "caption": "G17 ellipse, lin 0",
+          "row": "pp-272",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "ellipse",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 18,
+          "id": "G18",
+          "caption": "G18 circle path, centred focus, on 600 x 200",
+          "row": "pp-273",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.527046,
+                "radiusY": 1.581139,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 19,
+          "id": "G19",
+          "caption": "G19 circle path, centred focus, on 300 x 300",
+          "row": "pp-274",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [330, 120, 300, 300],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 20,
+          "id": "G20",
+          "caption": "G20 circle path, point focus (.75, .75), on 400 x 200",
+          "row": "pp-275",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [280, 170, 400, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.75, 0.75, 0.25, 0.25],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.559017,
+                "radiusY": 1.118034,
+                "focus": [0.75, 0.75],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 21,
+          "id": "G21",
+          "caption": "G21 circle path, point focus (.75, .25), on 400 x 200",
+          "row": "pp-276",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [280, 170, 400, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.75, 0.25, 0.25, 0.75],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.559017,
+                "radiusY": 1.118034,
+                "focus": [0.75, 0.25],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 22,
+          "id": "G22",
+          "caption": "G22 circle path, point focus (.25, .75), on 400 x 200",
+          "row": "pp-277",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [280, 170, 400, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.25, 0.75, 0.75, 0.25],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.559017,
+                "radiusY": 1.118034,
+                "focus": [0.25, 0.75],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 23,
+          "id": "G23",
+          "caption": "G23 circle path, point focus (.25, .25), on 400 x 200",
+          "row": "pp-278",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [280, 170, 400, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.25, 0.25, 0.75, 0.75],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.559017,
+                "radiusY": 1.118034,
+                "focus": [0.25, 0.25],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 24,
+          "id": "G24",
+          "caption": "G24 circle path, fillToRect l10 t30 r80 b20",
+          "row": "pp-279",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.1, 0.3, 0.8, 0.2],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.527046,
+                "radiusY": 1.581139,
+                "focus": [0.111111, 0.6],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 25,
+          "id": "G25",
+          "caption": "G25 circle path, bottom-right corner preset (fillToRect l t 100, tileRect r b -100)",
+          "row": "pp-280",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [1, 1, 0, 0],
+                "rotWithShape": true,
+                "tileRect": [0, 0, -1, -1],
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [1, 1],
+                "radius": 1.054093,
+                "radiusY": 3.162278,
+                "focus": [1, 1],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 26,
+          "id": "G26",
+          "caption": "G26 circle path, top-left corner preset (fillToRect r b 100, tileRect l t -100)",
+          "row": "pp-281",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0, 0, 1, 1],
+                "rotWithShape": true,
+                "tileRect": [-1, -1, 0, 0],
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0, 0],
+                "radius": 1.054093,
+                "radiusY": 3.162278,
+                "focus": [0, 0],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 27,
+          "id": "G27",
+          "caption": "G27 circle path, focus above the box (fillToRect l50 t-80 r50 b180)",
+          "row": "pp-282",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, -0.8, 0.5, 1.8],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.527046,
+                "radiusY": 1.581139,
+                "focus": [0.5, -0.8],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 28,
+          "id": "G28",
+          "caption": "G28 rect path, centred point focus",
+          "row": "pp-283",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 29,
+          "id": "G29",
+          "caption": "G29 rect path, fillToRect l10 t30 r80 b20, red 0, yellow 1, blue 100",
+          "row": "pp-284",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.1, 0.3, 0.8, 0.2],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.01, "color": "FFFF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": -0.8, "t": -0.4, "r": -0.6, "b": 0.6}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 30,
+          "id": "G30",
+          "caption": "G30 rect path, bottom-right corner preset (fillToRect l t 100, tileRect r b -100)",
+          "row": "pp-285",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [1, 1, 0, 0],
+                "rotWithShape": true,
+                "tileRect": [0, 0, -1, -1],
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [1, 1],
+                "axisX": [1, 0],
+                "axisY": [0, 1],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 31,
+          "id": "G31",
+          "caption": "G31 shape path, centred focus, on an ellipse",
+          "row": "pp-286",
+          "loValid": false,
+          "diagnostics": ["PX2106"],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "ellipse",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "shape",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0},
+                "drawnAs": "a rect path (PowerPoint's outline contours are unmeasured)"
+              }
+            }
+          ]
+        },
+        {
+          "slide": 32,
+          "id": "G32",
+          "caption": "G32 shape path, centred focus, on a star",
+          "row": "pp-287",
+          "loValid": false,
+          "diagnostics": ["PX2106"],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "star (custom)",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "shape",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0},
+                "drawnAs": "a rect path (PowerPoint's outline contours are unmeasured)"
+              }
+            }
+          ]
+        },
+        {
+          "slide": 33,
+          "id": "G33",
+          "caption": "G33 circle path, centred focus, on a box turned 30",
+          "row": "pp-288",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 30,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.527046,
+                "radiusY": 1.581139,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 34,
+          "id": "G34",
+          "caption": "G34 rect path, point focus (.25, .5), flipH",
+          "row": "pp-289",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": true,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.25, 0.5, 0.75, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": -0.5, "t": 0, "r": -0.5, "b": 0}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 35,
+          "id": "G35",
+          "caption": "G35 lin 0, tileRect l 50, flip x",
+          "row": "pp-290",
+          "loValid": false,
+          "diagnostics": ["PX2106"],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "geometry": "rect",
+              "box": [180, 170, 600, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "tileRect": [0.5, 0, 0, 0],
+                "flip": "x",
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0.5],
+                "to": [1, 0.5]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 36,
+          "id": "G36",
+          "caption": "G36 background lin 90",
+          "row": "pp-291",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "background",
+              "box": [0, 0, 960, 540],
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 37,
+          "id": "G37",
+          "caption": "G37 background circle path, centred focus",
+          "row": "pp-292",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "background",
+              "box": [0, 0, 960, 540],
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.573674,
+                "radiusY": 1.019864,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            }
+          ]
+        },
+        {
+          "slide": 38,
+          "id": "G38",
+          "caption": "G38 2 x 2 table: lin 90; lin 0 to a transparent stop; centred circle path; no fill",
+          "row": "pp-293",
+          "loValid": true,
+          "note": "LibreOffice 25.2.3.2 draws the circle cell as PowerPoint's centred circle, t = d / (half the cell diagonal): RGB rms 0.0034, max 0.0079 on its 144 dpi raster, as on G18's shape",
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Table",
+              "box": [180, 170, 600, 200],
+              "cells": [
+                {"row": 0, "col": 0, "size": [300, 100], "fill": {"type": "lin", "ang": 90, "scaled": false, "rotWithShape": true, "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]}, "powerpoint": {"kind": "linear", "from": [0.5, 0], "to": [0.5, 1]}},
+                {"row": 0, "col": 1, "size": [300, 100], "fill": {"type": "lin", "ang": 0, "scaled": false, "rotWithShape": true, "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0}]}, "powerpoint": {"kind": "linear", "from": [0, 0.5], "to": [1, 0.5]}},
+                {"row": 1, "col": 0, "size": [300, 100], "fill": {"type": "path", "path": "circle", "fillToRect": [0.5, 0.5, 0.5, 0.5], "rotWithShape": true, "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]}, "powerpoint": {"kind": "radial", "center": [0.5, 0.5], "radius": 0.527046, "radiusY": 1.581139, "focus": [0.5, 0.5], "focusInside": true}},
+                {"row": 1, "col": 1, "size": [300, 100], "fill": {"type": "none"}}
+              ]
+            }
+          ]
+        },
+        {
+          "slide": 39,
+          "id": "G39",
+          "caption": "G39 group of two boxes, grpFill of the group's lin 0",
+          "row": "pp-294",
+          "loValid": false,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Left",
+              "geometry": "rect",
+              "box": [180, 170, 280, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "grpFill",
+                "group": {"type": "lin", "ang": 0, "scaled": false, "rotWithShape": true, "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]}
+              }
+            },
+            {
+              "element": "Right",
+              "geometry": "rect",
+              "box": [500, 170, 280, 200],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "grpFill",
+                "group": {"type": "lin", "ang": 0, "scaled": false, "rotWithShape": true, "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 40,
+          "id": "G40",
+          "caption": "G40 fillRef 2 (theme lin 270 scaled 1, phClr tint 50 to shade 50); fillRef 3 (lin 90 scaled 0, phClr to white)",
+          "row": "pp-295",
+          "loValid": true,
+          "note": "both theme gradients are vertical, where scaled does not matter, so LibreOffice is valid for both",
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "fillRef 2",
+              "box": [180, 170, 280, 200],
+              "fill": {
+                "type": "fillRef",
+                "idx": 2,
+                "color": "2F6FDF"
+              }
+            },
+            {
+              "element": "fillRef 3",
+              "box": [500, 170, 280, 200],
+              "fill": {
+                "type": "fillRef",
+                "idx": 3,
+                "color": "2F6FDF"
+              }
+            }
+          ]
+        },
+        {
+          "slide": 41,
+          "id": "G41",
+          "caption": "G41 gradient line (20 pt, lin 0 red to blue) and gradient text (lin 0 red to blue)",
+          "row": "pp-296",
+          "loValid": false,
+          "diagnostics": ["PX2105", "PX2211"],
+          "objects": [
+            {
+              "element": "Gradient line",
+              "box": [180, 120, 600, 0],
+              "width": 20,
+              "stroke": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              }
+            },
+            {
+              "element": "Gradient text",
+              "box": [180, 200, 600, 160],
+              "text": "Gradient",
+              "size": 96,
+              "runFill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 42,
+          "id": "G42",
+          "caption": "G42 600 x 20 bars: lin 0 (top), lin 90 (bottom)",
+          "row": "pp-297",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Bar lin 0",
+              "geometry": "rect",
+              "box": [180, 200, 600, 20],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            },
+            {
+              "element": "Bar lin 90",
+              "geometry": "rect",
+              "box": [180, 320, 600, 20],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            }
+          ]
+        },
+        {
+          "slide": 43,
+          "id": "G43",
+          "caption": "G43 48 squares 60 x 60: lin 0..315; 3 stops; centred circle; centred rect; alpha; rotWithShape 0",
+          "row": "pp-298",
+          "loValid": true,
+          "note": "a centred rect path on a square is the same contours under PowerPoint's max rule and LibreOffice's equal insets",
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Small 1",
+              "geometry": "rect",
+              "box": [170, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            },
+            {
+              "element": "Small 2",
+              "geometry": "rect",
+              "box": [250, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0],
+                "to": [1, 1]
+              }
+            },
+            {
+              "element": "Small 3",
+              "geometry": "rect",
+              "box": [330, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            },
+            {
+              "element": "Small 4",
+              "geometry": "rect",
+              "box": [410, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 135,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0],
+                "to": [0, 1]
+              }
+            },
+            {
+              "element": "Small 5",
+              "geometry": "rect",
+              "box": [490, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 180,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0.5],
+                "to": [0, 0.5]
+              }
+            },
+            {
+              "element": "Small 6",
+              "geometry": "rect",
+              "box": [570, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 225,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 1],
+                "to": [0, 0]
+              }
+            },
+            {
+              "element": "Small 7",
+              "geometry": "rect",
+              "box": [650, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 270,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 1],
+                "to": [0.5, 0]
+              }
+            },
+            {
+              "element": "Small 8",
+              "geometry": "rect",
+              "box": [730, 50, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 315,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 1],
+                "to": [1, 0]
+              }
+            },
+            {
+              "element": "Small 9",
+              "geometry": "rect",
+              "box": [170, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            },
+            {
+              "element": "Small 10",
+              "geometry": "rect",
+              "box": [250, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0],
+                "to": [1, 1]
+              }
+            },
+            {
+              "element": "Small 11",
+              "geometry": "rect",
+              "box": [330, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            },
+            {
+              "element": "Small 12",
+              "geometry": "rect",
+              "box": [410, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 135,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0],
+                "to": [0, 1]
+              }
+            },
+            {
+              "element": "Small 13",
+              "geometry": "rect",
+              "box": [490, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 180,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0.5],
+                "to": [0, 0.5]
+              }
+            },
+            {
+              "element": "Small 14",
+              "geometry": "rect",
+              "box": [570, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 225,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 1],
+                "to": [0, 0]
+              }
+            },
+            {
+              "element": "Small 15",
+              "geometry": "rect",
+              "box": [650, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 270,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 1],
+                "to": [0.5, 0]
+              }
+            },
+            {
+              "element": "Small 16",
+              "geometry": "rect",
+              "box": [730, 130, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 315,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "FF0000", "alpha": 1}, {"pos": 0.5, "color": "00FF00", "alpha": 1}, {"pos": 1, "color": "0000FF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 1],
+                "to": [1, 0]
+              }
+            },
+            {
+              "element": "Small 17",
+              "geometry": "rect",
+              "box": [170, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 18",
+              "geometry": "rect",
+              "box": [250, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 19",
+              "geometry": "rect",
+              "box": [330, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 20",
+              "geometry": "rect",
+              "box": [410, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 21",
+              "geometry": "rect",
+              "box": [490, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 22",
+              "geometry": "rect",
+              "box": [570, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 23",
+              "geometry": "rect",
+              "box": [650, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 24",
+              "geometry": "rect",
+              "box": [730, 210, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "circle",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "radial",
+                "center": [0.5, 0.5],
+                "radius": 0.707107,
+                "radiusY": 0.707107,
+                "focus": [0.5, 0.5],
+                "focusInside": true
+              }
+            },
+            {
+              "element": "Small 25",
+              "geometry": "rect",
+              "box": [170, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 26",
+              "geometry": "rect",
+              "box": [250, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 27",
+              "geometry": "rect",
+              "box": [330, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 28",
+              "geometry": "rect",
+              "box": [410, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 29",
+              "geometry": "rect",
+              "box": [490, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 30",
+              "geometry": "rect",
+              "box": [570, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 31",
+              "geometry": "rect",
+              "box": [650, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 32",
+              "geometry": "rect",
+              "box": [730, 290, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "path",
+                "path": "rect",
+                "fillToRect": [0.5, 0.5, 0.5, 0.5],
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "rect",
+                "origin": [0.5, 0.5],
+                "axisX": [0.5, 0],
+                "axisY": [0, 0.5],
+                "inner": {"l": 0, "t": 0, "r": 0, "b": 0}
+              }
+            },
+            {
+              "element": "Small 33",
+              "geometry": "rect",
+              "box": [170, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            },
+            {
+              "element": "Small 34",
+              "geometry": "rect",
+              "box": [250, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0],
+                "to": [1, 1]
+              }
+            },
+            {
+              "element": "Small 35",
+              "geometry": "rect",
+              "box": [330, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            },
+            {
+              "element": "Small 36",
+              "geometry": "rect",
+              "box": [410, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 135,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0],
+                "to": [0, 1]
+              }
+            },
+            {
+              "element": "Small 37",
+              "geometry": "rect",
+              "box": [490, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 180,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0.5],
+                "to": [0, 0.5]
+              }
+            },
+            {
+              "element": "Small 38",
+              "geometry": "rect",
+              "box": [570, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 225,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 1],
+                "to": [0, 0]
+              }
+            },
+            {
+              "element": "Small 39",
+              "geometry": "rect",
+              "box": [650, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 270,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 1],
+                "to": [0.5, 0]
+              }
+            },
+            {
+              "element": "Small 40",
+              "geometry": "rect",
+              "box": [730, 370, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 315,
+                "scaled": false,
+                "rotWithShape": true,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "000000", "alpha": 0.2}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 1],
+                "to": [1, 0]
+              }
+            },
+            {
+              "element": "Small 41",
+              "geometry": "rect",
+              "box": [170, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 0,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0.5],
+                "to": [1, 0.5]
+              }
+            },
+            {
+              "element": "Small 42",
+              "geometry": "rect",
+              "box": [250, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 45,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 0],
+                "to": [1, 1]
+              }
+            },
+            {
+              "element": "Small 43",
+              "geometry": "rect",
+              "box": [330, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 90,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 0],
+                "to": [0.5, 1]
+              }
+            },
+            {
+              "element": "Small 44",
+              "geometry": "rect",
+              "box": [410, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 135,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0],
+                "to": [0, 1]
+              }
+            },
+            {
+              "element": "Small 45",
+              "geometry": "rect",
+              "box": [490, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 180,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 0.5],
+                "to": [0, 0.5]
+              }
+            },
+            {
+              "element": "Small 46",
+              "geometry": "rect",
+              "box": [570, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 225,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [1, 1],
+                "to": [0, 0]
+              }
+            },
+            {
+              "element": "Small 47",
+              "geometry": "rect",
+              "box": [650, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 270,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0.5, 1],
+                "to": [0.5, 0]
+              }
+            },
+            {
+              "element": "Small 48",
+              "geometry": "rect",
+              "box": [730, 450, 60, 60],
+              "rot": 0,
+              "flipH": false,
+              "flipV": false,
+              "fill": {
+                "type": "lin",
+                "ang": 315,
+                "scaled": false,
+                "rotWithShape": false,
+                "stops": [{"pos": 0, "color": "000000", "alpha": 1}, {"pos": 1, "color": "FFFFFF", "alpha": 1}]
+              },
+              "powerpoint": {
+                "kind": "linear",
+                "from": [0, 1],
+                "to": [1, 0]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "gradient-probe.odp",
+      "frontend": "odp",
+      "slides": [
+        {
+          "slide": 1,
+          "id": "O01",
+          "caption": "O01 linear 0deg, border 0%",
+          "row": "od-p1",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 2,
+          "id": "O02",
+          "caption": "O02 linear 30deg",
+          "row": "od-p2",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "30deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 3,
+          "id": "O03",
+          "caption": "O03 linear 0deg, border 25%",
+          "row": "od-p3",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "25%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 4,
+          "id": "O04",
+          "caption": "O04 linear 0deg, step count 4",
+          "row": "od-p4",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "stepCount": 4
+              }
+            }
+          ]
+        },
+        {
+          "slide": 5,
+          "id": "O05",
+          "caption": "O05 linear 0deg red to blue, start intensity 50%, end intensity 80%",
+          "row": "od-p5",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#ff0000", "endColor": "#0000ff", "startIntensity": "50%", "endIntensity": "80%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 6,
+          "id": "O06",
+          "caption": "O06 linear 30deg on a rect turned 30 anticlockwise",
+          "row": "od-p6",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 30,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "30deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 7,
+          "id": "O07",
+          "caption": "O07 linear 30deg on a custom shape mirrored horizontally",
+          "row": "od-p7",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:custom-shape rectangle",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "30deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 8,
+          "id": "O08",
+          "caption": "O08 linear 0deg on a custom shape mirrored vertically",
+          "row": "od-p8",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:custom-shape rectangle",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 9,
+          "id": "O09",
+          "caption": "O09 axial 0deg",
+          "row": "od-p9",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "axial", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 10,
+          "id": "O10",
+          "caption": "O10 axial 30deg, border 20%",
+          "row": "od-p10",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "axial", "angle": "30deg", "border": "20%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 11,
+          "id": "O11",
+          "caption": "O11 axial 0deg, step count 5",
+          "row": "od-p11",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "axial", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "stepCount": 5
+              }
+            }
+          ]
+        },
+        {
+          "slide": 12,
+          "id": "O12",
+          "caption": "O12 radial cx 50% cy 50% on 400 x 200",
+          "row": "od-p12",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [280, 170, 400, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 13,
+          "id": "O13",
+          "caption": "O13 radial cx 25% cy 75%",
+          "row": "od-p13",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "25%", "cy": "75%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 14,
+          "id": "O14",
+          "caption": "O14 radial border 30%",
+          "row": "od-p14",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "30%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 15,
+          "id": "O15",
+          "caption": "O15 radial cx 25% cy 25% on a rect turned 30 anticlockwise",
+          "row": "od-p15",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 30,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "25%", "cy": "25%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 16,
+          "id": "O16",
+          "caption": "O16 radial, step count 3",
+          "row": "od-p16",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"},
+                "stepCount": 3
+              }
+            }
+          ]
+        },
+        {
+          "slide": 17,
+          "id": "O17",
+          "caption": "O17 ellipsoid 0deg",
+          "row": "od-p17",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "ellipsoid", "angle": "0deg", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 18,
+          "id": "O18",
+          "caption": "O18 ellipsoid 30deg",
+          "row": "od-p18",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "ellipsoid", "angle": "30deg", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 19,
+          "id": "O19",
+          "caption": "O19 ellipsoid 0deg, border 20%, cx 25% cy 75%",
+          "row": "od-p19",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "ellipsoid", "angle": "0deg", "border": "20%", "cx": "25%", "cy": "75%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 20,
+          "id": "O20",
+          "caption": "O20 square 30deg",
+          "row": "od-p20",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "square", "angle": "30deg", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 21,
+          "id": "O21",
+          "caption": "O21 square 0deg on a custom shape turned 30 anticlockwise",
+          "row": "od-p21",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:custom-shape rectangle",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 30,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "square", "angle": "0deg", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 22,
+          "id": "O22",
+          "caption": "O22 rectangular 0deg",
+          "row": "od-p22",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "rectangular", "angle": "0deg", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 23,
+          "id": "O23",
+          "caption": "O23 rectangular 30deg, border 20%",
+          "row": "od-p23",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "rectangular", "angle": "30deg", "border": "20%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 24,
+          "id": "O24",
+          "caption": "O24 linear 0deg, loext stops red 0, green 0.3, blue 1",
+          "row": "od-p24",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#ff0000", "endColor": "#0000ff", "stops": [[0, "#ff0000"], [0.3, "#00ff00"], [1, "#0000ff"]]}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 25,
+          "id": "O25",
+          "caption": "O25 axial 0deg, loext stops red 0, green 0.3, blue 1",
+          "row": "od-p25",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "axial", "angle": "0deg", "border": "0%", "startColor": "#ff0000", "endColor": "#0000ff", "stops": [[0, "#ff0000"], [0.3, "#00ff00"], [1, "#0000ff"]]}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 26,
+          "id": "O26",
+          "caption": "O26 linear 0deg, start/end green, loext stops red 0, blue 1",
+          "row": "od-p26",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#00ff00", "endColor": "#00ff00", "stops": [[0, "#ff0000"], [1, "#0000ff"]]}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 27,
+          "id": "O27",
+          "caption": "O27 linear 0deg, loext stops red 0, green 0.5, blue 1, step count 2",
+          "row": "od-p27",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#ff0000", "endColor": "#0000ff", "stops": [[0, "#ff0000"], [0.5, "#00ff00"], [1, "#0000ff"]]},
+                "stepCount": 2
+              }
+            }
+          ]
+        },
+        {
+          "slide": 28,
+          "id": "O28",
+          "caption": "O28 radial without cx, cy and border (cx cy 0%)",
+          "row": "od-p28",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 29,
+          "id": "O29",
+          "caption": "O29 linear without colours, angle and border (black)",
+          "row": "od-p29",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 30,
+          "id": "O30",
+          "caption": "O30 linear, unitless angle 300 in ODF 1.3 (300 degrees)",
+          "row": "od-p30",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "300", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 31,
+          "id": "O31",
+          "caption": "O31 solid black, transparency linear 0deg, opacity 100% to 0%",
+          "row": "od-p31",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "solid",
+                "color": "#000000",
+                "transparency": {"style": "linear", "angle": "0deg", "border": "0%", "start": "100%", "end": "0%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 32,
+          "id": "O32",
+          "caption": "O32 solid black, transparency radial cx 25% cy 25%, border 20%, opacity 0% to 100%",
+          "row": "od-p32",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "solid",
+                "color": "#000000",
+                "transparency": {"style": "radial", "border": "20%", "cx": "25%", "cy": "25%", "start": "0%", "end": "100%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 33,
+          "id": "O33",
+          "caption": "O33 linear 90deg, transparency linear 90deg, opacity 100% to 20% (same geometry)",
+          "row": "od-p33",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "90deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "transparency": {"style": "linear", "angle": "90deg", "border": "0%", "start": "100%", "end": "20%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 34,
+          "id": "O34",
+          "caption": "O34 linear 90deg, transparency radial cx 25% cy 25%, border 20% (own geometry)",
+          "row": "od-p34",
+          "loValid": true,
+          "diagnostics": ["OD9103"],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "90deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "transparency": {"style": "radial", "border": "20%", "cx": "25%", "cy": "25%", "start": "0%", "end": "100%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 35,
+          "id": "O35",
+          "caption": "O35 linear 90deg, opacity 50% and transparency linear 0deg 100% to 0%",
+          "row": "od-p35",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "90deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "opacity": "50%",
+                "transparency": {"style": "linear", "angle": "0deg", "border": "0%", "start": "100%", "end": "0%"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 36,
+          "id": "O36",
+          "caption": "O36 background radial cx 25% cy 50%",
+          "row": "od-p36",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "background",
+              "box": [0, 0, 960, 540],
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "25%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 37,
+          "id": "O37",
+          "caption": "O37 background linear 0deg, step count 4",
+          "row": "od-p37",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "background",
+              "box": [0, 0, 960, 540],
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"},
+                "stepCount": 4
+              }
+            }
+          ]
+        },
+        {
+          "slide": 38,
+          "id": "O38",
+          "caption": "O38 2 x 2 table: linear 30deg; radial; no fill; no fill",
+          "row": "od-p38",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Table",
+              "box": [180, 170, 600, 200],
+              "cells": [
+                {"row": 0, "col": 0, "fill": {"type": "gradient", "gradient": {"style": "linear", "angle": "30deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}}},
+                {"row": 0, "col": 1, "fill": {"type": "gradient", "gradient": {"style": "radial", "border": "0%", "cx": "50%", "cy": "50%", "startColor": "#000000", "endColor": "#ffffff"}}},
+                {"row": 1, "col": 0, "fill": {"type": "none"}},
+                {"row": 1, "col": 1, "fill": {"type": "none"}}
+              ]
+            }
+          ]
+        },
+        {
+          "slide": 39,
+          "id": "O39",
+          "caption": "O39 radial cx 25% cy 25% on an ellipse turned 30 anticlockwise",
+          "row": "od-p39",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:ellipse",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 30,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "cx": "25%", "cy": "25%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 40,
+          "id": "O40",
+          "caption": "O40 linear 0deg on a draw:path over the top-left quarter of its 600 x 200 frame",
+          "row": "od-p40",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:path over the top-left quarter of its frame",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 41,
+          "id": "O41",
+          "caption": "O41 group of two rects, each linear 0deg",
+          "row": "od-p41",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Left",
+              "shape": "draw:rect",
+              "box": [180, 170, 280, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              },
+              "group": true
+            },
+            {
+              "element": "Right",
+              "shape": "draw:rect",
+              "box": [500, 170, 280, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "0deg", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              },
+              "group": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "gradient-probe-odp12.odp",
+      "frontend": "odp",
+      "slides": [
+        {
+          "slide": 1,
+          "id": "N01",
+          "caption": "N01 linear, unitless angle 300 in ODF 1.2 by LibreOfficeDev 6 (30 degrees)",
+          "row": "od-p1",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "linear", "angle": "300", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        },
+        {
+          "slide": 2,
+          "id": "N02",
+          "caption": "N02 radial without cx, cy (cx cy 0%), ODF 1.2",
+          "row": "od-p2",
+          "loValid": true,
+          "diagnostics": [],
+          "objects": [
+            {
+              "element": "Gradient box",
+              "shape": "draw:rect",
+              "box": [180, 170, 600, 200],
+              "rotCcw": 0,
+              "fill": {
+                "type": "gradient",
+                "gradient": {"style": "radial", "border": "0%", "startColor": "#000000", "endColor": "#ffffff"}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

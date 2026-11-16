@@ -1,0 +1,443 @@
+{
+  "runs": [
+    {
+      "compiler": {
+        "commit": "0000000000000000000000000000123456789abc",
+        "content": "05a4d0dd019a022eca945386bcd26c3af4e4b56a4cdcad2c280042fcca4a9f0e",
+        "dirty": false
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "0bf8691409250f9c610b2305c4d6e517e683554804b203f1d184fba4413057b5",
+      "lane": "static",
+      "partial": false,
+      "recordedAt": "2026-10-22T09:30:00Z",
+      "stamp": "d84c7d50dec10fea58e8ad7fe4784501230741325f5bccf0646b7db30c16ad77",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 5,
+            "declined": 0,
+            "failed": 0,
+            "match": 2,
+            "mismatch": 0,
+            "render-error": 1,
+            "rows": 8,
+            "ssim": {
+              "median": 0.9757,
+              "p10": 0.9652
+            },
+            "textRecall": {
+              "mean": 0.9887
+            }
+          },
+          "odp": {
+            "close": 4,
+            "declined": 0,
+            "failed": 1,
+            "match": 0,
+            "mismatch": 5,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.8964,
+              "p10": 0.872
+            },
+            "textRecall": {
+              "mean": 0.9538
+            }
+          },
+          "pptx": {
+            "close": 9,
+            "declined": 1,
+            "failed": 0,
+            "match": 0,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9603,
+              "p10": 0.9465
+            },
+            "textRecall": {
+              "mean": 0.9781
+            }
+          }
+        },
+        "declines": {
+          "PX4001": 1
+        },
+        "reference": {}
+      }
+    },
+    {
+      "compiler": {
+        "commit": "00000000000000000000000000002468acf13578",
+        "content": "6845c2154769d53d76819cc898da208bc501b17d2aec8c4a2f7a0f63eeb4c4e2",
+        "dirty": false
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "2527fcae92fb654a8925eb648b32f91a49560e3f7fb7d1f9ee6c56837afdf8bb",
+      "lane": "static",
+      "partial": false,
+      "recordedAt": "2026-10-24T09:30:00Z",
+      "stamp": "0af400eb6a467d85695f22000c9b22c27ea3932d26d73a3eec7cca7619576155",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 3,
+            "declined": 0,
+            "failed": 0,
+            "match": 4,
+            "mismatch": 0,
+            "render-error": 1,
+            "rows": 8,
+            "ssim": {
+              "median": 0.9863,
+              "p10": 0.9782
+            },
+            "textRecall": {
+              "mean": 0.9955
+            }
+          },
+          "odp": {
+            "close": 6,
+            "declined": 0,
+            "failed": 1,
+            "match": 0,
+            "mismatch": 3,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9306,
+              "p10": 0.8703
+            },
+            "textRecall": {
+              "mean": 0.9567
+            }
+          },
+          "pptx": {
+            "close": 8,
+            "declined": 1,
+            "failed": 0,
+            "match": 1,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.98,
+              "p10": 0.9632
+            },
+            "textRecall": {
+              "mean": 0.9748
+            }
+          }
+        },
+        "declines": {
+          "PX4001": 1
+        },
+        "reference": {}
+      }
+    },
+    {
+      "baseline": true,
+      "compiler": {
+        "commit": "0000000000000000000000000000369d0369d034",
+        "content": "05a3bf3fedda9ae6b3086a7fd6b318133d6991a094f638f8a7ae18bcaa97352e",
+        "dirty": false
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "d509795337a8af990733b25e07e482900d2cc9a62798a54a5371989784e65afe",
+      "lane": "static",
+      "partial": false,
+      "recordedAt": "2026-10-26T09:30:00Z",
+      "stamp": "8c4b5d75409db4d92944045755b66337edf0ebb5c0a338a68e8dd69f41dec5a6",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 2,
+            "declined": 0,
+            "failed": 0,
+            "match": 5,
+            "mismatch": 0,
+            "render-error": 1,
+            "rows": 8,
+            "ssim": {
+              "median": 0.9809,
+              "p10": 0.9769
+            },
+            "textRecall": {
+              "mean": 1
+            }
+          },
+          "odp": {
+            "close": 8,
+            "declined": 0,
+            "failed": 1,
+            "match": 0,
+            "mismatch": 1,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9407,
+              "p10": 0.9012
+            },
+            "textRecall": {
+              "mean": 0.9447
+            }
+          },
+          "pptx": {
+            "close": 6,
+            "declined": 1,
+            "failed": 0,
+            "match": 3,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9698,
+              "p10": 0.9627
+            },
+            "textRecall": {
+              "mean": 0.9926
+            }
+          }
+        },
+        "declines": {
+          "PX4001": 1
+        },
+        "reference": {}
+      }
+    },
+    {
+      "compiler": {
+        "commit": "000000000000000000000000000048d159e26af0",
+        "content": "c6fb4ef0b8c14e105b12c34ad22d604f3deed61e23b92aac17d494c967c0a2b4",
+        "dirty": true
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "6687cb0f2fceeb22524d0e60a678feea5c531fc153acce7fb1e866d5d5f4e322",
+      "lane": "static",
+      "partial": false,
+      "recordedAt": "2026-10-28T09:30:00Z",
+      "stamp": "8692c4818f48777cf946cf81ca039a82834423b7470ad51b143ca95a4fb1d975",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 5,
+            "declined": 0,
+            "failed": 0,
+            "match": 2,
+            "mismatch": 0,
+            "render-error": 1,
+            "rows": 8,
+            "ssim": {
+              "median": 0.9913,
+              "p10": 0.9833
+            },
+            "textRecall": {
+              "mean": 0.9845
+            }
+          },
+          "odp": {
+            "close": 4,
+            "declined": 0,
+            "failed": 1,
+            "match": 0,
+            "mismatch": 5,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.8973,
+              "p10": 0.8819
+            },
+            "textRecall": {
+              "mean": 0.9656
+            }
+          },
+          "pptx": {
+            "close": 7,
+            "declined": 1,
+            "failed": 0,
+            "match": 2,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9819,
+              "p10": 0.9577
+            },
+            "textRecall": {
+              "mean": 0.9877
+            }
+          }
+        },
+        "declines": {
+          "PX4001": 1
+        },
+        "reference": {}
+      }
+    },
+    {
+      "compiler": {
+        "commit": "00000000000000000000000000005b05b05b05ac",
+        "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+        "dirty": false
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "5a25d7f67c196d3e0deea13e8c0378d75ab8ac93151e2084b062c028824f933b",
+      "lane": "static",
+      "partial": false,
+      "recordedAt": "2026-10-30T09:30:00Z",
+      "stamp": "709d7350268b8310569c31bdf47766eef12367eb997f8daa1848b74d53c45228",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 4,
+            "declined": 0,
+            "failed": 0,
+            "match": 3,
+            "mismatch": 0,
+            "render-error": 1,
+            "rows": 8,
+            "ssim": {
+              "median": 0.9902,
+              "p10": 0.9858
+            },
+            "textRecall": {
+              "mean": 1
+            }
+          },
+          "odp": {
+            "close": 6,
+            "declined": 0,
+            "failed": 1,
+            "match": 0,
+            "mismatch": 3,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.931,
+              "p10": 0.9081
+            },
+            "textRecall": {
+              "mean": 0.9374
+            }
+          },
+          "pptx": {
+            "close": 8,
+            "declined": 1,
+            "failed": 0,
+            "match": 1,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 10,
+            "ssim": {
+              "median": 0.9707,
+              "p10": 0.9662
+            },
+            "textRecall": {
+              "mean": 0.9814
+            }
+          }
+        },
+        "declines": {
+          "PX4001": 1
+        },
+        "reference": {}
+      }
+    },
+    {
+      "compiler": {
+        "commit": "00000000000000000000000000005b05b05b05ac",
+        "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+        "dirty": false
+      },
+      "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+      "key": "1283a898a5f76a7bd1447787d6745421ead9f266fe0bd1bf61e42e00423efe18",
+      "lane": "motion",
+      "partial": false,
+      "recordedAt": "2026-10-30T10:15:00Z",
+      "stamp": "0eaafbbc24d273eb8d88412a30656d39c641d969d6555f72a50d101a09dab9d5",
+      "summary": {
+        "byFrontend": {
+          "keynote": {
+            "close": 3,
+            "declined": 0,
+            "failed": 0,
+            "match": 0,
+            "mismatch": 0,
+            "render-error": 0,
+            "rows": 3,
+            "ssim": {
+              "median": 0.9851,
+              "p10": 0.9827
+            },
+            "textRecall": {
+              "mean": 0.9625
+            }
+          }
+        },
+        "declines": {},
+        "lanes": {
+          "motion": {
+            "keynote": {
+              "effects": {
+                "fallback": 1,
+                "native": 3,
+                "unsupported": 0
+              },
+              "endState": {
+                "differs": 1,
+                "identical": 5,
+                "rows": 6
+              },
+              "items": {
+                "accepted": 1,
+                "dropped": 0,
+                "fallbackAllowed": 1,
+                "mismatched": 1,
+                "native": 1
+              },
+              "stageChecks": {
+                "motion-close": 0,
+                "motion-fallback": 1,
+                "motion-match": 1,
+                "motion-mismatch": 1,
+                "rows": 3
+              },
+              "stages": {
+                "close": 3,
+                "declined": 0,
+                "failed": 0,
+                "match": 0,
+                "mismatch": 0,
+                "render-error": 0,
+                "rows": 3,
+                "ssim": {
+                  "median": 0.9851,
+                  "p10": 0.9827
+                },
+                "textRecall": {
+                  "mean": 0.9625
+                }
+              },
+              "timelines": {
+                "exact": 2,
+                "slides": 3
+              },
+              "transitions": {
+                "motion-close": 1,
+                "motion-fallback": 0,
+                "motion-match": 2,
+                "motion-mismatch": 0,
+                "rows": 3
+              }
+            }
+          }
+        },
+        "reference": {}
+      }
+    }
+  ],
+  "schema": "slidock-bench-runs@1"
+}

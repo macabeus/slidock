@@ -1,0 +1,357 @@
+{
+  "compiler": {
+    "counts": {
+      "drift-better": 4,
+      "drift-same-class": 6,
+      "identical": 9,
+      "missing": 1,
+      "pixel-identical": 1,
+      "regressed": 7
+    },
+    "failing": [
+      "demo-basics:od-p903:odp",
+      "demo-basics:od-p905:odp",
+      "demo-basics:od-p906:odp",
+      "demo-basics:pp-9002:pptx",
+      "demo-basics:pp-9003:pptx",
+      "demo-basics:pp-9005:pptx",
+      "demo-basics:pp-9006:pptx",
+      "demo-keynote:kn-1002:keynote",
+      "demo-keynote:kn-1005:keynote",
+      "demo-keynote:kn-1006:keynote",
+      "demo-keynote:kn-1008:keynote",
+      "demo-tables:od-p911:odp",
+      "demo-tables:od-p913:odp",
+      "demo-tables:od-p914:odp",
+      "demo-tables:pp-9102:pptx",
+      "demo-tables:pp-9103:pptx",
+      "demo-tables:pp-9104:pptx"
+    ],
+    "rows": {
+      "demo-basics:od-p901:odp": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "mismatch",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-basics:od-p902:odp": {
+        "allowed": {
+          "path": "$.slides[0].elements",
+          "reason": "slidock reads the stored line spacing literally",
+          "reviewBy": "2027-01-31",
+          "row": "demo-basics:od-p902:odp"
+        },
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "mismatch",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-better"
+      },
+      "demo-basics:od-p903:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "mismatch",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-better"
+      },
+      "demo-basics:od-p904:odp": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "failed",
+        "reference": "failed",
+        "status": "identical"
+      },
+      "demo-basics:od-p905:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "mismatch",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-better"
+      },
+      "demo-basics:od-p906:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "ssim.mean 0.9687 → 0.9291",
+          "text.recall 1 → 0.9302",
+          "color.mean 2.1877 → 4.0808"
+        ],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-basics:pp-9001:pptx": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "status": "pixel-identical"
+      },
+      "demo-basics:pp-9002:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-basics:pp-9003:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-basics:pp-9004:pptx": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "declined",
+        "reference": "declined",
+        "status": "identical"
+      },
+      "demo-basics:pp-9005:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "text.recall 1 → 0.9767"
+        ],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-basics:pp-9006:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "text.recall 1 → 0.9524"
+        ],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-keynote:kn-1001:keynote": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "match",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-keynote:kn-1002:keynote": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-keynote:kn-1003:keynote": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "render-error",
+        "reference": "render-error",
+        "status": "identical"
+      },
+      "demo-keynote:kn-1004:keynote": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "match",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-keynote:kn-1005:keynote": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "match",
+        "reference": "match",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-keynote:kn-1006:keynote": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "match",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-keynote:kn-1007:keynote": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-keynote:kn-1008:keynote": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-tables:od-p911:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "color.mean 0.3638 → 3.7939"
+        ],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-tables:od-p912:odp": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "mismatch",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-tables:od-p913:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "mismatch",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-better"
+      },
+      "demo-tables:od-p914:odp": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "text.recall 0.9583 → 0.8966"
+        ],
+        "outcome": "mismatch",
+        "reference": "mismatch",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-tables:pp-9101:pptx": {
+        "diagnostics": {},
+        "guards": [],
+        "outcome": "match",
+        "reference": "close",
+        "status": "identical"
+      },
+      "demo-tables:pp-9102:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "drift-same-class"
+      },
+      "demo-tables:pp-9103:pptx": {
+        "diagnostics": {},
+        "firstIrDiff": "$.slides[0].elements[1].frame.y",
+        "guards": [
+          "text.recall 1 → 0.9545"
+        ],
+        "outcome": "close",
+        "reference": "close",
+        "renderVsRender": {
+          "deltaE": 1.2031,
+          "ssim": 0.9874
+        },
+        "status": "regressed"
+      },
+      "demo-tables:pp-9104:pptx": {
+        "diagnostics": {},
+        "guards": [],
+        "reference": "close",
+        "status": "missing"
+      }
+    },
+    "strict": false,
+    "unreferenced": []
+  },
+  "ir": {
+    "containers": {
+      "demo-basics:odp:od-p902": {
+        "path": "$.elements[1].frame.y",
+        "status": "differs"
+      },
+      "demo-basics:pptx:pp-9001": {
+        "status": "equal"
+      }
+    }
+  },
+  "reference": {
+    "fontSetId": "ce4fddd4c69990575ebb7880c234486ea3bc203a7bf43309147b52ff4ff63371",
+    "golden": {
+      "commit": "000000000000000000000000000000000000601d",
+      "manifest": "1b960ccea0c3eae18828bb0bf6271cb0100f84709969e5ae854d08d7fd951f97"
+    },
+    "rendererRecipe": "9c024e2f00b004addcb5e762e18f415d74742a7156eecbadee57eb6c84df1ff1",
+    "sha256": "486940806a4c3a090a01258fdebe58d7ab337686e26ac745555f30974323c4bf"
+  },
+  "run": "5a25d7f67c196d3e0deea13e8c0378d75ab8ac93151e2084b062c028824f933b",
+  "schema": "slidock-parity@2"
+}

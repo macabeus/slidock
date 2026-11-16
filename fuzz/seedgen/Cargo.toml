@@ -1,0 +1,14 @@
+# Writes the generated seeds in ../seeds (`cargo run --manifest-path fuzz/Cargo.toml -p slidock-fuzz-seedgen`), or,
+# with `private <dir>`, a local corpus from $SLIDOCK_PRIVATE/corpus that is never committed (see ../README.md).
+[package]
+name = "slidock-fuzz-seedgen"
+version = "0.0.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[dependencies]
+miniz_oxide = "=0.9.1"
+slidock-io = { path = "../../crates/slidock-io", features = ["std-fs"] }
+slidock-keynote = { path = "../../crates/slidock-keynote" }
+snap = "=1.1.2"

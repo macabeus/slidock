@@ -1,0 +1,67 @@
+[package]
+name = "slidock-bench"
+description = "slidock fidelity bench"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "slidock-bench"
+path = "src/main.rs"
+doc = false
+
+[features]
+# Checks the bench against slidock's goldens under $SLIDOCK_PRIVATE/golden (skips when they are absent).
+golden = []
+
+[dependencies]
+# The platform's elementary functions, which the pinned scores were computed with (macOS arm64).
+slidock-bench-metrics = { workspace = true, features = ["host-libm"] }
+slidock-bench-schema = { workspace = true }
+slidock-canon = { workspace = true }
+slidock-format = { workspace = true }
+# The deck zips the determinism gate scrubs.
+slidock-io = { workspace = true, features = ["std-fs"] }
+# Diagnostic severities, which the harness hash covers.
+slidock-ir = { workspace = true }
+# The fonts lane reads the faces a deck ships (WOFF2 decode, names) and the licence words of `LICENSES.txt`.
+slidock-fonts = { workspace = true }
+html5ever = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+sha2 = { workspace = true }
+sha1 = { workspace = true }
+hex = { workspace = true }
+base64 = { workspace = true }
+png = { workspace = true }
+gif = { workspace = true }
+quick-xml = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true, features = ["sync", "io-util", "net"] }
+axum = { workspace = true }
+chromiumoxide = { workspace = true }
+futures = { workspace = true }
+ureq = { workspace = true }
+# The wasm module's size as a server sends it (brotli quality 11).
+brotli = { workspace = true }
+# `kill(pid, 0)` with its errno: whether a renderer container's owner process is still running.
+nix = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+zip = { workspace = true }
+tower = { workspace = true, features = ["util"] }
+
+[lints.rust]
+unsafe_code = "deny"
+unused_must_use = "deny"
+
+[lints.clippy]
+todo = "deny"
+dbg_macro = "deny"
+disallowed_methods = "deny"
+disallowed_types = "deny"

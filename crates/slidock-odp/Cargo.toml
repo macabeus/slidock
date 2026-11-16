@@ -1,0 +1,48 @@
+[package]
+name = "slidock-odp"
+description = "OpenDocument Presentation (ODP) frontend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Compares the frontend's lowering of the synthetic presentations and the ODP corpus pairs with the recorded golden
+# files (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-geometry = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-math = { workspace = true }
+slidock-presets = { workspace = true }
+indexmap = { workspace = true }
+
+[dev-dependencies]
+slidock-core = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-format = { workspace = true }
+slidock-html = { workspace = true }
+slidock-io = { workspace = true, features = ["std-fs"] }
+slidock-passes = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+zip = { workspace = true }
+
+[[test]]
+name = "corpus"
+required-features = ["golden"]
+
+[lints]
+workspace = true

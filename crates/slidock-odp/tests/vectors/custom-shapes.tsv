@@ -1,0 +1,1242 @@
+# draw:type	preset	adjustments (draw:modifiers="1 2 … 9")	dropped modifiers
+mso-spt0	-
+mso-spt1	rect	-	true
+mso-spt2	roundRect	-	true
+mso-spt3	ellipse	-	true
+mso-spt4	diamond	-	true
+mso-spt5	triangle	-	true
+mso-spt6	rtTriangle	-	true
+mso-spt7	parallelogram	-	true
+mso-spt8	-
+mso-spt9	hexagon	-	true
+mso-spt10	octagon	-	true
+mso-spt11	plus	-	true
+mso-spt12	star5	-	true
+mso-spt13	rightArrow	-	true
+mso-spt14	-
+mso-spt15	homePlate	-	true
+mso-spt16	cube	-	true
+mso-spt17	-
+mso-spt18	-
+mso-spt19	-
+mso-spt20	line	-	true
+mso-spt21	-
+mso-spt22	can	-	true
+mso-spt23	donut	-	true
+mso-spt24	-
+mso-spt25	-
+mso-spt26	-
+mso-spt27	-
+mso-spt28	-
+mso-spt29	-
+mso-spt30	-
+mso-spt31	-
+mso-spt32	straightConnector1	-	true
+mso-spt33	bentConnector2	-	true
+mso-spt34	bentConnector3	-	true
+mso-spt35	bentConnector4	-	true
+mso-spt36	bentConnector5	-	true
+mso-spt37	curvedConnector2	-	true
+mso-spt38	curvedConnector3	-	true
+mso-spt39	curvedConnector4	-	true
+mso-spt40	curvedConnector5	-	true
+mso-spt41	-
+mso-spt42	-
+mso-spt43	-
+mso-spt44	-
+mso-spt45	-
+mso-spt46	-
+mso-spt47	-
+mso-spt48	-
+mso-spt49	-
+mso-spt50	-
+mso-spt51	-
+mso-spt52	-
+mso-spt53	-
+mso-spt54	-
+mso-spt55	chevron	-	true
+mso-spt56	pentagon	-	true
+mso-spt57	-
+mso-spt58	-
+mso-spt59	-
+mso-spt60	-
+mso-spt61	-
+mso-spt62	-
+mso-spt63	-
+mso-spt64	-
+mso-spt65	-
+mso-spt66	leftArrow	-	true
+mso-spt67	downArrow	-	true
+mso-spt68	upArrow	-	true
+mso-spt69	leftRightArrow	-	true
+mso-spt70	upDownArrow	-	true
+mso-spt71	-
+mso-spt72	-
+mso-spt73	lightningBolt	-	true
+mso-spt74	heart	-	true
+mso-spt75	-
+mso-spt76	-
+mso-spt77	-
+mso-spt78	-
+mso-spt79	-
+mso-spt80	-
+mso-spt81	-
+mso-spt82	-
+mso-spt83	-
+mso-spt84	-
+mso-spt85	-
+mso-spt86	-
+mso-spt87	-
+mso-spt88	-
+mso-spt89	-
+mso-spt90	-
+mso-spt91	-
+mso-spt92	-
+mso-spt93	-
+mso-spt94	-
+mso-spt95	-
+mso-spt96	smileyFace	-	true
+mso-spt97	-
+mso-spt98	-
+mso-spt99	-
+mso-spt100	-
+mso-spt101	-
+mso-spt102	-
+mso-spt103	-
+mso-spt104	-
+mso-spt105	-
+mso-spt106	-
+mso-spt107	-
+mso-spt108	-
+mso-spt109	-
+mso-spt110	-
+mso-spt111	-
+mso-spt112	-
+mso-spt113	-
+mso-spt114	-
+mso-spt115	-
+mso-spt116	-
+mso-spt117	-
+mso-spt118	-
+mso-spt119	-
+mso-spt120	-
+mso-spt121	-
+mso-spt122	-
+mso-spt123	-
+mso-spt124	-
+mso-spt125	-
+mso-spt126	-
+mso-spt127	-
+mso-spt128	-
+mso-spt129	-
+mso-spt130	-
+mso-spt131	-
+mso-spt132	-
+mso-spt133	-
+mso-spt134	-
+mso-spt135	-
+mso-spt136	-
+mso-spt137	-
+mso-spt138	-
+mso-spt139	-
+mso-spt140	-
+mso-spt141	-
+mso-spt142	-
+mso-spt143	-
+mso-spt144	-
+mso-spt145	-
+mso-spt146	-
+mso-spt147	-
+mso-spt148	-
+mso-spt149	-
+mso-spt150	-
+mso-spt151	-
+mso-spt152	-
+mso-spt153	-
+mso-spt154	-
+mso-spt155	-
+mso-spt156	-
+mso-spt157	-
+mso-spt158	-
+mso-spt159	-
+mso-spt160	-
+mso-spt161	-
+mso-spt162	-
+mso-spt163	-
+mso-spt164	-
+mso-spt165	-
+mso-spt166	-
+mso-spt167	-
+mso-spt168	-
+mso-spt169	-
+mso-spt170	-
+mso-spt171	-
+mso-spt172	-
+mso-spt173	-
+mso-spt174	-
+mso-spt175	-
+mso-spt176	-
+mso-spt177	-
+mso-spt178	-
+mso-spt179	-
+mso-spt180	-
+mso-spt181	-
+mso-spt182	-
+mso-spt183	sun	-	true
+mso-spt184	moon	-	true
+mso-spt185	-
+mso-spt186	-
+mso-spt187	-
+mso-spt188	-
+mso-spt189	-
+mso-spt190	-
+mso-spt191	-
+mso-spt192	-
+mso-spt193	-
+mso-spt194	-
+mso-spt195	-
+mso-spt196	-
+mso-spt197	-
+mso-spt198	-
+mso-spt199	-
+mso-spt200	-
+mso-spt201	-
+mso-spt202	-
+mso-spt203	-
+mso-spt204	-
+mso-spt205	-
+mso-spt206	-
+mso-spt207	-
+mso-spt208	-
+mso-spt209	-
+mso-spt210	-
+mso-spt211	-
+mso-spt212	-
+mso-spt213	-
+mso-spt214	-
+mso-spt215	-
+mso-spt216	-
+mso-spt217	-
+mso-spt218	-
+mso-spt219	-
+mso-spt220	-
+mso-spt221	-
+mso-spt222	-
+mso-spt223	-
+mso-spt224	-
+mso-spt225	-
+mso-spt226	-
+mso-spt227	-
+mso-spt228	-
+mso-spt229	-
+mso-spt230	-
+mso-spt231	-
+mso-spt232	-
+mso-spt233	-
+mso-spt234	-
+mso-spt235	-
+mso-spt236	-
+mso-spt237	-
+mso-spt238	-
+mso-spt239	-
+mso-spt240	-
+mso-spt241	-
+mso-spt242	-
+mso-spt243	-
+mso-spt244	-
+mso-spt245	-
+mso-spt246	-
+mso-spt247	-
+mso-spt248	-
+mso-spt249	-
+mso-spt250	-
+mso-spt251	-
+mso-spt252	-
+mso-spt253	-
+mso-spt254	-
+mso-spt255	-
+mso-spt256	-
+mso-spt257	-
+mso-spt258	-
+mso-spt259	-
+mso-spt260	-
+mso-spt261	-
+mso-spt262	-
+mso-spt263	-
+mso-spt264	-
+mso-spt265	-
+mso-spt266	-
+mso-spt267	-
+mso-spt268	-
+mso-spt269	-
+mso-spt270	-
+mso-spt271	-
+mso-spt272	-
+mso-spt273	-
+mso-spt274	-
+mso-spt275	-
+mso-spt276	-
+mso-spt277	-
+mso-spt278	-
+mso-spt279	-
+mso-spt280	-
+mso-spt281	-
+mso-spt282	-
+mso-spt283	-
+mso-spt284	-
+mso-spt285	-
+mso-spt286	-
+mso-spt287	-
+mso-spt288	-
+mso-spt289	-
+mso-spt290	-
+mso-spt291	-
+mso-spt292	-
+mso-spt293	-
+mso-spt294	-
+mso-spt295	-
+mso-spt296	-
+mso-spt297	-
+mso-spt298	-
+mso-spt299	-
+mso-spt300	-
+mso-spt301	-
+mso-spt302	-
+mso-spt303	-
+mso-spt304	-
+mso-spt305	-
+mso-spt306	-
+mso-spt307	-
+mso-spt308	-
+mso-spt309	-
+mso-spt310	-
+mso-spt311	-
+mso-spt312	-
+mso-spt313	-
+mso-spt314	-
+mso-spt315	-
+mso-spt316	-
+mso-spt317	-
+mso-spt318	-
+mso-spt319	-
+mso-spt320	-
+mso-spt321	-
+mso-spt322	-
+mso-spt323	-
+mso-spt324	-
+mso-spt325	-
+mso-spt326	-
+mso-spt327	-
+mso-spt328	-
+mso-spt329	-
+mso-spt330	-
+mso-spt331	-
+mso-spt332	-
+mso-spt333	-
+mso-spt334	-
+mso-spt335	-
+mso-spt336	-
+mso-spt337	-
+mso-spt338	-
+mso-spt339	-
+mso-spt340	-
+mso-spt341	-
+mso-spt342	-
+mso-spt343	-
+mso-spt344	-
+mso-spt345	-
+mso-spt346	-
+mso-spt347	-
+mso-spt348	-
+mso-spt349	-
+mso-spt350	-
+mso-spt351	-
+mso-spt352	-
+mso-spt353	-
+mso-spt354	-
+mso-spt355	-
+mso-spt356	-
+mso-spt357	-
+mso-spt358	-
+mso-spt359	-
+mso-spt360	-
+mso-spt361	-
+mso-spt362	-
+mso-spt363	-
+mso-spt364	-
+mso-spt365	-
+mso-spt366	-
+mso-spt367	-
+mso-spt368	-
+mso-spt369	-
+mso-spt370	-
+mso-spt371	-
+mso-spt372	-
+mso-spt373	-
+mso-spt374	-
+mso-spt375	-
+mso-spt376	-
+mso-spt377	-
+mso-spt378	-
+mso-spt379	-
+mso-spt380	-
+mso-spt381	-
+mso-spt382	-
+mso-spt383	-
+mso-spt384	-
+mso-spt385	-
+mso-spt386	-
+mso-spt387	-
+mso-spt388	-
+mso-spt389	-
+mso-spt390	-
+mso-spt391	-
+mso-spt392	-
+mso-spt393	-
+mso-spt394	-
+mso-spt395	-
+mso-spt396	-
+mso-spt397	-
+mso-spt398	-
+mso-spt399	-
+mso-spt400	-
+mso-spt401	-
+mso-spt402	-
+mso-spt403	-
+mso-spt404	-
+mso-spt405	-
+mso-spt406	-
+mso-spt407	-
+mso-spt408	-
+mso-spt409	-
+mso-spt410	-
+mso-spt411	-
+mso-spt412	-
+mso-spt413	-
+mso-spt414	-
+mso-spt415	-
+mso-spt416	-
+mso-spt417	-
+mso-spt418	-
+mso-spt419	-
+mso-spt420	-
+mso-spt421	-
+mso-spt422	-
+mso-spt423	-
+mso-spt424	-
+mso-spt425	-
+mso-spt426	-
+mso-spt427	-
+mso-spt428	-
+mso-spt429	-
+mso-spt430	-
+mso-spt431	-
+mso-spt432	-
+mso-spt433	-
+mso-spt434	-
+mso-spt435	-
+mso-spt436	-
+mso-spt437	-
+mso-spt438	-
+mso-spt439	-
+mso-spt440	-
+mso-spt441	-
+mso-spt442	-
+mso-spt443	-
+mso-spt444	-
+mso-spt445	-
+mso-spt446	-
+mso-spt447	-
+mso-spt448	-
+mso-spt449	-
+mso-spt450	-
+mso-spt451	-
+mso-spt452	-
+mso-spt453	-
+mso-spt454	-
+mso-spt455	-
+mso-spt456	-
+mso-spt457	-
+mso-spt458	-
+mso-spt459	-
+mso-spt460	-
+mso-spt461	-
+mso-spt462	-
+mso-spt463	-
+mso-spt464	-
+mso-spt465	-
+mso-spt466	-
+mso-spt467	-
+mso-spt468	-
+mso-spt469	-
+mso-spt470	-
+mso-spt471	-
+mso-spt472	-
+mso-spt473	-
+mso-spt474	-
+mso-spt475	-
+mso-spt476	-
+mso-spt477	-
+mso-spt478	-
+mso-spt479	-
+mso-spt480	-
+mso-spt481	-
+mso-spt482	-
+mso-spt483	-
+mso-spt484	-
+mso-spt485	-
+mso-spt486	-
+mso-spt487	-
+mso-spt488	-
+mso-spt489	-
+mso-spt490	-
+mso-spt491	-
+mso-spt492	-
+mso-spt493	-
+mso-spt494	-
+mso-spt495	-
+mso-spt496	-
+mso-spt497	-
+mso-spt498	-
+mso-spt499	-
+mso-spt500	-
+mso-spt501	-
+mso-spt502	-
+mso-spt503	-
+mso-spt504	-
+mso-spt505	-
+mso-spt506	-
+mso-spt507	-
+mso-spt508	-
+mso-spt509	-
+mso-spt510	-
+mso-spt511	-
+mso-spt512	-
+mso-spt513	-
+mso-spt514	-
+mso-spt515	-
+mso-spt516	-
+mso-spt517	-
+mso-spt518	-
+mso-spt519	-
+mso-spt520	-
+mso-spt521	-
+mso-spt522	-
+mso-spt523	-
+mso-spt524	-
+mso-spt525	-
+mso-spt526	-
+mso-spt527	-
+mso-spt528	-
+mso-spt529	-
+mso-spt530	-
+mso-spt531	-
+mso-spt532	-
+mso-spt533	-
+mso-spt534	-
+mso-spt535	-
+mso-spt536	-
+mso-spt537	-
+mso-spt538	-
+mso-spt539	-
+mso-spt540	-
+mso-spt541	-
+mso-spt542	-
+mso-spt543	-
+mso-spt544	-
+mso-spt545	-
+mso-spt546	-
+mso-spt547	-
+mso-spt548	-
+mso-spt549	-
+mso-spt550	-
+mso-spt551	-
+mso-spt552	-
+mso-spt553	-
+mso-spt554	-
+mso-spt555	-
+mso-spt556	-
+mso-spt557	-
+mso-spt558	-
+mso-spt559	-
+mso-spt560	-
+mso-spt561	-
+mso-spt562	-
+mso-spt563	-
+mso-spt564	-
+mso-spt565	-
+mso-spt566	-
+mso-spt567	-
+mso-spt568	-
+mso-spt569	-
+mso-spt570	-
+mso-spt571	-
+mso-spt572	-
+mso-spt573	-
+mso-spt574	-
+mso-spt575	-
+mso-spt576	-
+mso-spt577	-
+mso-spt578	-
+mso-spt579	-
+mso-spt580	-
+mso-spt581	-
+mso-spt582	-
+mso-spt583	-
+mso-spt584	-
+mso-spt585	-
+mso-spt586	-
+mso-spt587	-
+mso-spt588	-
+mso-spt589	-
+mso-spt590	-
+mso-spt591	-
+mso-spt592	-
+mso-spt593	-
+mso-spt594	-
+mso-spt595	-
+mso-spt596	-
+mso-spt597	-
+mso-spt598	-
+mso-spt599	-
+mso-spt600	-
+mso-spt601	-
+mso-spt602	-
+mso-spt603	-
+mso-spt604	-
+mso-spt605	-
+mso-spt606	-
+mso-spt607	-
+mso-spt608	-
+mso-spt609	-
+mso-spt610	-
+mso-spt611	-
+mso-spt612	-
+mso-spt613	-
+mso-spt614	-
+mso-spt615	-
+mso-spt616	-
+mso-spt617	-
+mso-spt618	-
+mso-spt619	-
+mso-spt620	-
+mso-spt621	-
+mso-spt622	-
+mso-spt623	-
+mso-spt624	-
+mso-spt625	-
+mso-spt626	-
+mso-spt627	-
+mso-spt628	-
+mso-spt629	-
+mso-spt630	-
+mso-spt631	-
+mso-spt632	-
+mso-spt633	-
+mso-spt634	-
+mso-spt635	-
+mso-spt636	-
+mso-spt637	-
+mso-spt638	-
+mso-spt639	-
+mso-spt640	-
+mso-spt641	-
+mso-spt642	-
+mso-spt643	-
+mso-spt644	-
+mso-spt645	-
+mso-spt646	-
+mso-spt647	-
+mso-spt648	-
+mso-spt649	-
+mso-spt650	-
+mso-spt651	-
+mso-spt652	-
+mso-spt653	-
+mso-spt654	-
+mso-spt655	-
+mso-spt656	-
+mso-spt657	-
+mso-spt658	-
+mso-spt659	-
+mso-spt660	-
+mso-spt661	-
+mso-spt662	-
+mso-spt663	-
+mso-spt664	-
+mso-spt665	-
+mso-spt666	-
+mso-spt667	-
+mso-spt668	-
+mso-spt669	-
+mso-spt670	-
+mso-spt671	-
+mso-spt672	-
+mso-spt673	-
+mso-spt674	-
+mso-spt675	-
+mso-spt676	-
+mso-spt677	-
+mso-spt678	-
+mso-spt679	-
+mso-spt680	-
+mso-spt681	-
+mso-spt682	-
+mso-spt683	-
+mso-spt684	-
+mso-spt685	-
+mso-spt686	-
+mso-spt687	-
+mso-spt688	-
+mso-spt689	-
+mso-spt690	-
+mso-spt691	-
+mso-spt692	-
+mso-spt693	-
+mso-spt694	-
+mso-spt695	-
+mso-spt696	-
+mso-spt697	-
+mso-spt698	-
+mso-spt699	-
+mso-spt700	-
+mso-spt701	-
+mso-spt702	-
+mso-spt703	-
+mso-spt704	-
+mso-spt705	-
+mso-spt706	-
+mso-spt707	-
+mso-spt708	-
+mso-spt709	-
+mso-spt710	-
+mso-spt711	-
+mso-spt712	-
+mso-spt713	-
+mso-spt714	-
+mso-spt715	-
+mso-spt716	-
+mso-spt717	-
+mso-spt718	-
+mso-spt719	-
+mso-spt720	-
+mso-spt721	-
+mso-spt722	-
+mso-spt723	-
+mso-spt724	-
+mso-spt725	-
+mso-spt726	-
+mso-spt727	-
+mso-spt728	-
+mso-spt729	-
+mso-spt730	-
+mso-spt731	-
+mso-spt732	-
+mso-spt733	-
+mso-spt734	-
+mso-spt735	-
+mso-spt736	-
+mso-spt737	-
+mso-spt738	-
+mso-spt739	-
+mso-spt740	-
+mso-spt741	-
+mso-spt742	-
+mso-spt743	-
+mso-spt744	-
+mso-spt745	-
+mso-spt746	-
+mso-spt747	-
+mso-spt748	-
+mso-spt749	-
+mso-spt750	-
+mso-spt751	-
+mso-spt752	-
+mso-spt753	-
+mso-spt754	-
+mso-spt755	-
+mso-spt756	-
+mso-spt757	-
+mso-spt758	-
+mso-spt759	-
+mso-spt760	-
+mso-spt761	-
+mso-spt762	-
+mso-spt763	-
+mso-spt764	-
+mso-spt765	-
+mso-spt766	-
+mso-spt767	-
+mso-spt768	-
+mso-spt769	-
+mso-spt770	-
+mso-spt771	-
+mso-spt772	-
+mso-spt773	-
+mso-spt774	-
+mso-spt775	-
+mso-spt776	-
+mso-spt777	-
+mso-spt778	-
+mso-spt779	-
+mso-spt780	-
+mso-spt781	-
+mso-spt782	-
+mso-spt783	-
+mso-spt784	-
+mso-spt785	-
+mso-spt786	-
+mso-spt787	-
+mso-spt788	-
+mso-spt789	-
+mso-spt790	-
+mso-spt791	-
+mso-spt792	-
+mso-spt793	-
+mso-spt794	-
+mso-spt795	-
+mso-spt796	-
+mso-spt797	-
+mso-spt798	-
+mso-spt799	-
+mso-spt800	-
+mso-spt801	-
+mso-spt802	-
+mso-spt803	-
+mso-spt804	-
+mso-spt805	-
+mso-spt806	-
+mso-spt807	-
+mso-spt808	-
+mso-spt809	-
+mso-spt810	-
+mso-spt811	-
+mso-spt812	-
+mso-spt813	-
+mso-spt814	-
+mso-spt815	-
+mso-spt816	-
+mso-spt817	-
+mso-spt818	-
+mso-spt819	-
+mso-spt820	-
+mso-spt821	-
+mso-spt822	-
+mso-spt823	-
+mso-spt824	-
+mso-spt825	-
+mso-spt826	-
+mso-spt827	-
+mso-spt828	-
+mso-spt829	-
+mso-spt830	-
+mso-spt831	-
+mso-spt832	-
+mso-spt833	-
+mso-spt834	-
+mso-spt835	-
+mso-spt836	-
+mso-spt837	-
+mso-spt838	-
+mso-spt839	-
+mso-spt840	-
+mso-spt841	-
+mso-spt842	-
+mso-spt843	-
+mso-spt844	-
+mso-spt845	-
+mso-spt846	-
+mso-spt847	-
+mso-spt848	-
+mso-spt849	-
+mso-spt850	-
+mso-spt851	-
+mso-spt852	-
+mso-spt853	-
+mso-spt854	-
+mso-spt855	-
+mso-spt856	-
+mso-spt857	-
+mso-spt858	-
+mso-spt859	-
+mso-spt860	-
+mso-spt861	-
+mso-spt862	-
+mso-spt863	-
+mso-spt864	-
+mso-spt865	-
+mso-spt866	-
+mso-spt867	-
+mso-spt868	-
+mso-spt869	-
+mso-spt870	-
+mso-spt871	-
+mso-spt872	-
+mso-spt873	-
+mso-spt874	-
+mso-spt875	-
+mso-spt876	-
+mso-spt877	-
+mso-spt878	-
+mso-spt879	-
+mso-spt880	-
+mso-spt881	-
+mso-spt882	-
+mso-spt883	-
+mso-spt884	-
+mso-spt885	-
+mso-spt886	-
+mso-spt887	-
+mso-spt888	-
+mso-spt889	-
+mso-spt890	-
+mso-spt891	-
+mso-spt892	-
+mso-spt893	-
+mso-spt894	-
+mso-spt895	-
+mso-spt896	-
+mso-spt897	-
+mso-spt898	-
+mso-spt899	-
+mso-spt900	-
+mso-spt901	-
+mso-spt902	-
+mso-spt903	-
+mso-spt904	-
+mso-spt905	-
+mso-spt906	-
+mso-spt907	-
+mso-spt908	-
+mso-spt909	-
+mso-spt910	-
+mso-spt911	-
+mso-spt912	-
+mso-spt913	-
+mso-spt914	-
+mso-spt915	-
+mso-spt916	-
+mso-spt917	-
+mso-spt918	-
+mso-spt919	-
+mso-spt920	-
+mso-spt921	-
+mso-spt922	-
+mso-spt923	-
+mso-spt924	-
+mso-spt925	-
+mso-spt926	-
+mso-spt927	-
+mso-spt928	-
+mso-spt929	-
+mso-spt930	-
+mso-spt931	-
+mso-spt932	-
+mso-spt933	-
+mso-spt934	-
+mso-spt935	-
+mso-spt936	-
+mso-spt937	-
+mso-spt938	-
+mso-spt939	-
+mso-spt940	-
+mso-spt941	-
+mso-spt942	-
+mso-spt943	-
+mso-spt944	-
+mso-spt945	-
+mso-spt946	-
+mso-spt947	-
+mso-spt948	-
+mso-spt949	-
+mso-spt950	-
+mso-spt951	-
+mso-spt952	-
+mso-spt953	-
+mso-spt954	-
+mso-spt955	-
+mso-spt956	-
+mso-spt957	-
+mso-spt958	-
+mso-spt959	-
+mso-spt960	-
+mso-spt961	-
+mso-spt962	-
+mso-spt963	-
+mso-spt964	-
+mso-spt965	-
+mso-spt966	-
+mso-spt967	-
+mso-spt968	-
+mso-spt969	-
+mso-spt970	-
+mso-spt971	-
+mso-spt972	-
+mso-spt973	-
+mso-spt974	-
+mso-spt975	-
+mso-spt976	-
+mso-spt977	-
+mso-spt978	-
+mso-spt979	-
+mso-spt980	-
+mso-spt981	-
+mso-spt982	-
+mso-spt983	-
+mso-spt984	-
+mso-spt985	-
+mso-spt986	-
+mso-spt987	-
+mso-spt988	-
+mso-spt989	-
+mso-spt990	-
+mso-spt991	-
+mso-spt992	-
+mso-spt993	-
+mso-spt994	-
+mso-spt995	-
+mso-spt996	-
+mso-spt997	-
+mso-spt998	-
+mso-spt999	-
+mso-spt	-
+mso-spt0001	-
+mso-spt032	straightConnector1	-	true
+mso-spt+1	-
+mso-spt1e1	-
+mso-spt 1	-
+rectangle	rect	-	true
+round-rectangle	roundRect	-	true
+ellipse	ellipse	-	true
+circle	ellipse	-	true
+isosceles-triangle	triangle	-	true
+right-triangle	rtTriangle	-	true
+diamond	diamond	-	true
+parallelogram	parallelogram	-	true
+hexagon	hexagon	-	true
+octagon	octagon	-	true
+pentagon	pentagon	-	true
+cross	plus	-	true
+star4	star4	-	true
+star5	star5	-	true
+star8	star8	-	true
+star12	star12	-	true
+star24	star24	-	true
+right-arrow	rightArrow	-	true
+left-arrow	leftArrow	-	true
+up-arrow	upArrow	-	true
+down-arrow	downArrow	-	true
+left-right-arrow	leftRightArrow	-	true
+up-down-arrow	upDownArrow	-	true
+pentagon-right	homePlate	-	true
+chevron	chevron	-	true
+heart	heart	-	true
+smiley	smileyFace	-	true
+sun	sun	-	true
+moon	moon	-	true
+lightning	lightningBolt	-	true
+can	can	-	true
+cube	cube	-	true
+ring	donut	-	true
+frame	frame	-	true
+paper	foldedCorner	-	true
+flowchart-process	flowChartProcess	-	true
+flowchart-decision	flowChartDecision	-	true
+flowchart-terminator	flowChartTerminator	-	true
+flowchart-connector	flowChartConnector	-	true
+flowchart-document	flowChartDocument	-	true
+flowchart-data	flowChartInputOutput	-	true
+Rectangle	-
+rectangle 	-
+non-primitive	-
+ooxml-non-primitive	-
+ooxml-accentBorderCallout1	accentBorderCallout1	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-accentBorderCallout2	accentBorderCallout2	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6	false
+ooxml-accentBorderCallout3	accentBorderCallout3	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6,adj7=7,adj8=8	false
+ooxml-accentCallout1	accentCallout1	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-accentCallout2	accentCallout2	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6	false
+ooxml-accentCallout3	accentCallout3	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6,adj7=7,adj8=8	false
+ooxml-actionButtonBackPrevious	actionButtonBackPrevious	-	false
+ooxml-actionButtonBeginning	actionButtonBeginning	-	false
+ooxml-actionButtonBlank	actionButtonBlank	-	false
+ooxml-actionButtonDocument	actionButtonDocument	-	false
+ooxml-actionButtonEnd	actionButtonEnd	-	false
+ooxml-actionButtonForwardNext	actionButtonForwardNext	-	false
+ooxml-actionButtonHelp	actionButtonHelp	-	false
+ooxml-actionButtonHome	actionButtonHome	-	false
+ooxml-actionButtonInformation	actionButtonInformation	-	false
+ooxml-actionButtonMovie	actionButtonMovie	-	false
+ooxml-actionButtonReturn	actionButtonReturn	-	false
+ooxml-actionButtonSound	actionButtonSound	-	false
+ooxml-arc	arc	adj1=1,adj2=2	false
+ooxml-bentArrow	bentArrow	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-bentConnector2	bentConnector2	-	false
+ooxml-bentConnector3	bentConnector3	adj1=1	false
+ooxml-bentConnector4	bentConnector4	adj1=1,adj2=2	false
+ooxml-bentConnector5	bentConnector5	adj1=1,adj2=2,adj3=3	false
+ooxml-bentUpArrow	bentUpArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-bevel	bevel	adj=1	false
+ooxml-blockArc	blockArc	adj1=1,adj2=2,adj3=3	false
+ooxml-borderCallout1	borderCallout1	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-borderCallout2	borderCallout2	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6	false
+ooxml-borderCallout3	borderCallout3	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6,adj7=7,adj8=8	false
+ooxml-bracePair	bracePair	adj=1	false
+ooxml-bracketPair	bracketPair	adj=1	false
+ooxml-callout1	callout1	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-callout2	callout2	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6	false
+ooxml-callout3	callout3	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5,adj6=6,adj7=7,adj8=8	false
+ooxml-can	can	adj=1	false
+ooxml-chartPlus	chartPlus	-	false
+ooxml-chartStar	chartStar	-	false
+ooxml-chartX	chartX	-	false
+ooxml-chevron	chevron	adj=1	false
+ooxml-chord	chord	adj1=1,adj2=2	false
+ooxml-circularArrow	circularArrow	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5	false
+ooxml-cloud	cloud	-	false
+ooxml-cloudCallout	cloudCallout	adj1=1,adj2=2	false
+ooxml-corner	corner	adj1=1,adj2=2	false
+ooxml-cornerTabs	cornerTabs	-	false
+ooxml-cube	cube	adj=1	false
+ooxml-curvedConnector2	curvedConnector2	-	false
+ooxml-curvedConnector3	curvedConnector3	adj1=1	false
+ooxml-curvedConnector4	curvedConnector4	adj1=1,adj2=2	false
+ooxml-curvedConnector5	curvedConnector5	adj1=1,adj2=2,adj3=3	false
+ooxml-curvedDownArrow	curvedDownArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-curvedLeftArrow	curvedLeftArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-curvedRightArrow	curvedRightArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-curvedUpArrow	curvedUpArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-decagon	decagon	vf=1	false
+ooxml-diagStripe	diagStripe	adj=1	false
+ooxml-diamond	diamond	-	false
+ooxml-dodecagon	dodecagon	-	false
+ooxml-donut	donut	adj=1	false
+ooxml-doubleWave	doubleWave	adj1=1,adj2=2	false
+ooxml-downArrow	downArrow	adj1=1,adj2=2	false
+ooxml-downArrowCallout	downArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-ellipse	ellipse	-	false
+ooxml-ellipseRibbon	ellipseRibbon	adj1=1,adj2=2,adj3=3	false
+ooxml-ellipseRibbon2	ellipseRibbon2	adj1=1,adj2=2,adj3=3	false
+ooxml-flowChartAlternateProcess	flowChartAlternateProcess	-	false
+ooxml-flowChartCollate	flowChartCollate	-	false
+ooxml-flowChartConnector	flowChartConnector	-	false
+ooxml-flowChartDecision	flowChartDecision	-	false
+ooxml-flowChartDelay	flowChartDelay	-	false
+ooxml-flowChartDisplay	flowChartDisplay	-	false
+ooxml-flowChartDocument	flowChartDocument	-	false
+ooxml-flowChartExtract	flowChartExtract	-	false
+ooxml-flowChartInputOutput	flowChartInputOutput	-	false
+ooxml-flowChartInternalStorage	flowChartInternalStorage	-	false
+ooxml-flowChartMagneticDisk	flowChartMagneticDisk	-	false
+ooxml-flowChartMagneticDrum	flowChartMagneticDrum	-	false
+ooxml-flowChartMagneticTape	flowChartMagneticTape	-	false
+ooxml-flowChartManualInput	flowChartManualInput	-	false
+ooxml-flowChartManualOperation	flowChartManualOperation	-	false
+ooxml-flowChartMerge	flowChartMerge	-	false
+ooxml-flowChartMultidocument	flowChartMultidocument	-	false
+ooxml-flowChartOfflineStorage	flowChartOfflineStorage	-	false
+ooxml-flowChartOffpageConnector	flowChartOffpageConnector	-	false
+ooxml-flowChartOnlineStorage	flowChartOnlineStorage	-	false
+ooxml-flowChartOr	flowChartOr	-	false
+ooxml-flowChartPredefinedProcess	flowChartPredefinedProcess	-	false
+ooxml-flowChartPreparation	flowChartPreparation	-	false
+ooxml-flowChartProcess	flowChartProcess	-	false
+ooxml-flowChartPunchedCard	flowChartPunchedCard	-	false
+ooxml-flowChartPunchedTape	flowChartPunchedTape	-	false
+ooxml-flowChartSort	flowChartSort	-	false
+ooxml-flowChartSummingJunction	flowChartSummingJunction	-	false
+ooxml-flowChartTerminator	flowChartTerminator	-	false
+ooxml-foldedCorner	foldedCorner	adj=1	false
+ooxml-frame	frame	adj1=1	false
+ooxml-funnel	funnel	-	false
+ooxml-gear6	gear6	adj1=1,adj2=2	false
+ooxml-gear9	gear9	adj1=1,adj2=2	false
+ooxml-halfFrame	halfFrame	adj1=1,adj2=2	false
+ooxml-heart	heart	-	false
+ooxml-heptagon	heptagon	hf=1,vf=2	false
+ooxml-hexagon	hexagon	adj=1,vf=2	false
+ooxml-homePlate	homePlate	adj=1	false
+ooxml-horizontalScroll	horizontalScroll	adj=1	false
+ooxml-irregularSeal1	irregularSeal1	-	false
+ooxml-irregularSeal2	irregularSeal2	-	false
+ooxml-leftArrow	leftArrow	adj1=1,adj2=2	false
+ooxml-leftArrowCallout	leftArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-leftBrace	leftBrace	adj1=1,adj2=2	false
+ooxml-leftBracket	leftBracket	adj=1	false
+ooxml-leftCircularArrow	leftCircularArrow	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5	false
+ooxml-leftRightArrow	leftRightArrow	adj1=1,adj2=2	false
+ooxml-leftRightArrowCallout	leftRightArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-leftRightCircularArrow	leftRightCircularArrow	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5	false
+ooxml-leftRightRibbon	leftRightRibbon	adj1=1,adj2=2,adj3=3	false
+ooxml-leftRightUpArrow	leftRightUpArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-leftUpArrow	leftUpArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-lightningBolt	lightningBolt	-	false
+ooxml-line	line	-	false
+ooxml-lineInv	lineInv	-	false
+ooxml-mathDivide	mathDivide	adj1=1,adj2=2,adj3=3	false
+ooxml-mathEqual	mathEqual	adj1=1,adj2=2	false
+ooxml-mathMinus	mathMinus	adj1=1	false
+ooxml-mathMultiply	mathMultiply	adj1=1	false
+ooxml-mathNotEqual	mathNotEqual	adj1=1,adj2=2,adj3=3	false
+ooxml-mathPlus	mathPlus	adj1=1	false
+ooxml-moon	moon	adj=1	false
+ooxml-noSmoking	noSmoking	adj=1	false
+ooxml-nonIsoscelesTrapezoid	nonIsoscelesTrapezoid	adj1=1,adj2=2	false
+ooxml-notchedRightArrow	notchedRightArrow	adj1=1,adj2=2	false
+ooxml-octagon	octagon	adj=1	false
+ooxml-parallelogram	parallelogram	adj=1	false
+ooxml-pentagon	pentagon	hf=1,vf=2	false
+ooxml-pie	pie	adj1=1,adj2=2	false
+ooxml-pieWedge	pieWedge	-	false
+ooxml-plaque	plaque	adj=1	false
+ooxml-plaqueTabs	plaqueTabs	-	false
+ooxml-plus	plus	adj=1	false
+ooxml-quadArrow	quadArrow	adj1=1,adj2=2,adj3=3	false
+ooxml-quadArrowCallout	quadArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-rect	rect	-	false
+ooxml-ribbon	ribbon	adj1=1,adj2=2	false
+ooxml-ribbon2	ribbon2	adj1=1,adj2=2	false
+ooxml-rightArrow	rightArrow	adj1=1,adj2=2	false
+ooxml-rightArrowCallout	rightArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-rightBrace	rightBrace	adj1=1,adj2=2	false
+ooxml-rightBracket	rightBracket	adj=1	false
+ooxml-round1Rect	round1Rect	adj=1	false
+ooxml-round2DiagRect	round2DiagRect	adj1=1,adj2=2	false
+ooxml-round2SameRect	round2SameRect	adj1=1,adj2=2	false
+ooxml-roundRect	roundRect	adj=1	false
+ooxml-rtTriangle	rtTriangle	-	false
+ooxml-smileyFace	smileyFace	adj=1	false
+ooxml-snip1Rect	snip1Rect	adj=1	false
+ooxml-snip2DiagRect	snip2DiagRect	adj1=1,adj2=2	false
+ooxml-snip2SameRect	snip2SameRect	adj1=1,adj2=2	false
+ooxml-snipRoundRect	snipRoundRect	adj1=1,adj2=2	false
+ooxml-squareTabs	squareTabs	-	false
+ooxml-star10	star10	adj=1,hf=2	false
+ooxml-star12	star12	adj=1	false
+ooxml-star16	star16	adj=1	false
+ooxml-star24	star24	adj=1	false
+ooxml-star32	star32	adj=1	false
+ooxml-star4	star4	adj=1	false
+ooxml-star5	star5	adj=1,hf=2,vf=3	false
+ooxml-star6	star6	adj=1,hf=2	false
+ooxml-star7	star7	adj=1,hf=2,vf=3	false
+ooxml-star8	star8	adj=1	false
+ooxml-straightConnector1	straightConnector1	-	false
+ooxml-stripedRightArrow	stripedRightArrow	adj1=1,adj2=2	false
+ooxml-sun	sun	adj=1	false
+ooxml-swooshArrow	swooshArrow	adj1=1,adj2=2	false
+ooxml-teardrop	teardrop	adj=1	false
+ooxml-trapezoid	trapezoid	adj=1	false
+ooxml-triangle	triangle	adj=1	false
+ooxml-upArrow	upArrow	adj1=1,adj2=2	false
+ooxml-upArrowCallout	upArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-upDownArrow	upDownArrow	adj1=1,adj2=2	false
+ooxml-upDownArrowCallout	upDownArrowCallout	adj1=1,adj2=2,adj3=3,adj4=4	false
+ooxml-uturnArrow	uturnArrow	adj1=1,adj2=2,adj3=3,adj4=4,adj5=5	false
+ooxml-verticalScroll	verticalScroll	adj=1	false
+ooxml-wave	wave	adj1=1,adj2=2	false
+ooxml-wedgeEllipseCallout	wedgeEllipseCallout	adj1=1,adj2=2	false
+ooxml-wedgeRectCallout	wedgeRectCallout	adj1=1,adj2=2	false
+ooxml-wedgeRoundRectCallout	wedgeRoundRectCallout	adj1=1,adj2=2,adj3=3	false
+ooxml-	-
+OOXML-rect	-
+ooxml-Rect	-

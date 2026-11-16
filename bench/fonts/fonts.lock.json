@@ -1,0 +1,647 @@
+{
+  "fonts": [
+    {
+      "family": "8-bit Wonder",
+      "file": "8-BIT WONDER.TTF",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "e3e9c64fa912d83576a0110c46fe889e88c3bf7dc34319e27fcd414885c2a50a",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/8-BIT WONDER.TTF"
+        ]
+      }
+    },
+    {
+      "family": "8-Bit Madness",
+      "file": "8-BitMadness.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "6227fd03affd1110ee59005c7575b2ad32f6c953cea0e62292e6ee97004c2563",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/8-BitMadness.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Arial",
+      "file": "Arial Bold Italic.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "374b0190a9844343110d8f8ed1818117a4591803d022bbb2bd189d63a681e731",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Arial",
+      "file": "Arial Bold.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Arial",
+      "file": "Arial Italic.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "ce1d2f1ab89db45f9796100eee960f5702a40e84c225c2b48c3ec3e81d153f98",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Arial Italic.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Arial",
+      "file": "Arial.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Arial.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "BarlowCondensed-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "e476562ec9c1e16cf16475895b511f08c804f438cc9a9f80a44ea50a0eeb5b65",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-Bold.ttf"
+      }
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "BarlowCondensed-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "d8694f65cd70c3e5e600ead37657aab0adb5f63b275d0c1f6f4a7046de222145",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-BoldItalic.ttf"
+      }
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "BarlowCondensed-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "063615da0a64f318397de2afac330dfbfbbf4cdb562a9987cb72bfdcbd37ba7c",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-Italic.ttf"
+      }
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "BarlowCondensed-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "583cec5da3b84bc4dc7c9c72e2a565c94d34e431518b19d7e250b7830ad5f996",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/60824dce48f7dd28fe7d65559f2da1f6e04e585b/ofl/barlowcondensed/BarlowCondensed-Regular.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "bb5d20f79b82599ec72983597437373a80f2d2085fa91fc144fd74e876a594db",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Bold.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "b32928186c119599e03ca6a1ffc680fdcb7fac95772f4b95d989cf6cd3861517",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-BoldItalic.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "0b019225e58d702bfedcbd35c21696769f8ee115cb6343f84c2f240312450d1c",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Italic.ttf"
+      }
+    },
+    {
+      "family": "Carlito",
+      "file": "Carlito-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f6418f708baede9789daef5d458c0f53d2a888af9820e8062934e504fedc6595",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/carlito/3a810cab78ebd6e2e4eed42af9e8453c4f9b850a/fonts/ttf/Carlito-Regular.ttf"
+      }
+    },
+    {
+      "family": "Courier New",
+      "file": "Courier New Bold Italic.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "60e4c514200985d3f8405af039ffb89cd24b45fef5005b019825a4937b96135d",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Courier New Bold Italic.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Courier New",
+      "file": "Courier New Bold.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "500df4e46b554ae7d646e8727952fd8c7e60e94423481f6b82325cfddba2ee6a",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Courier New Bold.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Courier New",
+      "file": "Courier New Italic.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "b5c6d453f16fb1693652671fa2e11d8c8ad1cd0046c3f38ae2608d165838ecf1",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Courier New Italic.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Courier New",
+      "file": "Courier New.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "c886ca3172d8ce9189976992d145ec090500a4ff516ecb9d4df56b1a78336247",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/Courier New.ttf"
+        ]
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-Bold.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "e6476c1b80502924294eed40894c5b18e06c181444ca953e5334262df9c27724",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-Bold.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-BoldOblique.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "eb436dca0c2594b73d8b603b892e374fdfd8d885d25ffb4f18df4c4c0b49e50f",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-BoldOblique.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans-Oblique.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "4af75fa16ee6d3ad43e1ecec41862c24954af26a55c6bb1ebb27bd486a50f5f4",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans-Oblique.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "DejaVu Sans",
+      "file": "DejaVuSans.ttf",
+      "licence": "Bitstream-Vera",
+      "sha256": "7da195a74c55bef988d0d48f9508bd5d849425c1770dba5d7bfc6ce9ed848954",
+      "source": {
+        "kind": "url",
+        "member": "dejavu-fonts-ttf-2.37/ttf/DejaVuSans.ttf",
+        "url": "https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+      }
+    },
+    {
+      "family": "Helvetica",
+      "file": "Helvetica.ttc",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "658718d77497145281cb0ec45ff2fe7c6e18062b2a38f837d0d792d9be3a9ba3",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Helvetica.ttc"
+        ]
+      }
+    },
+    {
+      "family": "Helvetica Neue",
+      "file": "HelveticaNeue.ttc",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "f589d70dc741853a336fcb0d11aa1505d1646898fba2340a0f5999ea920406b3",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/HelveticaNeue.ttc"
+        ]
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "bd62a0672d0b9b6710b01df434c80ad54fa5f0835207eb7b17b7a761463067bb",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "79451f3c09fe25116098853b7a2ca6e2436220ccc11af022979adbcf195be130",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "605c01c711b44480a7508d349dfbf3264e81fa43d69e61cfa7d10b86e764c4d1",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Mono",
+      "file": "LiberationMono-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f2b83c763e8afd21709333370bed4774337fae82267937e2b5aea7e2fbd922c1",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationMono-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "788abee4c806d660e8aee46689dd8540cd4bb98da03dcc9d171ce3efd99a9173",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "698da70fc191cc5f33ad4d6d3fe830fe4624b898ea2e3169955928b7c491f1ee",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "e5bae5c4cde31f22142753855f4f8fb86da6ff39955ed3c0a11248b0d16948b0",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Sans",
+      "file": "LiberationSans-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "76d04c18ea243f426b7de1f3ad208e927008f961dc5945e5aad352d0dfde8ee8",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSans-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "d754ba427cfe0bca54ae052384baa8f842da5bd6550ad4da024ac441e7a7d5ce",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Bold.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "f17db8af71e24d2066b587546021d4f0b296be389512b658dec3c09affeb11a7",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-BoldItalic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "0e3dea9f8d613e006ccfa62201f33e265d19167bd0907725c3e145368b04fc2e",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Italic.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Liberation Serif",
+      "file": "LiberationSerif-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "058ea80864aef09a23f45cbec2bb5400bc3dfbdea01c3f10538a21fcb497fb74",
+      "source": {
+        "kind": "url",
+        "member": "liberation-fonts-ttf-2.1.5/LiberationSerif-Regular.ttf",
+        "url": "https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz"
+      }
+    },
+    {
+      "family": "Monaco",
+      "file": "Monaco.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "c6e990f6429fae28eb85321375dd335252f1122aa64c19fec553619a140724ef",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Monaco.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Monoid",
+      "file": "Monoid-Bold.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "2c7fe41429ed148a8777b4fe740b96632a158ff1df92328dce8a93f65329edb6",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/Monoid-Bold.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Monoid",
+      "file": "Monoid-Italic.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "c65c1e92c675219e949a19817cd004fcf6a00baad34cbfb4c197238763f767f5",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/Monoid-Italic.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Monoid",
+      "file": "Monoid-Regular.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "fd119e732472cc35803480668f316160b0cfa4d5217e7c995dbe91bd9cf19706",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/Monoid-Regular.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Monoid",
+      "file": "Monoid-Retina.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "3fc8c6033eb2b5a035edde2d08837fdab0edeebb936ddb0ddd804ef8cb680805",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/Monoid-Retina.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Noto Sans Symbols 2",
+      "file": "NotoSansSymbols2-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notosanssymbols2/NotoSansSymbols2-Regular.ttf"
+      }
+    },
+    {
+      "family": "Oswald",
+      "file": "Oswald-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "eb7d46f856dd57f18a8c03d033c57802692bf127f01dbd95ba8984338e6b5135",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/ttf/Oswald-Bold.ttf"
+      }
+    },
+    {
+      "family": "Oswald Medium",
+      "file": "Oswald-Medium.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "d8b3ac8668c6ddbcecd299567e2130e2b933ad8b6c98b5b8ac6ff2bee9c0848a",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/ttf/Oswald-Medium.ttf"
+      }
+    },
+    {
+      "family": "Oswald",
+      "file": "Oswald-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "0d9980da817ee71ad9c34bb46950fcf15dd53e928031f39d2e11ae19178ab826",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/OswaldFont/89795261ac9eeb9aa8cd99f43982c4e4b0e53261/fonts/ttf/Oswald-Regular.ttf"
+      }
+    },
+    {
+      "family": "Party LET",
+      "file": "PartyLET-plain.ttf",
+      "licence": "Apple system font: never redistributed",
+      "sha256": "2be3b08fdfe79f9198eaeb7fc8acb9fd720b6635e35eb3a28c6d6434fa4a29ca",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "/System/Library/Fonts/Supplemental/PartyLET-plain.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Roboto",
+      "file": "Roboto-Bold.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "9c0f7e007d337cf9531cad18c8cc8494414c5f8c2419b70d79b73881d8ddf28e",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-Bold.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto",
+      "file": "Roboto-BoldItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "bf1f31d3bd875d33189fd72ba25a04013fa3313b95a527c65d983ef98e8a01ab",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-BoldItalic.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto",
+      "file": "Roboto-Italic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "1bfa9e9573967a26ee5f41a3ca1ece3890418051eed3f8a5f71bf981c27a940c",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-Italic.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto Medium",
+      "file": "Roboto-Medium.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "e01c91d31eff42c59edf85c3276b0876b9daa5539e3dd26ed0ef5816886b4143",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-Medium.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto Medium",
+      "file": "Roboto-MediumItalic.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "9f6b6d3b5fb990256f2873028150fc37c67c36b509f4c7ce323a192a4e49f530",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-MediumItalic.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto",
+      "file": "Roboto-Regular.ttf",
+      "licence": "OFL-1.1",
+      "sha256": "b6ef3b40740949948f0e21ea1e7f2e8a5414e1ef3d95bf57dbd71926d8291cba",
+      "source": {
+        "kind": "url",
+        "member": "hinted/static/Roboto-Regular.ttf",
+        "url": "https://github.com/googlefonts/roboto-3-classic/releases/download/v3.011/Roboto_v3.011.zip"
+      }
+    },
+    {
+      "family": "Roboto Mono",
+      "file": "RobotoMono-Bold.ttf",
+      "licence": "Apache-2.0",
+      "sha256": "3ecf35e5e87accc7578b605d1f5f0bc30d88b195d6807bec8a0c57f6aa95c4db",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/fonts/ttf/RobotoMono-Bold.ttf"
+      }
+    },
+    {
+      "family": "Roboto Mono",
+      "file": "RobotoMono-BoldItalic.ttf",
+      "licence": "Apache-2.0",
+      "sha256": "a0f16567447311eaf42a35f6c50eb64b911694b42f1b01038e3b7e92c20f131d",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/fonts/ttf/RobotoMono-BoldItalic.ttf"
+      }
+    },
+    {
+      "family": "Roboto Mono",
+      "file": "RobotoMono-Italic.ttf",
+      "licence": "Apache-2.0",
+      "sha256": "4549325cd2d10938d37d63eba2aaca7c2e16e48322dc767576eab45e512b6ad2",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/fonts/ttf/RobotoMono-Italic.ttf"
+      }
+    },
+    {
+      "family": "Roboto Mono",
+      "file": "RobotoMono-Regular.ttf",
+      "licence": "Apache-2.0",
+      "sha256": "af0bff7599c3df3831755c16e39b3c496df74b8c8d8a1161b14dc8461be17cb4",
+      "source": {
+        "kind": "url",
+        "url": "https://raw.githubusercontent.com/googlefonts/RobotoMono/111eb14e367888c9374da4da0b018e72cf8ac46d/fonts/ttf/RobotoMono-Regular.ttf"
+      }
+    },
+    {
+      "family": "Trump Gothic East",
+      "file": "trump_gothic_east_bold.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "3e965a3e4bf9d1a79fef00661cdfaa1fab05460679e7c7f1c8a94d1743a4e32c",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/trump_gothic_east_bold.ttf"
+        ]
+      }
+    },
+    {
+      "family": "Upheaval",
+      "file": "upheaval-tt-brk.upheaval-tt-brk.ttf",
+      "licence": "User-installed font: never redistributed",
+      "sha256": "60ddb78d3a285da2bb7cab2edb27bcf49a5b78180f5e36666fbf7b378dbce29c",
+      "source": {
+        "kind": "host",
+        "paths": [
+          "~/Library/Fonts/upheaval-tt-brk.upheaval-tt-brk.ttf"
+        ]
+      }
+    }
+  ],
+  "version": 1
+}

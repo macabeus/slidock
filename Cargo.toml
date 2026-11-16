@@ -1,0 +1,193 @@
+[workspace]
+resolver = "3"
+members = [
+  "crates/slidock-canon",
+  "crates/slidock-math",
+  "crates/slidock-io",
+  "crates/slidock-ir",
+  "crates/slidock-format",
+  "crates/slidock-color",
+  "crates/slidock-geometry",
+  "crates/slidock-fonts",
+  "crates/slidock-substitutes",
+  "crates/slidock-core-api",
+  "crates/slidock-core",
+  "crates/slidock-passes",
+  "crates/slidock-presets",
+  "crates/slidock-frontend-ir",
+  "crates/slidock-pptx",
+  "crates/slidock-odp",
+  "crates/slidock-keynote",
+  "crates/slidock-html",
+  "crates/slidock-bundle",
+  "crates/slidock",
+  "crates/slidock-cli",
+  "crates/slidock-wasm",
+  "crates/slidock-bench-metrics",
+  "crates/slidock-bench-schema",
+  "crates/slidock-bench",
+  "xtask",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.99"
+authors = ["Bruno Macabeus <bruno.macabeus@gmail.com>"]
+repository = "https://github.com/macabeus/slidock"
+homepage = "https://macabeus.github.io/slidock/"
+readme = "README.md"
+keywords = ["presentation", "pptx", "keynote", "odp", "slides"]
+categories = ["parser-implementations", "multimedia", "encoding"]
+# The published crates leave out their tests: they read the workspace's shared and private test data.
+exclude = ["/tests/"]
+# The crates `slidock-cli` builds from publish (`publish = true`); the wasm module, the bench and the tools do not.
+publish = false
+
+# Library crates opt in with `[lints] workspace = true`. Binary crates (slidock-cli, slidock-bench, xtask) keep their
+# own table without the no-panic denies. Tests may panic: see `allow-*-in-tests` in clippy.toml.
+[workspace.lints.rust]
+unsafe_code = "deny"
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+indexing_slicing = "deny"
+todo = "deny"
+unimplemented = "deny"
+dbg_macro = "deny"
+disallowed_methods = "deny"
+disallowed_types = "deny"
+
+[workspace.dependencies]
+# Workspace crates
+slidock-canon = { path = "crates/slidock-canon", version = "0.1.0" }
+slidock-math = { path = "crates/slidock-math", version = "0.1.0" }
+slidock-io = { path = "crates/slidock-io", version = "0.1.0" }
+slidock-ir = { path = "crates/slidock-ir", version = "0.1.0" }
+slidock-format = { path = "crates/slidock-format", version = "0.1.0" }
+slidock-color = { path = "crates/slidock-color", version = "0.1.0" }
+slidock-geometry = { path = "crates/slidock-geometry", version = "0.1.0" }
+slidock-fonts = { path = "crates/slidock-fonts", version = "0.1.0" }
+slidock-substitutes = { path = "crates/slidock-substitutes", version = "0.1.0", default-features = false }
+slidock-core-api = { path = "crates/slidock-core-api", version = "0.1.0" }
+slidock-core = { path = "crates/slidock-core", version = "0.1.0" }
+slidock-passes = { path = "crates/slidock-passes", version = "0.1.0" }
+slidock-presets = { path = "crates/slidock-presets", version = "0.1.0" }
+slidock-frontend-ir = { path = "crates/slidock-frontend-ir", version = "0.1.0" }
+slidock-pptx = { path = "crates/slidock-pptx", version = "0.1.0" }
+slidock-odp = { path = "crates/slidock-odp", version = "0.1.0" }
+slidock-keynote = { path = "crates/slidock-keynote", version = "0.1.0" }
+slidock-html = { path = "crates/slidock-html", version = "0.1.0" }
+slidock-bundle = { path = "crates/slidock-bundle", version = "0.1.0" }
+slidock = { path = "crates/slidock", version = "0.1.0" }
+slidock-bench-metrics = { path = "crates/slidock-bench-metrics", version = "0.1.0" }
+slidock-bench-schema = { path = "crates/slidock-bench-schema", version = "0.1.0" }
+
+# Data structures and serialization
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", features = ["preserve_order", "float_roundtrip"] }
+indexmap = { version = "2.14.2", features = ["serde"] }
+enumset = "1.1.15"
+thiserror = "2.0.21"
+serde_path_to_error = "0.1.20"
+
+# Numbers, hashing, encoding
+ryu-js = "1.0.3"
+libm = "0.2.16"
+sha2 = "0.11.1"
+sha1 = "0.11.0"
+hex = "0.4.3"
+base64 = "0.23.1"
+
+# Compression and containers. `zip` is the writer only; deflate goes through flate2's miniz_oxide backend.
+miniz_oxide = "0.9.1"
+flate2 = { version = "1.1.10", default-features = false, features = ["rust_backend"] }
+zip = { version = "9.1.3", default-features = false, features = ["deflate-flate2"] }
+snap = "1.1.2"
+brotli = { version = "9.1.1", default-features = false, features = ["std", "disable-timer"] }
+brotli-decompressor = { version = "6.2.0", default-features = false, features = ["std", "disable-timer"] }
+
+# XML, HTML, CSS
+roxmltree = "0.21.2"
+html5ever = "0.40.1"
+markup5ever = "0.40.0"
+cssparser = "0.38.0"
+quick-xml = "0.42.0"
+
+# Images
+png = "0.18.1"
+tiff = { version = "0.11.3", default-features = false, features = ["deflate", "lzw"] }
+image = { version = "0.25.10", default-features = false, features = ["bmp"] }
+imagesize = "0.15.0"
+gif = "0.14.2"
+
+# Fonts (fontations releases in lockstep: read-fonts 0.46 / skrifa 0.49 / write-fonts 0.55 / skera 0.9)
+read-fonts = "0.46.0"
+skrifa = "0.49.0"
+write-fonts = "0.55.0"
+skera = "0.9.0"
+ttf2woff2 = { version = "0.14.1", default-features = false }
+
+# Keynote protobuf
+prost = "0.14.4"
+prost-types = "0.14.4"
+prost-build = "0.14.4"
+protox = "0.10.0"
+
+# Text
+# Pinned exactly: a patch release can move to newer Unicode tables, which changes the output. Unicode 17, the reference
+# bench engine's (Bun 1.4.2, ICU 78.1): 0.1.26's Unicode 18 tables normalise 81 code points that ICU leaves alone.
+unicode-normalization = "=0.1.25"
+regex-lite = "0.1.9"
+
+# Wasm
+wasm-bindgen = "0.2.129"
+js-sys = "0.3.106"
+web-sys = "0.3.106"
+serde-wasm-bindgen = "0.6.5"
+tsify = { version = "0.5.8", default-features = false, features = ["js"] }
+console_error_panic_hook = "0.1.7"
+wasm-bindgen-test = "0.3.79"
+
+# TS codegen
+ts-rs = "12.0.1"
+
+# Native hosts: CLI, bench, xtask (never linked into wasm)
+clap = { version = "4.6.7", features = ["derive"] }
+ureq = "3.5.0"
+chromiumoxide = { version = "0.9.1", default-features = false }
+tokio = { version = "1.54.1", features = ["rt-multi-thread", "macros", "process", "time", "fs"] }
+axum = "0.8.9"
+futures = "0.3.34"
+tower-http = { version = "0.7.1", features = ["fs"] }
+rust-embed = "8.13.0"
+tempfile = "3.27.0"
+walkdir = "2.5.0"
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+zstd = "0.14.3"
+tar = "0.4.46"
+rayon = "1.12.0"
+anyhow = "1.0.104"
+nix = { version = "0.31.3", default-features = false, features = ["resource", "signal"] }
+
+# Tests
+insta = { version = "1.49.0", features = ["json"] }
+proptest = "1.12.0"
+similar-asserts = "2.0.0"
+tower = "0.5.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+# The wasm module (`pnpm wasm:build`): it ships to every visitor of the app, so it is optimised for size (under 3 MB
+# gzip) and carries no symbol names. The native CLI keeps `release`.
+[profile.wasm]
+inherits = "release"
+opt-level = "s"
+strip = "symbols"

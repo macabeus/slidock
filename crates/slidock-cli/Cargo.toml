@@ -1,0 +1,75 @@
+[package]
+name = "slidock-cli"
+description = "slidock command-line compiler"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories = ["command-line-utilities", "multimedia", "encoding"]
+exclude.workspace = true
+
+[[bin]]
+name = "slidock"
+path = "src/main.rs"
+doc = false
+
+[features]
+default = ["bundled-substitutes"]
+# Builds the bundled substitutes (`slidock-substitutes`, the files the web app serves) into the binary.
+bundled-substitutes = ["slidock-substitutes/embed"]
+# Runs the built binary on the private IR fixtures and the corpus and compares what it writes with the recorded golden
+# files (tests/golden), and with the wasm build under Node (skips when the golden files are absent). The checks
+# expect the bundled substitutes, so it builds them in.
+golden = ["bundled-substitutes"]
+
+[dependencies]
+slidock = { workspace = true, features = ["std-fs", "ir-input"] }
+clap = { workspace = true }
+slidock-canon = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-substitutes = { workspace = true }
+ureq = { workspace = true }
+
+[dev-dependencies]
+slidock-format = { workspace = true }
+html5ever = { workspace = true }
+miniz_oxide = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+zip = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+# A corpus deck's embedded fonts ship (corpus data).
+[[test]]
+name = "deck_fonts"
+required-features = ["golden"]
+
+# Native and wasm bytes equal on the corpus; needs Node and `pnpm wasm:build`.
+[[test]]
+name = "wasm_parity"
+required-features = ["golden"]
+
+[lints.rust]
+unsafe_code = "deny"
+unused_must_use = "deny"
+
+[lints.clippy]
+todo = "deny"
+dbg_macro = "deny"
+disallowed_methods = "deny"
+disallowed_types = "deny"
+
+[package.metadata.golden]
+# The golden suite compiles the corpus and the fixtures: about 7 minutes in a debug build, 35 s in release.
+release = true

@@ -1,0 +1,31 @@
+[package]
+name = "slidock-substitutes"
+description = "slidock's bundled substitute fonts: Liberation, DejaVu Sans, Carlito and Caladea as WOFF2"
+version.workspace = true
+edition.workspace = true
+license = "MIT AND OFL-1.1 AND Bitstream-Vera"
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+default = ["embed"]
+# Builds the font files into `FACES`; without it `FACES` is empty.
+embed = []
+
+[build-dependencies]
+serde_json = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+
+[lints]
+workspace = true

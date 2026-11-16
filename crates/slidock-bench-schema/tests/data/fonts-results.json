@@ -1,0 +1,938 @@
+{
+  "fontPairs": {
+    "demo-basics:odp": {
+      "cssBytes": 37120,
+      "faces": [
+        {
+          "bytes": 9216,
+          "family": "Inter",
+          "originalSha256": "9cd4b6fc5bd85616ad9e37668ace2172b476e2fa3591a163cfb2be72ea0668e8",
+          "postscriptName": "Inter-100 900",
+          "source": "google",
+          "style": "normal",
+          "weight": "100 900",
+          "woff2Sha256": "17b02c2d2fd41b483b3fa9702b1bbef0f3293776b0e18bb505bc276598037d64"
+        },
+        {
+          "bytes": 9216,
+          "family": "Roboto",
+          "postscriptName": "Roboto-400",
+          "source": "embedded",
+          "style": "italic",
+          "weight": "400",
+          "woff2Sha256": "0ee9ff5c090d18cf4b296afa8096b5eae9d373e55353c6c3d30c688a2df4bd6d"
+        },
+        {
+          "bytes": 9216,
+          "family": "Carlito",
+          "originalSha256": "7e7b83b0232b499de322ff47041ab43d42bef4165ea2f37c3dc020986ee1c536",
+          "postscriptName": "Carlito-400",
+          "source": "substitute",
+          "style": "normal",
+          "weight": "400",
+          "woff2Sha256": "c971379acf1edbc0a69881db9b4598c5adaf7de65034223cba81784bd3cf1e07"
+        }
+      ],
+      "families": {
+        "Calibri": {
+          "coverageGaps": 8,
+          "exact": 0,
+          "fallback": 8,
+          "glyphs": 188,
+          "sources": {
+            "substitute": 180
+          },
+          "substitute": 180
+        },
+        "Inter": {
+          "coverageGaps": 0,
+          "exact": 600,
+          "fallback": 0,
+          "glyphs": 600,
+          "sources": {
+            "google": 600
+          },
+          "substitute": 0
+        }
+      },
+      "fontBytes": 27648,
+      "notices": {
+        "MID5401": 2
+      },
+      "requested": [
+        {
+          "family": "Calibri",
+          "source": "substitute",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "family": "Inter",
+          "source": "google",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "family": "Inter",
+          "source": "google",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "family": "Inter",
+          "source": null,
+          "style": "normal",
+          "weight": 800
+        }
+      ]
+    },
+    "demo-basics:pptx": {
+      "cssBytes": 37120,
+      "faces": [
+        {
+          "bytes": 9216,
+          "family": "Inter",
+          "originalSha256": "9cd4b6fc5bd85616ad9e37668ace2172b476e2fa3591a163cfb2be72ea0668e8",
+          "postscriptName": "Inter-100 900",
+          "source": "google",
+          "style": "normal",
+          "weight": "100 900",
+          "woff2Sha256": "17b02c2d2fd41b483b3fa9702b1bbef0f3293776b0e18bb505bc276598037d64"
+        },
+        {
+          "bytes": 9216,
+          "family": "Roboto",
+          "postscriptName": "Roboto-400",
+          "source": "embedded",
+          "style": "italic",
+          "weight": "400",
+          "woff2Sha256": "0ee9ff5c090d18cf4b296afa8096b5eae9d373e55353c6c3d30c688a2df4bd6d"
+        },
+        {
+          "bytes": 9216,
+          "family": "Carlito",
+          "originalSha256": "7e7b83b0232b499de322ff47041ab43d42bef4165ea2f37c3dc020986ee1c536",
+          "postscriptName": "Carlito-400",
+          "source": "substitute",
+          "style": "normal",
+          "weight": "400",
+          "woff2Sha256": "c971379acf1edbc0a69881db9b4598c5adaf7de65034223cba81784bd3cf1e07"
+        }
+      ],
+      "families": {
+        "Calibri": {
+          "coverageGaps": 4,
+          "exact": 0,
+          "fallback": 4,
+          "glyphs": 220,
+          "sources": {
+            "substitute": 216
+          },
+          "substitute": 216
+        },
+        "Inter": {
+          "coverageGaps": 0,
+          "exact": 720,
+          "fallback": 0,
+          "glyphs": 720,
+          "sources": {
+            "google": 720
+          },
+          "substitute": 0
+        }
+      },
+      "fontBytes": 27648,
+      "notices": {
+        "MID5401": 2
+      },
+      "requested": [
+        {
+          "family": "Calibri",
+          "source": "substitute",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "family": "Inter",
+          "source": "google",
+          "style": "normal",
+          "weight": 400
+        },
+        {
+          "family": "Inter",
+          "source": "google",
+          "style": "normal",
+          "weight": 700
+        },
+        {
+          "family": "Inter",
+          "source": null,
+          "style": "normal",
+          "weight": 800
+        }
+      ]
+    }
+  },
+  "rows": {
+    "demo-basics:od-p901:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "odp",
+      "html": "01d7b2aa6ab688aed5195f74d53e23252b9c071234ec86cb7c36ae9f2c8534ac",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "dbbac9277633a2c5c55791aed0f1d20fc43901f002d0c3291353ec0e1d7b787d",
+      "slide": "od-p901"
+    },
+    "demo-basics:od-p902:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "fonts": {
+        "exactShare": 0.75,
+        "fallbackFonts": [
+          "Last Resort High-Efficiency"
+        ],
+        "fallbackShare": 0.025,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 4,
+            "exact": 0,
+            "fallback": 4,
+            "glyphs": 40,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.225,
+        "total": {
+          "coverageGaps": 4,
+          "exact": 120,
+          "fallback": 4,
+          "glyphs": 160,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "odp",
+      "html": "b3af2bca8e21f729d3eed988a601443a4756175f7f7f9bbff8ddb782e922d1da",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "fonts-fallback",
+      "presentation": "demo-basics",
+      "render": "6f17fd6fb36c5c5c142b3ab949f70f1b8e2ea993f741e0eb04547bb8e949f4aa",
+      "slide": "od-p902"
+    },
+    "demo-basics:od-p903:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "odp",
+      "html": "6e16927609b05345c019c77f13c8b18451d4752a0ee24082cba62df4da88014b",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "db047455ce27b3f52866170a5e65a68e97ae387a76a746638ff67fb9684b6f26",
+      "slide": "od-p903"
+    },
+    "demo-basics:od-p904:odp": {
+      "code": "IR0901",
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "IR0901": 1,
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "failed",
+      "presentation": "demo-basics",
+      "reason": "slide-failed",
+      "slide": "od-p904"
+    },
+    "demo-basics:od-p905:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "odp",
+      "html": "35da8f5b9d17141886884037d707324d8cd3b661bd7c4190b1177318575e9846",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "4fb6ca65c0dbc7a57f5ea5b70170d82d1c78c684e9b57f70ac5a7aafaf5f866f",
+      "slide": "od-p905"
+    },
+    "demo-basics:od-p906:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "fonts": {
+        "exactShare": 0.75,
+        "fallbackFonts": [
+          "Last Resort High-Efficiency"
+        ],
+        "fallbackShare": 0.025,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 4,
+            "exact": 0,
+            "fallback": 4,
+            "glyphs": 40,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.225,
+        "total": {
+          "coverageGaps": 4,
+          "exact": 120,
+          "fallback": 4,
+          "glyphs": 160,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "odp",
+      "html": "b2fc25f86f937122d7d9e1753119b20825b73a1a52ddfd7fcd8a136ffe90139e",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "fonts-fallback",
+      "presentation": "demo-basics",
+      "render": "d398c14f03f7e2a584078169faab1c7cb5f9f8992ce775323533a79a7aac582d",
+      "slide": "od-p906"
+    },
+    "demo-basics:pp-9001:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "html": "40211bea9c988cde4c30e588600a37c3ce214a942099c4b9da0bf8d15a271c12",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "8e7c49a18e5b9abe2b7d69b3c31677435deed862cc5a49dd9c67c8a79a1fbf59",
+      "slide": "pp-9001"
+    },
+    "demo-basics:pp-9002:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "html": "43b9ac7bebc3ffe4c96175f3849be0967119252714154417b45b530168f31655",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "79a2f6b0425bd34c0b8bd2e46b40122c8a1218e2d667ccfcf0994c893978fca9",
+      "slide": "pp-9002"
+    },
+    "demo-basics:pp-9003:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "html": "9e779464fa8f489c7fa289ab96467e387f1a62a4d400cfa28574305630a9b957",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "8e387e1b7834ad900302fee6b4be2b50c2397a8ea8348c6dcd03e1e9ec3607a2",
+      "slide": "pp-9003"
+    },
+    "demo-basics:pp-9004:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1,
+        "PX4001": 1
+      },
+      "fonts": {
+        "exactShare": 0.75,
+        "fallbackFonts": [
+          "Last Resort High-Efficiency"
+        ],
+        "fallbackShare": 0.025,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 4,
+            "exact": 0,
+            "fallback": 4,
+            "glyphs": 40,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.225,
+        "total": {
+          "coverageGaps": 4,
+          "exact": 120,
+          "fallback": 4,
+          "glyphs": 160,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "fonts-fallback",
+      "presentation": "demo-basics",
+      "slide": "pp-9004"
+    },
+    "demo-basics:pp-9005:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "html": "0b876e95c0a76ebb2b078f71b5241e9eef1fb848c6b8213638216c055243de8d",
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "5f22b3199bb8deff8a40e7159c645c425fb2fb52badb4a9d85e435a5ac49d94d",
+      "slide": "pp-9005"
+    },
+    "demo-basics:pp-9006:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "fonts": {
+        "exactShare": 0.7692,
+        "fallbackFonts": [],
+        "fallbackShare": 0,
+        "families": {
+          "Calibri": {
+            "coverageGaps": 0,
+            "exact": 0,
+            "fallback": 0,
+            "glyphs": 36,
+            "sources": {
+              "substitute": 36
+            },
+            "substitute": 36
+          },
+          "Inter": {
+            "coverageGaps": 0,
+            "exact": 120,
+            "fallback": 0,
+            "glyphs": 120,
+            "sources": {
+              "google": 120
+            },
+            "substitute": 0
+          }
+        },
+        "substituteShare": 0.2308,
+        "total": {
+          "coverageGaps": 0,
+          "exact": 120,
+          "fallback": 0,
+          "glyphs": 156,
+          "sources": {
+            "google": 120,
+            "substitute": 36
+          },
+          "substitute": 36
+        }
+      },
+      "frontend": "pptx",
+      "html": "d6c45c213c58faf88ee82a1df1b4aecae8ddff894c0d99555f741e1cb9873537",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "fonts-complete",
+      "presentation": "demo-basics",
+      "render": "9d1b7f4ca9cd025b950780d010306893bf86dd8a5cf67c7849ea792efd7b15fc",
+      "slide": "pp-9006"
+    }
+  },
+  "schema": "slidock-bench-results@1",
+  "stamp": {
+    "classifier": "classifier@2",
+    "compiler": {
+      "commit": "00000000000000000000000000005b05b05b05ac",
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "dirty": false
+    },
+    "corpus": {
+      "demo-basics:odp": "e0a13f4ce9576bfd3b2814445c2f62691b9d34fd845e441c075ce54a4196eb38",
+      "demo-basics:pptx": "f2dd0f51e54cbc62bc20574d2e8072c9b53d027a919776381d3afbf3f36a3933"
+    },
+    "deps": {
+      "cargoLock": "f9b103692b2ea3d30b5905345df0347122a111580a43beb22cc11aec178d7eb9",
+      "node": "24.x",
+      "rustc": "1.99.1",
+      "wasmPack": "0.13.1"
+    },
+    "fonts": {
+      "fontSetId": "ce4fddd4c69990575ebb7880c234486ea3bc203a7bf43309147b52ff4ff63371",
+      "lockSha256": "535366f6ba87c6eb5c1611f28c9707a9284300a6351eb4c09b9c9910efef81f9"
+    },
+    "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+    "host": {
+      "arch": "arm64",
+      "platform": "darwin"
+    },
+    "lane": "fonts",
+    "metrics": {
+      "color": "color@1",
+      "fonts": "fonts@1",
+      "pixel": "pixel@1",
+      "ssim": "ssim@1",
+      "text": "text@2"
+    },
+    "partial": false,
+    "renderer": {
+      "arch": "aarch64",
+      "cdpClient": "chromiumoxide@0.9.1",
+      "chromium": "148.0.7778.0",
+      "colorProfile": "srgb",
+      "imageId": "sha256:6105d6cc76af400325e94d588ce511be5bfdbb73b437dc51eca43917d7a43e3d",
+      "metricLongSidePx": 960,
+      "platformDigest": "sha256:beddddcf96f19abec078cd2f3da676f40abd460e0e734ad5eed73627ce161d33",
+      "poppler": "24.02.0",
+      "rasterLongSidePx": 1920,
+      "recipe": "9c024e2f00b004addcb5e762e18f415d74742a7156eecbadee57eb6c84df1ff1",
+      "renderPolicy": {
+        "gif": "first-frame",
+        "video": "poster-img"
+      }
+    },
+    "selection": {
+      "tiers": [
+        "smoke"
+      ]
+    }
+  },
+  "summary": {
+    "byFrontend": {
+      "odp": {
+        "close": 0,
+        "declined": 0,
+        "failed": 1,
+        "match": 0,
+        "mismatch": 0,
+        "render-error": 0,
+        "rows": 6,
+        "ssim": {
+          "median": null,
+          "p10": null
+        },
+        "textRecall": {
+          "mean": null
+        }
+      },
+      "pptx": {
+        "close": 0,
+        "declined": 0,
+        "failed": 0,
+        "match": 0,
+        "mismatch": 0,
+        "render-error": 0,
+        "rows": 6,
+        "ssim": {
+          "median": null,
+          "p10": null
+        },
+        "textRecall": {
+          "mean": null
+        }
+      }
+    },
+    "declines": {},
+    "lanes": {
+      "fonts": {
+        "odp": {
+          "complete": 3,
+          "faces": 3,
+          "fontBytes": 27648,
+          "rows": 6,
+          "total": {
+            "coverageGaps": 8,
+            "exact": 600,
+            "fallback": 8,
+            "glyphs": 788,
+            "sources": {
+              "google": 600,
+              "substitute": 180
+            },
+            "substitute": 180
+          },
+          "unresolved": 1
+        },
+        "pptx": {
+          "complete": 5,
+          "faces": 3,
+          "fontBytes": 27648,
+          "rows": 6,
+          "total": {
+            "coverageGaps": 4,
+            "exact": 720,
+            "fallback": 4,
+            "glyphs": 940,
+            "sources": {
+              "google": 720,
+              "substitute": 216
+            },
+            "substitute": 216
+          },
+          "unresolved": 1
+        }
+      }
+    },
+    "reference": {}
+  }
+}

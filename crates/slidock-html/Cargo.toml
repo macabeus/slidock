@@ -1,0 +1,38 @@
+[package]
+name = "slidock-html"
+description = "Static HTML backend and deck JSON"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Prints the recorded IR of the golden files and compares the documents (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-ir = { workspace = true }
+slidock-format = { workspace = true }
+slidock-canon = { workspace = true }
+slidock-color = { workspace = true }
+indexmap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+# TypeScript declarations of the deck JSON (`packages/types`).
+ts-rs = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[lints]
+workspace = true

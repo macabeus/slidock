@@ -1,0 +1,47 @@
+[package]
+name = "slidock-passes"
+description = "The IR passes from normalize-frames to collect-glyphs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Runs the pass list over the private IR fixtures and compares the resolved IR with the recorded golden files
+# (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-math = { workspace = true }
+slidock-color = { workspace = true }
+slidock-geometry = { workspace = true }
+slidock-fonts = { workspace = true }
+indexmap = { workspace = true }
+
+[dev-dependencies]
+slidock-core = { workspace = true }
+slidock-io = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[[test]]
+name = "fixtures"
+required-features = ["golden"]
+
+[lints]
+workspace = true

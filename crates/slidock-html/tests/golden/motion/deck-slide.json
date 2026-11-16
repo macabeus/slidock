@@ -1,0 +1,219 @@
+{
+  "matchKeys": {
+    "ir-s1.group.dot": "dot:ir-s1.group.dot",
+    "ir-s1.group.inner": "dot:ir-s1.group.inner",
+    "ir-s1.title": "title"
+  },
+  "timeline": [
+    {
+      "delayMs": 0,
+      "delivery": "byParagraph",
+      "durationMs": 500,
+      "easing": "out",
+      "effect": "flyIn",
+      "fallback": "dissolve",
+      "kind": "entrance",
+      "native": "pptx:entr.2/4",
+      "offsetMs": 0,
+      "params": {
+        "dir": "u",
+        "distance": "offSlide"
+      },
+      "stagger": {
+        "order": "forward",
+        "perUnit": {
+          "ms": 120
+        }
+      },
+      "target": {
+        "element": "ir-s1.body",
+        "paragraphs": [
+          0,
+          1
+        ]
+      },
+      "trigger": "click"
+    },
+    {
+      "after": {
+        "dim": "#808080"
+      },
+      "autoReverse": true,
+      "delayMs": 0,
+      "delivery": "all",
+      "durationMs": 1000,
+      "effect": "blink",
+      "fallback": "none",
+      "kind": "emphasis",
+      "native": "pptx:emph.35",
+      "params": {
+        "repeat": 3
+      },
+      "repeat": "untilNextClick",
+      "target": {
+        "element": "ir-s1.title",
+        "paragraphs": null
+      },
+      "trigger": "withPrevious"
+    },
+    {
+      "delayMs": 250,
+      "delivery": "all",
+      "durationMs": 500,
+      "easing": {
+        "bezier": [
+          0.25,
+          0.1,
+          0.25,
+          1
+        ]
+      },
+      "effect": "path",
+      "fallback": "none",
+      "kind": "motion",
+      "native": "pptx:path.0",
+      "offsetMs": 1250,
+      "params": {
+        "autoRotate": true,
+        "d": [
+          [
+            "M",
+            0,
+            0
+          ],
+          [
+            "C",
+            40,
+            -20,
+            80.5,
+            20,
+            120,
+            0
+          ]
+        ],
+        "hold": true
+      },
+      "target": {
+        "element": "ir-s1.arrow",
+        "paragraphs": null
+      },
+      "trigger": "afterPrevious"
+    },
+    {
+      "after": "hide",
+      "delayMs": 0,
+      "delivery": "all",
+      "durationMs": 500,
+      "effect": "growShrink",
+      "fallback": "none",
+      "kind": "emphasis",
+      "native": "pptx:emph.6",
+      "params": {
+        "hold": false,
+        "scale": {
+          "x": 1.5,
+          "y": 0.5
+        }
+      },
+      "repeat": {
+        "count": 2.5
+      },
+      "target": {
+        "background": true,
+        "element": "ir-s1.photo",
+        "paragraphs": null
+      },
+      "trigger": "click"
+    },
+    {
+      "delayMs": 0,
+      "delivery": "byWord",
+      "durationMs": 500,
+      "easing": {
+        "accelDecel": {
+          "accel": 0.2,
+          "decel": 0.3
+        }
+      },
+      "effect": "behaviors",
+      "fallback": "dissolve",
+      "kind": "entrance",
+      "native": "pptx:entr.99",
+      "params": [
+        {
+          "beginMs": 0,
+          "durationMs": 400,
+          "frames": [
+            {
+              "offset": 0,
+              "value": 1
+            },
+            {
+              "offset": 1,
+              "value": 0.25
+            }
+          ],
+          "property": "opacity"
+        }
+      ],
+      "stagger": {
+        "order": {
+          "random": 7
+        },
+        "perUnit": {
+          "fraction": 0.1
+        }
+      },
+      "target": {
+        "element": "ir-s1.group",
+        "paragraphs": null
+      },
+      "trigger": "click"
+    },
+    {
+      "delayMs": 0,
+      "delivery": "all",
+      "durationMs": 500,
+      "effect": "play",
+      "fallback": "none",
+      "kind": "media",
+      "native": "keynote:apple:movie-start",
+      "params": {
+        "from": 1000
+      },
+      "target": {
+        "element": "ir-s1.video",
+        "paragraphs": null
+      },
+      "trigger": "click"
+    },
+    {
+      "delayMs": 0,
+      "delivery": "byChar",
+      "durationMs": 500,
+      "fallback": "dissolve",
+      "kind": "exit",
+      "native": "keynote:apple:shimmer",
+      "target": {
+        "element": "ir-s1.table",
+        "paragraphs": null
+      },
+      "trigger": "click"
+    }
+  ],
+  "transition": {
+    "advance": {
+      "afterMs": 3000,
+      "onClick": true
+    },
+    "durationMs": 700,
+    "easing": "in-out",
+    "effect": "push",
+    "fallback": "push",
+    "native": "pptx:push",
+    "params": {
+      "dir": "l"
+    }
+  }
+}
+

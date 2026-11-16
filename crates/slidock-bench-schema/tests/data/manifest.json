@@ -1,0 +1,224 @@
+{
+  "presentations": [
+    {
+      "features": [
+        "placeholder",
+        "text.run",
+        "slide.transition"
+      ],
+      "fontsExpect": {
+        "openFamilies": [
+          "Inter",
+          "Roboto"
+        ]
+      },
+      "id": "demo-basics",
+      "knownLoss": {
+        "odp": [
+          {
+            "feature": "text.autofit.shrink",
+            "kind": "source",
+            "note": "The export keeps the autofit flag, not the scale it reached"
+          }
+        ]
+      },
+      "oracle": {
+        "exporter": {
+          "app": "Google Slides",
+          "version": null,
+          "via": "PDF Creator 'Google'"
+        },
+        "file": "Demo Basics.pdf",
+        "kind": "pdf-file",
+        "pageHashes": {
+          "f59680641c0cf33ea0fa0d013695d237f82720deeedd0d9ec6465a36c97e0e95": [
+            "cad1374d4fb973afade5a8b66685bd8547e0b7857a5ad83411aba61dcd2f3c41",
+            "341b585999062544a56f56d9038e7aaa77fcfaa304a2a1105102806a5897dd8d",
+            "2f45e6cc2fe9219d7655b11a0e50e3c35d1fa4f2043bcbdf5c764fbba0f9d0fe",
+            "15663d8efd920cf80495a8aaf029afa13176198819ed3b0792cbf8b96ff1da0f",
+            "4a9a9762dcca70258b9a20aa241379bd583c536fd38be41aad54be89d290365d",
+            "ebbfb721c1a2747159151c20c820d93da23f2e478e94ab81e95b62f06ecb3cf8"
+          ]
+        },
+        "sha256": "f51ed2e22c6f8d18d7336318892bb37fa647709c0f7356549eaecf51fd1ee284"
+      },
+      "sources": [
+        {
+          "bytes": 25632,
+          "file": "Demo Basics.pptx",
+          "frontend": "pptx",
+          "rows": [
+            "pp-9001",
+            "pp-9002",
+            "pp-9003",
+            "pp-9004",
+            "pp-9005",
+            "pp-9006"
+          ],
+          "sha256": "70b6e9fc9cc4e87cb5f00f13df42756a8006795bf328a9a5e22f4714dc4ac806"
+        },
+        {
+          "bytes": 24655,
+          "file": "Demo Basics.odp",
+          "frontend": "odp",
+          "rows": [
+            "od-p901",
+            "od-p902",
+            "od-p903",
+            "od-p904",
+            "od-p905",
+            "od-p906"
+          ],
+          "sha256": "38becef2603a6d7fa73cbc29ab8c85748e41070b34a1322dd698559dcbed2b55"
+        }
+      ],
+      "tier": "smoke",
+      "title": "Demo basics"
+    },
+    {
+      "features": [
+        "text.run",
+        "slide.timeline",
+        "slide.transition"
+      ],
+      "id": "demo-keynote",
+      "knownLoss": {
+        "keynote": [
+          {
+            "feature": "slide.timeline",
+            "kind": "oracle",
+            "note": "Objects with a build-out are absent from the export"
+          }
+        ]
+      },
+      "oracle": {
+        "exporter": {
+          "build": "7045.0.17",
+          "bundleId": "com.apple.iWork.Keynote",
+          "version": "14.5"
+        },
+        "fonts": [
+          "HelveticaNeue",
+          "HelveticaNeue-Bold"
+        ],
+        "kind": "keynote-export",
+        "pageHashes": {
+          "f59680641c0cf33ea0fa0d013695d237f82720deeedd0d9ec6465a36c97e0e95": [
+            "4904f53bfbcb642989292eaed445a4a0c4cfbdc10d8ca3b80901bebdbfcb61f6",
+            "a53ef3babdd308348ffe207d86e781175bc1a7556f4e793ae204dbcaaf6b21cd",
+            "5b0544073b8b93f5ecf45863bb6d03f5242b376003918860cc9c6b2908e4c538",
+            "be269212929e84cf901675f0386785fa56abf3c12659e1ef1ee3c1a967c7cba3",
+            "6569e154916212dc70ba9efdf6b98e68fccbba17fc8544cdc1cd5dba0f41d9b7",
+            "b4581ecee1569395571a6b026ac1dd8447d1b704dc698bab0aee09e00e1f9c36",
+            "1afdf22af99e954a8164d8c2eed6d52b13f03ba3ccd6183515e6f54dcfea0c91",
+            "23fb753158c652df23af1f60bd258a64b8d9af85929328ff4879fa695f0b2fba"
+          ]
+        },
+        "sha256": "99dd6ed96236e8b53471cede46b0e7e1c25722fcec98e01bdf5c81f0826b4948",
+        "source": "Demo Keynote.key"
+      },
+      "sources": [
+        {
+          "bytes": 25632,
+          "file": "Demo Keynote.key",
+          "frontend": "keynote",
+          "rows": [
+            "kn-1001",
+            "kn-1002",
+            "kn-1003",
+            "kn-1004",
+            "kn-1005",
+            "kn-1006",
+            "kn-1007",
+            "kn-1008"
+          ],
+          "sha256": "4b4a52d73b6c08bc6820065265263217778bed13e984abb9d6353d46e379945e"
+        }
+      ],
+      "stages": {
+        "exporter": {
+          "build": "7045.0.17",
+          "bundleId": "com.apple.iWork.Keynote",
+          "version": "14.5"
+        },
+        "kind": "keynote-stages",
+        "pageHashes": {
+          "f59680641c0cf33ea0fa0d013695d237f82720deeedd0d9ec6465a36c97e0e95": [
+            "ad4bab5642ff9a88a70e78b6ea6f05c06f7a4b167afd1ad3f3b8192d15e9396d",
+            "afb46ed418b31f7cbca5a62d6f7c7cbd2f26bf43e06e54d5d476636e0ea4696c",
+            "99ba335967ea3fa736d81585c2660df39d12f6e45350837d73cd063a51e60f96",
+            "a3a93ff5f1e2b2227605eca9a6b3b14f1ee8c99978e45d9ab846ddc475ad2d53",
+            "0a8c8cf16e173457402770a2e0c9dc5beaabc5d2a71a1f5a93289afda0a21011",
+            "6a05947e0223667798602aff03373765656b2f5de12f07eeabd37afe1d48f9b7",
+            "86caf884cac1abf3607e50413afdad378102f9bb3f53e489c284d3d37f4e5454",
+            "bc86e47a1fb00921efc0cdc3da8f2e37aa530bfd9441d76727b6d2dc4e6b708b",
+            "5080d1d79481df005b493e0d0cca2c815720ffedd4c4ea857afcc7bab127a7c2",
+            "a545d4269653c9c4e9de0b030b45a50e212d9cab371c2c635ea76ed1f0d945bf"
+          ]
+        },
+        "pagesPerRow": {
+          "kn-1001": 1,
+          "kn-1002": 1,
+          "kn-1003": 3,
+          "kn-1004": 1,
+          "kn-1005": 1,
+          "kn-1006": 1,
+          "kn-1007": 1,
+          "kn-1008": 1
+        },
+        "sha256": "3438cc2e5369b474bcb94db6f30efb3854cf7ac29d936574644874827ded831b"
+      },
+      "tier": "real",
+      "title": "Demo Keynote"
+    },
+    {
+      "features": [
+        "element.table",
+        "text.run"
+      ],
+      "id": "demo-tables",
+      "oracle": {
+        "file": "Demo Tables.pdf",
+        "kind": "pdf-file",
+        "pageHashes": {
+          "f59680641c0cf33ea0fa0d013695d237f82720deeedd0d9ec6465a36c97e0e95": [
+            "adad19640d0b708442679d9727a8c71efcaf724da15ac3f271f47a5552a01554",
+            "b8840c91425313af430466aa2430b60eb5dbb230566f216401bfa5dde6f98e82",
+            "774848a30d86187892832143959e3cfdce36247716df8245a0600a91a505adab",
+            "c64d56f6fdb841ed6e7a7057b70b1778b8c1d034ae9995166fc395733efa000f"
+          ]
+        },
+        "sha256": "552f18c3674ddf258793439bf99b50af58b1d5b0efedb4d8b14a37d5adfb6f58"
+      },
+      "sources": [
+        {
+          "bytes": 25632,
+          "file": "Demo Tables.pptx",
+          "frontend": "pptx",
+          "rows": [
+            "pp-9101",
+            "pp-9102",
+            "pp-9103",
+            "pp-9104"
+          ],
+          "sha256": "2d45c35b489af08ecdc5b712f656596314479c810f95cd2314c34bb1e0784cc5"
+        },
+        {
+          "bytes": 24655,
+          "file": "Demo Tables.odp",
+          "frontend": "odp",
+          "rows": [
+            "od-p911",
+            "od-p912",
+            "od-p913",
+            "od-p914"
+          ],
+          "sha256": "8040ae344d9bc1f3dbc10e027c63798d6f95551f2e0c7acdb786a7e1d4ddbe90"
+        }
+      ],
+      "tier": "real",
+      "title": "Demo Tables"
+    }
+  ],
+  "version": 1
+}

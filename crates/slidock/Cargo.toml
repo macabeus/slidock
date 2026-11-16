@@ -1,0 +1,92 @@
+[package]
+name = "slidock"
+description = "slidock driver facade: compile, Session and bundle"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Every IR fixture's recorded documents, backend report and resolved IR reproduced through the facade, and the
+# driver's checks over the corpus, against the golden files (tests/golden; skips when they are absent). slidock-cli's
+# feature of the same name covers the `slidock` binary.
+golden = ["ir-input"]
+# The IR-JSON input (`slidock-frontend-ir`): an agent-written `.presentation-ir.json` or a canonical dump. The CLI
+# builds it in; the wasm build leaves it out, so there an IR document is an input no frontend reads (IR0902).
+ir-input = ["dep:slidock-frontend-ir"]
+# `FileReader`: positioned reads from a file, for native hosts (never in the wasm build).
+std-fs = ["slidock-io/std-fs"]
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-format = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-passes = { workspace = true }
+slidock-frontend-ir = { workspace = true, optional = true }
+slidock-pptx = { workspace = true }
+slidock-odp = { workspace = true }
+slidock-keynote = { workspace = true }
+slidock-html = { workspace = true }
+slidock-bundle = { workspace = true }
+indexmap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+slidock-io = { workspace = true, features = ["std-fs"] }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[[test]]
+name = "driver"
+required-features = ["ir-input"]
+
+[[test]]
+name = "bundle"
+required-features = ["ir-input"]
+
+[[test]]
+name = "host_media"
+required-features = ["ir-input"]
+
+[[test]]
+name = "images"
+required-features = ["ir-input"]
+
+[[test]]
+name = "shadows"
+required-features = ["ir-input"]
+
+[[test]]
+name = "videos"
+required-features = ["ir-input"]
+
+[[test]]
+name = "alternates"
+required-features = ["ir-input"]
+
+[[test]]
+name = "stack"
+required-features = ["golden"]
+
+[lints]
+workspace = true
+
+[package.metadata.golden]
+# The golden suite compiles the corpus: about 7 minutes in a debug build, 20 s in release.
+release = true

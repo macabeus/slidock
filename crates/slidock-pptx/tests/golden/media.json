@@ -1,0 +1,1156 @@
+{
+  "diagnostics": [
+    {
+      "code": "PX2104",
+      "container": "pp-256",
+      "emitter": "pptx",
+      "feature": "fill.tile",
+      "message": "A tiled picture fill is stretched over the shape",
+      "node": "pp-256.18",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2301",
+      "container": "pp-256",
+      "data": {
+        "target": "https://example.com/a.png"
+      },
+      "emitter": "pptx",
+      "feature": "element.picture",
+      "message": "The picture is linked from https://example.com/a.png, which is never fetched",
+      "node": "pp-256.15",
+      "severity": "decline",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2302",
+      "container": "pp-256",
+      "data": {
+        "effects": "grayscl, lum"
+      },
+      "emitter": "pptx",
+      "feature": "image.recolor",
+      "message": "The picture is shown without its colour effects (grayscl, lum)",
+      "node": "pp-256.12",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2303",
+      "container": "pp-256",
+      "emitter": "pptx",
+      "message": "The picture is stretched over its whole box, without its fill insets",
+      "node": "pp-256.17",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2305",
+      "container": "pp-256",
+      "data": {
+        "crop": "0 0.5 0 0.498"
+      },
+      "emitter": "pptx",
+      "feature": "element.picture",
+      "message": "The picture is cropped to nothing (0 0.5 0 0.498)",
+      "node": "pp-256.14",
+      "severity": "decline",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2307",
+      "container": "pp-256",
+      "data": {
+        "part": "ppt/media/missing.png",
+        "reason": "missing"
+      },
+      "emitter": "pptx",
+      "feature": "element.picture",
+      "message": "The picture ppt/media/missing.png cannot be read: missing",
+      "node": "pp-256.16",
+      "severity": "decline",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2304",
+      "container": "pp-257",
+      "emitter": "pptx",
+      "feature": "element.audio",
+      "message": "The sound is not included; its picture stays",
+      "node": "pp-257.32",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2306",
+      "container": "pp-257",
+      "data": {
+        "reason": "linked",
+        "target": "https://example.com/watch"
+      },
+      "emitter": "pptx",
+      "message": "The movie https://example.com/watch is not included (linked); its poster stands in",
+      "node": "pp-257.31",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2401",
+      "container": "pp-257",
+      "emitter": "pptx",
+      "feature": "animation",
+      "message": "The slide animations are not included; the slide shows fully built",
+      "severity": "lossy",
+      "stage": "frontend"
+    },
+    {
+      "code": "PX2402",
+      "container": "pp-257",
+      "data": {
+        "effect": "prism"
+      },
+      "emitter": "pptx",
+      "message": "The prism transition is not supported and plays as a dissolve",
+      "severity": "info",
+      "stage": "frontend"
+    }
+  ],
+  "features": {
+    "pp-2147483648": [],
+    "pp-2147483649": [
+      "element.picture",
+      "placeholder"
+    ],
+    "pp-256": [
+      "element.alt",
+      "element.picture",
+      "fill.tile",
+      "image.clip",
+      "image.crop",
+      "image.opacity",
+      "image.recolor",
+      "placeholder",
+      "slide.notes",
+      "slide.transition",
+      "stroke"
+    ],
+    "pp-257": [
+      "animation",
+      "element.audio",
+      "element.picture",
+      "element.video",
+      "slide.transition"
+    ],
+    "presentation": []
+  },
+  "presentation": {
+    "defaults": {
+      "body": {
+        "anchor": "top",
+        "autofit": {
+          "kind": "none"
+        },
+        "insets": {
+          "b": 3.6,
+          "l": 7.2,
+          "r": 7.2,
+          "t": 3.6
+        },
+        "overflow": "spread",
+        "wrap": "square"
+      },
+      "text": {
+        "0": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "1": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "2": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "3": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "4": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "5": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "6": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "7": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        },
+        "8": {
+          "para": {
+            "align": "left",
+            "bullet": {
+              "kind": "none"
+            },
+            "indent": 0,
+            "lineSpacing": {
+              "basis": "size-1.2",
+              "kind": "multiple",
+              "value": 1
+            },
+            "marginLeft": 0,
+            "marginRight": 0,
+            "rtl": false,
+            "spaceAfter": {
+              "kind": "pt",
+              "value": 0
+            },
+            "spaceBefore": {
+              "kind": "pt",
+              "value": 0
+            },
+            "tabSize": 72
+          },
+          "run": {
+            "baseline": 0,
+            "caps": "none",
+            "color": {
+              "kind": "theme",
+              "mods": [],
+              "slot": "tx1"
+            },
+            "font": {
+              "kind": "theme",
+              "slot": "minor"
+            },
+            "highlight": null,
+            "italic": false,
+            "letterSpacing": 0,
+            "link": null,
+            "scriptScale": 0.58,
+            "size": 18,
+            "strike": "none",
+            "synthesizeBold": true,
+            "underline": "none",
+            "weight": 400
+          }
+        }
+      }
+    },
+    "fonts": {},
+    "layouts": {
+      "pp-2147483649": {
+        "elements": [
+          {
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 80,
+              "rotation": 0,
+              "w": 100,
+              "x": 600,
+              "y": 20
+            },
+            "id": "pp-2147483649.5",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 5",
+            "origin": {
+              "kind": "source",
+              "object": "5",
+              "part": "ppt/slideLayouts/slideLayout1.xml",
+              "path": "/p:sldLayout/p:cSld/p:spTree/p:pic[1]"
+            },
+            "placeholder": {
+              "index": 13,
+              "role": "pic"
+            }
+          }
+        ],
+        "id": "pp-2147483649",
+        "master": "pp-2147483648",
+        "origin": {
+          "kind": "source",
+          "part": "ppt/slideLayouts/slideLayout1.xml"
+        },
+        "showMaster": true
+      }
+    },
+    "masters": {
+      "pp-2147483648": {
+        "colorMap": {
+          "accent1": "accent1",
+          "accent2": "accent2",
+          "accent3": "accent3",
+          "accent4": "accent4",
+          "accent5": "accent5",
+          "accent6": "accent6",
+          "bg1": "lt1",
+          "bg2": "lt2",
+          "dk1": "dk1",
+          "dk2": "dk2",
+          "folHlink": "folHlink",
+          "hlink": "hlink",
+          "lt1": "lt1",
+          "lt2": "lt2",
+          "tx1": "dk1",
+          "tx2": "dk2"
+        },
+        "elements": [],
+        "id": "pp-2147483648",
+        "origin": {
+          "kind": "source",
+          "part": "ppt/slideMasters/slideMaster1.xml"
+        },
+        "theme": "pp-t.2147483648"
+      }
+    },
+    "media": {
+      "3abf4e528c3b543a08274a697e4209794cc9fa816e61147300a7411f0f2ec521": {
+        "bytes": 1156,
+        "codec": "avc1",
+        "origin": {
+          "kind": "source",
+          "part": "ppt/media/movie1.mp4"
+        },
+        "sha256": "3abf4e528c3b543a08274a697e4209794cc9fa816e61147300a7411f0f2ec521",
+        "type": "video/mp4"
+      },
+      "b61f9caf55516d9659937be12b2203ffea7dec05eec97d9094b83545b559d3db": {
+        "bytes": 81,
+        "height": 4,
+        "origin": {
+          "kind": "source",
+          "part": "ppt/media/poster.png"
+        },
+        "sha256": "b61f9caf55516d9659937be12b2203ffea7dec05eec97d9094b83545b559d3db",
+        "type": "image/png",
+        "width": 8
+      },
+      "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8": {
+        "bytes": 81,
+        "height": 2,
+        "origin": {
+          "kind": "source",
+          "part": "ppt/media/image1.png"
+        },
+        "sha256": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+        "type": "image/png",
+        "width": 4
+      }
+    },
+    "phase": "source",
+    "size": {
+      "h": 405,
+      "w": 720
+    },
+    "slides": [
+      {
+        "elements": [
+          {
+            "alt": "Logo",
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 60,
+              "rotation": 0,
+              "w": 100,
+              "x": 20,
+              "y": 20
+            },
+            "id": "pp-256.10",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 10",
+            "opacity": 0.4,
+            "origin": {
+              "kind": "source",
+              "object": "10",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[1]"
+            }
+          },
+          {
+            "crop": {
+              "b": 0.92,
+              "l": 0.1,
+              "r": 0.2,
+              "t": -0.05
+            },
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 60,
+              "rotation": 0,
+              "w": 100,
+              "x": 20,
+              "y": 20
+            },
+            "id": "pp-256.11",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 11",
+            "origin": {
+              "kind": "source",
+              "object": "11",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[2]"
+            }
+          },
+          {
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 60,
+              "rotation": 0,
+              "w": 100,
+              "x": 20,
+              "y": 20
+            },
+            "id": "pp-256.12",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 12",
+            "origin": {
+              "kind": "source",
+              "object": "12",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[3]"
+            }
+          },
+          {
+            "clip": {
+              "adjust": {},
+              "kind": "preset",
+              "name": "ellipse"
+            },
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 80,
+              "rotation": 0,
+              "w": 80,
+              "x": 140,
+              "y": 20
+            },
+            "id": "pp-256.13",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 13",
+            "origin": {
+              "kind": "source",
+              "object": "13",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[4]"
+            },
+            "stroke": {
+              "cap": "flat",
+              "dash": "solid",
+              "fill": {
+                "color": {
+                  "kind": "theme",
+                  "mods": [],
+                  "slot": "accent1"
+                },
+                "kind": "solid"
+              },
+              "join": "round",
+              "width": 2
+            }
+          },
+          {
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 60,
+              "rotation": 0,
+              "w": 100,
+              "x": 20,
+              "y": 20
+            },
+            "id": "pp-256.17",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 17",
+            "origin": {
+              "kind": "source",
+              "object": "17",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[8]"
+            }
+          },
+          {
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 60,
+              "rotation": 0,
+              "w": 100,
+              "x": 20,
+              "y": 20
+            },
+            "id": "pp-256.18",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 18",
+            "origin": {
+              "kind": "source",
+              "object": "18",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[9]"
+            }
+          },
+          {
+            "id": "pp-256.19",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Picture 19",
+            "origin": {
+              "kind": "source",
+              "object": "19",
+              "part": "ppt/slides/slide1.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[10]"
+            },
+            "placeholder": {
+              "index": 13,
+              "role": "pic"
+            }
+          }
+        ],
+        "hidden": false,
+        "id": "pp-256",
+        "layout": "pp-2147483649",
+        "notes": {
+          "body": {},
+          "paragraphs": [
+            {
+              "inlines": [
+                {
+                  "kind": "run",
+                  "props": {},
+                  "text": "Say hello"
+                }
+              ],
+              "level": 0,
+              "props": {}
+            },
+            {
+              "inlines": [
+                {
+                  "kind": "run",
+                  "props": {},
+                  "text": "then go"
+                }
+              ],
+              "level": 0,
+              "props": {}
+            }
+          ]
+        },
+        "origin": {
+          "kind": "source",
+          "part": "ppt/slides/slide1.xml"
+        },
+        "showLayout": true,
+        "timeline": [],
+        "transition": {
+          "advance": {
+            "afterMs": 3000,
+            "onClick": false
+          },
+          "durationMs": 750,
+          "effect": {
+            "fallback": "dissolve",
+            "id": "pptx:fade"
+          }
+        }
+      },
+      {
+        "elements": [
+          {
+            "autoplay": false,
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 90,
+              "rotation": 0,
+              "w": 160,
+              "x": 20,
+              "y": 200
+            },
+            "id": "pp-257.30",
+            "kind": "media",
+            "loop": false,
+            "media": "3abf4e528c3b543a08274a697e4209794cc9fa816e61147300a7411f0f2ec521",
+            "mediaKind": "video",
+            "muted": false,
+            "name": "Movie",
+            "origin": {
+              "kind": "source",
+              "object": "30",
+              "part": "ppt/slides/slide2.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[1]"
+            },
+            "poster": "b61f9caf55516d9659937be12b2203ffea7dec05eec97d9094b83545b559d3db",
+            "trim": {
+              "startMs": 1500
+            }
+          },
+          {
+            "autoplay": false,
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 90,
+              "rotation": 0,
+              "w": 160,
+              "x": 200,
+              "y": 200
+            },
+            "id": "pp-257.31",
+            "kind": "media",
+            "loop": false,
+            "mediaKind": "video",
+            "muted": false,
+            "name": "Online movie",
+            "origin": {
+              "kind": "source",
+              "object": "31",
+              "part": "ppt/slides/slide2.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[2]"
+            },
+            "poster": "b61f9caf55516d9659937be12b2203ffea7dec05eec97d9094b83545b559d3db"
+          },
+          {
+            "frame": {
+              "flipH": false,
+              "flipV": false,
+              "h": 30,
+              "rotation": 0,
+              "w": 30,
+              "x": 380,
+              "y": 200
+            },
+            "id": "pp-257.32",
+            "kind": "picture",
+            "media": "b8fdb16f43f05515f137e9852bc557c623942a6b68bea7c517a610c5ec2be0b8",
+            "name": "Sound",
+            "origin": {
+              "kind": "source",
+              "object": "32",
+              "part": "ppt/slides/slide2.xml",
+              "path": "/p:sld/p:cSld/p:spTree/p:pic[3]"
+            }
+          }
+        ],
+        "hidden": false,
+        "id": "pp-257",
+        "layout": "pp-2147483649",
+        "origin": {
+          "kind": "source",
+          "part": "ppt/slides/slide2.xml"
+        },
+        "showLayout": true,
+        "timeline": [],
+        "transition": {
+          "advance": {
+            "onClick": true
+          },
+          "durationMs": 1600,
+          "effect": {
+            "fallback": "dissolve",
+            "id": "pptx:prism"
+          }
+        }
+      }
+    ],
+    "themes": {
+      "pp-t.2147483648": {
+        "colors": {
+          "accent1": {
+            "a": 1,
+            "b": 0.76863,
+            "g": 0.44706,
+            "kind": "rgb",
+            "r": 0.26667,
+            "space": "srgb"
+          },
+          "accent2": {
+            "a": 1,
+            "b": 0.19216,
+            "g": 0.4902,
+            "kind": "rgb",
+            "r": 0.92941,
+            "space": "srgb"
+          },
+          "accent3": {
+            "a": 1,
+            "b": 0.64706,
+            "g": 0.64706,
+            "kind": "rgb",
+            "r": 0.64706,
+            "space": "srgb"
+          },
+          "accent4": {
+            "a": 1,
+            "b": 0,
+            "g": 0.75294,
+            "kind": "rgb",
+            "r": 1,
+            "space": "srgb"
+          },
+          "accent5": {
+            "a": 1,
+            "b": 0.83529,
+            "g": 0.60784,
+            "kind": "rgb",
+            "r": 0.35686,
+            "space": "srgb"
+          },
+          "accent6": {
+            "a": 1,
+            "b": 0.27843,
+            "g": 0.67843,
+            "kind": "rgb",
+            "r": 0.43922,
+            "space": "srgb"
+          },
+          "dk1": {
+            "a": 1,
+            "b": 0,
+            "g": 0,
+            "kind": "rgb",
+            "r": 0,
+            "space": "srgb"
+          },
+          "dk2": {
+            "a": 1,
+            "b": 0.41569,
+            "g": 0.32941,
+            "kind": "rgb",
+            "r": 0.26667,
+            "space": "srgb"
+          },
+          "folHlink": {
+            "a": 1,
+            "b": 0.44706,
+            "g": 0.3098,
+            "kind": "rgb",
+            "r": 0.58431,
+            "space": "srgb"
+          },
+          "hlink": {
+            "a": 1,
+            "b": 0.75686,
+            "g": 0.38824,
+            "kind": "rgb",
+            "r": 0.01961,
+            "space": "srgb"
+          },
+          "lt1": {
+            "a": 1,
+            "b": 1,
+            "g": 1,
+            "kind": "rgb",
+            "r": 1,
+            "space": "srgb"
+          },
+          "lt2": {
+            "a": 1,
+            "b": 0.90196,
+            "g": 0.90196,
+            "kind": "rgb",
+            "r": 0.90588,
+            "space": "srgb"
+          }
+        },
+        "fonts": {
+          "major": {
+            "latin": "Liberation Serif"
+          },
+          "minor": {
+            "latin": "Liberation Sans"
+          }
+        },
+        "id": "pp-t.2147483648",
+        "name": "Theme 1",
+        "origin": {
+          "kind": "source",
+          "part": "ppt/theme/theme1.xml"
+        }
+      }
+    }
+  },
+  "provenance": {
+    "bytes": 8528,
+    "format": "pptx",
+    "name": "presentation.pptx"
+  }
+}

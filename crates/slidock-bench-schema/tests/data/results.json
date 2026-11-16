@@ -1,0 +1,1096 @@
+{
+  "rows": {
+    "demo-basics:od-p901:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "01d7b2aa6ab688aed5195f74d53e23252b9c071234ec86cb7c36ae9f2c8534ac",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "mismatch",
+      "presentation": "demo-basics",
+      "render": "dbbac9277633a2c5c55791aed0f1d20fc43901f002d0c3291353ec0e1d7b787d",
+      "scores": {
+        "color": {
+          "mean": 2.7745,
+          "p99": 13.049
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9081,
+          "p1": 0.4233
+        },
+        "text": {
+          "domWords": 36,
+          "heightRatioMedian": 1.012,
+          "matched": 32,
+          "medianPm": 0.3889,
+          "oracleWords": 36,
+          "p95Pm": 0.6482,
+          "precision": 0.8889,
+          "recall": 0.8889
+        }
+      },
+      "slide": "od-p901"
+    },
+    "demo-basics:od-p902:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "b3af2bca8e21f729d3eed988a601443a4756175f7f7f9bbff8ddb782e922d1da",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "6f17fd6fb36c5c5c142b3ab949f70f1b8e2ea993f741e0eb04547bb8e949f4aa",
+      "scores": {
+        "color": {
+          "mean": 0.9226,
+          "p99": 9.1017
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9256,
+          "p1": 0.5839
+        },
+        "text": {
+          "domWords": 37,
+          "heightRatioMedian": 1.0081,
+          "matched": 35,
+          "medianPm": 0.3892,
+          "oracleWords": 37,
+          "p95Pm": 0.6486,
+          "precision": 0.9459,
+          "recall": 0.9459
+        }
+      },
+      "slide": "od-p902"
+    },
+    "demo-basics:od-p903:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "6e16927609b05345c019c77f13c8b18451d4752a0ee24082cba62df4da88014b",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "db047455ce27b3f52866170a5e65a68e97ae387a76a746638ff67fb9684b6f26",
+      "scores": {
+        "color": {
+          "mean": 4.4776,
+          "p99": 13.6493
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.931,
+          "p1": 0.5687
+        },
+        "text": {
+          "domWords": 10,
+          "heightRatioMedian": 1.0162,
+          "matched": 9,
+          "medianPm": 0.2395,
+          "oracleWords": 10,
+          "p95Pm": 0.3991,
+          "precision": 0.9,
+          "recall": 0.9
+        }
+      },
+      "slide": "od-p903"
+    },
+    "demo-basics:od-p904:odp": {
+      "code": "IR0901",
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "IR0901": 1,
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "failed",
+      "presentation": "demo-basics",
+      "reason": "slide-failed",
+      "slide": "od-p904"
+    },
+    "demo-basics:od-p905:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "35da8f5b9d17141886884037d707324d8cd3b661bd7c4190b1177318575e9846",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "4fb6ca65c0dbc7a57f5ea5b70170d82d1c78c684e9b57f70ac5a7aafaf5f866f",
+      "scores": {
+        "color": {
+          "mean": 2.0054,
+          "p99": 11.4794
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9199,
+          "p1": 0.5713
+        },
+        "text": {
+          "domWords": 10,
+          "heightRatioMedian": 0.991,
+          "matched": 10,
+          "medianPm": 0.4232,
+          "oracleWords": 10,
+          "p95Pm": 0.7054,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "od-p905"
+    },
+    "demo-basics:od-p906:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "b2fc25f86f937122d7d9e1753119b20825b73a1a52ddfd7fcd8a136ffe90139e",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "d398c14f03f7e2a584078169faab1c7cb5f9f8992ce775323533a79a7aac582d",
+      "scores": {
+        "color": {
+          "mean": 4.0808,
+          "p99": 5.5517
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9291,
+          "p1": 0.6012
+        },
+        "text": {
+          "domWords": 43,
+          "heightRatioMedian": 1.0034,
+          "matched": 40,
+          "medianPm": 1.0607,
+          "oracleWords": 43,
+          "p95Pm": 1.7678,
+          "precision": 0.9302,
+          "recall": 0.9302
+        }
+      },
+      "slide": "od-p906"
+    },
+    "demo-basics:pp-9001:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "pptx",
+      "html": "40211bea9c988cde4c30e588600a37c3ce214a942099c4b9da0bf8d15a271c12",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "8e7c49a18e5b9abe2b7d69b3c31677435deed862cc5a49dd9c67c8a79a1fbf59",
+      "scores": {
+        "color": {
+          "mean": 0.6146,
+          "p99": 4.1755
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9699,
+          "p1": 0.6272
+        },
+        "text": {
+          "domWords": 36,
+          "heightRatioMedian": 1.0161,
+          "matched": 35,
+          "medianPm": 0.7708,
+          "oracleWords": 36,
+          "p95Pm": 1.2846,
+          "precision": 0.9722,
+          "recall": 0.9722
+        }
+      },
+      "slide": "pp-9001"
+    },
+    "demo-basics:pp-9002:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "43b9ac7bebc3ffe4c96175f3849be0967119252714154417b45b530168f31655",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "79a2f6b0425bd34c0b8bd2e46b40122c8a1218e2d667ccfcf0994c893978fca9",
+      "scores": {
+        "color": {
+          "mean": 0.5136,
+          "p99": 4.7156
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.967,
+          "p1": 0.5428
+        },
+        "text": {
+          "domWords": 14,
+          "heightRatioMedian": 1.0184,
+          "matched": 14,
+          "medianPm": 0.3208,
+          "oracleWords": 14,
+          "p95Pm": 0.5347,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9002"
+    },
+    "demo-basics:pp-9003:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "9e779464fa8f489c7fa289ab96467e387f1a62a4d400cfa28574305630a9b957",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "8e387e1b7834ad900302fee6b4be2b50c2397a8ea8348c6dcd03e1e9ec3607a2",
+      "scores": {
+        "color": {
+          "mean": 1.6425,
+          "p99": 3.2867
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.972,
+          "p1": 0.5814
+        },
+        "text": {
+          "domWords": 6,
+          "heightRatioMedian": 0.994,
+          "matched": 6,
+          "medianPm": 0.3683,
+          "oracleWords": 6,
+          "p95Pm": 0.6139,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9003"
+    },
+    "demo-basics:pp-9004:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "declined": {
+        "code": "PX4001",
+        "feature": "element.chart"
+      },
+      "diagnostics": {
+        "MID5602": 1,
+        "PX4001": 1
+      },
+      "frontend": "pptx",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "declined",
+      "presentation": "demo-basics",
+      "slide": "pp-9004"
+    },
+    "demo-basics:pp-9005:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "0b876e95c0a76ebb2b078f71b5241e9eef1fb848c6b8213638216c055243de8d",
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "5f22b3199bb8deff8a40e7159c645c425fb2fb52badb4a9d85e435a5ac49d94d",
+      "scores": {
+        "color": {
+          "mean": 0.2517,
+          "p99": 3.1956
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9771,
+          "p1": 0.6037
+        },
+        "text": {
+          "domWords": 43,
+          "heightRatioMedian": 1.0195,
+          "matched": 42,
+          "medianPm": 0.3548,
+          "oracleWords": 43,
+          "p95Pm": 0.5913,
+          "precision": 0.9767,
+          "recall": 0.9767
+        }
+      },
+      "slide": "pp-9005"
+    },
+    "demo-basics:pp-9006:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "d6c45c213c58faf88ee82a1df1b4aecae8ddff894c0d99555f741e1cb9873537",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "close",
+      "presentation": "demo-basics",
+      "render": "9d1b7f4ca9cd025b950780d010306893bf86dd8a5cf67c7849ea792efd7b15fc",
+      "scores": {
+        "color": {
+          "mean": 1.3795,
+          "p99": 2.2782
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9707,
+          "p1": 0.6917
+        },
+        "text": {
+          "domWords": 42,
+          "heightRatioMedian": 0.9809,
+          "matched": 40,
+          "medianPm": 0.1811,
+          "oracleWords": 42,
+          "p95Pm": 0.3019,
+          "precision": 0.9524,
+          "recall": 0.9524
+        }
+      },
+      "slide": "pp-9006"
+    },
+    "demo-keynote:kn-1001:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "de8651bc96fcc9f9992f327155ea123b685aab8f664e9f27e756f4bccc22d2bb",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "08d94552904b2234ce3da5b6fefde0bec07be809dc4931cbfbd826c53c31d334",
+      "scores": {
+        "color": {
+          "mean": 0.921,
+          "p99": 2.0401
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9902,
+          "p1": 0.7792
+        },
+        "text": {
+          "domWords": 38,
+          "heightRatioMedian": 0.9997,
+          "matched": 38,
+          "medianPm": 0.4929,
+          "oracleWords": 38,
+          "p95Pm": 0.8215,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1001"
+    },
+    "demo-keynote:kn-1002:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "ce482c378d658c8b7eed3645b04aa0e63e9ce8ddd6bc8e0b5c0b5fa8a1075d25",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "7ff981c88e18aa57a169a729601638bcf33c166154a2877c16a2c744abeb4b59",
+      "scores": {
+        "color": {
+          "mean": 0.5956,
+          "p99": 3.9735
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9914,
+          "p1": 0.562
+        },
+        "text": {
+          "domWords": 27,
+          "heightRatioMedian": 1.009,
+          "matched": 27,
+          "medianPm": 0.2829,
+          "oracleWords": 27,
+          "p95Pm": 0.4715,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1002"
+    },
+    "demo-keynote:kn-1003:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "keynote",
+      "html": "81aab9335cf7bbd857e65d8f9ad1562f6daac73c17f8d7dbcd65be36dce757a2",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "render-error",
+      "presentation": "demo-keynote",
+      "reason": "oracle-font-missing",
+      "slide": "kn-1003"
+    },
+    "demo-keynote:kn-1004:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "d8f7a9f238bde31589b69ada157b0549ca9bc0db469ab0f3a42ac157f4209b0f",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "2d01593da223fb9bac3356ef7eea0fcc6f9da4f998e1c2d3dffd3760e106d863",
+      "scores": {
+        "color": {
+          "mean": 0.4668,
+          "p99": 3.7025
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9877,
+          "p1": 0.6269
+        },
+        "text": {
+          "domWords": 14,
+          "heightRatioMedian": 0.9939,
+          "matched": 14,
+          "medianPm": 0.4254,
+          "oracleWords": 14,
+          "p95Pm": 0.709,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1004"
+    },
+    "demo-keynote:kn-1005:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "51853fd75b4d754fb135f58a451fe3e8bea93178b4a5e853108aebccb3b07b77",
+      "oracle": {
+        "page": 5
+      },
+      "outcome": "match",
+      "presentation": "demo-keynote",
+      "render": "4180670f0c5f398f180e48fca6ec3b03f5fc09cbb1a2a6474ac5d0585900269a",
+      "scores": {
+        "color": {
+          "mean": 0.7254,
+          "p99": 2.0646
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9958,
+          "p1": 0.646
+        },
+        "text": {
+          "domWords": 18,
+          "heightRatioMedian": 1.0142,
+          "matched": 18,
+          "medianPm": 0.4876,
+          "oracleWords": 18,
+          "p95Pm": 0.8127,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1005"
+    },
+    "demo-keynote:kn-1006:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "keynote",
+      "html": "159d99fc960fa2ce48ebc1a9e36fd7c99c3c954567e35bdd4e32682bbd03c889",
+      "oracle": {
+        "page": 6
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "74cf29263f44034ae985b105b49864631307ba5613e55fd922f1cf6979d143c5",
+      "scores": {
+        "color": {
+          "mean": 0.5034,
+          "p99": 3.4073
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9858,
+          "p1": 0.5713
+        },
+        "text": {
+          "domWords": 6,
+          "heightRatioMedian": 1.0054,
+          "matched": 6,
+          "medianPm": 0.2944,
+          "oracleWords": 6,
+          "p95Pm": 0.4906,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1006"
+    },
+    "demo-keynote:kn-1007:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "keynote",
+      "html": "1ae68ff802d5c9a339c79e356fd1802d539466717a2d3f8f56adbdcbea1ac91b",
+      "oracle": {
+        "page": 7
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "08c08fac1a59bca5a050d137968cb368fbafd2b01c454a52b53c66ea2f9f09a1",
+      "scores": {
+        "color": {
+          "mean": 0.3329,
+          "p99": 3.0247
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9861,
+          "p1": 0.5574
+        },
+        "text": {
+          "domWords": 10,
+          "heightRatioMedian": 0.9824,
+          "matched": 10,
+          "medianPm": 0.2198,
+          "oracleWords": 10,
+          "p95Pm": 0.3663,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1007"
+    },
+    "demo-keynote:kn-1008:keynote": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "keynote",
+      "html": "0fead6b07e83ddea57a2ac008d69b1ac2c67292115ba562fb23fa4c2027e0fae",
+      "oracle": {
+        "page": 8
+      },
+      "outcome": "close",
+      "presentation": "demo-keynote",
+      "render": "00920e00d89bb1054b7321252e116255270ad0bddda4bfd6a9a1d2d9773020e7",
+      "scores": {
+        "color": {
+          "mean": 0.3413,
+          "p99": 2.3706
+        },
+        "pixel": 0.998,
+        "ssim": {
+          "mean": 0.9936,
+          "p1": 0.502
+        },
+        "text": {
+          "domWords": 6,
+          "heightRatioMedian": 0.9979,
+          "matched": 6,
+          "medianPm": 0.184,
+          "oracleWords": 6,
+          "p95Pm": 0.3066,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "kn-1008"
+    },
+    "demo-tables:od-p911:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "28ae2fb52be99bb1f62e180e09d524281440e7a43c94d7a80cb42b731b4f4249",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "36cadd321f3125c02a9a5a4b2d7a87e5f2bf12903348bd937641853ad9235151",
+      "scores": {
+        "color": {
+          "mean": 3.7939,
+          "p99": 13.409
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9677,
+          "p1": 0.5878
+        },
+        "text": {
+          "domWords": 4,
+          "heightRatioMedian": 0.9996,
+          "matched": 4,
+          "medianPm": 1.2794,
+          "oracleWords": 4,
+          "p95Pm": 2.1324,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "od-p911"
+    },
+    "demo-tables:od-p912:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "odp",
+      "html": "d7cb0aa1f6c760c97c09aa4516b4e50375e9664d65098b36a46c2d4e5f4abd1c",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "mismatch",
+      "presentation": "demo-tables",
+      "render": "27e443dd2316b6f35003dff044647b3d928fb0589cf0198f355468553db39839",
+      "scores": {
+        "color": {
+          "mean": 4.4291,
+          "p99": 7.4124
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9659,
+          "p1": 0.6651
+        },
+        "text": {
+          "domWords": 8,
+          "heightRatioMedian": 1.0177,
+          "matched": 7,
+          "medianPm": 1.5211,
+          "oracleWords": 8,
+          "p95Pm": 2.5352,
+          "precision": 0.875,
+          "recall": 0.875
+        }
+      },
+      "slide": "od-p912"
+    },
+    "demo-tables:od-p913:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "odp",
+      "html": "7b3585598f1b674e5447f3ab9e1c0044eddf6ecd0c1d1ccb1684add7d655fe99",
+      "knownLoss": [
+        "source"
+      ],
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "f84d99137ffa0534fab31bdb7573482aff2eeff867fb053d4f38a81acc9015d5",
+      "scores": {
+        "color": {
+          "mean": 2.6134,
+          "p99": 13.9767
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.9593,
+          "p1": 0.5796
+        },
+        "text": {
+          "domWords": 18,
+          "heightRatioMedian": 0.9856,
+          "matched": 18,
+          "medianPm": 0.1979,
+          "oracleWords": 18,
+          "p95Pm": 0.3298,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "od-p913"
+    },
+    "demo-tables:od-p914:odp": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "odp",
+      "html": "e6f88e7fc7d7797f51148063d8058370f31e10f6124907b802c4c2979fec458b",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "mismatch",
+      "presentation": "demo-tables",
+      "render": "7d583f0baecddc1268a7e1bc03c11a0aece39e6a04defe29783bfee3521ebdf9",
+      "scores": {
+        "color": {
+          "mean": 2.1625,
+          "p99": 3.3208
+        },
+        "pixel": 0.988,
+        "ssim": {
+          "mean": 0.962,
+          "p1": 0.5061
+        },
+        "text": {
+          "domWords": 29,
+          "heightRatioMedian": 0.9955,
+          "matched": 26,
+          "medianPm": 1.3709,
+          "oracleWords": 29,
+          "p95Pm": 2.2849,
+          "precision": 0.8966,
+          "recall": 0.8966
+        }
+      },
+      "slide": "od-p914"
+    },
+    "demo-tables:pp-9101:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "ec34323d9cc4d5620684a047ed6d729580783a078a89db82cb9847939160c783",
+      "oracle": {
+        "page": 1
+      },
+      "outcome": "match",
+      "presentation": "demo-tables",
+      "render": "c2620cc8f194d0f568f3476d7e7f57d9c23f534d3e038ad07c9d673203d42d59",
+      "scores": {
+        "color": {
+          "mean": 1.5414,
+          "p99": 5.3625
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9909,
+          "p1": 0.6154
+        },
+        "text": {
+          "domWords": 11,
+          "heightRatioMedian": 0.9866,
+          "matched": 11,
+          "medianPm": 0.5233,
+          "oracleWords": 11,
+          "p95Pm": 0.8721,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9101"
+    },
+    "demo-tables:pp-9102:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 1
+      },
+      "frontend": "pptx",
+      "html": "4397c93a0209c71b9e21b72429ed1fa3f7b57266f80a6fce4c18fbe0cd5c0925",
+      "oracle": {
+        "page": 2
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "53f5386b0eaeb7ce07cb025d53ee7e3f631e650347a2da99abca59610c593046",
+      "scores": {
+        "color": {
+          "mean": 0.5868,
+          "p99": 5.9182
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.969,
+          "p1": 0.7463
+        },
+        "text": {
+          "domWords": 21,
+          "heightRatioMedian": 1.0076,
+          "matched": 21,
+          "medianPm": 0.4293,
+          "oracleWords": 21,
+          "p95Pm": 0.7155,
+          "precision": 1,
+          "recall": 1
+        }
+      },
+      "slide": "pp-9102"
+    },
+    "demo-tables:pp-9103:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 2
+      },
+      "frontend": "pptx",
+      "html": "2d69ac094974c8bdd31cf629a657f173bcaa0a14bc023acccac5af51a3b14a0e",
+      "oracle": {
+        "page": 3
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "d44d9a3d80d345bf37774339dc6ba1b6be40f0ec9031ed053fdfac890328f0a8",
+      "scores": {
+        "color": {
+          "mean": 0.209,
+          "p99": 4.8839
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9759,
+          "p1": 0.5912
+        },
+        "text": {
+          "domWords": 22,
+          "heightRatioMedian": 0.9825,
+          "matched": 21,
+          "medianPm": 0.8258,
+          "oracleWords": 22,
+          "p95Pm": 1.3764,
+          "precision": 0.9545,
+          "recall": 0.9545
+        }
+      },
+      "slide": "pp-9103"
+    },
+    "demo-tables:pp-9104:pptx": {
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "diagnostics": {
+        "MID5602": 3
+      },
+      "frontend": "pptx",
+      "html": "f061b555cd5967e23c8eb52aebc9655eae1a062520f68c83bcf438086b42583b",
+      "oracle": {
+        "page": 4
+      },
+      "outcome": "close",
+      "presentation": "demo-tables",
+      "render": "b8daf23d695b0142f48def676f4afa586ab9423aae88ee28a0b891756b307ddd",
+      "scores": {
+        "color": {
+          "mean": 1.5505,
+          "p99": 5.3675
+        },
+        "pixel": 0.996,
+        "ssim": {
+          "mean": 0.9662,
+          "p1": 0.5792
+        },
+        "text": {
+          "domWords": 43,
+          "heightRatioMedian": 1.0051,
+          "matched": 42,
+          "medianPm": 0.7094,
+          "oracleWords": 43,
+          "p95Pm": 1.1823,
+          "precision": 0.9767,
+          "recall": 0.9767
+        }
+      },
+      "slide": "pp-9104"
+    }
+  },
+  "schema": "slidock-bench-results@1",
+  "stamp": {
+    "classifier": "classifier@2",
+    "compiler": {
+      "commit": "00000000000000000000000000005b05b05b05ac",
+      "content": "e458b7a84768c5e7c16077ec0385fe20376bb39ff328f0e55026ad2cc3528b34",
+      "dirty": false
+    },
+    "corpus": {
+      "demo-basics:odp": "e0a13f4ce9576bfd3b2814445c2f62691b9d34fd845e441c075ce54a4196eb38",
+      "demo-basics:pptx": "f2dd0f51e54cbc62bc20574d2e8072c9b53d027a919776381d3afbf3f36a3933",
+      "demo-keynote:keynote": "7f03d47dc6ff79bd1bd8147960f8b73eb46ef80eddd45c592ac8e9133256d267",
+      "demo-tables:odp": "3dc9714a2bbac3ee31c131d2a53483c6c7febed27da782f2faeadf046a97d702",
+      "demo-tables:pptx": "042c59f71d55609a5d831d7a1c2367f694560090e4aea7f2c0b204db138de7b9"
+    },
+    "deps": {
+      "cargoLock": "f9b103692b2ea3d30b5905345df0347122a111580a43beb22cc11aec178d7eb9",
+      "node": "24.x",
+      "rustc": "1.99.1",
+      "wasmPack": "0.13.1"
+    },
+    "determinism": "6fe255438b10900648d9ff218dac1b56441c32842ad63856b2d9b8217f93a96c",
+    "fonts": {
+      "fontSetId": "ce4fddd4c69990575ebb7880c234486ea3bc203a7bf43309147b52ff4ff63371",
+      "lockSha256": "535366f6ba87c6eb5c1611f28c9707a9284300a6351eb4c09b9c9910efef81f9"
+    },
+    "harness": "49f756463ad9dcfb9b6ade54d7d6f15476e7214f46a65b4b0c55d46845b12f70",
+    "host": {
+      "arch": "arm64",
+      "platform": "darwin"
+    },
+    "lane": "static",
+    "metrics": {
+      "color": "color@1",
+      "gradient": "gradient@1",
+      "pixel": "pixel@1",
+      "shadow": "shadow@1",
+      "ssim": "ssim@1",
+      "text": "text@2"
+    },
+    "parity": {
+      "golden": {
+        "commit": "000000000000000000000000000000000000601d",
+        "manifest": "1b960ccea0c3eae18828bb0bf6271cb0100f84709969e5ae854d08d7fd951f97"
+      },
+      "reference": "486940806a4c3a090a01258fdebe58d7ab337686e26ac745555f30974323c4bf",
+      "report": "85f7bd2396f04c31e6a33ef96c2c39821770e7c96ac9ec28a8e8b6032fdc0509"
+    },
+    "partial": false,
+    "renderer": {
+      "arch": "aarch64",
+      "cdpClient": "chromiumoxide@0.9.1",
+      "chromium": "148.0.7778.0",
+      "colorProfile": "srgb",
+      "imageId": "sha256:6105d6cc76af400325e94d588ce511be5bfdbb73b437dc51eca43917d7a43e3d",
+      "metricLongSidePx": 960,
+      "platformDigest": "sha256:beddddcf96f19abec078cd2f3da676f40abd460e0e734ad5eed73627ce161d33",
+      "poppler": "24.02.0",
+      "rasterLongSidePx": 1920,
+      "recipe": "9c024e2f00b004addcb5e762e18f415d74742a7156eecbadee57eb6c84df1ff1",
+      "renderPolicy": {
+        "gif": "first-frame",
+        "video": "poster-img"
+      }
+    },
+    "selection": {
+      "tiers": [
+        "real",
+        "smoke"
+      ]
+    }
+  },
+  "summary": {
+    "byFrontend": {
+      "keynote": {
+        "close": 4,
+        "declined": 0,
+        "failed": 0,
+        "match": 3,
+        "mismatch": 0,
+        "render-error": 1,
+        "rows": 8,
+        "ssim": {
+          "median": 0.9902,
+          "p10": 0.9858
+        },
+        "textRecall": {
+          "mean": 1
+        }
+      },
+      "odp": {
+        "close": 6,
+        "declined": 0,
+        "failed": 1,
+        "match": 0,
+        "mismatch": 3,
+        "render-error": 0,
+        "rows": 10,
+        "ssim": {
+          "median": 0.931,
+          "p10": 0.9081
+        },
+        "textRecall": {
+          "mean": 0.9374
+        }
+      },
+      "pptx": {
+        "close": 8,
+        "declined": 1,
+        "failed": 0,
+        "match": 1,
+        "mismatch": 0,
+        "render-error": 0,
+        "rows": 10,
+        "ssim": {
+          "median": 0.9707,
+          "p10": 0.9662
+        },
+        "textRecall": {
+          "mean": 0.9814
+        }
+      }
+    },
+    "declines": {
+      "PX4001": 1
+    },
+    "reference": {}
+  }
+}

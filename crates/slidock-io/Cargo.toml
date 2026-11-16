@@ -1,0 +1,42 @@
+[package]
+name = "slidock-io"
+description = "Range reading, sniffing, hardened zip and XML readers, image sizing and transcoding"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# `FileReader`: positioned reads from a `std::fs::File`, for native hosts (never in the wasm build).
+std-fs = []
+# Checks against the private fixtures of the golden files (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-math = { workspace = true }
+indexmap = { workspace = true }
+# Block boundaries let the TIFF Deflate reader see stored blocks, as fflate does.
+miniz_oxide = { workspace = true, features = ["block-boundary"] }
+png = { workspace = true }
+roxmltree = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+tiff = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[lints]
+workspace = true

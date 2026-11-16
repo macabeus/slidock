@@ -1,0 +1,20 @@
+target/
+node_modules/
+dist/
+pkg/
+pnpm-lock.yaml
+packages/types/src/generated/
+apps/bench-web/src/schema/
+# Rust test data, goldens and generated tables: their bytes are compared as they are.
+crates/*/data/
+crates/*/tests/data/
+crates/*/tests/golden/
+crates/*/tests/vectors/
+# Byte-identical to the font lock the reference bench hashes (its sha256 is the lock id).
+bench/fonts/fonts.lock.json
+# The player builds slidock-bundle embeds, as esbuild writes them (packages/player/build.mjs).
+crates/slidock-bundle/player/
+# Written by probes/fonts/build.sh.
+probes/out/
+# Written by `cargo xtask diagnostics`, which CI checks.
+docs/diagnostics.md

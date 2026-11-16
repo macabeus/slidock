@@ -1,0 +1,12 @@
+{
+  "generator": "probes/fonts/build.sh",
+  "source": "probes/fonts/fonts-probe.fodp",
+  "image": "slidock-probes-lo:trixie-20261030",
+  "imageId": "sha256:af5cd329008fe985ead7161597bac9a36eaafc5d140bdaaadd60c4e4d9fe83b3",
+  "libreoffice": "LibreOffice 25.2.3.2 520(Build:2)",
+  "fontsCommit": "6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec",
+  "decks": [
+    { "file": "fonts-probe.odp", "sha256": "8a8e196bc5b36fd173497955ced9d4663788fc2ddc6c18992533ed1475b1aaeb", "fontParts": ["Fonts/Font_Barlow_Condensed_1.ttf","Fonts/Font_Barlow_Condensed_2.ttf","Fonts/Font_Caveat_1.ttf","Fonts/Font_Lato_1.ttf","Fonts/Font_Lato_2.ttf","Fonts/Font_Lato_3.ttf","Fonts/Font_Lato_4.ttf","Fonts/Font_PT_Serif_1.ttf","Fonts/Font_PT_Serif_2.ttf","Fonts/Font_PT_Serif_3.ttf","Fonts/Font_PT_Serif_4.ttf"] },
+    { "file": "fonts-probe.pptx", "sha256": "4d2e3057bb843affe48bebdf44cf6e59b66f9c02ee802a065faa30df72efcf04", "fontParts": [] }
+  ]
+}

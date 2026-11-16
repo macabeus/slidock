@@ -1,0 +1,27 @@
+[package]
+name = "slidock-bench-schema"
+description = "slidock bench result schema"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[features]
+# Checks the bench's private manifest and baselines under $SLIDOCK_PRIVATE (skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+# The closed feature vocabulary the corpus manifest names, and the serde adapters for zod's optional and nullable.
+slidock-ir = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_path_to_error = { workspace = true }
+thiserror = { workspace = true }
+# TypeScript declarations for the bench UI (`apps/bench-web/src/schema`).
+ts-rs = { workspace = true, features = ["no-serde-warnings"] }
+
+[lints]
+workspace = true

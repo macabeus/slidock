@@ -1,0 +1,69 @@
+[package]
+name = "slidock-fonts"
+description = "Font identification, containers, catalog, metrics, subsetting, WOFF2 and @font-face output"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Reads the bench's pinned font set and the corpus deck's embedded fonts in $SLIDOCK_PRIVATE against the recorded
+# golden files (tests/golden; skips when they are absent).
+golden = []
+# Runs the shipped files through ots-sanitize and fontTools, with the Python in $SLIDOCK_FONT_ORACLE_PYTHON (fails
+# when it is missing).
+font-oracle = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-format = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+base64 = { workspace = true }
+read-fonts = { workspace = true }
+brotli-decompressor = { workspace = true }
+miniz_oxide = { workspace = true }
+serde = { workspace = true }
+skera = { workspace = true }
+skrifa = { workspace = true }
+thiserror = { workspace = true }
+write-fonts = { workspace = true }
+# `portable-float` computes brotli's logarithms from tables, so a native and a wasm32 build encode the same bytes.
+ttf2woff2 = { workspace = true, features = ["portable-float"] }
+
+[build-dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+slidock-substitutes = { workspace = true, features = ["embed"] }
+serde_json = { workspace = true }
+brotli = { workspace = true }
+sha2 = { workspace = true }
+hex = { workspace = true }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = { workspace = true }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[[test]]
+name = "container_corpus"
+required-features = ["golden"]
+
+[[test]]
+name = "oracle"
+required-features = ["font-oracle"]
+
+[lints]
+workspace = true

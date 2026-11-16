@@ -1,0 +1,31 @@
+[package]
+name = "slidock-geometry"
+description = "Preset and custom shape geometry: guide formulas, arcTo, presets and line ends"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-math = { workspace = true }
+slidock-ir = { workspace = true }
+indexmap = { workspace = true }
+thiserror = { workspace = true }
+
+[build-dependencies]
+serde_json = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

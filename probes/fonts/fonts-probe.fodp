@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- slidock font probe deck: our own text in four OFL families (static and variable), several weights and both
+     slants. build.sh converts it with LibreOffice (EmbedFonts on) to an ODP and a PPTX with the fonts embedded. -->
+<office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
+  xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
+  xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+  xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0"
+  xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0"
+  xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0"
+  xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0"
+  xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0"
+  office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.presentation">
+ <office:settings>
+  <config:config-item-set config:name="ooo:configuration-settings">
+   <config:config-item config:name="EmbedFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">false</config:config-item>
+  </config:config-item-set>
+ </office:settings>
+ <office:font-face-decls>
+  <style:font-face style:name="Lato" svg:font-family="Lato" style:font-family-generic="swiss"/>
+  <style:font-face style:name="Barlow Condensed" svg:font-family="'Barlow Condensed'" style:font-family-generic="swiss"/>
+  <style:font-face style:name="PT Serif" svg:font-family="'PT Serif'" style:font-family-generic="roman"/>
+  <style:font-face style:name="Caveat" svg:font-family="Caveat" style:font-family-generic="script"/>
+ </office:font-face-decls>
+ <office:styles/>
+ <office:automatic-styles>
+  <style:page-layout style:name="PM1">
+   <style:page-layout-properties fo:margin-top="0cm" fo:margin-bottom="0cm" fo:margin-left="0cm" fo:margin-right="0cm"
+     fo:page-width="25.4cm" fo:page-height="14.288cm" style:print-orientation="landscape"/>
+  </style:page-layout>
+  <style:style style:name="dp1" style:family="drawing-page"/>
+  <style:style style:name="gr1" style:family="graphic">
+   <style:graphic-properties draw:stroke="none" draw:fill="none" draw:auto-grow-height="false"/>
+  </style:style>
+  <style:style style:name="LatoR" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt"/></style:style>
+  <style:style style:name="LatoI" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt" fo:font-style="italic"/></style:style>
+  <style:style style:name="LatoB" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt" fo:font-weight="bold"/></style:style>
+  <style:style style:name="LatoBI" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt" fo:font-weight="bold" fo:font-style="italic"/></style:style>
+  <style:style style:name="LatoL" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt" fo:font-weight="300"/></style:style>
+  <style:style style:name="LatoK" style:family="text"><style:text-properties style:font-name="Lato" fo:font-size="26pt" fo:font-weight="900"/></style:style>
+  <style:style style:name="BarR" style:family="text"><style:text-properties style:font-name="Barlow Condensed" fo:font-size="26pt"/></style:style>
+  <style:style style:name="BarS" style:family="text"><style:text-properties style:font-name="Barlow Condensed" fo:font-size="26pt" fo:font-weight="600"/></style:style>
+  <style:style style:name="BarB" style:family="text"><style:text-properties style:font-name="Barlow Condensed" fo:font-size="26pt" fo:font-weight="bold"/></style:style>
+  <style:style style:name="PtR" style:family="text"><style:text-properties style:font-name="PT Serif" fo:font-size="26pt"/></style:style>
+  <style:style style:name="PtI" style:family="text"><style:text-properties style:font-name="PT Serif" fo:font-size="26pt" fo:font-style="italic"/></style:style>
+  <style:style style:name="PtB" style:family="text"><style:text-properties style:font-name="PT Serif" fo:font-size="26pt" fo:font-weight="bold"/></style:style>
+  <style:style style:name="PtBI" style:family="text"><style:text-properties style:font-name="PT Serif" fo:font-size="26pt" fo:font-weight="bold" fo:font-style="italic"/></style:style>
+  <style:style style:name="CavR" style:family="text"><style:text-properties style:font-name="Caveat" fo:font-size="30pt"/></style:style>
+  <style:style style:name="CavB" style:family="text"><style:text-properties style:font-name="Caveat" fo:font-size="30pt" fo:font-weight="bold"/></style:style>
+ </office:automatic-styles>
+ <office:master-styles>
+  <style:master-page style:name="Default" style:page-layout-name="PM1" draw:style-name="dp1"/>
+ </office:master-styles>
+ <office:body>
+  <office:presentation>
+   <draw:page draw:name="Lato" draw:style-name="dp1" draw:master-page-name="Default">
+    <draw:frame draw:style-name="gr1" svg:x="1.5cm" svg:y="1cm" svg:width="22.4cm" svg:height="12.3cm">
+     <draw:text-box>
+      <text:p><text:span text:style-name="LatoR">Lato Regular: Sphinx of black quartz</text:span></text:p>
+      <text:p><text:span text:style-name="LatoI">Lato Italic: judge my vow</text:span></text:p>
+      <text:p><text:span text:style-name="LatoB">Lato Bold: 0123456789</text:span></text:p>
+      <text:p><text:span text:style-name="LatoBI">Lato Bold Italic: Àéîõü</text:span></text:p>
+      <text:p><text:span text:style-name="LatoL">Lato Light (300)</text:span></text:p>
+      <text:p><text:span text:style-name="LatoK">Lato Black (900)</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="Barlow Condensed" draw:style-name="dp1" draw:master-page-name="Default">
+    <draw:frame draw:style-name="gr1" svg:x="1.5cm" svg:y="1cm" svg:width="22.4cm" svg:height="12.3cm">
+     <draw:text-box>
+      <text:p><text:span text:style-name="BarR">Barlow Condensed Regular: How vexingly quick</text:span></text:p>
+      <text:p><text:span text:style-name="BarS">Barlow Condensed SemiBold (600): daft zebras jump</text:span></text:p>
+      <text:p><text:span text:style-name="BarB">Barlow Condensed Bold: 2026</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="PT Serif" draw:style-name="dp1" draw:master-page-name="Default">
+    <draw:frame draw:style-name="gr1" svg:x="1.5cm" svg:y="1cm" svg:width="22.4cm" svg:height="12.3cm">
+     <draw:text-box>
+      <text:p><text:span text:style-name="PtR">PT Serif Regular: Pack my box</text:span></text:p>
+      <text:p><text:span text:style-name="PtI">PT Serif Italic: with five dozen</text:span></text:p>
+      <text:p><text:span text:style-name="PtB">PT Serif Bold: liquor jugs</text:span></text:p>
+      <text:p><text:span text:style-name="PtBI">PT Serif Bold Italic: ÆØÅ ß</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+   <draw:page draw:name="Caveat" draw:style-name="dp1" draw:master-page-name="Default">
+    <draw:frame draw:style-name="gr1" svg:x="1.5cm" svg:y="1cm" svg:width="22.4cm" svg:height="12.3cm">
+     <draw:text-box>
+      <text:p><text:span text:style-name="CavR">Caveat (variable) Regular: handwritten notes</text:span></text:p>
+      <text:p><text:span text:style-name="CavB">Caveat (variable) Bold: underlined twice</text:span></text:p>
+     </draw:text-box>
+    </draw:frame>
+   </draw:page>
+  </office:presentation>
+ </office:body>
+</office:document>

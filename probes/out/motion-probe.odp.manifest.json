@@ -1,0 +1,49 @@
+{
+  "generator": "cargo xtask probes-motion (xtask/src/probes_motion.rs)",
+  "spec": "docs/format.md §5.2 (the effect vocabulary and its direction convention); catalog rows 12.1 PowerPoint transitions, 12.2 PowerPoint build presets, 12.3 ODP",
+  "inputs": [
+    {
+      "file": "probes/motion/media/clip.mp4",
+      "sha256": "df29a91b98bfe3764eeba427c8916b670fbdc932f96da7c4a772a6b87cafc643",
+      "made": "probes/motion/make-media.sh"
+    },
+    {
+      "file": "probes/motion/media/poster.png",
+      "sha256": "89c5b109e2277e4d24023627a8828cffd317517fd43ec496a1f0b1e1838bcf38",
+      "made": "probes/motion/make-media.sh"
+    }
+  ],
+  "catalog": {
+    "libreofficeCommit": "bbb074479178df812d175f709636b368952c2ce3",
+    "files": [
+      {
+        "file": "sd/xml/effects.xml",
+        "sha256": "ce150ba36c14559abc48aa2d61561ffef9386e8acd1a419037cfa04c6d9f6103"
+      },
+      {
+        "file": "sd/xml/transitions.xml",
+        "sha256": "6385fb101f409fdeb2625440d6cce8edd604c604dd28eb628b21fea6c0adf67d"
+      },
+      {
+        "file": "sd/xml/transitions-ogl.xml",
+        "sha256": "3c2dff3766ccfd6816ced260f94ebd44cf49191435424140d04831adc73630f1"
+      },
+      {
+        "file": "oox/source/ppt/pptfilterhelpers.cxx",
+        "sha256": "495a68c8243c803d445e7db079cdebb156f69de1586872ad71687dbce77d75da"
+      }
+    ]
+  },
+  "expectations": {
+    "file": "motion-probe.expect.json",
+    "sha256": "a9bda1de7dd629002c0a70be9b2fb1c546ed5ee4ccc177a9e13a0bd4c7dee97b"
+  },
+  "deck": {
+    "file": "motion-probe.odp",
+    "sha256": "89b302c6be18febed8cbd277475f0e8bd5f1d6f3897c5131970e73ee74baa48e",
+    "bytes": 40839,
+    "slides": 178,
+    "slidesSharedWithOtherDeck": 139,
+    "schemaInvalidByDesign": ""
+  }
+}

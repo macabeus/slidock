@@ -1,0 +1,25 @@
+[package]
+name = "slidock-presets"
+description = "OOXML/ODF animation preset and transition tables"
+version.workspace = true
+edition.workspace = true
+# Holds MPL-2.0 files derived from LibreOffice (see NOTICE).
+license = "MIT AND MPL-2.0"
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+slidock-ir = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

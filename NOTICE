@@ -1,0 +1,152 @@
+slidock
+Copyright (c) 2026 Bruno Macabeus
+Licensed under the MIT License (see LICENSE).
+
+slidock-presets and xtask also hold files under the Mozilla Public License 2.0 (below): their licence is
+"MIT AND MPL-2.0". The full texts of the licences named here are in LICENSES/. THIRD-PARTY-NOTICES.txt lists the
+crates and packages the slidock command, the web app and its compiler (slidock-wasm) are built from, with their
+licences.
+
+This product includes:
+
+- Heroicons (https://github.com/tailwindlabs/heroicons) icon paths, in the presenter view
+  (`packages/player/src/presenter/window.ts`, which every deck that ships a presenter view embeds) and the web app's
+  icons (`packages/ui/src/components/Icon.tsx`), licensed under the MIT License:
+
+  MIT License
+
+  Copyright (c) Tailwind Labs, Inc.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+  the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+  the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+  THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+- fdlibm 5.3 (https://www.netlib.org/fdlibm/), translated to Rust in slidock-math (`crates/slidock-math/src/fdlibm/`),
+  with FreeBSD msun's hypot (`lib/msun/src/e_hypot.c`, https://github.com/freebsd/freebsd-src), which carries the same
+  notice:
+
+  ====================================================
+  Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+
+  Developed at SunSoft, a Sun Microsystems, Inc. business.
+  Permission to use, copy, modify, and distribute this
+  software is freely granted, provided that this notice
+  is preserved.
+  ====================================================
+
+- The preset shape definitions of ECMA-376 Part 1, 5th edition (December 2016), annex D
+  (`presetShapeDefinitions.xml`), as `crates/slidock-geometry/data/presets.json`, which the slidock command and
+  slidock-wasm build in. This work includes material copied from or derived from ECMA-376 Part 1, Office Open XML
+  File Formats (https://ecma-international.org/publications-and-standards/standards/ecma-376/). Copyright © Ecma
+  International. It is used under Ecma's copyright notice, whose full text is in
+  `crates/slidock-geometry/data/NOTICE`:
+
+  © Ecma International
+
+  This document may be copied, published and distributed to others, and certain derivative works of it may be
+  prepared, copied, published, and distributed, in whole or in part, provided that the above copyright notice and
+  this Copyright License and Disclaimer are included on all such copies and derivative works. The only derivative
+  works that are permissible under this Copyright License and Disclaimer are: (i) works which incorporate all or
+  portion of this document for the purpose of providing commentary or explanation (such as an annotated version of
+  the document), (ii) works which incorporate all or portion of this document for the purpose of incorporating
+  features that provide accessibility, (iii) translations of this document into languages other than English and
+  into different formats and (iv) works by making use of this specification in standard conformant products by
+  implementing (e.g. by copy and paste wholly or partly) the functionality therein.
+
+  However, the content of this document itself may not be modified in any way, including by removing the copyright
+  notice or references to Ecma International, except as required to translate it into languages other than English
+  or into a different format.
+
+  The official version of an Ecma International document is the English language version on the Ecma International
+  website. In the event of discrepancies between a translated version and the official version, the official
+  version shall govern.
+
+  The limited permissions granted above are perpetual and will not be revoked by Ecma International or its
+  successors or assigns.
+
+  This document and the information contained herein is provided on an "AS IS" basis and ECMA INTERNATIONAL
+  DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE
+  INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS
+  FOR A PARTICULAR PURPOSE.
+
+- The Keynote protobuf schema in slidock-keynote (`crates/slidock-keynote/proto/`), derived from keynote-parser
+  (https://github.com/psobot/keynote-parser) by Peter Sobot, licensed under the MIT License as its README states
+  (https://github.com/psobot/keynote-parser/blob/56a4d3b0d38c999f4273d084acd45415665e2030/README.md#license):
+
+  Copyright 2019-2025 Peter Sobot
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+  the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+  the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+  THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+- Animation preset and transition catalogs derived from LibreOffice (https://www.libreoffice.org), licensed under
+  the Mozilla Public License 2.0 (https://mozilla.org/MPL/2.0/, `LICENSES/MPL-2.0.txt`).
+  `crates/slidock-presets/src/libreoffice/effects.rs` and `transitions.rs` are generated from LibreOffice core's
+  `sd/xml/effects.xml` and `sd/xml/transitions.xml`, `pptx.rs` (PowerPoint's preset ids and sub-type numbers) from
+  `oox/source/ppt/commontimenodecontext.cxx`, and `migration.rs` (the transition each ODF 1.0 transition style
+  migrates to) from `sd/source/core/EffectMigration.cxx`, at tag libreoffice-25.2.3.2, commit
+  bbb074479178df812d175f709636b368952c2ce3 (`cargo xtask libreoffice-presets`). They are kept as separate MPL-2.0
+  files, each with the source's licence header; they are not relicensed. Their source is available from
+  https://git.libreoffice.org/core.
+
+  Those LibreOffice sources incorporate work from Apache OpenOffice licensed to the Apache Software Foundation under
+  the Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0, `LICENSES/Apache-2.0.txt`), as their
+  headers state. Apache OpenOffice's NOTICE reads, in part:
+
+  Apache OpenOffice (https://www.openoffice.org)
+  Copyright 2011-2026 The Apache Software Foundation
+
+  This product includes software developed at
+  The Apache Software Foundation (https://www.apache.org/).
+
+  Portions of this software copyright (c) 2000-2011, Oracle and/or its affiliates <https://www.oracle.com/>.
+
+  Portions of this software (C) Copyright IBM Corporation 2003, 2012. All Rights Reserved.
+
+- The motion probe generator's LibreOffice tables (`xtask/src/probes_libreoffice.rs`): the preset and transition
+  lists of `sd/xml/effects.xml`, `transitions.xml` and `transitions-ogl.xml`, the clip each preset plays and the flash
+  bulb's time filter, PowerPoint's filter names (`oox/source/ppt/pptfilterhelpers.cxx`) and the preset id and
+  sub-type mapping (`oox/source/ppt/commontimenodecontext.cxx`), from LibreOffice core at tag libreoffice-25.2.3.2
+  (https://github.com/LibreOffice/core, commit bbb074479178df812d175f709636b368952c2ce3). The file stays under the
+  Mozilla Public License 2.0 (http://mozilla.org/MPL/2.0/); LibreOffice is Copyright the LibreOffice contributors,
+  with the Apache OpenOffice heritage above.
+
+- Fonts, each under its own licence, whose text sits beside the files (the licences' full texts are also in
+  LICENSES/):
+  - the bundled substitute faces of slidock-substitutes, which the web app serves and the slidock command builds in
+    (`crates/slidock-substitutes/fonts/`): Liberation 2.1.5 (SIL Open Font License 1.1, `Liberation-LICENSE.txt`),
+    DejaVu Sans 2.37 (the Bitstream Vera Fonts licence and the Arev Fonts licence, DejaVu's changes in the public
+    domain, `DejaVu-LICENSE.txt`), Carlito and Caladea (SIL Open Font License 1.1, `Carlito-OFL.txt`,
+    `Caladea-OFL.txt`);
+  - the fonts embedded in the font probe decks (`probes/out/fonts-probe.odp`): Barlow Condensed, Caveat, Lato and
+    PT Serif, under the SIL Open Font License 1.1 (`probes/out/licenses/`);
+  - the subset of Pacifico embedded in the picture-labels probe decks (`probes/out/picture-labels-probe.pptx`,
+    `.odp`, written by `xtask/src/probes_pictures.rs`), under the SIL Open Font License 1.1
+    (`probes/out/licenses/pacifico-OFL.txt`);
+  - the test fonts of slidock-fonts (`crates/slidock-fonts/tests/fonts/`, `crates/slidock-fonts/tests/data/container/`),
+    under the SIL Open Font License 1.1, one licence file per family.
+
+  A deck slidock writes lists every face it ships, with that face's own copyright and licence and the full text of
+  each licence, in its `LICENSES.txt`. A face slidock subsets is a modified version of it: a face whose licence
+  reserves its names (an SIL Open Font License Reserved Font Name, the Bitstream Vera names) ships under a neutral
+  name.

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "probes": [
+    {
+      "id": "motion-probe",
+      "frontend": "pptx",
+      "file": "probes/out/motion-probe.pptx",
+      "sha256": "a4469c501fe127b0c4e5b7f98f384f35cb9c1c3609dbf9f336cf069be432e901",
+      "expect": "probes/out/motion-probe.expect.json",
+      "deck": "motion-probe.pptx"
+    },
+    {
+      "id": "motion-probe",
+      "frontend": "odp",
+      "file": "probes/out/motion-probe.odp",
+      "sha256": "89b302c6be18febed8cbd277475f0e8bd5f1d6f3897c5131970e73ee74baa48e",
+      "expect": "probes/out/motion-probe.expect.json",
+      "deck": "motion-probe.odp"
+    }
+  ]
+}

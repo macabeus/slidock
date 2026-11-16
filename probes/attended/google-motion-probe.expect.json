@@ -1,0 +1,943 @@
+{
+  "format": "slidock-attended-probe-expect@1",
+  "probe": "google-motion-probe",
+  "source": "Google Slides, one deck exported three times by File > Download (probes/google/RUNBOOK.md); private, read from $SLIDOCK_PRIVATE/probes-incoming/google/ and pinned by SHA-256",
+  "exported": "2026-11-01",
+  "files": {
+    "odp": {
+      "name": "google-motion-probe.odp",
+      "sha256": "46097a423f2a30924aef9898ad168016dbaf533c57509c129bb595362a6e2d18",
+      "bytes": 16475
+    },
+    "pdf": {
+      "name": "google-motion-probe.pdf",
+      "sha256": "b7ee291d77253395e4fc155b463ba7c3b3eeb2f72ddb83db82df621b919458a2",
+      "bytes": 82130
+    },
+    "pptx": {
+      "name": "google-motion-probe.pptx",
+      "sha256": "0e5be6d0543a9cd58670d3bd140b5c6e23b2d5fd346978dccf8678dc101ad0e8",
+      "bytes": 1890295
+    }
+  },
+  "conventions": {
+    "dir": "the direction the content moves, in OOXML tokens (docs/format.md §5.2)",
+    "slides": "by 1-based index; both exports keep the deck's 31 slides in order",
+    "shape": "the target shape's text, paragraphs joined with |: our own labels, one effect per labelled shape",
+    "transition": "effect and params as both formats should read them; pptx/odp hold each format's native id and duration and, where a format reads otherwise, what it reads instead, with `explained`",
+    "steps": "kind, effect, params, trigger, delivery, paragraphs and durationMs as both formats read them; native ids per format; a `pptx` or `odp` object holds what that format reads instead, with `explained`. A step with neither agrees across the formats",
+    "fallback": "effect null: no vocabulary entry; the transition or step plays `fallback`, reported with `diagnostic`"
+  },
+  "writes": {
+    "Flip": {
+      "pptx": "mc:AlternateContent: Choice Requires=\"p14\" <p:transition spd=\"med\"><p14:flip dir=\"l\"/>, Fallback <p:fade/>",
+      "odp": "nothing (no transition)"
+    },
+    "Cube": {
+      "pptx": "mc:AlternateContent: Choice Requires=\"p14\" <p14:prism dir=\"l\"/> (no isContent, no isInverted), Fallback <p:fade/>; Keynote's own PPTX export writes its Cube the same way",
+      "odp": "transitionFilter miscShapeWipe cornersOut (LibreOffice's OpenGL outside-cube)"
+    },
+    "Gallery": {
+      "pptx": "mc:AlternateContent: Choice Requires=\"p14\" <p14:gallery dir=\"l\"/>, Fallback <p:fade/>",
+      "odp": "nothing (no transition)"
+    },
+    "Dissolve": {
+      "pptx": "<p:fade/>",
+      "odp": "fade crossfade"
+    },
+    "durations": {
+      "pptx": "spd only, or spd with p14:dur (mc:AlternateContent) for a slider value",
+      "odp": "transitionFilter smil:dur 2s, or 3s with transition-speed slow"
+    },
+    "odpPresets": "every preset Google's ODP export writes is one of LibreOffice's effects.xml ids with one of its sub-types: ooo-entrance-appear, ooo-exit-disappear, ooo-entrance-fade-in, ooo-exit-fade-out, ooo-entrance-fly-in and ooo-exit-fly-out (from-left, from-right, from-bottom, from-top), ooo-entrance-zoom (in), ooo-exit-zoom (out), ooo-emphasis-spin; its behaviours are Google's own (x/y and width/height animate with SMIL values, no transitionFilter for fly or zoom)",
+    "paragraphs": "PPTX: one effect per paragraph targeting p:txEl/p:pRg, no p:bldLst; ODP: one effect per paragraph targeting its text:p xml:id, inside a frame that has no id of its own"
+  },
+  "slides": [
+    {
+      "index": 1,
+      "title": "title slide",
+      "transition": null,
+      "steps": []
+    },
+    {
+      "index": 2,
+      "title": "My Section Title",
+      "transition": null,
+      "steps": []
+    },
+    {
+      "index": 3,
+      "title": "Transition: Dissolve",
+      "transition": {
+        "effect": "fade",
+        "params": {
+          "through": "none"
+        },
+        "pptx": {
+          "native": "pptx:fade",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": "odp:fade/crossfade",
+          "durationMs": 2000
+        },
+        "explained": "Google writes Dissolve as a plain fade in both formats (p:fade, fade crossfade). PPTX spd=\"med\" is PowerPoint's 0.75 s (ECMA-376 Part 1 §19.7.53 ST_TransitionSpeed names no duration); Google's ODP writer gives its transitionFilter smil:dur=\"2s\", which the ODP frontend reads"
+      },
+      "steps": []
+    },
+    {
+      "index": 4,
+      "title": "Transition: Fade",
+      "transition": {
+        "effect": "fade",
+        "params": {
+          "through": "black"
+        },
+        "pptx": {
+          "native": "pptx:fade",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": "odp:fade/fadeOverColor",
+          "durationMs": 2000
+        },
+        "explained": "Google writes Fade as a fade through black in both formats (p:fade thruBlk, fadeOverColor #000000). PPTX spd=\"med\" is PowerPoint's 0.75 s (ECMA-376 Part 1 §19.7.53 ST_TransitionSpeed names no duration); Google's ODP writer gives its transitionFilter smil:dur=\"2s\", which the ODP frontend reads"
+      },
+      "steps": []
+    },
+    {
+      "index": 5,
+      "title": "Transition: Slide from right",
+      "transition": {
+        "effect": "push",
+        "params": {
+          "dir": "l"
+        },
+        "pptx": {
+          "native": "pptx:push",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": "odp:pushWipe/fromLeft",
+          "durationMs": 2000,
+          "params": {
+            "dir": "r"
+          }
+        },
+        "explained": "Google's ODP writer names the push side the way LibreOffice's PPTX import does (OOXML dir=l as pushWipe fromLeft), the opposite of SMIL's pushWipe (W3C SMIL 2.0 Transitions: fromLeft brings the new slide in from the left, so the content moves right) and of what Google Slides plays (its 'Slide from right' moves the content left, as the PPTX export's dir and Keynote's movie of its own Push, written dir=l, show). The ODP frontend reads SMIL as written. PPTX spd=\"med\" is PowerPoint's 0.75 s (ECMA-376 Part 1 §19.7.53 ST_TransitionSpeed names no duration); Google's ODP writer gives its transitionFilter smil:dur=\"2s\", which the ODP frontend reads"
+      },
+      "steps": []
+    },
+    {
+      "index": 6,
+      "title": "Transition: Slide from left",
+      "transition": {
+        "effect": "push",
+        "params": {
+          "dir": "r"
+        },
+        "pptx": {
+          "native": "pptx:push",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": "odp:pushWipe/fromRight",
+          "durationMs": 2000,
+          "params": {
+            "dir": "l"
+          }
+        },
+        "explained": "Google's ODP writer names the push side the way LibreOffice's PPTX import does (OOXML dir=l as pushWipe fromLeft), the opposite of SMIL's pushWipe (W3C SMIL 2.0 Transitions: fromLeft brings the new slide in from the left, so the content moves right) and of what Google Slides plays (its 'Slide from right' moves the content left, as the PPTX export's dir and Keynote's movie of its own Push, written dir=l, show). The ODP frontend reads SMIL as written. PPTX spd=\"med\" is PowerPoint's 0.75 s (ECMA-376 Part 1 §19.7.53 ST_TransitionSpeed names no duration); Google's ODP writer gives its transitionFilter smil:dur=\"2s\", which the ODP frontend reads"
+      },
+      "steps": []
+    },
+    {
+      "index": 7,
+      "title": "Transition: Flip",
+      "transition": {
+        "effect": "flip",
+        "params": {
+          "dir": "l"
+        },
+        "pptx": {
+          "native": "pptx:flip",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": null,
+          "durationMs": null,
+          "effect": null,
+          "params": null
+        },
+        "explained": "The PPTX export writes mc:AlternateContent: Choice Requires=\"p14\" p14:flip dir=\"l\", Fallback p:fade; the frontend reads the p14 choice. Google's ODP export writes no transition for Flip: the page has no transitionFilter and no transition style"
+      },
+      "steps": []
+    },
+    {
+      "index": 8,
+      "title": "Transition: Cube",
+      "transition": {
+        "effect": null,
+        "params": null,
+        "pptx": {
+          "native": "pptx:prism",
+          "durationMs": 750,
+          "fallback": "dissolve",
+          "diagnostic": "PX2402"
+        },
+        "odp": {
+          "native": "odp:miscShapeWipe/cornersOut",
+          "durationMs": 2000,
+          "fallback": "dissolve",
+          "diagnostic": "OD9402"
+        },
+        "explained": "Google writes Cube as mc:AlternateContent: Choice p14:prism dir=\"l\" (no isContent, no isInverted), Fallback p:fade, and in ODP as miscShapeWipe cornersOut (LibreOffice's OpenGL outside-cube). Neither has a vocabulary entry: both play the dissolve fallback, reported. PPTX spd=\"med\" is PowerPoint's 0.75 s (ECMA-376 Part 1 §19.7.53 ST_TransitionSpeed names no duration); Google's ODP writer gives its transitionFilter smil:dur=\"2s\", which the ODP frontend reads"
+      },
+      "steps": []
+    },
+    {
+      "index": 9,
+      "title": "Transition: Gallery",
+      "transition": {
+        "effect": "gallery",
+        "params": {
+          "dir": "l"
+        },
+        "pptx": {
+          "native": "pptx:gallery",
+          "durationMs": 750
+        },
+        "odp": {
+          "native": null,
+          "durationMs": null,
+          "effect": null,
+          "params": null
+        },
+        "explained": "The PPTX export writes mc:AlternateContent: Choice p14:gallery dir=\"l\", Fallback p:fade. Google's ODP export writes no transition for Gallery: the page has no transitionFilter and no transition style"
+      },
+      "steps": []
+    },
+    {
+      "index": 10,
+      "title": "Transition: Fade, slowest",
+      "transition": {
+        "effect": "fade",
+        "params": {
+          "through": "black"
+        },
+        "pptx": {
+          "native": "pptx:fade",
+          "durationMs": 5000
+        },
+        "odp": {
+          "native": "odp:fade/fadeOverColor",
+          "durationMs": 3000
+        },
+        "explained": "the PPTX export writes the slider's value as p14:dur inside mc:AlternateContent; the ODP export writes presentation:transition-speed=\"slow\" and a transitionFilter smil:dur=\"3s\" whatever the slider says"
+      },
+      "steps": []
+    },
+    {
+      "index": 11,
+      "title": "Transition: Slide from right, medium",
+      "transition": {
+        "effect": "push",
+        "params": {
+          "dir": "l"
+        },
+        "pptx": {
+          "native": "pptx:push",
+          "durationMs": 2600
+        },
+        "odp": {
+          "native": "odp:pushWipe/fromLeft",
+          "durationMs": 3000,
+          "params": {
+            "dir": "r"
+          }
+        },
+        "explained": "Google's ODP writer names the push side the way LibreOffice's PPTX import does (OOXML dir=l as pushWipe fromLeft), the opposite of SMIL's pushWipe (W3C SMIL 2.0 Transitions: fromLeft brings the new slide in from the left, so the content moves right) and of what Google Slides plays (its 'Slide from right' moves the content left, as the PPTX export's dir and Keynote's movie of its own Push, written dir=l, show). The ODP frontend reads SMIL as written. Durations: the PPTX export writes the slider's value as p14:dur inside mc:AlternateContent; the ODP export writes presentation:transition-speed=\"slow\" and a transitionFilter smil:dur=\"3s\" whatever the slider says"
+      },
+      "steps": []
+    },
+    {
+      "index": 12,
+      "title": "Entrance: Appear",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "appear, on click",
+          "kind": "entrance",
+          "effect": "appear",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 0,
+          "native": {
+            "pptx": "pptx:entr.1",
+            "odp": "odp:ooo-entrance-appear"
+          }
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "title": "Exit: Disappear",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "disappear, on click",
+          "kind": "exit",
+          "effect": "appear",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 0,
+          "native": {
+            "pptx": "pptx:exit.1",
+            "odp": "odp:ooo-exit-disappear"
+          }
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "title": "Entrance: Fade in",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fade in, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "title": "Exit: Fade out",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fade out, on click",
+          "kind": "exit",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.10",
+            "odp": "odp:ooo-exit-fade-out"
+          }
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "title": "Entrance: Fly in from left",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly in from left, on click",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "r",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/8",
+            "odp": "odp:ooo-entrance-fly-in/from-left"
+          }
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "title": "Entrance: Fly in from right",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly in from right, on click",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "l",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/2",
+            "odp": "odp:ooo-entrance-fly-in/from-right"
+          }
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "title": "Entrance: Fly in from bottom",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly in from bottom, on click",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          }
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "title": "Entrance: Fly in from top",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly in from top, on click",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "d",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/1",
+            "odp": "odp:ooo-entrance-fly-in/from-top"
+          }
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "title": "Exit: Fly out to left",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly out to left, on click",
+          "kind": "exit",
+          "effect": "flyIn",
+          "params": {
+            "dir": "l",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.2/8",
+            "odp": "odp:ooo-exit-fly-out/from-left"
+          }
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "title": "Exit: Fly out to right",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly out to right, on click",
+          "kind": "exit",
+          "effect": "flyIn",
+          "params": {
+            "dir": "r",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.2/2",
+            "odp": "odp:ooo-exit-fly-out/from-right"
+          }
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "title": "Exit: Fly out to bottom",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly out to bottom, on click",
+          "kind": "exit",
+          "effect": "flyIn",
+          "params": {
+            "dir": "d",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.2/4",
+            "odp": "odp:ooo-exit-fly-out/from-bottom"
+          }
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "title": "Exit: Fly out to top",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "fly out to top, on click",
+          "kind": "exit",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.2/1",
+            "odp": "odp:ooo-exit-fly-out/from-top"
+          }
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "title": "Entrance: Zoom in",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "zoom in, on click",
+          "kind": "entrance",
+          "effect": "zoom",
+          "params": {
+            "inOut": "in",
+            "origin": "object",
+            "slight": false,
+            "fade": false,
+            "overshoot": false
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.23/16",
+            "odp": "odp:ooo-entrance-zoom/in"
+          }
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "title": "Exit: Zoom out",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "zoom out, on click",
+          "kind": "exit",
+          "effect": "zoom",
+          "params": {
+            "inOut": "in",
+            "origin": "object",
+            "slight": false,
+            "fade": false,
+            "overshoot": false
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:exit.23/32",
+            "odp": "odp:ooo-exit-zoom/out"
+          }
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "title": "Emphasis: Spin",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "spin, on click",
+          "kind": "emphasis",
+          "effect": "spin",
+          "params": {
+            "deg": 360,
+            "cw": false,
+            "hold": true
+          },
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:emph.8",
+            "odp": "odp:ooo-emphasis-spin"
+          }
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "title": "By paragraph: Fly in from bottom, on click",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "byParagraph",
+          "paragraphs": [0, 0],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "byParagraph",
+          "paragraphs": [1, 1],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "byParagraph",
+          "paragraphs": [2, 2],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "click",
+          "delivery": "byParagraph",
+          "paragraphs": [3, 3],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "title": "By paragraph: Fly in from bottom, after previous",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "afterPrevious",
+          "delivery": "byParagraph",
+          "paragraphs": [0, 0],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "afterPrevious",
+          "delivery": "byParagraph",
+          "paragraphs": [1, 1],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "afterPrevious",
+          "delivery": "byParagraph",
+          "paragraphs": [2, 2],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        },
+        {
+          "shape": "first||second|child of second",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "u",
+            "distance": "offSlide"
+          },
+          "trigger": "afterPrevious",
+          "delivery": "byParagraph",
+          "paragraphs": [3, 3],
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/4",
+            "odp": "odp:ooo-entrance-fly-in/from-bottom"
+          },
+          "pptx": {
+            "delivery": "all"
+          },
+          "explained": "Google's PPTX export writes one effect per paragraph and no build list (p:bldLst): ECMA-376 Part 1 §19.5.12 bldP build=\"p\" is the only by-paragraph mark, so the PPTX frontend reads each step as building its one-paragraph range at once (all); the ODP frontend reads a paragraph target (text:p xml:id) as by paragraph. Both build exactly that paragraph"
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "title": "Triggers: click, with previous, after previous, click",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "A: fade in, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        },
+        {
+          "shape": "B: fly in from left, with previous",
+          "kind": "entrance",
+          "effect": "flyIn",
+          "params": {
+            "dir": "r",
+            "distance": "offSlide"
+          },
+          "trigger": "withPrevious",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.2/8",
+            "odp": "odp:ooo-entrance-fly-in/from-left"
+          }
+        },
+        {
+          "shape": "C: zoom in, after previous",
+          "kind": "entrance",
+          "effect": "zoom",
+          "params": {
+            "inOut": "in",
+            "origin": "object",
+            "slight": false,
+            "fade": false,
+            "overshoot": false
+          },
+          "trigger": "afterPrevious",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.23/16",
+            "odp": "odp:ooo-entrance-zoom/in"
+          }
+        },
+        {
+          "shape": "D: fade in, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 1000,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "title": "Durations: fade in slowest, fade in fastest",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "A: fade in, slowest, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 5000,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        },
+        {
+          "shape": "B: fade in, fastest, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 100,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "title": "Fonts: webfonts with builds",
+      "transition": null,
+      "steps": [
+        {
+          "shape": "Caveat 400, fade in slowest, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 5000,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        },
+        {
+          "shape": "Roboto 700 italic, fade in fastest, on click",
+          "kind": "entrance",
+          "effect": "fade",
+          "params": null,
+          "trigger": "click",
+          "delivery": "all",
+          "paragraphs": null,
+          "durationMs": 100,
+          "native": {
+            "pptx": "pptx:entr.10",
+            "odp": "odp:ooo-entrance-fade-in"
+          }
+        }
+      ]
+    }
+  ]
+}

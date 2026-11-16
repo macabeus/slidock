@@ -1,0 +1,29 @@
+[package]
+name = "slidock-core-api"
+description = "Frontend and pass contracts, diagnostics sink, limits and lowering helpers"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-math = { workspace = true }
+indexmap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,41 @@
+[package]
+name = "slidock-core"
+description = "PassManager, the compile pipeline and the two-phase Session"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Checks the manager and verify-source on the private fixtures against the recorded golden files (tests/golden;
+# skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+indexmap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+slidock-substitutes = { workspace = true, features = ["embed"] }
+
+[[test]]
+name = "golden"
+required-features = ["golden"]
+
+[lints]
+workspace = true

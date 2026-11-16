@@ -1,0 +1,54 @@
+[package]
+name = "slidock-pptx"
+description = "PowerPoint (PPTX) frontend"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+exclude.workspace = true
+
+[features]
+# Compiles the PPTX corpus pairs and compares them with the recorded golden files, and reads the corpus deck that
+# embeds fonts (tests/golden; skips when they are absent).
+golden = []
+
+[dependencies]
+slidock-canon = { workspace = true }
+slidock-core-api = { workspace = true }
+slidock-color = { workspace = true }
+slidock-geometry = { workspace = true }
+slidock-io = { workspace = true }
+slidock-ir = { workspace = true }
+slidock-math = { workspace = true }
+slidock-presets = { workspace = true }
+indexmap = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+slidock-core = { workspace = true }
+slidock-fonts = { workspace = true }
+slidock-format = { workspace = true }
+slidock-html = { workspace = true }
+slidock-io = { workspace = true, features = ["std-fs"] }
+slidock-passes = { workspace = true }
+serde = { workspace = true }
+miniz_oxide = { workspace = true }
+
+[[test]]
+name = "corpus"
+required-features = ["golden"]
+
+[[test]]
+name = "embedded_corpus"
+required-features = ["golden"]
+
+[lints]
+workspace = true

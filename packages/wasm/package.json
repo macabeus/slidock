@@ -1,0 +1,32 @@
+{
+  "name": "@slidock/wasm",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./pkg/slidock_wasm.d.ts",
+      "default": "./pkg/slidock_wasm.js"
+    },
+    "./protocol": "./src/protocol.ts",
+    "./worker": "./src/worker.ts",
+    "./folder": "./src/folder.ts",
+    "./test/ooxml": "./test/support/ooxml.ts"
+  },
+  "files": [
+    "pkg",
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint src test require-pkg.mjs",
+    "typecheck": "node require-pkg.mjs && tsc -p tsconfig.json",
+    "test": "node require-pkg.mjs && vitest run"
+  },
+  "dependencies": {
+    "@slidock/types": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "4.1.12"
+  }
+}

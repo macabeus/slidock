@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Presentation IR</title>
+<style>html,body{margin:0;padding:0}p{margin:0}</style>
+<template data-sd-timeline><ol>
+<li data-target="ir-s1.body" data-trigger="click" data-kind="entrance" data-effect="flyIn" data-dir="u" data-distance="offSlide" data-native="pptx:entr.2/4" data-fallback="dissolve" data-delivery="byParagraph" data-paragraphs="0-1" data-stagger-ms="120" data-stagger-order="forward" data-offset-ms="0" data-delay-ms="0" data-duration-ms="500" data-easing="out"></li>
+<li data-target="ir-s1.title" data-trigger="withPrevious" data-kind="emphasis" data-effect="blink" data-effect-repeat="3" data-native="pptx:emph.35" data-fallback="none" data-delivery="all" data-delay-ms="0" data-duration-ms="1000" data-repeat="untilNextClick" data-auto-reverse data-after="{&#x22;dim&#x22;:&#x22;#808080&#x22;}"></li>
+<li data-target="ir-s1.arrow" data-trigger="afterPrevious" data-kind="motion" data-effect="path" data-d="[[&#x22;M&#x22;,0,0],[&#x22;C&#x22;,40,-20,80.5,20,120,0]]" data-auto-rotate="true" data-hold="true" data-native="pptx:path.0" data-fallback="none" data-delivery="all" data-offset-ms="1250" data-delay-ms="250" data-duration-ms="500" data-easing="{&#x22;bezier&#x22;:[0.25,0.1,0.25,1]}"></li>
+<li data-target="ir-s1.photo" data-trigger="click" data-kind="emphasis" data-effect="growShrink" data-scale="{&#x22;x&#x22;:1.5,&#x22;y&#x22;:0.5}" data-hold="false" data-native="pptx:emph.6" data-fallback="none" data-delivery="all" data-background data-delay-ms="0" data-duration-ms="500" data-repeat="{&#x22;count&#x22;:2.5}" data-after="hide"></li>
+<li data-target="ir-s1.group" data-trigger="click" data-kind="entrance" data-effect="behaviors" data-params="[{&#x22;beginMs&#x22;:0,&#x22;durationMs&#x22;:400,&#x22;frames&#x22;:[{&#x22;offset&#x22;:0,&#x22;value&#x22;:1},{&#x22;offset&#x22;:1,&#x22;value&#x22;:0.25}],&#x22;property&#x22;:&#x22;opacity&#x22;}]" data-native="pptx:entr.99" data-fallback="dissolve" data-delivery="byWord" data-stagger-fraction="0.1" data-stagger-order="{&#x22;random&#x22;:7}" data-delay-ms="0" data-duration-ms="500" data-easing="{&#x22;accelDecel&#x22;:{&#x22;accel&#x22;:0.2,&#x22;decel&#x22;:0.3}}"></li>
+<li data-target="ir-s1.video" data-trigger="click" data-kind="media" data-effect="play" data-from="1000" data-native="keynote:apple:movie-start" data-fallback="none" data-delivery="all" data-delay-ms="0" data-duration-ms="500"></li>
+<li data-target="ir-s1.table" data-trigger="click" data-kind="exit" data-native="keynote:apple:shimmer" data-fallback="dissolve" data-delivery="byChar" data-delay-ms="0" data-duration-ms="500"></li>
+</ol></template>
+</head>
+<body>
+<main data-slide="ir-s1" data-layout="ir-layout" style="position:relative;width:720pt;height:405pt;overflow:hidden;text-rendering:geometricPrecision">
+<div data-el="ir-s1.title" data-kind="shape" data-sd-match="title" data-placeholder="title" data-sd-text style="position:absolute;left:36pt;top:20pt;width:648pt;height:60pt;box-sizing:border-box;padding:3.6pt 7.2pt;display:flex;flex-direction:column;justify-content:flex-end;white-space:pre-wrap;overflow-wrap:break-word;color:var(--sd-color-tx2,#44546a)">
+<p data-p="0" data-line-spacing="multiple:1:size-1.2" style="line-height:1.2;font-size:40pt;font-family:&#x22;Liberation Serif&#x22;,serif">Presentation IR</p>
+</div>
+<div data-el="ir-s1.body" data-kind="shape" data-placeholder="body:1" data-sd-text data-autofit="shrink" data-font-scale="1" data-fitted="false" style="position:absolute;left:36pt;top:96pt;width:648pt;height:270pt;box-sizing:border-box;padding:3.6pt 7.2pt;display:flex;flex-direction:column;white-space:pre-wrap;overflow-wrap:break-word;color:var(--sd-color-tx1,#000000);tab-size:72pt">
+<ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column">
+<li data-p="0" data-line-spacing="multiple:1:size-1.2" style="padding-left:18pt;text-indent:-18pt;line-height:1.2;font-size:18pt;font-family:&#x22;Liberation Sans&#x22;,sans-serif"><span data-sd-bullet aria-hidden="true" style="display:inline-block;min-width:18pt;text-indent:0pt;color:#335593">1.</span><span style="color:#335593">Read the </span><a href="https://example.com/spec" style="color:inherit;text-decoration:inherit"><span style="color:#335593;text-decoration-line:underline">spec</span></a>	<span data-field="slideNumber" style="font-weight:700;color:#335593">1</span></li>
+<li data-p="1" data-line-spacing="multiple:1.15:hhea" style="padding-left:36pt;text-indent:-18pt;line-height:1.32258;font-size:12pt;font-family:&#x22;Liberation Sans&#x22;,sans-serif"><span data-sd-bullet aria-hidden="true" style="display:inline-block;min-width:18pt;text-indent:0pt;font-family:&#x22;Liberation Mono&#x22;,monospace;font-size:16pt">–</span><span style="font-family:&#x22;Liberation Mono&#x22;,monospace;font-size:16pt;font-style:italic">Second line</span><br><span style="vertical-align:0.3em">after a break</span></li>
+</ol>
+</div>
+<div data-el="ir-s1.arrow" data-kind="shape" style="position:absolute;left:400pt;top:300pt;width:200pt;height:60pt;rotate:30deg;scale:-1 1">
+<svg data-sd-geom viewBox="0 0 200 60" preserveAspectRatio="none" width="100%" height="100%" style="position:absolute;left:0pt;top:0pt;overflow:visible">
+<defs>
+<linearGradient id="g-ir-s1.arrow" gradientUnits="userSpaceOnUse" gradientTransform="scale(200 60)" x1="0.5" y1="0" x2="0.5" y2="1">
+<stop offset="0" style="stop-color:var(--sd-color-accent1,#4472c4)"></stop>
+<stop offset="1" style="stop-color:#335593"></stop>
+</linearGradient>
+</defs>
+<path d="M0 15L170 15L170 0L200 30L170 60L170 45L0 45Z" stroke-width="1.5" stroke-dasharray="6 4.5" style="fill:url(#g-ir-s1.arrow);stroke:var(--sd-color-tx1,#000000)"></path>
+<path d="M196.25 26.25L200 30L196.25 33.75Z" style="fill:var(--sd-color-tx1,#000000)"></path>
+</svg>
+</div>
+<div data-el="ir-s1.photo" data-kind="picture" data-crop="0.1 0 0.1 -0.05" data-clip="M0 45C0 20.147 26.863 0 60 0C93.137 0 120 20.147 120 45C120 69.853 93.137 90 60 90C26.863 90 0 69.853 0 45Z" style="position:absolute;left:36pt;top:300pt;width:120pt;height:90pt;overflow:hidden;clip-path:path(&#x22;M0 60C0 26.863 35.817 0 80 0C124.183 0 160 26.863 160 60C160 93.137 124.183 120 80 120C35.817 120 0 93.137 0 60Z&#x22;)">
+<img src="../media/f14fbb9805c892808f72571ae2701b88601c47aff9449a9b847439c24077a957.jpg" alt="A photo" style="position:absolute;left:-12.5%;top:0%;width:125%;height:95.238%;opacity:0.5">
+</div>
+<div data-el="ir-s1.group" data-kind="group" style="position:absolute;left:200pt;top:300pt;width:100pt;height:80pt">
+<div data-el="ir-s1.group.dot" data-kind="shape" data-sd-match="dot:ir-s1.group.dot" style="position:absolute;left:0pt;top:0pt;width:50pt;height:50pt">
+<svg data-sd-geom viewBox="0 0 50 50" preserveAspectRatio="none" width="100%" height="100%" style="position:absolute;left:0pt;top:0pt;overflow:visible">
+<defs>
+<radialGradient id="g-ir-s1.group.dot" gradientUnits="userSpaceOnUse" gradientTransform="scale(50 50)" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" style="stop-color:#ffffff"></stop>
+<stop offset="1" style="stop-color:var(--sd-color-accent2,#ed7d31)"></stop>
+</radialGradient>
+</defs>
+<path d="M0 25L25 0L50 25L25 50Z" style="fill:url(#g-ir-s1.group.dot)"></path>
+</svg>
+</div>
+<div data-el="ir-s1.group.inner" data-kind="group" data-sd-match="dot:ir-s1.group.inner" style="position:absolute;left:50pt;top:50pt;width:50pt;height:30pt">
+<img data-el="ir-s1.group.inner.logo" data-kind="picture" src="../media/85c39d66deda90996b78a3a39c8f194089238ac7de266e97a20d26e7c7b86cbf.png" alt="" style="position:absolute;left:0pt;top:0pt;width:50pt;height:30pt;clip:rect(auto, auto, auto, auto)">
+</div>
+</div>
+<div data-el="ir-s1.table" data-kind="foreign" data-foreign="table" style="position:absolute;left:320pt;top:100pt;width:360pt;height:120pt">
+<img src="../media/8f7fa92dd6b7d0f869a860754ec4491aa5dc5a6c582b8bf2398c17a8623bb355.png" alt="" style="position:absolute;left:0pt;top:0pt;width:100%;height:100%;object-fit:fill">
+</div>
+<div data-el="ir-s1.video" data-kind="media" style="position:absolute;left:500pt;top:20pt;width:160pt;height:90pt">
+<video src="../media/a926572f089a588fe12709a1aef00bd6b7131c7b1a5995d1914cd1917047c03d.mp4" poster="../media/10dd12d5330259fbf93005f63e29dfaae65885a80d0ea11cffe0cdd4c8f8f8ac.png" preload="none" playsinline muted style="position:absolute;left:0pt;top:0pt;width:100%;height:100%;object-fit:fill" data-muted data-trim="1000-5000"></video>
+</div>
+</main>
+</body>
+</html>

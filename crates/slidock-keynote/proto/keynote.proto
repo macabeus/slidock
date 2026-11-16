@@ -1,0 +1,1558 @@
+// The trimmed Keynote schema: the messages slidock-keynote reads, from psobot/keynote-parser's definitions
+// (version set 14.5), see NOTICE.md. Each namespace is a wrapper message, so full names are the original ones
+// (`.KN.SlideArchive`) and the namespaces, which name each other in cycles, share one file. Every field is optional
+// or repeated; a message field whose type was not kept is left out. An extension field is a field of the message it
+// extends, named by its full name with `_` for `.`.
+//
+// Generated; do not edit by hand.
+syntax = "proto2";
+
+message TSP {
+  message ArchiveInfo {
+    optional uint64 identifier = 1;
+    repeated .TSP.MessageInfo message_infos = 2;
+    optional bool should_merge = 3;
+  }
+  message MessageInfo {
+    optional uint32 type = 1;
+    repeated uint32 version = 2 [packed = true];
+    optional uint32 length = 3;
+    repeated uint64 object_references = 5 [packed = true];
+    repeated uint64 data_references = 6 [packed = true];
+    optional uint32 base_message_index = 7;
+    repeated uint32 diff_merge_version = 8 [packed = true];
+    repeated uint32 diff_read_version = 11 [packed = true];
+  }
+  message Reference {
+    optional uint64 identifier = 1;
+    optional int32 deprecated_type = 2;
+    optional bool deprecated_is_external = 3;
+  }
+  message DataReference {
+    optional uint64 identifier = 1;
+  }
+  message Point {
+    optional float x = 1;
+    optional float y = 2;
+  }
+  message Size {
+    optional float width = 1;
+    optional float height = 2;
+  }
+  message Color {
+    enum ColorModel {
+      rgb = 1;
+      cmyk = 2;
+      white = 3;
+    }
+    enum RGBColorSpace {
+      srgb = 1;
+      p3 = 2;
+    }
+    optional .TSP.Color.ColorModel model = 1;
+    optional float r = 3;
+    optional float g = 4;
+    optional float b = 5;
+    optional .TSP.Color.RGBColorSpace rgbspace = 12;
+    optional float a = 6;
+    optional float c = 7;
+    optional float m = 8;
+    optional float y = 9;
+    optional float k = 10;
+    optional float w = 11;
+  }
+  message Path {
+    enum ElementType {
+      moveTo = 1;
+      lineTo = 2;
+      quadCurveTo = 3;
+      curveTo = 4;
+      closeSubpath = 5;
+    }
+    message Element {
+      optional .TSP.Path.ElementType type = 1;
+      repeated .TSP.Point points = 2;
+    }
+    repeated .TSP.Path.Element elements = 1;
+  }
+  message PackageMetadata {
+    enum PackageType {
+      Default = 0;
+      Directory = 1;
+      SingleFile = 2;
+    }
+    optional uint64 last_object_identifier = 1;
+    repeated .TSP.DataInfo datas = 4;
+    repeated uint32 read_version = 5 [packed = true];
+    repeated uint32 write_version = 6 [packed = true];
+    repeated uint32 file_format_version = 7 [packed = true];
+    optional uint64 save_token = 8;
+    optional .TSP.PackageMetadata.PackageType preferred_package_type = 9;
+    optional .TSP.Reference data_metadata_map = 10;
+  }
+  message DataInfo {
+    enum DownloadPriority {
+      High = 0;
+      Default = 1;
+    }
+    optional uint64 identifier = 1;
+    optional bytes digest = 2;
+    optional string preferred_file_name = 3;
+    optional string file_name = 4;
+    optional string document_resource_locator = 5;
+    optional bytes source_bookmark_data = 6;
+    optional string remote_url = 7;
+    optional bool can_download = 8;
+    optional .TSP.DataInfo.DownloadPriority download_priority = 9;
+    optional bytes last_mismatched_digest = 12;
+    optional uint64 remote_data_length = 14;
+    optional bool remote_data_has_package_storage = 15;
+    optional .TSP.DataUploadStatus upload_status = 16;
+    optional double remote_data_mtime = 17;
+    optional uint64 materialized_length = 18;
+    optional string pasteboard_external_file_path = 99;
+  }
+  enum DataUploadStatus {
+    DataUploadStatus_Pending = 0;
+    DataUploadStatus_Reserved = 1;
+    DataUploadStatus_UnableToReserve = 2;
+    DataUploadStatus_Corrupted = 3;
+    DataUploadStatus_DocumentMayExceedDocumentSizeLimit = 4;
+    DataUploadStatus_Expired = 5;
+  }
+  message UUID {
+    optional uint64 lower = 1;
+    optional uint64 upper = 2;
+  }
+  message CFUUIDArchive {
+    optional bytes uuid_bytes = 1;
+    optional uint32 uuid_w0 = 2;
+    optional uint32 uuid_w1 = 3;
+    optional uint32 uuid_w2 = 4;
+    optional uint32 uuid_w3 = 5;
+  }
+}
+
+message TSS {
+  message StyleArchive {
+    optional string name = 1;
+    optional string style_identifier = 2;
+    optional .TSP.Reference parent = 3;
+    optional bool is_variation = 4;
+    optional .TSP.Reference stylesheet = 5;
+  }
+}
+
+message KN {
+  message DocumentArchive {
+    optional .TSP.Reference show = 2;
+    optional .TSP.Reference tables_custom_format_list = 4;
+  }
+  message ShowArchive {
+    enum KNShowMode {
+      kKNShowModeNormal = 0;
+      kKNShowModeAutoPlay = 1;
+      kKNShowModeHyperlinksOnly = 2;
+    }
+    optional .TSP.Reference uiState = 1;
+    optional .TSP.Reference theme = 2;
+    optional .KN.SlideTreeArchive slideTree = 3;
+    optional .TSP.Size size = 4;
+    optional .TSP.Reference stylesheet = 5;
+    optional bool slideNumbersVisible = 6;
+    optional .TSP.Reference recording = 7;
+    optional bool loop_presentation = 8;
+    optional .KN.ShowArchive.KNShowMode mode = 9;
+    optional double autoplay_transition_delay = 10;
+    optional double autoplay_build_delay = 11;
+    optional bool idle_timer_active = 15;
+    optional double idle_timer_delay = 16;
+    optional .TSP.Reference soundtrack = 17;
+    optional bool automatically_plays_upon_open = 18;
+    optional .TSP.Reference slideList = 19;
+  }
+  message SlideTreeArchive {
+    optional .TSP.Reference rootSlideNode = 1;
+    repeated .TSP.Reference slides = 2;
+  }
+  message SlideNodeArchive {
+    repeated .TSP.Reference children = 1;
+    optional .TSP.Reference slide = 2;
+    optional uint32 depth = 21;
+    repeated .TSP.DataReference thumbnails = 16;
+    repeated .TSP.Size thumbnailSizes = 10;
+    optional bool thumbnailsAreDirty = 14;
+    repeated string digests_for_datas_needing_download_for_thumbnail = 25;
+    optional bool isSkipped = 4;
+    optional bool isCollapsed = 5;
+    optional bool isCollapsedInOutlineView = 17;
+    optional bool hasBodyInOutlineView = 19;
+    optional bool hasBuilds = 6;
+    optional bool hasTransition = 7;
+    optional bool hasNote = 8;
+    optional bool isSlideNumberVisible = 18;
+    optional string uniqueIdentifier = 11;
+    optional string copyFromSlideIdentifier = 12;
+    optional uint32 slideSpecificHyperlinkCount = 13;
+    optional uint32 build_event_count = 15;
+    optional uint32 build_event_count_cache_version = 26;
+    optional bool build_event_count_is_up_to_date = 22;
+    optional bool has_explicit_builds = 20;
+    optional uint32 has_explicit_builds_cache_version = 27;
+    optional bool has_explicit_builds_is_up_to_date = 23;
+    optional bool background_is_no_fill_or_color_fill_with_alpha = 28;
+    optional .TSP.UUID template_slide_id = 29;
+    repeated .TSP.UUID live_video_source_ids = 30;
+    optional .TSP.Reference database_thumbnail = 3;
+    repeated .TSP.Reference database_thumbnails = 9;
+  }
+  message SlideArchive {
+    message SageTagMapEntry {
+      optional string tag = 1;
+      optional .TSP.Reference info = 2;
+    }
+    optional .TSP.Reference style = 1;
+    repeated .TSP.Reference builds = 2;
+    repeated .KN.BuildChunkArchive buildChunkArchives = 3;
+    repeated .TSP.Reference buildChunks = 43;
+    optional .KN.TransitionArchive transition = 4;
+    optional .TSP.Reference titlePlaceholder = 5;
+    optional .TSP.Reference bodyPlaceholder = 6;
+    optional .TSP.Reference objectPlaceholder = 30;
+    optional .TSP.Reference slideNumberPlaceholder = 20;
+    repeated .TSP.Reference owned_drawables = 7;
+    repeated .TSP.Reference drawables_z_order = 42;
+    repeated .KN.SlideArchive.SageTagMapEntry sage_tag_to_info_map = 28;
+    optional string name = 10;
+    optional .TSD.GeometryArchive titlePlaceholderGeometry = 11;
+    optional uint32 titlePlaceholderShapeStyleIndex = 12;
+    optional uint32 titlePlaceholderTextStyleIndex = 13;
+    optional .TSWP.ShapeStylePropertiesArchive titleLayoutProperties = 24;
+    optional .TSD.GeometryArchive bodyPlaceholderGeometry = 14;
+    optional uint32 bodyPlaceholderShapeStyleIndex = 15;
+    optional uint32 bodyPlaceholderTextStyleIndex = 16;
+    optional .TSWP.ShapeStylePropertiesArchive bodyLayoutProperties = 25;
+    optional .TSD.GeometryArchive slideNumberPlaceholderGeometry = 21;
+    optional uint32 slideNumberPlaceholderShapeStyleIndex = 22;
+    optional uint32 slideNumberPlaceholderTextStyleIndex = 23;
+    optional .TSWP.ShapeStylePropertiesArchive slideNumberLayoutProperties = 26;
+    optional .TSP.Reference classicStylesheetRecord = 29;
+    repeated .TSP.Reference bodyParagraphStyles = 31;
+    repeated .TSP.Reference bodyListStyles = 35;
+    optional string thumbnailTextForTitlePlaceholder = 37;
+    optional string thumbnailTextForBodyPlaceholder = 38;
+    optional bool slide_objects_layer_with_template = 41;
+    optional .TSP.Reference template_slide = 17;
+    optional .TSP.Reference userDefinedGuideStorage = 36;
+    optional bool inDocument = 19;
+    optional .TSP.Reference note = 27;
+    repeated .TSP.Reference infos_using_object_placeholder_geometry = 44;
+    optional bool deprecated_objectPlaceholderVisibleForExport = 34;
+    optional .TSP.Reference info_using_object_placeholder_geometry = 39;
+    optional bool info_using_object_placeholder_geometry_matches_object_placeholder_geometry = 40;
+  }
+  message ThemeArchive {
+    repeated .TSP.Reference templates = 2;
+    optional string uuid = 3;
+    repeated .TSP.Reference classicThemeRecords = 4;
+    optional .TSP.Reference default_template_slide_node = 5;
+    optional .TSP.Reference default_template_slide_node_reference = 6;
+    optional bool default_template_slide_node_is_our_best_guess = 7;
+    optional .TSP.Reference live_video_source_collection = 9;
+    repeated .TSP.Reference motion_background_style_presets = 10;
+  }
+  message TransitionArchive {
+    optional .KN.TransitionAttributesArchive attributes = 2;
+  }
+  message TransitionAttributesArchive {
+    enum TransitionCustomAttributesTimingCurveType {
+      TransitionCustomAttributesTimingCurveTypeLinear = 1;
+      TransitionCustomAttributesTimingCurveTypeEaseIn = 2;
+      TransitionCustomAttributesTimingCurveTypeEaseOut = 3;
+      TransitionCustomAttributesTimingCurveTypeEaseInEaseOut = 4;
+      TransitionCustomAttributesTimingCurveTypeCustom = 5;
+    }
+    enum TransitionCustomAttributesTextDeliveryType {
+      TransitionCustomAttributesTextDeliveryTypeByObject = 1;
+      TransitionCustomAttributesTextDeliveryTypeByWord = 2;
+      TransitionCustomAttributesTextDeliveryTypeByCharacter = 3;
+      TransitionCustomAttributesTextDeliveryTypeByLine = 4;
+    }
+    optional .KN.AnimationAttributesArchive animationAttributes = 8;
+    optional float custom_twist = 9;
+    optional uint32 custom_mosaic_size = 10;
+    optional uint32 custom_mosaic_type = 11;
+    optional bool custom_bounce = 12;
+    optional bool custom_magic_move_fade_unmatched_objects = 13;
+    optional .KN.TransitionAttributesArchive.TransitionCustomAttributesTimingCurveType custom_timing_curve = 15;
+    optional .KN.TransitionAttributesArchive.TransitionCustomAttributesTextDeliveryType custom_text_delivery_type = 16;
+    optional bool custom_motion_blur = 17;
+    optional float custom_travel_distance = 18;
+    optional string database_animation_type = 1;
+    optional string database_effect = 2;
+    optional double database_duration = 3;
+    optional uint32 database_direction = 4;
+    optional float database_delay = 5;
+    optional bool database_is_automatic = 6;
+    optional .TSP.Color database_color = 7;
+  }
+  message AnimationAttributesArchive {
+    optional string animation_type = 1;
+    optional string effect = 2;
+    optional double duration = 3;
+    optional uint32 direction = 4;
+    optional double delay = 5;
+    optional bool is_automatic = 6;
+    optional .TSP.Color color = 7;
+    optional .TSD.PathSourceArchive custom_effect_timing_curve_1 = 8;
+    optional .TSD.PathSourceArchive custom_effect_timing_curve_2 = 9;
+    optional .TSD.PathSourceArchive custom_effect_timing_curve_3 = 10;
+    optional uint32 random_number_seed = 11;
+    optional double custom_detail = 12;
+    optional string custom_effect_timing_curve_theme_name_1 = 13;
+    optional string custom_effect_timing_curve_theme_name_2 = 14;
+    optional string custom_effect_timing_curve_theme_name_3 = 15;
+    optional bool writing_direction_is_rtl = 16;
+  }
+  message BuildArchive {
+    optional .TSP.Reference drawable = 1;
+    optional string delivery = 2;
+    optional double duration = 3;
+    optional .KN.BuildAttributesArchive attributes = 4;
+    optional int32 chunk_id_seed = 5;
+  }
+  message BuildAttributesArchive {
+    enum BuildAttributesCurveStyle {
+      kStraight = 0;
+      kCurved = 1;
+    }
+    enum BuildAttributesRotationDirection {
+      kClockwise = 31;
+      kCounterclockwise = 32;
+    }
+    enum BuildAttributesAcceleration {
+      kNone = 0;
+      kEaseIn = 1;
+      kEaseOut = 2;
+      kEaseBoth = 3;
+      kCustom = 4;
+    }
+    enum BuildAttributesTextDelivery {
+      kTextDeliveryUndefined = 0;
+      kTextDeliveryByObject = 1;
+      kTextDeliveryByWord = 2;
+      kTextDeliveryByCharacter = 3;
+      kTextDeliveryByLine = 4;
+    }
+    enum BuildAttributesDeliveryOption {
+      kDeliveryOptionUndefined = 0;
+      kDeliveryOptionForward = 1;
+      kDeliveryOptionBackward = 2;
+      kDeliveryOptionFromCenter = 3;
+      kDeliveryOptionFromEdges = 4;
+      kDeliveryOptionRandom = 5;
+    }
+    enum ActionBuildAttributesJiggleIntensity {
+      kJiggleIntensitySmall = 0;
+      kJiggleIntensityMedium = 1;
+      kJiggleIntensityLarge = 2;
+    }
+    optional .KN.AnimationAttributesArchive animationAttributes = 18;
+    optional uint32 eventTrigger = 4;
+    optional double delayAutomaticAfter = 6;
+    optional double delayAutomaticWith = 7;
+    optional .KN.BuildAttributesArchive.BuildAttributesCurveStyle curveStyle = 14;
+    optional double ChartRotation3D = 17;
+    optional uint32 startOffset = 27;
+    optional uint32 endOffset = 28;
+    optional double action_rotationAngle = 9;
+    optional .KN.BuildAttributesArchive.BuildAttributesRotationDirection action_rotationDirection = 10;
+    optional double action_scaleSize = 11;
+    optional double action_colorAlpha = 12;
+    optional .KN.BuildAttributesArchive.BuildAttributesAcceleration action_acceleration = 13;
+    optional .TSD.PathSourceArchive action_motionPathSource = 22;
+    optional bool custom_bounce = 19;
+    optional .KN.BuildAttributesArchive.BuildAttributesTextDelivery custom_textDelivery = 20;
+    optional .KN.BuildAttributesArchive.BuildAttributesDeliveryOption custom_deliveryOption = 21;
+    optional bool custom_action_decay = 23;
+    optional uint32 custom_action_repeatCount = 24;
+    optional double custom_action_scale = 25;
+    optional .KN.BuildAttributesArchive.ActionBuildAttributesJiggleIntensity custom_action_jiggleIntensity = 26;
+    optional bool custom_motion_blur = 29;
+    optional bool custom_include_endpoints = 30;
+    optional bool custom_shine = 33;
+    optional double custom_scale_amount = 34;
+    optional double custom_travel_distance = 35;
+    optional bool custom_cursor = 36;
+    optional bool custom_align_to_path = 37;
+    optional string database_animationType = 1;
+    optional string database_effect = 2;
+    optional uint32 database_direction = 3;
+    optional double database_delay = 5;
+    optional double database_duration = 8;
+    optional .TSP.Color database_color = 16;
+    optional string motionPathString = 15;
+  }
+  message BuildChunkArchive {
+    optional .TSP.Reference build = 1;
+    optional uint32 index = 2;
+    optional double delay = 3;
+    optional double duration = 4;
+    optional bool automatic = 5;
+    optional bool referent = 6;
+    optional .TSP.UUID build_id = 8;
+  }
+  message PlaceholderArchive {
+    enum Kind {
+      kKindPlaceholder = 0;
+      kKindSlideNumberPlaceholder = 1;
+      kKindTitlePlaceholder = 2;
+      kKindBodyPlaceholder = 3;
+      kKindObjectPlaceholder = 4;
+    }
+    optional .TSWP.ShapeInfoArchive super = 1;
+    optional .KN.PlaceholderArchive.Kind kind = 2;
+  }
+  message NoteArchive {
+    optional .TSP.Reference containedStorage = 1;
+  }
+  message SlideStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .KN.SlideStylePropertiesArchive slide_properties = 11;
+  }
+  message SlideStylePropertiesArchive {
+    optional .TSD.FillArchive fill = 1;
+    optional .KN.TransitionAttributesArchive transition = 2;
+    optional bool transition_null = 3;
+    optional bool titlePlaceholderVisibility = 4;
+    optional bool bodyPlaceholderVisibility = 5;
+    optional bool objectPlaceholderVisibility = 7;
+    optional bool slideNumberPlaceholderVisibility = 6;
+  }
+}
+
+message TSD {
+  message GeometryArchive {
+    optional .TSP.Point position = 1;
+    optional .TSP.Size size = 2;
+    optional uint32 flags = 3;
+    optional float angle = 4;
+  }
+  message DrawableArchive {
+    optional .TSD.GeometryArchive geometry = 1;
+    optional .TSP.Reference parent = 2;
+    optional string hyperlink_url = 4;
+    optional bool locked = 5;
+    optional .TSP.Reference comment = 6;
+    optional bool aspect_ratio_locked = 7;
+    optional string accessibility_description = 8;
+    repeated .TSP.Reference pencil_annotations = 9;
+    optional .TSP.Reference title = 10;
+    optional .TSP.Reference caption = 11;
+    optional bool title_hidden = 12;
+    optional bool caption_hidden = 13;
+  }
+  message ShapeArchive {
+    optional .TSD.DrawableArchive super = 1;
+    optional .TSP.Reference style = 2;
+    optional .TSD.PathSourceArchive pathsource = 3;
+    optional .TSD.LineEndArchive head_line_end = 4;
+    optional .TSD.LineEndArchive tail_line_end = 5;
+    optional float strokePatternOffsetDistance = 6;
+  }
+  message GroupArchive {
+    optional .TSD.DrawableArchive super = 1;
+    repeated .TSP.Reference children = 2;
+    optional .TSP.Reference fake_shape_for_empty_group = 3;
+  }
+  message ImageArchive {
+    optional .TSD.DrawableArchive super = 1;
+    optional .TSP.DataReference data = 11;
+    optional .TSP.Reference style = 3;
+    optional .TSP.Size originalSize = 4;
+    optional .TSP.Reference mask = 5;
+    optional .TSP.DataReference thumbnailData = 12;
+    optional uint32 flags = 7;
+    optional .TSP.DataReference originalData = 13;
+    optional .TSP.DataReference originalSVGData = 23;
+    optional .TSP.Size naturalSize = 9;
+    optional .TSP.Path instantAlphaPath = 10;
+    optional .TSP.DataReference enhancedImageData = 17;
+    optional .TSP.DataReference adjustedImageData = 15;
+    optional .TSP.DataReference thumbnailAdjustedImageData = 16;
+    optional bool interpretsUntaggedImageDataAsGeneric = 18;
+    optional .TSP.Reference database_data = 2;
+    optional .TSP.Reference database_thumbnailData = 6;
+    optional .TSP.Reference database_originalData = 8;
+    optional .TSP.Path traced_path = 19;
+    optional bool should_trace_pdf_content = 21;
+    optional bool background_removed = 22;
+    // The extension .TSWP.EquationInfoArchive.equation_source_old.
+    optional string TSWP_EquationInfoArchive_equation_source_old = 100;
+    // The extension .TSWP.EquationInfoArchive.equation_text_properties.
+    optional .TSWP.CharacterStylePropertiesArchive TSWP_EquationInfoArchive_equation_text_properties = 101;
+    // The extension .TSWP.EquationInfoArchive.equation_depth.
+    optional float TSWP_EquationInfoArchive_equation_depth = 102;
+    // The extension .TSWP.EquationInfoArchive.equation_source_text.
+    optional string TSWP_EquationInfoArchive_equation_source_text = 103;
+  }
+  message MaskArchive {
+    optional .TSD.DrawableArchive super = 1;
+    optional .TSD.PathSourceArchive pathsource = 2;
+  }
+  message MovieArchive {
+    enum MovieLoopOption {
+      None = 0;
+      Repeat = 1;
+      BackAndForth = 2;
+    }
+    optional .TSD.DrawableArchive super = 1;
+    optional .TSP.DataReference movieData = 14;
+    optional .TSP.DataReference importedAuxiliaryMovieData = 22;
+    optional string imported_auxiliary_movie_data_original_filename = 25;
+    optional string movieRemoteURL = 17;
+    optional float startTime = 3;
+    optional float endTime = 4;
+    optional float posterTime = 5;
+    optional uint32 loopOptionAsInteger = 6;
+    optional .TSD.MovieArchive.MovieLoopOption loop_option = 24;
+    optional float volume = 7;
+    optional bool autoPlay = 8;
+    optional bool audioOnly = 9;
+    optional bool streaming = 18;
+    optional bool nativeAudioRecording = 27;
+    optional bool playsAcrossSlides = 28;
+    optional .TSP.DataReference posterImageData = 15;
+    optional .TSP.DataReference audioOnlyImageData = 16;
+    optional bool poster_image_generated_with_alpha_support = 23;
+    optional uint32 playableState = 12;
+    optional uint32 flags = 13;
+    optional .TSP.Reference database_movieData = 2;
+    optional .TSP.Reference database_posterImageData = 10;
+    optional .TSP.Reference database_audioOnlyImageData = 11;
+    optional .TSP.Reference style = 19;
+    optional .TSP.Size originalSize = 20;
+    optional .TSP.Size naturalSize = 21;
+    optional bool is_live_video = 30;
+  }
+  message ConnectionLineArchive {
+    optional .TSD.ShapeArchive super = 1;
+    optional .TSP.Reference connected_from = 2;
+    optional .TSP.Reference connected_to = 3;
+    optional .TSP.UUID connected_to_uuid = 4;
+    optional .TSP.UUID connected_from_uuid = 5;
+  }
+  message PathSourceArchive {
+    optional bool horizontalFlip = 1;
+    optional bool verticalFlip = 2;
+    optional .TSD.PointPathSourceArchive point_path_source = 3;
+    optional .TSD.ScalarPathSourceArchive scalar_path_source = 4;
+    optional .TSD.BezierPathSourceArchive bezier_path_source = 5;
+    optional .TSD.CalloutPathSourceArchive callout_path_source = 6;
+    optional .TSD.ConnectionLinePathSourceArchive connection_line_path_source = 7;
+    optional .TSD.EditableBezierPathSourceArchive editable_bezier_path_source = 8;
+    optional string localizationKey = 9;
+    optional string userDefinedName = 10;
+  }
+  message PointPathSourceArchive {
+    enum PointPathSourceType {
+      kTSDLeftSingleArrow = 0;
+      kTSDRightSingleArrow = 1;
+      kTSDDoubleArrow = 10;
+      kTSDStar = 100;
+      kTSDPlus = 200;
+    }
+    optional .TSD.PointPathSourceArchive.PointPathSourceType type = 1;
+    optional .TSP.Point point = 2;
+    optional .TSP.Size naturalSize = 3;
+  }
+  message ScalarPathSourceArchive {
+    enum ScalarPathSourceType {
+      kTSDRoundedRectangle = 0;
+      kTSDRegularPolygon = 1;
+      kTSDChevron = 2;
+    }
+    optional .TSD.ScalarPathSourceArchive.ScalarPathSourceType type = 1;
+    optional float scalar = 2;
+    optional .TSP.Size naturalSize = 3;
+    optional bool is_curve_continuous = 4;
+  }
+  message BezierPathSourceArchive {
+    optional string path_string = 1;
+    optional .TSP.Size naturalSize = 2;
+    optional .TSP.Path path = 3;
+  }
+  message CalloutPathSourceArchive {
+    optional .TSP.Size natural_size = 1;
+    optional .TSP.Point tail_position = 2;
+    optional float tail_size = 3;
+    optional float corner_radius = 4;
+    optional bool center_tail = 5;
+  }
+  message ConnectionLinePathSourceArchive {
+    enum ConnectionLinePathSourceType {
+      kTSDConnectionLineTypeQuadratic = 0;
+      kTSDConnectionLineTypeOrthogonal = 1;
+    }
+    optional .TSD.BezierPathSourceArchive super = 1;
+    optional .TSD.ConnectionLinePathSourceArchive.ConnectionLinePathSourceType type = 2;
+    optional float outset_from = 3;
+    optional float outset_to = 4;
+  }
+  message EditableBezierPathSourceArchive {
+    enum NodeType {
+      sharp = 1;
+      bezier = 2;
+      smooth = 3;
+    }
+    message Node {
+      optional .TSP.Point inControlPoint = 1;
+      optional .TSP.Point nodePoint = 2;
+      optional .TSP.Point outControlPoint = 3;
+      optional .TSD.EditableBezierPathSourceArchive.NodeType type = 4;
+    }
+    message Subpath {
+      repeated .TSD.EditableBezierPathSourceArchive.Node nodes = 1;
+      optional bool closed = 2;
+    }
+    repeated .TSD.EditableBezierPathSourceArchive.Subpath subpaths = 1;
+    optional .TSP.Size naturalSize = 2;
+  }
+  message FillArchive {
+    optional .TSP.Color color = 1;
+    optional .TSD.GradientArchive gradient = 2;
+    optional .TSD.ImageFillArchive image = 3;
+  }
+  message GradientArchive {
+    enum GradientType {
+      Linear = 0;
+      Radial = 1;
+    }
+    message GradientStop {
+      optional .TSP.Color color = 1;
+      optional float fraction = 2;
+      optional float inflection = 3;
+    }
+    optional .TSD.GradientArchive.GradientType type = 1;
+    repeated .TSD.GradientArchive.GradientStop stops = 2;
+    optional float opacity = 3;
+    optional bool advancedGradient = 4;
+    optional .TSD.AngleGradientArchive anglegradient = 5;
+    optional .TSD.TransformGradientArchive transformgradient = 6;
+  }
+  message AngleGradientArchive {
+    optional float gradientangle = 2;
+  }
+  message TransformGradientArchive {
+    optional .TSP.Point start = 1;
+    optional .TSP.Point end = 2;
+    optional .TSP.Size baseNaturalSize = 3;
+  }
+  message ImageFillArchive {
+    enum ImageFillTechnique {
+      NaturalSize = 0;
+      Stretch = 1;
+      Tile = 2;
+      ScaleToFill = 3;
+      ScaleToFit = 4;
+    }
+    optional .TSP.DataReference imagedata = 6;
+    optional .TSD.ImageFillArchive.ImageFillTechnique technique = 2;
+    optional .TSP.Color tint = 3;
+    optional .TSP.Size fillsize = 4;
+    optional .TSP.DataReference originalimagedata = 7;
+    optional bool interpretsUntaggedImageDataAsGeneric = 8;
+    optional .TSP.Color referencecolor = 9;
+    optional .TSP.Reference database_imagedata = 1;
+    optional .TSP.Reference database_originalimagedata = 5;
+  }
+  message StrokeArchive {
+    enum LineCap {
+      ButtCap = 0;
+      RoundCap = 1;
+      SquareCap = 2;
+    }
+    optional .TSP.Color color = 1;
+    optional float width = 2;
+    optional .TSD.StrokeArchive.LineCap cap = 3;
+    optional .TSD.LineJoin join = 4;
+    optional float miter_limit = 5;
+    optional .TSD.StrokePatternArchive pattern = 6;
+  }
+  enum LineJoin {
+    MiterJoin = 0;
+    RoundJoin = 1;
+    BevelJoin = 2;
+  }
+  message StrokePatternArchive {
+    enum StrokePatternType {
+      TSDPattern = 0;
+      TSDSolidPattern = 1;
+      TSDEmptyPattern = 2;
+    }
+    optional .TSD.StrokePatternArchive.StrokePatternType type = 1;
+    optional float phase = 2;
+    optional uint32 count = 3;
+    repeated float pattern = 4;
+  }
+  message ShadowArchive {
+    enum ShadowType {
+      TSDDropShadow = 0;
+      TSDContactShadow = 1;
+      TSDCurvedShadow = 2;
+    }
+    optional .TSP.Color color = 1;
+    optional float angle = 2;
+    optional float offset = 3;
+    optional int32 radius = 4;
+    optional float opacity = 5;
+    optional bool is_enabled = 6;
+    optional .TSD.ShadowArchive.ShadowType type = 7;
+  }
+  message LineEndArchive {
+    optional .TSP.Path path = 1;
+    optional .TSD.LineJoin line_join = 2;
+    optional .TSP.Point end_point = 3;
+    optional bool is_filled = 4;
+    optional string identifier = 5;
+  }
+  message ShapeStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TSD.ShapeStylePropertiesArchive shape_properties = 11;
+  }
+  message ShapeStylePropertiesArchive {
+    optional .TSD.FillArchive fill = 1;
+    optional .TSD.StrokeArchive stroke = 2;
+    optional float opacity = 3;
+    optional .TSD.ShadowArchive shadow = 4;
+    optional .TSD.LineEndArchive head_line_end = 6;
+    optional .TSD.LineEndArchive tail_line_end = 7;
+  }
+  message MediaStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TSD.MediaStylePropertiesArchive media_properties = 11;
+  }
+  message MediaStylePropertiesArchive {
+    optional .TSD.StrokeArchive stroke = 1;
+    optional float opacity = 2;
+    optional .TSD.ShadowArchive shadow = 3;
+  }
+}
+
+message TSWP {
+  message StorageArchive {
+    enum KindType {
+      BODY = 0;
+      HEADER = 1;
+      FOOTNOTE = 2;
+      TEXTBOX = 3;
+      NOTE = 4;
+      CELL = 5;
+      UNCLASSIFIED = 6;
+      TABLEOFCONTENTS = 7;
+      UNDEFINED = 8;
+    }
+    optional .TSWP.StorageArchive.KindType kind = 1;
+    optional .TSP.Reference style_sheet = 2;
+    repeated string text = 3;
+    optional bool has_itext = 4;
+    optional bool in_document = 10;
+    optional .TSWP.ObjectAttributeTable table_para_style = 5;
+    optional .TSWP.ParaDataAttributeTable table_para_data = 6;
+    optional .TSWP.ObjectAttributeTable table_list_style = 7;
+    optional .TSWP.ObjectAttributeTable table_char_style = 8;
+    optional .TSWP.ObjectAttributeTable table_attachment = 9;
+    optional .TSWP.ObjectAttributeTable table_smartfield = 11;
+    optional .TSWP.ObjectAttributeTable table_layout_style = 12;
+    optional .TSWP.ParaDataAttributeTable table_para_starts = 14;
+    optional .TSWP.ObjectAttributeTable table_bookmark = 15;
+    optional .TSWP.ObjectAttributeTable table_footnote = 16;
+    optional .TSWP.ObjectAttributeTable table_section = 17;
+    optional .TSWP.ObjectAttributeTable table_rubyfield = 18;
+    optional .TSWP.ObjectAttributeTable table_insertion = 21;
+    optional .TSWP.ObjectAttributeTable table_deletion = 22;
+    optional .TSWP.ObjectAttributeTable table_highlight = 23;
+    optional .TSWP.ParaDataAttributeTable table_para_bidi = 24;
+    optional .TSWP.ObjectAttributeTable table_tatechuyoko = 27;
+    optional .TSWP.ObjectAttributeTable table_drop_cap_style = 28;
+  }
+  message ObjectAttributeTable {
+    message ObjectAttribute {
+      optional uint32 character_index = 1;
+      optional .TSP.Reference object = 2;
+    }
+    repeated .TSWP.ObjectAttributeTable.ObjectAttribute entries = 1;
+  }
+  message ParaDataAttributeTable {
+    message ParaDataAttribute {
+      optional uint32 character_index = 1;
+      optional uint32 first = 2;
+      optional uint32 second = 3;
+    }
+    repeated .TSWP.ParaDataAttributeTable.ParaDataAttribute entries = 1;
+  }
+  message ShapeInfoArchive {
+    optional .TSD.ShapeArchive super = 1;
+    optional .TSP.Reference deprecated_storage = 2;
+    optional .TSP.Reference text_flow = 3;
+    optional .TSP.Reference owned_storage = 4;
+    optional bool is_text_box = 6;
+  }
+  message CharacterStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TSWP.CharacterStylePropertiesArchive char_properties = 11;
+  }
+  message CharacterStylePropertiesArchive {
+    enum SuperscriptType {
+      kNoScript = 0;
+      kSuperscript = 1;
+      kSubscript = 2;
+    }
+    enum UnderlineType {
+      kNoUnderline = 0;
+      kSingleUnderline = 1;
+      kDoubleUnderline = 2;
+      kWavyUnderline = 3;
+    }
+    enum StrikethruType {
+      kNoStrikethru = 0;
+      kSingleStrikethru = 1;
+      kDoubleStrikethru = 2;
+      kTripleStrikethru = 3;
+    }
+    enum CapitalizationType {
+      kNoCaps = 0;
+      kAllCaps = 1;
+      kSmallCaps = 2;
+      kTitled = 3;
+    }
+    enum LigaturesType {
+      kRequiredLigatures = 0;
+      kStandardLigatures = 1;
+      kAllLigatures = 2;
+    }
+    optional bool bold = 1;
+    optional bool italic = 2;
+    optional float font_size = 3;
+    optional bool font_name_null = 4;
+    optional string font_name = 5;
+    optional bool font_color_null = 6;
+    optional .TSP.Color font_color = 7;
+    optional bool language_null = 8;
+    optional string language = 9;
+    optional .TSWP.CharacterStylePropertiesArchive.SuperscriptType superscript = 10;
+    optional .TSWP.CharacterStylePropertiesArchive.UnderlineType underline = 11;
+    optional .TSWP.CharacterStylePropertiesArchive.StrikethruType strikethru = 12;
+    optional .TSWP.CharacterStylePropertiesArchive.CapitalizationType capitalization = 13;
+    optional float baseline_shift = 14;
+    optional float kerning = 15;
+    optional .TSWP.CharacterStylePropertiesArchive.LigaturesType ligatures = 16;
+    optional bool outline_color_null = 17;
+    optional .TSP.Color outline_color = 18;
+    optional float outline = 19;
+    optional bool shadow_null = 20;
+    optional .TSD.ShadowArchive shadow = 21;
+    optional bool strikethru_color_null = 22;
+    optional .TSP.Color strikethru_color = 23;
+    optional float strikethru_width = 24;
+    optional bool background_color_null = 25;
+    optional .TSP.Color background_color = 26;
+    optional float tracking = 27;
+    optional bool underline_color_null = 28;
+    optional .TSP.Color underline_color = 29;
+    optional float underline_width = 30;
+    optional bool word_strikethru = 31;
+    optional bool word_underline = 32;
+    optional bool font_features_null = 33;
+    optional .TSWP.WritingDirectionType writing_direction = 35;
+    optional bool emphasis_marks_null = 36;
+    optional string emphasis_marks = 37;
+    optional bool compatibility_font_name_null = 38;
+    optional string compatibility_font_name = 39;
+    optional bool is_named_point_size = 40;
+    optional bool capitalization_uses_linguistics = 41;
+    optional bool tate_chu_yoko = 42;
+    optional bool tsd_stroke_null = 43;
+    optional .TSD.StrokeArchive tsd_stroke = 44;
+    optional bool tsd_fill_null = 45;
+    optional .TSD.FillArchive tsd_fill = 46;
+    optional bool tsd_fill_should_fill_text_container = 47;
+  }
+  enum WritingDirectionType {
+    kWritingDirectionNatural = -1;
+    kWritingDirectionLeftToRight = 0;
+    kWritingDirectionRightToLeft = 1;
+  }
+  message ParagraphStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TSWP.CharacterStylePropertiesArchive char_properties = 11;
+    optional .TSWP.ParagraphStylePropertiesArchive para_properties = 12;
+  }
+  message ParagraphStylePropertiesArchive {
+    enum TextAlignmentType {
+      TATvalue0 = 0;
+      TATvalue1 = 1;
+      TATvalue2 = 2;
+      TATvalue3 = 3;
+      TATvalue4 = 4;
+    }
+    enum DeprecatedParagraphBorderType {
+      PBTvalue0 = 0;
+      PBTvalue1 = 1;
+      PBTvalue2 = 2;
+      PBTvalue3 = 3;
+      PBTvalue4 = 4;
+      PBTvalue5 = 8;
+      PBTvalue6 = 9;
+      PBTvalue7 = 10;
+      PBTvalue8 = 11;
+      PBTvalue9 = 16;
+      PBTvalue10 = 17;
+      PBTvalue11 = 18;
+      PBTvalue12 = 19;
+      PBTvalue13 = 24;
+      PBTvalue14 = 25;
+      PBTvalue15 = 26;
+    }
+    enum OutlineStyleType {
+      OSTvalue0 = 0;
+      OSTvalue1 = 1;
+      OSTvalue2 = 2;
+    }
+    optional .TSWP.ParagraphStylePropertiesArchive.TextAlignmentType alignment = 1;
+    optional bool decimal_tab_null = 2;
+    optional string decimal_tab = 3;
+    optional float default_tab_stops = 4;
+    optional bool fill_null = 5;
+    optional .TSP.Color fill = 6;
+    optional float first_line_indent = 7;
+    optional bool hyphenate = 8;
+    optional bool keep_lines_together = 9;
+    optional bool keep_with_next = 10;
+    optional float left_indent = 11;
+    optional bool line_spacing_null = 12;
+    optional .TSWP.LineSpacingArchive line_spacing = 13;
+    optional bool page_break_before = 14;
+    optional .TSWP.ParagraphStylePropertiesArchive.DeprecatedParagraphBorderType deprecated_borders = 15;
+    optional bool historical_rule_offset_null = 16;
+    optional .TSP.Point historical_rule_offset = 17;
+    optional float rule_width = 18;
+    optional float right_indent = 19;
+    optional float space_after = 20;
+    optional float space_before = 21;
+    optional bool tabs_null = 24;
+    optional .TSWP.TabsArchive tabs = 25;
+    optional bool widow_control = 26;
+    optional uint32 outline_level = 27;
+    optional .TSWP.ParagraphStylePropertiesArchive.OutlineStyleType outline_style = 28;
+    optional bool following_style_id_null = 29;
+    optional string following_style_id = 30;
+    optional bool stroke_null = 31;
+    optional .TSD.StrokeArchive stroke = 32;
+    optional bool show_in_toc = 33;
+    optional bool toc_style_id_null = 34;
+    optional string toc_style_id = 35;
+    optional .TSWP.WritingDirectionType writing_direction = 38;
+    optional bool list_style_null = 39;
+    optional .TSP.Reference list_style = 40;
+    optional bool following_style_null = 41;
+    optional .TSP.Reference following_style = 42;
+    optional bool show_in_bookmarks_list = 43;
+    optional bool show_in_toc_navigator = 44;
+    optional int32 border_positions = 45;
+    optional bool rounded_corners = 46;
+  }
+  message LineSpacingArchive {
+    enum LineSpacingModeType {
+      kRelativeLineSpacing = 0;
+      kMinimumLineSpacing = 1;
+      kExactLineSpacing = 2;
+      kMaximumLineSpacing = 3;
+      kSpaceBetweenLineSpacing = 4;
+    }
+    optional .TSWP.LineSpacingArchive.LineSpacingModeType mode = 1;
+    optional float amount = 2;
+    optional float baselineRule = 3;
+  }
+  message TabsArchive {
+    repeated .TSWP.TabArchive tabs = 1;
+  }
+  message TabArchive {
+    enum TabAlignmentType {
+      kTabAlignmentLeft = 0;
+      kTabAlignmentCenter = 1;
+      kTabAlignmentRight = 2;
+      kTabAlignmentDecimal = 3;
+    }
+    optional float position = 1;
+    optional .TSWP.TabArchive.TabAlignmentType alignment = 2;
+    optional string leader = 3;
+  }
+  message ListStyleArchive {
+    enum LabelType {
+      kNone = 0;
+      kImage = 1;
+      kString = 2;
+      kNumber = 3;
+    }
+    enum NumberType {
+      kNumericDecimal = 0;
+      kNumericDoubleParen = 1;
+      kNumericRightParen = 2;
+      kRomanUpperDecimal = 3;
+      kRomanUpperDoubleParen = 4;
+      kRomanUpperRightParen = 5;
+      kRomanLowerDecimal = 6;
+      kRomanLowerDoubleParen = 7;
+      kRomanLowerRightParen = 8;
+      kAlphaUpperDecimal = 9;
+      kAlphaUpperDoubleParen = 10;
+      kAlphaUpperRightParen = 11;
+      kAlphaLowerDecimal = 12;
+      kAlphaLowerDoubleParen = 13;
+      kAlphaLowerRightParen = 14;
+      kIdeographicJapaneseDecimalKind = 15;
+      kIdeographicJapaneseDoubleParenKind = 16;
+      kIdeographicJapaneseRightParenKind = 17;
+      kHiraganaDecimalKind = 18;
+      kHiraganaDoubleParenKind = 19;
+      kHiraganaRightParenKind = 20;
+      kKatakanaDecimalKind = 21;
+      kKatakanaDoubleParenKind = 22;
+      kKatakanaRightParenKind = 23;
+      kHiraganaIrohaDecimalKind = 24;
+      kHiraganaIrohaDoubleParenKind = 25;
+      kHiraganaIrohaRightParenKind = 26;
+      kKatakanaIrohaDecimalKind = 27;
+      kKatakanaIrohaDoubleParenKind = 28;
+      kKatakanaIrohaRightParenKind = 29;
+      kIdeographicSimplifiedChineseDecimalKind = 30;
+      kIdeographicSimplifiedChineseDoubleParenKind = 31;
+      kIdeographicSimplifiedChineseRightParenKind = 32;
+      kIdeographicTraditionalChineseDecimalKind = 33;
+      kIdeographicTraditionalChineseDoubleParenKind = 34;
+      kIdeographicTraditionalChineseRightParenKind = 35;
+      kIdeographicFormalJapaneseDecimalKind = 36;
+      kIdeographicFormalJapaneseDoubleParenKind = 37;
+      kIdeographicFormalJapaneseRightParenKind = 38;
+      kIdeographicFormalSimplifiedChineseDecimalKind = 39;
+      kIdeographicFormalSimplifiedChineseDoubleParenKind = 40;
+      kIdeographicFormalSimplifiedChineseRightParenKind = 41;
+      kIdeographicFormalTraditionalChineseDecimalKind = 42;
+      kIdeographicFormalTraditionalChineseDoubleParenKind = 43;
+      kIdeographicFormalTraditionalChineseRightParenKind = 44;
+      kKoreanAlphabetDecimalKind = 45;
+      kKoreanAlphabetDoubleParenKind = 46;
+      kKoreanAlphabetRightParenKind = 47;
+      kCircledNumberKind = 48;
+      kArabianNumericDecimalKind = 49;
+      kArabianNumericDoubleParenKind = 50;
+      kArabianNumericRightParenKind = 51;
+      kArabianAlphaDecimalKind = 52;
+      kArabianAlphaDoubleParenKind = 53;
+      kArabianAlphaRightParenKind = 54;
+      kArabianAbjadDecimalKind = 55;
+      kArabianAbjadDoubleParenKind = 56;
+      kArabianAbjadRightParenKind = 57;
+      kHebrewAlphaDecimalKind = 58;
+      kHebrewAlphaDoubleParenKind = 59;
+      kHebrewAlphaRightParenKind = 60;
+      kHebrewBiblicalStandardKind = 61;
+      kHebrewBiblicalDecimalKind = 62;
+      kHebrewBiblicalDoubleParenKind = 63;
+      kHebrewBiblicalRightParenKind = 64;
+    }
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    repeated .TSWP.ListStyleArchive.LabelType label_types = 11;
+    repeated float text_indents = 12;
+    repeated float indents = 13;
+    repeated .TSWP.ListStyleArchive.NumberType number_types = 15;
+    repeated string strings = 16;
+    optional bool shadow_null = 18;
+    optional .TSD.ShadowArchive shadow = 19;
+    optional bool font_color_null = 20;
+    optional .TSP.Color font_color = 21;
+    optional bool font_name_null = 22;
+    optional string font_name = 23;
+    optional .TSWP.WritingDirectionType writing_direction = 24;
+    repeated bool tiered_numbers = 25;
+  }
+  message ShapeStyleArchive {
+    optional .TSD.ShapeStyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TSWP.ShapeStylePropertiesArchive shape_properties = 11;
+  }
+  message ShapeStylePropertiesArchive {
+    enum VerticalAlignmentType {
+      kFrameAlignTop = 0;
+      kFrameAlignMiddle = 1;
+      kFrameAlignBottom = 2;
+      kFrameAlignJustify = 3;
+    }
+    optional bool shrink_to_fit = 1;
+    optional .TSWP.ShapeStylePropertiesArchive.VerticalAlignmentType vertical_alignment = 2;
+    optional bool columns_null = 3;
+    optional bool padding_null = 5;
+    optional .TSWP.PaddingArchive padding = 6;
+    optional uint32 default_text_preset_index = 7;
+    optional bool vertical_text = 8;
+    optional bool paragraph_style_null = 9;
+    optional .TSP.Reference paragraph_style = 10;
+    optional bool vertical_text_40 = 11;
+  }
+  message PaddingArchive {
+    optional float left = 1;
+    optional float top = 2;
+    optional float right = 3;
+    optional float bottom = 4;
+  }
+  message SmartFieldArchive {
+    optional string text_attribute_uuid_string = 1;
+  }
+  message HyperlinkFieldArchive {
+    optional .TSWP.SmartFieldArchive super = 1;
+    optional string url_ref = 2;
+  }
+  message DrawableAttachmentArchive {
+    optional .TSP.Reference drawable = 1;
+    optional uint32 h_offset_type = 2;
+    optional float h_offset = 3;
+    optional uint32 v_offset_type = 4;
+    optional float v_offset = 5;
+  }
+}
+
+message TSK {
+  message FormatStructArchive {
+    optional uint32 format_type = 1;
+    optional uint32 decimal_places = 2;
+    optional string currency_code = 3;
+    optional uint32 negative_style = 4;
+    optional bool show_thousands_separator = 5;
+    optional bool use_accounting_style = 6;
+    optional uint32 duration_style = 7;
+    optional uint32 base = 8;
+    optional uint32 base_places = 9;
+    optional bool base_use_minus_sign = 10;
+    optional uint32 fraction_accuracy = 11;
+    optional bool suppress_date_format = 12;
+    optional bool suppress_time_format = 13;
+    optional string date_time_format = 14;
+    optional uint32 duration_unit_largest = 15;
+    optional uint32 duration_unit_smallest = 16;
+    optional uint32 custom_id = 17;
+    optional string custom_format_string = 18;
+    optional double scale_factor = 19;
+    optional bool requires_fraction_replacement = 20;
+    optional double control_minimum = 21;
+    optional double control_maximum = 22;
+    optional double control_increment = 23;
+    optional uint32 control_format_type = 24;
+    optional uint32 slider_orientation = 25;
+    optional uint32 slider_position = 26;
+    optional uint32 decimal_width = 27;
+    optional uint32 min_integer_width = 28;
+    optional uint32 num_nonspace_integer_digits = 29;
+    optional uint32 num_nonspace_decimal_digits = 30;
+    optional uint32 index_from_right_last_integer = 31;
+    repeated string interstitial_strings = 32;
+    optional uint32 num_hash_decimal_digits = 34;
+    optional uint32 total_num_decimal_digits = 35;
+    optional bool is_complex = 36;
+    optional bool contains_integer_token = 37;
+    optional uint32 multiple_choice_list_initial_value = 38;
+    optional uint32 multiple_choice_list_id = 39;
+    optional bool use_automatic_duration_units = 40;
+    optional .TSP.UUID custom_uid = 41;
+    optional bool uses_plus_sign = 43;
+    optional string bool_true_string = 44;
+    optional string bool_false_string = 45;
+    // The extension .TSCH.ChartFormatStructExtensions.prefix.
+    optional string TSCH_ChartFormatStructExtensions_prefix = 10000;
+    // The extension .TSCH.ChartFormatStructExtensions.suffix.
+    optional string TSCH_ChartFormatStructExtensions_suffix = 10001;
+  }
+}
+
+message TST {
+  message TableInfoArchive {
+    optional .TSD.DrawableArchive super = 1;
+    optional .TSP.Reference tableModel = 2;
+    optional .TSP.Reference editing_state = 3;
+    optional .TSP.Reference summary_model = 4;
+    optional .TSP.Reference category_order = 5;
+    optional .TSP.Reference view_column_row_uids = 6;
+    optional .TSP.UUID group_by_uuid = 7;
+    optional .TSP.UUID hidden_states_uuid = 8;
+    optional uint32 formula_coord_space_in_pre40 = 9;
+    optional uint32 formula_coord_space = 10;
+    optional .TSP.Reference pivot_data_model = 15;
+    optional bool is_a_pivot_table = 16;
+    optional .TSP.Reference pivot_order = 17;
+  }
+  message TableModelArchive {
+    optional string table_id = 1;
+    optional string from_table_id = 43;
+    optional bool was_cut = 50;
+    optional .TSP.Reference table_style = 3;
+    optional .TSP.Reference body_text_style = 24;
+    optional .TSP.Reference header_row_text_style = 25;
+    optional .TSP.Reference header_column_text_style = 26;
+    optional .TSP.Reference footer_row_text_style = 27;
+    optional .TSP.Reference body_cell_style = 18;
+    optional .TSP.Reference header_row_style = 19;
+    optional .TSP.Reference header_column_style = 20;
+    optional .TSP.Reference footer_row_style = 21;
+    optional .TSP.Reference table_name_style = 30;
+    optional .TSP.Reference table_name_shape_style = 36;
+    optional .TSP.Reference table_style_preset = 48;
+    optional uint32 preset_index = 28;
+    optional .TST.DataStore base_data_store = 4;
+    optional .TSP.Reference provider = 5;
+    optional uint32 number_of_rows = 6;
+    optional uint32 number_of_columns = 7;
+    optional string table_name = 8;
+    optional bool table_name_enabled = 22;
+    optional double table_name_height = 33;
+    optional bool table_name_border_enabled = 37;
+    optional uint32 number_of_header_rows = 9;
+    optional uint32 number_of_header_columns = 10;
+    optional uint32 number_of_footer_rows = 11;
+    optional bool header_rows_frozen = 12;
+    optional bool header_columns_frozen = 13;
+    optional uint32 number_of_hidden_rows = 14;
+    optional uint32 number_of_hidden_columns = 15;
+    optional uint32 number_of_user_hidden_rows = 41;
+    optional uint32 number_of_user_hidden_columns = 42;
+    optional uint32 number_of_filtered_rows = 40;
+    optional double default_row_height = 16;
+    optional double default_column_width = 17;
+    optional bool repeating_header_rows_enabled = 29;
+    optional bool style_apply_clears_all = 31;
+    optional bool repeating_header_columns_enabled = 32;
+    optional .TSP.Reference hidden_state_formula_owner_for_columns = 34;
+    optional .TSP.Reference hidden_state_formula_owner_for_rows = 35;
+    optional .TSP.Reference row_filter_set_pre_pivot = 38;
+    optional .TSP.CFUUIDArchive conditional_style_formula_owner_id = 39;
+    optional .TSP.Reference base_column_row_uids = 46;
+    optional .TST.MergeOwnerArchive merge_owner = 47;
+    optional .TSP.Reference stroke_sidecar = 49;
+    optional bool preset_needs_strong_ownership = 51;
+    optional .TSP.Reference category_level_1_style = 60;
+    optional .TSP.Reference category_level_2_style = 61;
+    optional .TSP.Reference category_level_3_style = 62;
+    optional .TSP.Reference category_level_4_style = 63;
+    optional .TSP.Reference category_level_5_style = 64;
+    optional .TSP.Reference category_level_1_text_style = 65;
+    optional .TSP.Reference category_level_2_text_style = 66;
+    optional .TSP.Reference category_level_3_text_style = 67;
+    optional .TSP.Reference category_level_4_text_style = 68;
+    optional .TSP.Reference category_level_5_text_style = 69;
+    optional .TSP.Reference label_level_1_style = 71;
+    optional .TSP.Reference label_level_2_style = 72;
+    optional .TSP.Reference label_level_3_style = 73;
+    optional .TSP.Reference label_level_4_style = 74;
+    optional .TSP.Reference label_level_5_style = 75;
+    optional .TSP.Reference label_level_1_text_style = 76;
+    optional .TSP.Reference label_level_2_text_style = 77;
+    optional .TSP.Reference label_level_3_text_style = 78;
+    optional .TSP.Reference label_level_4_text_style = 79;
+    optional .TSP.Reference label_level_5_text_style = 80;
+    optional string from_group_by_uid = 83;
+    optional .TSP.Reference pivot_owner = 85;
+    optional .TSP.Reference category_owner = 86;
+    optional .TSP.Reference pivot_body_summary_row_style = 87;
+    optional .TSP.Reference pivot_body_summary_column_style = 88;
+    optional .TSP.Reference pivot_header_column_summary_style = 89;
+    repeated uint32 pivot_value_types_by_col = 90;
+    repeated uint32 pivot_date_grouping_columns = 91;
+    repeated uint32 pivot_date_grouping_types = 92;
+  }
+  message DataStore {
+    optional .TST.HeaderStorage rowHeaders = 1;
+    optional .TSP.Reference columnHeaders = 2;
+    optional .TST.TileStorage tiles = 3;
+    optional .TSP.Reference stringTable = 4;
+    optional .TSP.Reference styleTable = 5;
+    optional .TSP.Reference formula_table = 6;
+    optional .TSP.Reference formulaErrorTable = 12;
+    optional .TSP.Reference format_table_pre_bnc = 11;
+    optional .TSP.Reference multipleChoiceListFormatTable = 16;
+    optional .TSP.Reference merge_region_map = 13;
+    optional .TSP.Reference deprecated_custom_format_table = 15;
+    optional uint32 nextRowStripID = 7;
+    optional uint32 nextColumnStripID = 8;
+    optional .TST.TableRBTree rowTileTree = 9;
+    optional .TST.TableRBTree columnTileTree = 10;
+    optional uint32 storage_version_pre_bnc = 14;
+    optional .TSP.Reference rich_text_table = 17;
+    optional .TSP.Reference conditionalstyletable = 18;
+    optional .TSP.Reference commentStorageTable = 19;
+    optional .TSP.Reference importWarningSetTable = 20;
+    optional .TSP.Reference control_cell_spec_table = 21;
+    optional .TSP.Reference format_table = 22;
+  }
+  message HeaderStorage {
+    optional uint32 bucketHashFunction = 1;
+    repeated .TSP.Reference buckets = 2;
+  }
+  message HeaderStorageBucket {
+    message Header {
+      optional uint32 index = 1;
+      optional float size = 2;
+      optional uint32 hidingState = 3;
+      optional uint32 numberOfCells = 4;
+      optional .TSP.Reference cell_style = 5;
+      optional .TSP.Reference text_style = 6;
+    }
+    optional uint32 bucketHashFunction = 1;
+    repeated .TST.HeaderStorageBucket.Header headers = 2;
+  }
+  message TileStorage {
+    message Tile {
+      optional uint32 tileid = 1;
+      optional .TSP.Reference tile = 2;
+    }
+    repeated .TST.TileStorage.Tile tiles = 1;
+    optional uint32 tile_size = 2;
+    optional bool should_use_wide_rows = 3;
+  }
+  message Tile {
+    optional uint32 maxColumn = 1;
+    optional uint32 maxRow = 2;
+    optional uint32 numCells = 3;
+    optional uint32 numrows = 4;
+    repeated .TST.TileRowInfo rowInfos = 5;
+    optional uint32 storage_version = 6;
+    optional bool last_saved_in_BNC = 7;
+    optional bool should_use_wide_rows = 8;
+  }
+  message TileRowInfo {
+    optional uint32 tile_row_index = 1;
+    optional uint32 cell_count = 2;
+    optional bytes cell_storage_buffer_pre_bnc = 3;
+    optional bytes cell_offsets_pre_bnc = 4;
+    optional uint32 storage_version = 5;
+    optional bytes cell_storage_buffer = 6;
+    optional bytes cell_offsets = 7;
+    optional bool has_wide_offsets = 8;
+  }
+  message TableRBTree {
+    message Node {
+      optional uint32 key = 1;
+      optional uint32 value = 2;
+    }
+    repeated .TST.TableRBTree.Node nodes = 1;
+  }
+  message TableDataList {
+    enum ListType {
+      STRING = 1;
+      FORMAT = 2;
+      FORMULA = 3;
+      STYLE = 4;
+      FORMULA_ERROR = 5;
+      CUSTOM_FORMAT = 6;
+      MULTIPLE_CHOICE_LIST_FORMAT = 7;
+      RICH_TEXT_PAYLOAD = 8;
+      CONDITIONAL_STYLE = 9;
+      COMMENT_STORAGE = 10;
+      IMPORT_WARNING = 11;
+      CONTROL_CELL_SPEC = 12;
+    }
+    message ListEntry {
+      optional uint32 key = 1;
+      optional uint32 refcount = 2;
+      optional string string = 3;
+      optional .TSP.Reference reference = 4;
+      optional .TSK.FormatStructArchive format = 6;
+      optional .TSP.Reference rich_text_payload = 9;
+      optional .TSP.Reference comment_storage = 10;
+    }
+    optional .TST.TableDataList.ListType listType = 1;
+    optional uint32 nextListID = 2;
+    repeated .TST.TableDataList.ListEntry entries = 3;
+    repeated .TSP.Reference segments = 4;
+    optional bool is_new_for_bnc = 5;
+  }
+  message TableDataListSegment {
+    optional .TST.TableDataList.ListType list_type = 1;
+    repeated .TST.TableDataList.ListEntry entries = 3;
+  }
+  message RichTextPayloadArchive {
+    optional .TSP.Reference storage = 1;
+  }
+  message MergeOwnerArchive {
+    optional .TSP.CFUUIDArchive owner_id = 1;
+  }
+  message StrokeSidecarArchive {
+    optional uint32 max_order = 1;
+    optional uint32 column_count = 2;
+    optional uint32 row_count = 3;
+    repeated .TSP.Reference left_column_stroke_layers = 4;
+    repeated .TSP.Reference right_column_stroke_layers = 5;
+    repeated .TSP.Reference top_row_stroke_layers = 6;
+    repeated .TSP.Reference bottom_row_stroke_layers = 7;
+  }
+  message StrokeLayerArchive {
+    message StrokeRunArchive {
+      optional int32 origin = 1;
+      optional uint32 length = 2;
+      optional .TSD.StrokeArchive stroke = 3;
+      optional uint32 order = 4;
+    }
+    optional uint32 row_column_index = 1;
+    repeated .TST.StrokeLayerArchive.StrokeRunArchive stroke_runs = 2;
+  }
+  message CellStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TST.CellStylePropertiesArchive cell_properties = 11;
+  }
+  message CellStylePropertiesArchive {
+    optional .TSD.FillArchive cell_fill = 1;
+    optional bool text_wrap = 3;
+    optional int32 vertical_alignment = 8;
+    optional .TSWP.PaddingArchive padding = 9;
+    optional .TSD.StrokeArchive top_stroke = 10;
+    optional .TSD.StrokeArchive right_stroke = 11;
+    optional .TSD.StrokeArchive bottom_stroke = 12;
+    optional .TSD.StrokeArchive left_stroke = 13;
+  }
+  message TableStyleArchive {
+    optional .TSS.StyleArchive super = 1;
+    optional uint32 override_count = 10;
+    optional .TST.TableStylePropertiesArchive table_properties = 11;
+  }
+  message TableStylePropertiesArchive {
+    optional bool banded_rows = 1;
+    optional .TSD.FillArchive banded_fill = 2;
+    optional bool behaves_like_spreadsheet = 21;
+    optional bool auto_resize = 22;
+    optional bool v_strokes_visible = 33;
+    optional bool h_strokes_visible = 34;
+    optional bool hr_separator_visible = 35;
+    optional bool hc_separator_visible = 36;
+    optional bool footer_separator_visible = 37;
+    optional bool table_border_visible = 38;
+    optional bool table_header_border_visible = 39;
+    optional bool table_hc_divider_visible = 42;
+    optional bool table_hr_divider_visible = 43;
+    optional bool table_footer_divider_visible = 44;
+    optional int32 OBSOLETE_master_font_size = 40;
+    optional string master_font_family = 41;
+    optional .TSWP.WritingDirectionType writing_direction = 45;
+    optional .TSD.StrokeArchive header_row_separator_stroke = 46;
+    optional .TSD.StrokeArchive header_row_border_stroke = 47;
+    optional .TSD.StrokeArchive header_row_horizontal_stroke = 48;
+    optional .TSD.StrokeArchive header_row_vertical_stroke = 49;
+    optional .TSD.StrokeArchive header_column_border_stroke = 50;
+    optional .TSD.StrokeArchive header_column_separator_stroke = 51;
+    optional .TSD.StrokeArchive header_column_horizontal_stroke = 52;
+    optional .TSD.StrokeArchive header_column_vertical_stroke = 53;
+    optional .TSD.StrokeArchive footer_row_separator_stroke = 54;
+    optional .TSD.StrokeArchive footer_row_border_stroke = 55;
+    optional .TSD.StrokeArchive footer_row_horizontal_stroke = 56;
+    optional .TSD.StrokeArchive footer_row_vertical_stroke = 57;
+    optional .TSD.StrokeArchive table_body_horizontal_border_stroke = 58;
+    optional .TSD.StrokeArchive table_body_vertical_border_stroke = 59;
+    optional .TSD.StrokeArchive table_body_horizontal_stroke = 60;
+    optional .TSD.StrokeArchive table_body_vertical_stroke = 61;
+    optional .TSD.StrokeArchive category_level1_top_stroke = 62;
+    optional .TSD.StrokeArchive category_level2_top_stroke = 63;
+    optional .TSD.StrokeArchive category_level3_top_stroke = 64;
+    optional .TSD.StrokeArchive category_level4_top_stroke = 65;
+    optional .TSD.StrokeArchive category_level5_top_stroke = 66;
+    optional .TSD.StrokeArchive category_level1_bottom_stroke = 67;
+    optional .TSD.StrokeArchive category_level2_bottom_stroke = 68;
+    optional .TSD.StrokeArchive category_level3_bottom_stroke = 69;
+    optional .TSD.StrokeArchive category_level4_bottom_stroke = 70;
+    optional .TSD.StrokeArchive category_level5_bottom_stroke = 71;
+    optional .TSD.StrokeArchive category_level1_interior_stroke = 72;
+    optional .TSD.StrokeArchive category_level2_interior_stroke = 73;
+    optional .TSD.StrokeArchive category_level3_interior_stroke = 74;
+    optional .TSD.StrokeArchive category_level4_interior_stroke = 75;
+    optional .TSD.StrokeArchive category_level5_interior_stroke = 76;
+    optional .TSD.StrokeArchive category_level1_label_separator_stroke = 77;
+    optional .TSD.StrokeArchive category_level2_label_separator_stroke = 78;
+    optional .TSD.StrokeArchive category_level3_label_separator_stroke = 79;
+    optional .TSD.StrokeArchive category_level4_label_separator_stroke = 80;
+    optional .TSD.StrokeArchive category_level5_label_separator_stroke = 81;
+    optional .TSD.StrokeArchive table_body_pivot_group_horizontal_stroke = 82;
+    optional .TSD.StrokeArchive table_body_pivot_group_vertical_stroke = 83;
+    optional .TSD.StrokeArchive table_body_pivot_deemphasis_horizontal_stroke = 84;
+    optional .TSD.StrokeArchive table_body_pivot_emphasis_vertical_stroke = 85;
+    optional .TSD.StrokeArchive header_column_pivot_group_horizontal_stroke = 86;
+    optional .TSD.StrokeArchive header_column_pivot_group_deemphasis_stroke = 87;
+    optional .TSD.StrokeArchive header_column_pivot_separator_stroke = 88;
+    optional .TSD.StrokeArchive header_row_pivot_group_vertical_stroke = 89;
+    optional .TSD.StrokeArchive header_row_pivot_group_deemphasis_stroke = 90;
+    optional .TSD.StrokeArchive header_row_pivot_title_stroke = 91;
+    optional .TSD.StrokeArchive footer_row_pivot_group_vertical_stroke = 92;
+  }
+}
+
+message TSCE {
+  message FormulaOwnerDependenciesArchive {
+    optional .TSP.UUID formula_owner_uid = 1;
+    optional uint32 internal_formula_owner_id = 2;
+    optional uint32 owner_kind = 3;
+    optional .TSCE.RangeDependenciesArchive range_dependencies = 5;
+    optional .TSP.Reference formula_owner = 11;
+    optional .TSP.UUID base_owner_uid = 12;
+    optional .TSCE.RangeDependenciesTiledArchive tiled_range_dependencies = 15;
+  }
+  message RangeDependenciesArchive {
+    repeated .TSCE.RangeBackDependencyArchive back_dependency = 2;
+  }
+  message RangeBackDependencyArchive {
+    optional uint32 cell_coord_row = 1;
+    optional uint32 cell_coord_column = 2;
+    optional .TSCE.InternalRangeReferenceArchive internal_range_reference = 4;
+  }
+  message InternalRangeReferenceArchive {
+    optional uint32 owner_id = 1;
+    optional .TSCE.RangeCoordinateArchive range = 2;
+  }
+  message RangeCoordinateArchive {
+    optional uint32 top_left_column = 1;
+    optional uint32 top_left_row = 2;
+    optional uint32 bottom_right_column = 3;
+    optional uint32 bottom_right_row = 4;
+  }
+  message RangeDependenciesTiledArchive {
+    repeated .TSP.Reference range_precedents_tile = 1;
+  }
+  message RangePrecedentsTileArchive {
+    message FromToRangeArchive {
+      optional .TSCE.CellCoordinateArchive from_coord = 1;
+      optional .TSCE.CellRectArchive refers_to_rect = 2;
+    }
+    optional uint32 to_owner_id = 1;
+    repeated .TSCE.RangePrecedentsTileArchive.FromToRangeArchive from_to_range = 2;
+  }
+  message CellRectArchive {
+    optional .TSCE.CellCoordinateArchive origin = 1;
+    optional .TSCE.ColumnRowSize size = 2;
+  }
+  message CellCoordinateArchive {
+    optional fixed32 packedData = 1;
+    optional uint32 column = 2;
+    optional uint32 row = 3;
+  }
+  message ColumnRowSize {
+    optional uint32 num_columns = 1;
+    optional uint32 num_rows = 2;
+  }
+}
+
+message TSCH {
+  message ChartDrawableArchive {
+    optional .TSD.DrawableArchive super = 1;
+  }
+}

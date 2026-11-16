@@ -1,0 +1,25 @@
+name: Feature request
+description: Something slidock does not read, play or offer yet.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What you would like
+      description: The feature, and the deck or workflow that needs it.
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Input format, if it is about one
+      options:
+        - Any
+        - PowerPoint (.pptx)
+        - Keynote (.key)
+        - OpenDocument (.odp)
+  - type: textarea
+    id: today
+    attributes:
+      label: What slidock does today
+      description: Its diagnostic, or how the slide shows now. Do not attach a deck you cannot share publicly.

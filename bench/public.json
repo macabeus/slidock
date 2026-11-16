@@ -1,0 +1,25 @@
+{
+  "schema": "slidock-bench-public@1",
+  "presentations": [
+    "callout-probe-keynote",
+    "callout-probe-odp",
+    "callout-probe-pptx",
+    "conf-callouts",
+    "conf-magic-move",
+    "gradient-probe-keynote",
+    "gradient-probe-odp",
+    "gradient-probe-odp12",
+    "gradient-probe-pptx",
+    "grown-text-probe",
+    "magic-move-probe",
+    "retro",
+    "retro-fidelity",
+    "retro-gradients",
+    "retro-shadows",
+    "shadow-probe",
+    "shadow-probe-gui",
+    "shadow-probe-keynote",
+    "shadow-probe-odp",
+    "shadow-probe-pptx"
+  ]
+}

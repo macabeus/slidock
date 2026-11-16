@@ -130,6 +130,8 @@ fn cargo(root: &Path, args: &[&str]) -> Result<String, String> {
     let cargo = std::env::var("CARGO").unwrap_or_else(|_| "cargo".to_owned());
     let output = Command::new(&cargo)
         .args(args)
+        // Parsed text: no colour codes, whatever CARGO_TERM_COLOR the caller (CI) sets.
+        .env("CARGO_TERM_COLOR", "never")
         .current_dir(root)
         .output()
         .map_err(|e| format!("{cargo}: {e}"))?;

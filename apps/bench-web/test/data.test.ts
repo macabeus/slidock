@@ -66,6 +66,10 @@ describe('the report payload', () => {
     expect(() => parseReportPayload({ ...payload, schema: 'other@1' })).toThrow(REPORT_SCHEMA);
     expect(() => parseReportPayload({ ...payload, runs: {} })).toThrow('runs index');
     expect(() => parseReportPayload({ ...payload, rows: null })).toThrow('rows');
+    expect(() => parseReportPayload({ ...payload, public: { images: 'mismatch' } })).toThrow('public section');
+    expect(parseReportPayload({ ...payload, public: { images: ['mismatch'] } }).public).toEqual({
+      images: ['mismatch'],
+    });
   });
 
   it('serves runs, results, rows and images by key', async () => {
@@ -83,6 +87,11 @@ describe('the report payload', () => {
     const withImage = reportSource({ ...payload, images: { [imageKey('k', 'r', 'render')]: 'renders/r.png' } });
     expect(withImage.imageUrl('k', 'r', 'render')).toBe('renders/r.png');
     expect(rowKey('k', 'r')).toBe('k r');
+    expect(source.scope).toEqual({ parity: true, public: null });
+    expect(reportSource({ ...payload, parity: {}, public: { images: ['mismatch'] } }).scope).toEqual({
+      parity: false,
+      public: { images: ['mismatch'] },
+    });
   });
 });
 

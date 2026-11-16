@@ -33,6 +33,8 @@ contributors do not need it (see `CONTRIBUTING.md`).
   (see Budgets below); the player's gzip budgets are the `BUDGET_BYTES` of the player's build test
   (`packages/player/test/build.test.ts`), which `--record` reads and a unit test holds the committed entry to.
 - `parity/allow.json`: reviewed divergences from the goldens (`parity/README.md`).
+- `public.json`: the presentations the public report may publish (`slidock-bench-public@1`), by id; see Publishing
+  the public report below.
 - `wasm-cli.mjs`: the determinism gate's wasm leg: the compiler built to WebAssembly (`pnpm wasm:build`) under Node,
   writing the document set and the deck zip.
 
@@ -107,6 +109,7 @@ slidock-bench run --lane motion [--renderer container|native]   # each deck play
 slidock-bench run --lane shell [--from <motion run>]             # each deck's zip opened from file://: the motion run's frames, no request
 slidock-bench ui [--port 5290] [--dist apps/bench-web/dist]      # the bench UI over the private data, on 127.0.0.1
 slidock-bench report --single-file [--images mismatch]           # the UI as one HTML file with the data inlined
+slidock-bench report --public [--out apps/web/public/bench]      # the public report: bench/public.json's decks only
 slidock-bench lo-roundtrip [--check]                             # the motion probes through LibreOffice (Docker): bench/motion/lo-roundtrip.json
 slidock-bench gc [--keep 5]                                      # old runs out of the cache (every run collects past 20 GiB)
 slidock-bench budgets [--check | --record] [--runs 5]           # wasm and player sizes, compile time and peak memory (exit 3: loaded)
@@ -390,6 +393,38 @@ unknown ids, before any file is read.
 app's `dist`. The wire types are `slidock-bench-schema`'s structs, generated with `ts-rs` into
 `apps/bench-web/src/schema/`. `slidock-bench report --single-file` writes the same app as one HTML file with the data
 inlined, for sharing without the server.
+
+## Publishing the public report
+
+The web app publishes a snapshot of the bench beside itself, at <https://macabeus.github.io/slidock/bench/>: the page
+and its images live in `apps/web/public/bench/`, which the app's build copies as they are. A maintainer regenerates it
+from the private data, at a commit whose bench UI is built, and commits the folder:
+
+```sh
+pnpm --filter @slidock/bench-web build
+slidock-bench report --public            # writes apps/web/public/bench/: index.html and images/
+```
+
+What it holds:
+
+- The presentations `public.json` lists, and nothing of any other: the list is default-deny, so a deck added to the
+  corpus stays out until it is listed. Their rows only; the stamp's pairs and every summary are recomputed over those
+  rows, so no count, median or share covers an unlisted deck.
+- The `latest` static run (`--runs` names others; only static runs are published). No parity report, no status, no
+  other lane: the page leaves out the views it holds no data for.
+- No corpus file name or path: a row's source is named `<presentation>.<extension>`, and its images missing from the
+  report say so instead of naming a command.
+- The oracle, render and heatmap of the `mismatch` rows (`--images` names other classes), at the metric size, as
+  lossy WebP (libwebp's `cwebp -q 85 -m 6`, which must be on `PATH`), under `images/<run>/<row>/<kind>.webp`. The
+  scores are the run's, computed on the lossless renders; the WebP images are for reading.
+
+Before writing anything, the command checks the payload: no presentation outside the list named anywhere (as a row
+id, a pair key, a `presentation` field, or its id as a word), no corpus file name, stem or title of the manifest, no
+path (`/Users/`, `~/`, `.slidock`, the cache and corpus folders, …). A finding stops it with nothing written. The
+page's Content Security Policy allows its own inline script by hash and images from its folder and `data:` only. The
+`public` tests of `slidock-bench` run the same check over the committed report in CI, without the private data, with
+the corpus ids the repository names (`bench/budgets.json`, `tests/golden/manifest.json`), and hold its images to the
+files the payload names.
 
 ## Known limits
 

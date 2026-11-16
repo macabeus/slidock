@@ -2,12 +2,27 @@
 import type { ImageKind, ParityView, Results, RowDetail, RowId, RunsIndex, Status } from '../schema/index.ts';
 
 /**
+ * What a report holds beyond its runs. A view whose data a report does not hold is left out; the API serves whatever
+ * the bench holds, and has no scope.
+ */
+export interface ReportScope {
+  /** Some run carries a parity view. */
+  parity: boolean;
+  /**
+   * A published report (`slidock-bench report --public`): the presentations cleared for publication only, with the
+   * images of rows of these classes; its readers have no bench, so the views show no command.
+   */
+  public: { images: string[] } | null;
+}
+
+/**
  * Where the UI reads a bench from: `slidock-bench ui`'s read-only API, or the data inlined in a single-file report.
  * Runs are named by their key (aliases are resolved against the runs index first). `null` means the bench holds no
  * such thing (the API's 404); a failed read rejects.
  */
 export interface BenchSource {
   readonly kind: 'api' | 'report';
+  readonly scope?: ReportScope;
   /** HEAD's ids and the classifier thresholds; null when the source does not know HEAD (a report). */
   status(): Promise<Status | null>;
   runs(): Promise<RunsIndex>;

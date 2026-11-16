@@ -47,6 +47,7 @@ function paneOf(
   kind: ImageKind,
   served: ImageRef | undefined,
   fallback: string | null,
+  published: boolean,
   label: string = LABELS[kind],
 ): Pane {
   if (served && 'url' in served) {
@@ -55,7 +56,10 @@ function paneOf(
     return { id: kind, label, src: served.url, caption };
   }
   if (served && 'missing' in served) {
-    return { id: kind, label, src: null, missing: served.missing };
+    // A published report's readers have no bench: its text says why the image is not there.
+    return published
+      ? { id: kind, label, src: null, note: served.missing }
+      : { id: kind, label, src: null, missing: served.missing };
   }
   return { id: kind, label, src: fallback };
 }
@@ -223,6 +227,7 @@ export interface RowDrawerProps {
 
 export function RowDrawer({ state, set, run, record, id, order, thresholds, base }: RowDrawerProps) {
   const { source } = useBenchData();
+  const published = Boolean(source.scope?.public);
   const detail = useResource<RowDetail | null>(`row:${run.key}:${id}`, (s) => s.row(run.key, id));
   const { previous, next } = neighbours(order, id);
   const parts = parseRowId(id);
@@ -246,12 +251,12 @@ export function RowDrawer({ state, set, run, record, id, order, thresholds, base
   const loaded = detail.state === 'ready' ? detail.value : null;
   const images = loaded?.images ?? {};
   const fallback = (kind: ImageKind) => (loaded ? null : source.imageUrl(run.key, id, kind));
-  const oracle = paneOf('oracle', images.oracle, fallback('oracle'));
-  const render = paneOf('render', images.render, fallback('render'));
-  const heatmap = paneOf('heatmap', images.heatmap, fallback('heatmap'));
+  const oracle = paneOf('oracle', images.oracle, fallback('oracle'), published);
+  const render = paneOf('render', images.render, fallback('render'), published);
+  const heatmap = paneOf('heatmap', images.heatmap, fallback('heatmap'), published);
   const extra: Pane[] = [];
   if (images.golden) {
-    extra.push(paneOf('golden', images.golden, null));
+    extra.push(paneOf('golden', images.golden, null, published));
   }
   if (base && base.key !== run.key) {
     const baseRender = source.imageUrl(base.key, id, 'render');
@@ -333,7 +338,9 @@ export function RowDrawer({ state, set, run, record, id, order, thresholds, base
         <Section title="Findings">
           {!loaded.explain.matchesRow && (
             <Banner tone="warning" title="These findings come from another record of this row">
-              Re-run the explain command below for this record.
+              {published
+                ? 'They were measured on an earlier render of the slide.'
+                : 'Re-run the explain command below for this record.'}
             </Banner>
           )}
           <ul className="space-y-2">
@@ -423,18 +430,20 @@ export function RowDrawer({ state, set, run, record, id, order, thresholds, base
         )}
       </Section>
 
-      <Section title="Reproduce">
-        <CopyCommand
-          command={loaded?.commands.explain ?? `slidock-bench explain ${id} --from ${runDirPath(run.key)}`}
-          label="explain command"
-        />
-        <CopyCommand command={loaded?.commands.run ?? `slidock-bench run --only ${id}`} label="run command" />
-        {loaded?.viewer.available && (
-          <p className="text-xs text-muted">
-            The corpus holds the source file, <span className="font-mono">{loaded.viewer.file}</span>.
-          </p>
-        )}
-      </Section>
+      {!published && (
+        <Section title="Reproduce">
+          <CopyCommand
+            command={loaded?.commands.explain ?? `slidock-bench explain ${id} --from ${runDirPath(run.key)}`}
+            label="explain command"
+          />
+          <CopyCommand command={loaded?.commands.run ?? `slidock-bench run --only ${id}`} label="run command" />
+          {loaded?.viewer.available && (
+            <p className="text-xs text-muted">
+              The corpus holds the source file, <span className="font-mono">{loaded.viewer.file}</span>.
+            </p>
+          )}
+        </Section>
+      )}
 
       <Section title="Provenance">
         <Facts

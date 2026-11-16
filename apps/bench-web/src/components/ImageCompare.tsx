@@ -1,6 +1,6 @@
 // The row drawer's image comparison: side by side with synchronized pan and zoom,
 // a slider between the oracle and the render, an onion skin, a client-side difference, and the heatmap over the
-// render. A missing image shows the command that produces it.
+// render. A missing image shows the command that produces it, or why a report does not hold it.
 import { cx } from '@slidock/ui';
 import { type PointerEvent, type ReactNode, useEffect, useRef, useState } from 'react';
 
@@ -16,6 +16,8 @@ export interface Pane {
   caption?: string | undefined;
   /** The command that produces a missing image. */
   missing?: string | undefined;
+  /** Why a missing image is not there, where no command produces it (a published report). */
+  note?: string | undefined;
 }
 
 export const MODE_OPTIONS: { value: ImageMode; label: string; title: string }[] = [
@@ -38,6 +40,7 @@ function Missing({ pane }: { pane: Pane }) {
   return (
     <div className="flex aspect-video flex-col items-center justify-center gap-2 rounded-md border border-dashed border-line p-3 text-center">
       <p className="text-xs text-muted">No {pane.label.toLowerCase()} image</p>
+      {pane.note && <p className="text-xs text-muted">{pane.note}</p>}
       {pane.missing && <CopyCommand command={pane.missing} label={`command that produces the ${pane.label}`} />}
     </div>
   );

@@ -23,5 +23,7 @@ The first public release.
   files, and bundled metric-compatible substitutes; every shipped face subset to WOFF2, with its licence listed.
 - The web app (<https://macabeus.github.io/slidock/>): drop a deck, view, present and download it, compiled in the
   browser with nothing uploaded.
+- The fidelity bench's public report (<https://macabeus.github.io/slidock/bench/>), linked from the web app's landing
+  page: each slide of the decks cleared for publication, scored against the authoring app's own PDF export.
 - Diagnostics with stable codes for everything the compiler cannot represent exactly.
 - The deck format and the player API, documented in `docs/format.md` and `docs/player-api.md`.

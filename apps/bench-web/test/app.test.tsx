@@ -4,9 +4,9 @@ import { describe, expect, it } from 'vitest';
 
 import { samplePayload } from '../mock/report';
 import { App } from '../src/App';
-import { reportSource } from '../src/data/report';
+import { type ReportPayload, reportSource, rowKey } from '../src/data/report';
 import type { BenchSource } from '../src/data/source';
-import { fixture, mockSource } from './fixture';
+import { fixture, latest, mockSource } from './fixture';
 
 function renderApp(hash = '', source: BenchSource = mockSource().source) {
   window.history.replaceState(null, '', `/${hash}`);
@@ -291,5 +291,80 @@ describe('the single-file report', () => {
     const oracle = await within(dialog).findByRole('img', { name: 'Oracle' });
     expect(oracle.getAttribute('src')?.startsWith('data:image/png;base64,')).toBe(true);
     expect(screen.queryByText('stale for HEAD')).toBeNull();
+  });
+});
+
+/** The sample report as `slidock-bench report --public` scopes one: the latest run alone, no parity, images of one row. */
+function publishedPayload(): ReportPayload {
+  const sample = samplePayload(fixture);
+  const latestRun = sample.runs.runs.filter((run) => run.key === fixture.latest);
+  const rows = Object.fromEntries(
+    Object.entries(sample.rows)
+      .filter(([key]) => key.startsWith(`${fixture.latest} `))
+      .map(([key, detail]) => [
+        key,
+        key === rowKey(fixture.latest, 'demo-basics:od-p901:odp')
+          ? detail
+          : {
+              ...detail,
+              explain: detail.explain && { ...detail.explain, matchesRow: false },
+              images: {
+                oracle: { missing: 'Published for mismatch rows only.' },
+                render: { missing: 'Published for mismatch rows only.' },
+                heatmap: { missing: 'Published for mismatch rows only.' },
+              },
+            },
+      ]),
+  );
+  return {
+    ...sample,
+    runs: { ...sample.runs, runs: latestRun },
+    results: { [fixture.latest]: latest() },
+    parity: {},
+    rows,
+    public: { images: ['mismatch'] },
+  };
+}
+
+describe('a published report', () => {
+  it('shows only the views it holds data for, and says what it is', async () => {
+    renderApp('#tab=fonts', reportSource(publishedPayload()));
+    const tabs = await screen.findByRole('tablist', { name: 'Bench views' });
+    expect(
+      within(tabs)
+        .getAllByRole('tab')
+        .map((tab) => tab.textContent),
+    ).toEqual(['Overview', 'Explorer', 'Methodology']);
+    expect(within(tabs).getByRole('tab', { name: 'Overview' }).getAttribute('aria-selected')).toBe('true');
+    expect(screen.getByText("A published snapshot of slidock's fidelity bench")).toBeTruthy();
+    expect(screen.getByText(/Images are included for mismatch rows\./)).toBeTruthy();
+    expect(screen.queryByText('Parity with the goldens')).toBeNull();
+    expect(screen.queryByRole('combobox', { name: 'Run' })).toBeNull();
+    expect(screen.getByRole('link', { name: 'Open slidock' }).getAttribute('href')).toBe('../');
+  });
+
+  it('shows no command: a row without images says why, and the explorer and methodology name none', async () => {
+    const { user } = renderApp(
+      `#tab=explorer&row=${encodeURIComponent('demo-basics:od-p902:odp')}`,
+      reportSource(publishedPayload()),
+    );
+    const dialog = await screen.findByRole('dialog');
+    expect(await within(dialog).findAllByText('Published for mismatch rows only.')).toHaveLength(3);
+    expect(within(dialog).queryByRole('heading', { name: 'Reproduce' })).toBeNull();
+    expect(within(dialog).queryByText(/slidock-bench/)).toBeNull();
+    expect(within(dialog).getByText('They were measured on an earlier render of the slide.')).toBeTruthy();
+    expect(within(dialog).queryByText(/explain command/)).toBeNull();
+    expect(screen.queryByText(/slidock-bench list/)).toBeNull();
+    await user.keyboard('{Escape}');
+    await user.click(screen.getByRole('tab', { name: 'Methodology' }));
+    expect(screen.getByRole('link', { name: "The bench's README" })).toBeTruthy();
+    expect(screen.queryByText('slidock-bench regression --base HEAD')).toBeNull();
+  });
+
+  it('keeps every view of a report that holds every lane', async () => {
+    renderApp('', reportSource(samplePayload(fixture)));
+    const tabs = await screen.findByRole('tablist', { name: 'Bench views' });
+    expect(within(tabs).getAllByRole('tab')).toHaveLength(7);
+    expect(screen.queryByText("A published snapshot of slidock's fidelity bench")).toBeNull();
   });
 });

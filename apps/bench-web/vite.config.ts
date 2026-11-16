@@ -7,6 +7,7 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 import { loadFixture } from './mock/fixtures.ts';
 import { benchMock } from './mock/plugin.ts';
 import { samplePayload } from './mock/report.ts';
+import { withReportCsp } from './scripts/report-csp.ts';
 import { REPORT_DATA_SLOT, checkEmptyReportPage, injectReportData } from './src/data/inline.ts';
 
 /**
@@ -46,6 +47,24 @@ export function reportSlot(data: string | undefined): Plugin {
   };
 }
 
+/** The report's CSP (`scripts/report-csp.ts`), once its script is inlined: after `vite-plugin-singlefile`. */
+export function reportPolicy(): Plugin {
+  return {
+    name: 'slidock-bench-report-csp',
+    apply: 'build',
+    enforce: 'post',
+    generateBundle(_options, bundle) {
+      const page = bundle['index.html'];
+      if (!page || page.type !== 'asset') {
+        throw new Error('the report build wrote no index.html');
+      }
+      page.source = withReportCsp(
+        typeof page.source === 'string' ? page.source : new TextDecoder().decode(page.source),
+      );
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const report = mode === 'report';
   return {
@@ -53,7 +72,9 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       tailwindcss(),
-      ...(report ? [reportSlot(process.env.SLIDOCK_BENCH_REPORT_DATA), viteSingleFile()] : [benchMock()]),
+      ...(report
+        ? [reportSlot(process.env.SLIDOCK_BENCH_REPORT_DATA), viteSingleFile(), reportPolicy()]
+        : [benchMock()]),
     ],
     build: {
       target: 'es2022',

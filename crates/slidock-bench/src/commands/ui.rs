@@ -1,7 +1,8 @@
 //! `ui` serves the bench UI over the private bench data (see [`crate::server`]); `report --single-file` writes the
-//! UI's single-file build with the data inlined, for reading without the server.
+//! UI's single-file build with the data inlined, for reading without the server, and `report --public` the same page
+//! over the presentations cleared for publication, with its images beside it (see [`crate::public`]).
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::path::PathBuf;
 
 use clap::Args;
@@ -13,6 +14,8 @@ use slidock_bench_schema::runs::RunsIndex;
 use crate::cache::write_atomic;
 use crate::corpus::load_manifest;
 use crate::error::{BenchError, Exit, Result};
+use crate::exec::{ExecOptions, args as exec_args, exec, exec_text};
+use crate::public::{self, Forbidden, PublicScope};
 use crate::server::{ServerData, runs_index, serve};
 use crate::setup::Context;
 
@@ -27,19 +30,23 @@ pub struct UiArgs {
 
 #[derive(Debug, Args)]
 pub struct ReportArgs {
-    /// One self-contained HTML file (the only form).
-    #[arg(long)]
+    /// One self-contained HTML file.
+    #[arg(long, conflicts_with = "public")]
     single_file: bool,
-    /// Where to write it [default: <cache>/report/index.html].
+    /// The public report: the presentations of `bench/public.json` only, its images as WebP files beside the page.
+    #[arg(long)]
+    public: bool,
+    /// Where to write it [default: <cache>/report/index.html; with --public, the folder apps/web/public/bench].
     #[arg(long)]
     out: Option<PathBuf>,
     /// The UI's empty report page [default: apps/bench-web/dist/report/index.html].
     #[arg(long)]
     template: Option<PathBuf>,
-    /// The runs it carries: `latest`, `baseline` or run keys.
-    #[arg(long, default_value = "latest,baseline")]
-    runs: String,
-    /// Inlines the oracle, render and heatmap of rows of these classes, at the metric size (e.g. `mismatch`).
+    /// The runs it carries: `latest`, `baseline` or run keys [default: latest,baseline; with --public, latest].
+    #[arg(long)]
+    runs: Option<String>,
+    /// The oracle, render and heatmap of rows of these classes, at the metric size (e.g. `mismatch`) [default: none;
+    /// with --public, mismatch].
     #[arg(long)]
     images: Option<String>,
 }
@@ -89,6 +96,8 @@ struct Payload {
     parity: BTreeMap<String, ParityView>,
     rows: BTreeMap<String, RowDetail>,
     images: BTreeMap<String, String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    public: Option<PublicScope>,
 }
 
 /// The images a report can inline, at the metric size.
@@ -125,66 +134,90 @@ pub fn inject(page: &str, json: &str) -> Result<String> {
     Ok(out)
 }
 
-/// A PNG at the metric size, as a data URI.
-fn metric_data_uri(png: &[u8]) -> Option<String> {
-    use base64::Engine;
+/// A PNG at the metric size.
+fn metric_png(png: &[u8]) -> Option<Vec<u8>> {
     let image = slidock_bench_metrics::decode_png(png).ok()?;
     let (w, h) = slidock_bench_metrics::metric_size(image.width(), image.height());
     let small =
         slidock_bench_metrics::resample_area(&slidock_bench_metrics::over_white(&image), w, h)
             .ok()?;
-    let encoded = crate::explain::encode_png(&small).ok()?;
+    crate::explain::encode_png(&small).ok()
+}
+
+/// A PNG at the metric size, as a data URI.
+fn metric_data_uri(png: &[u8]) -> Option<String> {
+    use base64::Engine;
     Some(format!(
         "data:image/png;base64,{}",
-        base64::engine::general_purpose::STANDARD.encode(encoded)
+        base64::engine::general_purpose::STANDARD.encode(metric_png(png)?)
     ))
 }
 
-pub async fn report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
-    if !args.single_file {
-        return Err(BenchError::usage("report writes --single-file pages only"));
-    }
-    let template = args.template.unwrap_or_else(|| {
-        ctx.env
-            .repo_root
-            .join("apps/bench-web/dist/report/index.html")
-    });
-    let page = std::fs::read_to_string(&template).map_err(BenchError::io(&template))?;
-    let image_classes: Vec<Outcome> = crate::setup::list(args.images.as_deref())
+fn image_classes(list: Option<&str>) -> Result<Vec<Outcome>> {
+    crate::setup::list(list)
         .unwrap_or_default()
         .iter()
         .map(|c| {
             serde_json::from_value(serde_json::Value::String(c.clone()))
                 .map_err(|_| BenchError::usage(format!("unknown class {c}")))
         })
-        .collect::<Result<_>>()?;
+        .collect()
+}
+
+/// The run keys `latest`, `baseline` and keys name, each once, in order.
+fn run_keys(index: &RunsIndex, wanted: &[String]) -> Vec<String> {
+    let mut keys: Vec<String> = Vec::new();
+    for run in wanted {
+        let key = match run.as_str() {
+            "latest" => index
+                .runs
+                .iter()
+                .rev()
+                .find(|r| r.lane == slidock_bench_schema::Lane::Static)
+                .map(|r| r.key.as_str().to_owned()),
+            "baseline" => index
+                .runs
+                .iter()
+                .rev()
+                .find(|r| r.baseline.is_some())
+                .map(|r| r.key.as_str().to_owned()),
+            key => Some(key.to_owned()),
+        };
+        if let Some(key) = key
+            && !keys.contains(&key)
+        {
+            keys.push(key);
+        }
+    }
+    keys
+}
+
+fn read_template(ctx: &Context, template: Option<PathBuf>) -> Result<String> {
+    let template = template.unwrap_or_else(|| {
+        ctx.env
+            .repo_root
+            .join("apps/bench-web/dist/report/index.html")
+    });
+    std::fs::read_to_string(&template).map_err(BenchError::io(&template))
+}
+
+pub async fn report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
+    if args.public {
+        return public_report(ctx, args).await;
+    }
+    if !args.single_file {
+        return Err(BenchError::usage(
+            "report writes --single-file or --public pages",
+        ));
+    }
+    let page = read_template(ctx, args.template)?;
+    let image_classes = image_classes(args.images.as_deref())?;
     let data = server_data(ctx, PathBuf::new(), 0).await?;
-    let wanted = crate::setup::list(Some(&args.runs)).unwrap_or_default();
+    let wanted = crate::setup::list(Some(args.runs.as_deref().unwrap_or("latest,baseline")))
+        .unwrap_or_default();
     let payload = tokio::task::spawn_blocking(move || -> Result<Payload> {
         let index = runs_index(&data)?;
-        let mut keys: Vec<String> = Vec::new();
-        for run in &wanted {
-            let key = match run.as_str() {
-                "latest" => index
-                    .runs
-                    .iter()
-                    .rev()
-                    .find(|r| r.lane == slidock_bench_schema::Lane::Static)
-                    .map(|r| r.key.as_str().to_owned()),
-                "baseline" => index
-                    .runs
-                    .iter()
-                    .rev()
-                    .find(|r| r.baseline.is_some())
-                    .map(|r| r.key.as_str().to_owned()),
-                key => Some(key.to_owned()),
-            };
-            if let Some(key) = key
-                && !keys.contains(&key)
-            {
-                keys.push(key);
-            }
-        }
+        let keys = run_keys(&index, &wanted);
         let mut payload = Payload {
             schema: "slidock-bench-report@1",
             status: Some(crate::server::status_for_report(&data)),
@@ -201,6 +234,7 @@ pub async fn report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
             parity: BTreeMap::new(),
             rows: BTreeMap::new(),
             images: BTreeMap::new(),
+            public: None,
         };
         for key in &keys {
             let Some(results) = crate::server::public_results(&data, key) else {
@@ -268,6 +302,218 @@ pub async fn report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
         payload.rows.len(),
         payload.images.len(),
         std::fs::metadata(&out).map(|m| m.len()).unwrap_or(0)
+    );
+    Ok(Exit::Ok)
+}
+
+/// The images of a public report, as metric-size PNGs by their path in the report.
+type Pictures = Vec<(String, Vec<u8>)>;
+
+/// The quality the public report's WebP images are encoded at (`cwebp -q`).
+const WEBP_QUALITY: &str = "85";
+
+/// A PNG as lossy WebP, with libwebp's `cwebp`.
+async fn webp(png: Vec<u8>) -> Result<Vec<u8>> {
+    let options = ExecOptions {
+        input: Some(png),
+        timeout: Some(std::time::Duration::from_secs(60)),
+        ..ExecOptions::default()
+    };
+    let arguments = exec_args([
+        "-quiet",
+        "-q",
+        WEBP_QUALITY,
+        "-m",
+        "6",
+        "-metadata",
+        "none",
+        "-o",
+        "-",
+        "--",
+        "-",
+    ]);
+    let result = exec("cwebp", &arguments, &options).await?;
+    if !result.ok() || result.stdout.is_empty() {
+        return Err(BenchError::failed(format!(
+            "cwebp failed: {}",
+            result.stderr.trim()
+        )));
+    }
+    Ok(result.stdout)
+}
+
+/// `report --public`: see [`crate::public`]. Nothing is written when the payload fails [`public::check_payload`].
+async fn public_report(ctx: &Context, args: ReportArgs) -> Result<Exit> {
+    let repo = ctx.env.repo_root.clone();
+    let allow = public::read_allowlist(&repo.join(public::ALLOWLIST))?;
+    let page = read_template(ctx, args.template)?;
+    if !page.contains("http-equiv=\"Content-Security-Policy\"") {
+        return Err(BenchError::refused(
+            "the report page has no Content Security Policy: rebuild it with `pnpm --filter @slidock/bench-web build`",
+        ));
+    }
+    let classes = image_classes(Some(args.images.as_deref().unwrap_or("mismatch")))?;
+    let out = args.out.unwrap_or_else(|| repo.join(public::PUBLIC_DIR));
+    public::check_out_dir(&out)?;
+    let cwebp = exec_text(
+        "cwebp",
+        &exec_args(["-version"]),
+        &ExecOptions::timeout(std::time::Duration::from_secs(10)),
+    )
+    .await
+    .map_err(|_| {
+        BenchError::refused(
+            "the public report encodes its images with libwebp's cwebp, which is not on PATH",
+        )
+    })?;
+    let data = server_data(ctx, PathBuf::new(), 0).await?;
+    let manifest = data.manifest.clone();
+    let wanted =
+        crate::setup::list(Some(args.runs.as_deref().unwrap_or("latest"))).unwrap_or_default();
+    let note = format!(
+        "The public report includes images of {} rows only.",
+        classes
+            .iter()
+            .map(|c| serde_json::to_value(c)
+                .ok()
+                .and_then(|v| v.as_str().map(str::to_owned))
+                .unwrap_or_default())
+            .collect::<Vec<_>>()
+            .join(", ")
+    );
+    let scope = allow.clone();
+    let wanted_classes = classes.clone();
+    let (payload, pictures) =
+        tokio::task::spawn_blocking(move || -> Result<(Payload, Pictures)> {
+            let index = runs_index(&data)?;
+            let keys = run_keys(&index, &wanted);
+            let mut payload = Payload {
+                schema: "slidock-bench-report@1",
+                status: None,
+                runs: RunsIndex {
+                    schema: index.schema,
+                    runs: Vec::new(),
+                },
+                results: BTreeMap::new(),
+                parity: BTreeMap::new(),
+                rows: BTreeMap::new(),
+                images: BTreeMap::new(),
+                public: Some(PublicScope {
+                    images: wanted_classes.clone(),
+                }),
+            };
+            let mut pictures = Vec::new();
+            for key in &keys {
+                let (Some(entry), Some(results)) = (
+                    index.runs.iter().find(|r| r.key.as_str() == key),
+                    crate::server::public_results(&data, key),
+                ) else {
+                    return Err(BenchError::refused(format!("no run {key}")));
+                };
+                let results = public::scope_results(results, &scope)?;
+                payload
+                    .runs
+                    .runs
+                    .push(public::scope_entry(entry.clone(), &results)?);
+                for (id, record) in &results.rows {
+                    let mut published = BTreeMap::new();
+                    if record
+                        .outcome
+                        .classifier()
+                        .is_some_and(|c| wanted_classes.contains(&c))
+                    {
+                        for (kind, name) in INLINED {
+                            let Some(png) = crate::server::public_png(&data, key, id, name)
+                                .as_deref()
+                                .and_then(metric_png)
+                            else {
+                                continue;
+                            };
+                            let path = public::image_path(key, id, name);
+                            if kind == ImageKind::Render {
+                                payload
+                                    .images
+                                    .insert(format!("{key} {id} {name}"), path.clone());
+                            }
+                            published.insert(kind, path.clone());
+                            pictures.push((path, png));
+                        }
+                    }
+                    if let Ok(Some(detail)) = crate::server::public_row_detail(&data, key, id) {
+                        payload.rows.insert(
+                            format!("{key} {id}"),
+                            public::scope_detail(detail, &published, &note),
+                        );
+                    }
+                }
+                payload.results.insert(key.clone(), results);
+            }
+            payload.runs.runs.sort_by(|a, b| {
+                a.recorded_at
+                    .cmp(&b.recorded_at)
+                    .then_with(|| a.key.cmp(&b.key))
+            });
+            Ok((payload, pictures))
+        })
+        .await
+        .map_err(|e| BenchError::failed(e.to_string()))??;
+
+    let value = serde_json::to_value(&payload).map_err(|e| BenchError::failed(e.to_string()))?;
+    let mut forbidden = Forbidden::generic()
+        .repository(&repo, &allow)?
+        .manifest(&manifest, &allow)
+        .text(ctx.cache.root.to_string_lossy())
+        .text(ctx.env.corpus_dir.to_string_lossy());
+    for name in ["HOME", "USER"] {
+        if let Ok(value) = std::env::var(name) {
+            forbidden = forbidden.text(value);
+        }
+    }
+    let mut problems = public::check_payload(&value, &allow, &forbidden);
+    let encoded_paths: BTreeSet<String> = pictures.iter().map(|(path, _)| path.clone()).collect();
+    if public::image_paths(&value) != encoded_paths {
+        problems.push("the payload names other images than the ones the report writes".to_owned());
+    }
+    if !problems.is_empty() {
+        for problem in &problems {
+            eprintln!("  {problem}");
+        }
+        return Err(BenchError::failed(format!(
+            "the public report would publish what it must not ({} findings): nothing written",
+            problems.len()
+        )));
+    }
+
+    let mut encoded = Vec::with_capacity(pictures.len());
+    for (path, png) in pictures {
+        encoded.push((path, webp(png).await?));
+    }
+    let images = out.join(public::IMAGES_DIR);
+    if images.is_dir() {
+        std::fs::remove_dir_all(&images).map_err(BenchError::io(&images))?;
+    }
+    let mut image_bytes = 0;
+    for (path, bytes) in &encoded {
+        image_bytes += bytes.len();
+        write_atomic(&out.join(path), bytes)?;
+    }
+    let json = serde_json::to_string(&payload).map_err(|e| BenchError::failed(e.to_string()))?;
+    let index = out.join("index.html");
+    write_atomic(&index, inject(&page, &json)?)?;
+    let rows: usize = payload.results.values().map(|r| r.rows.len()).sum();
+    let decks: BTreeSet<_> = payload
+        .results
+        .values()
+        .flat_map(|r| r.rows.keys().map(|id| id.presentation().clone()))
+        .collect();
+    println!(
+        "public report: {} ({} runs, {} decks, {rows} rows, {} images of {image_bytes} bytes with {}, page {} bytes)",
+        out.display(),
+        payload.runs.runs.len(),
+        decks.len(),
+        encoded.len(),
+        cwebp.lines().next().unwrap_or_default().trim(),
+        std::fs::metadata(&index).map(|m| m.len()).unwrap_or(0)
     );
     Ok(Exit::Ok)
 }

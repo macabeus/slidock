@@ -18,6 +18,8 @@ export interface ReportPayload {
   parity: { [run: string]: ParityView };
   rows: { [key: string]: RowDetail };
   images: { [key: string]: string };
+  /** A published report: the classes whose rows carry images (`slidock-bench report --public`). */
+  public?: { images: string[] };
 }
 
 export const rowKey = (run: string, row: RowId) => `${run} ${row}`;
@@ -41,6 +43,16 @@ export function parseReportPayload(value: unknown): ReportPayload {
       throw new Error(`the report data has no ${section} section`);
     }
   }
+  if (
+    value.public !== undefined &&
+    !(
+      isObject(value.public) &&
+      Array.isArray(value.public.images) &&
+      value.public.images.every((c) => typeof c === 'string')
+    )
+  ) {
+    throw new Error('the report data has a malformed public section');
+  }
   if (value.status !== null && !isObject(value.status)) {
     throw new Error('the report data has a malformed status');
   }
@@ -51,6 +63,7 @@ export function parseReportPayload(value: unknown): ReportPayload {
 export function reportSource(payload: ReportPayload): BenchSource {
   return {
     kind: 'report',
+    scope: { parity: Object.keys(payload.parity).length > 0, public: payload.public ?? null },
     status: () => Promise.resolve(payload.status),
     runs: () => Promise.resolve(payload.runs),
     results: (run) => Promise.resolve(payload.results[run] ?? null),

@@ -26,6 +26,7 @@ mod lo_roundtrip;
 mod motion_lane;
 mod oracle;
 mod parity;
+mod public;
 mod renderer;
 mod results;
 mod runner;

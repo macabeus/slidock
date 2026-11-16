@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { CopyCommand } from '../components/Controls';
 import { OutcomeBadge } from '../components/OutcomeBadge';
+import { useBenchData } from '../data/resource';
 import { EROSION, FRONTEND_SSIM_DROP, GRADIENT_APPROXIMATED, SHADOW_NOT_DRAWN } from '../model/compare';
 import { DASH, formatNumber, short } from '../model/format';
 import { OUTCOMES, outcomeGloss } from '../model/outcomes';
@@ -13,7 +14,11 @@ function Prose({ children }: { children: ReactNode }) {
   return <div className="max-w-3xl space-y-3 text-sm leading-relaxed text-fg-secondary">{children}</div>;
 }
 
+/** The bench's documentation, for the readers of a published report. */
+const BENCH_README = 'https://github.com/macabeus/slidock/blob/main/bench/README.md';
+
 export function Methodology({ results, run, thresholds }: ViewProps) {
+  const published = Boolean(useBenchData().source.scope?.public);
   const stamp = results?.stamp;
   const n = formatNumber;
   return (
@@ -166,14 +171,28 @@ export function Methodology({ results, run, thresholds }: ViewProps) {
         )}
       </Panel>
 
-      <Panel title="Reproduce" subtitle="The commands behind these numbers.">
-        <div className="space-y-2">
-          <CopyCommand command="slidock-bench run" label="run command" />
-          <CopyCommand command="slidock-bench regression --base HEAD" label="regression command" />
-          <CopyCommand command="slidock-bench parity check" label="parity command" />
-          <CopyCommand command="slidock-bench report" label="report command" />
-        </div>
-      </Panel>
+      {published ? (
+        <Panel title="Reproduce" subtitle="The bench runs on any decks you have the right to use.">
+          <Prose>
+            <p>
+              The corpus behind this report is private.{' '}
+              <a className="underline hover:text-fg" href={BENCH_README}>
+                The bench's README
+              </a>{' '}
+              says how to score your own decks against their oracles.
+            </p>
+          </Prose>
+        </Panel>
+      ) : (
+        <Panel title="Reproduce" subtitle="The commands behind these numbers.">
+          <div className="space-y-2">
+            <CopyCommand command="slidock-bench run" label="run command" />
+            <CopyCommand command="slidock-bench regression --base HEAD" label="regression command" />
+            <CopyCommand command="slidock-bench parity check" label="parity command" />
+            <CopyCommand command="slidock-bench report" label="report command" />
+          </div>
+        </Panel>
+      )}
     </div>
   );
 }

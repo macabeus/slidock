@@ -8,6 +8,7 @@ import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { extname, join, normalize, sep } from 'node:path';
 
+import { envPort } from '../../../../packages/player/e2e/support/browserServer';
 import { APP, REPO } from '../support/decks';
 import { expectBuiltFor } from '../support/dist';
 
@@ -23,6 +24,7 @@ const TYPES: Record<string, string> = {
   '.json': 'application/json',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.webp': 'image/webp',
   '.woff2': 'font/woff2',
   '.txt': 'text/plain; charset=utf-8',
 };
@@ -72,7 +74,7 @@ export default async function globalSetup() {
       response.end(request.method === 'HEAD' ? undefined : body);
     })().catch(() => response.writeHead(500).end());
   });
-  await new Promise<void>((resolve) => server.listen(0, '127.0.0.1', resolve));
+  await new Promise<void>((resolve) => server.listen(envPort('SLIDOCK_PAGES_PORT', 0), '127.0.0.1', resolve));
   const { port } = server.address() as AddressInfo;
   process.env.SLIDOCK_PAGES_URL = `http://127.0.0.1:${port}${BASE}`;
   return () => new Promise<void>((resolve) => server.close(() => resolve()));

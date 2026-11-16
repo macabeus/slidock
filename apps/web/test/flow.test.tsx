@@ -14,6 +14,7 @@ describe('upload → compile → view', () => {
     const app = renderApp(sampleScript({ hold: ['finish'] }));
     expect(screen.getByRole('button', { name: 'Choose a presentation' })).toBeTruthy();
     expect(screen.getByText(/Your file never leaves this tab/)).toBeTruthy();
+    expect(screen.getByRole('link', { name: 'fidelity benchmark' }).getAttribute('href')).toBe('/bench/');
     await waitFor(() => expect(screen.getByTestId('wasm-status').textContent).toBe('slidock-wasm 9.9.9'));
 
     const file = new File(['pptx bytes'], 'Quarterly review.pptx');

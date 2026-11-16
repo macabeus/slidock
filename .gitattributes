@@ -4,3 +4,5 @@
 # Kept as they were written, with CRLF line endings.
 crates/slidock-fonts/tests/data/container/OFL-oswald.txt -text
 crates/slidock-fonts/tests/fonts/oswald/OFL.txt -text
+# The public bench report (`slidock-bench report --public`): one generated line of JSON, shown as a binary change.
+apps/web/public/bench/index.html -diff linguist-generated

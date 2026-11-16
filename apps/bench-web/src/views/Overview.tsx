@@ -4,7 +4,7 @@ import { DeltaBadge, Stat } from '../components/Controls';
 import { ParityBadge } from '../components/OutcomeBadge';
 import { OutcomeBar } from '../components/OutcomeBar';
 import { Empty } from '../components/States';
-import { useResource } from '../data/resource';
+import { useBenchData, useResource } from '../data/resource';
 import { FRONTEND_SSIM_DROP } from '../model/compare';
 import { formatDelta, formatNumber, formatPercent, formatPointsDelta, formatTime } from '../model/format';
 import { laneFigures } from '../model/lanes';
@@ -215,6 +215,8 @@ function Lanes({ index, run, set }: Pick<ViewProps, 'index' | 'run' | 'set'>) {
 }
 
 export function Overview({ index, run, results, base, thresholds, set }: ViewProps) {
+  // A report without parity data leaves the panel out; over the API it says how to make the report.
+  const showParity = useBenchData().source.scope?.parity ?? true;
   const summary = results?.summary ?? run.summary;
   const parity = useResource<ParityView | null>(results ? `parity:${run.key}` : null, (source) =>
     source.parity(run.key),
@@ -286,8 +288,8 @@ export function Overview({ index, run, results, base, thresholds, set }: ViewPro
           </div>
         </Panel>
       )}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {parity.state === 'ready' && parity.value ? (
+      <div className={showParity ? 'grid grid-cols-1 gap-6 lg:grid-cols-2' : 'grid grid-cols-1 gap-6'}>
+        {!showParity ? null : parity.state === 'ready' && parity.value ? (
           <ParityStrip view={parity.value} set={set} />
         ) : (
           <Panel title="Parity with the goldens" subtitle="Level B, row by row against slidock's goldens.">

@@ -1,6 +1,7 @@
 // The GitHub Pages dry run: apps/web built exactly as .github/workflows/pages.yml builds it (`pnpm wasm:build`, then
-// `pnpm --filter @slidock/web build` with `VITE_BASE_URL=/slidock/`), served under /slidock/ on a free loopback port,
-// and the real flow run against it in Chromium (dry-run.pages.ts):
+// `pnpm --filter @slidock/web build` with `VITE_BASE_URL=/slidock/`), served under /slidock/ on a free loopback port
+// (or `SLIDOCK_PAGES_PORT`), and the real flow run against it in Chromium (dry-run.pages.ts), with the published bench
+// the app links to (bench.pages.ts):
 //
 //   pnpm --filter @slidock/web e2e:pages
 //

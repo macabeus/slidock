@@ -18,3 +18,5 @@ crates/slidock-bundle/player/
 probes/out/
 # Written by `cargo xtask diagnostics`, which CI checks.
 docs/diagnostics.md
+# Written by `slidock-bench report --public` (bench/README.md), which a test checks.
+apps/web/public/bench/

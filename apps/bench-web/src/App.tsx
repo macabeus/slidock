@@ -1,7 +1,7 @@
 import { AppHeader, Banner, Pill, TabPanel, Tabs, ThemeProvider, ThemeToggle } from '@slidock/ui';
 import { type ReactNode, useMemo, useState } from 'react';
 
-import { CopyCommand, SegmentedControl, Select } from './components/Controls';
+import { CommitLink, CopyCommand, SegmentedControl, Select } from './components/Controls';
 import { Logo } from './components/Logo';
 import { Await, Empty, LoadError, Loading } from './components/States';
 import { BenchDataContext, ResourceCache, useBenchData, useResource } from './data/resource';
@@ -80,9 +80,15 @@ function ContextRow({
   results: Results | null;
   status: Status | null;
 }) {
+  // A published report names its run by the commit alone: its payload holds no run key or hash, and no base run.
+  const published = Boolean(useBenchData().source.scope?.public);
   const stale = staleFor(run, status);
   const stamp = results?.stamp;
-  const pairs = stamp ? Object.keys(stamp.corpus).length : null;
+  const pairs = !results
+    ? null
+    : published
+      ? new Set(Object.values(results.rows).map((record) => `${record.presentation}:${record.frontend}`)).size
+      : Object.keys(results.stamp.corpus).length;
   const alias = state.run === 'latest' || state.run === 'baseline' ? state.run : 'run';
   return (
     <section aria-label="Run" className="space-y-3">
@@ -90,10 +96,14 @@ function ContextRow({
         <div className="min-w-0 space-y-1">
           <p className="flex flex-wrap items-center gap-2 text-sm">
             <span className="text-muted">slidock</span>
-            <code className="font-mono text-fg">{short(run.compiler.commit)}</code>
+            {published ? (
+              <CommitLink commit={run.compiler.commit} />
+            ) : (
+              <code className="font-mono text-fg">{short(run.compiler.commit)}</code>
+            )}
             {run.compiler.dirty && <Pill size="xs">+dirty</Pill>}
             <Pill size="xs">{LANE_LABELS[run.lane]} lane</Pill>
-            {run.baseline && <Pill size="xs">baseline</Pill>}
+            {run.baseline && !published && <Pill size="xs">baseline</Pill>}
             {run.partial && <Pill size="xs">partial</Pill>}
             {stale && (
               <Pill size="xs" tint="var(--warning)" title={`Refresh with ${stale}`}>
@@ -101,17 +111,30 @@ function ContextRow({
               </Pill>
             )}
           </p>
-          <p className="text-xs text-muted">
-            {formatTime(run.recordedAt)} · run <span className="font-mono">{short(run.key, 8)}</span>
-            {stamp && (
-              <>
-                {' '}
-                · Chromium {stamp.renderer.chromium} · poppler {stamp.renderer.poppler} · font set{' '}
-                <span className="font-mono">{short(stamp.fonts.fontSetId, 8)}</span> · {pairs} pairs ·{' '}
-                {stamp.classifier}
-              </>
-            )}
-          </p>
+          {published ? (
+            <p className="text-xs text-muted">
+              {formatTime(run.recordedAt)}
+              {stamp && (
+                <>
+                  {' '}
+                  · Chromium {stamp.renderer.chromium} · poppler {stamp.renderer.poppler} · {pairs} pairs ·{' '}
+                  {stamp.classifier}
+                </>
+              )}
+            </p>
+          ) : (
+            <p className="text-xs text-muted">
+              {formatTime(run.recordedAt)} · run <span className="font-mono">{short(run.key, 8)}</span>
+              {stamp && (
+                <>
+                  {' '}
+                  · Chromium {stamp.renderer.chromium} · poppler {stamp.renderer.poppler} · font set{' '}
+                  <span className="font-mono">{short(stamp.fonts.fontSetId, 8)}</span> · {pairs} pairs ·{' '}
+                  {stamp.classifier}
+                </>
+              )}
+            </p>
+          )}
         </div>
         {index.runs.length > 1 && (
           <div className="flex min-w-0 max-w-full flex-wrap items-end gap-3">
@@ -179,15 +202,17 @@ function View({ tab, props, baseResults }: { tab: Tab; props: ViewProps; baseRes
 
 function Bench({ index, status }: { index: RunsIndex; status: Status | null }) {
   const [state, set] = useBenchState();
-  const tabs = tabsFor(index, useBenchData().source.scope);
+  const { scope } = useBenchData().source;
+  const tabs = tabsFor(index, scope);
   const tab = tabs.some(({ id }) => id === state.tab) ? state.tab : 'overview';
   const run = resolveRun(index, state.run);
   const results = useResource<Results | null>(run ? `results:${run.key}` : null, (source) =>
     run ? source.results(run.key) : Promise.resolve(null),
   );
-  const baseRef = state.base ?? (run?.baseline ? null : 'baseline');
+  // A published report shows its one run against no other.
+  const baseRef = scope?.public ? null : (state.base ?? (run?.baseline ? null : 'baseline'));
   const base = baseRef === null ? null : resolveRun(index, baseRef);
-  const explicitBase = state.base === null ? null : base;
+  const explicitBase = state.base === null || baseRef === null ? null : base;
   const baseResults = useResource<Results | null>(explicitBase ? `results:${explicitBase.key}` : null, (source) =>
     explicitBase ? source.results(explicitBase.key) : Promise.resolve(null),
   );

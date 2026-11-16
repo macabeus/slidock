@@ -44,6 +44,12 @@ export function latestByLane(index: RunsIndex): RunEntry[] {
   });
 }
 
+/** slidock's repository, which a published report links to. */
+export const REPOSITORY = 'https://github.com/macabeus/slidock';
+
+/** A commit's page in the repository. */
+export const commitUrl = (commit: string) => `${REPOSITORY}/commit/${commit}`;
+
 /** `2026-10-30 09:30 UTC · static · 5b05b05`, the run's time, lane and commit. */
 export function runLabel(run: RunEntry): string {
   const dirty = run.compiler.dirty ? '+dirty' : '';

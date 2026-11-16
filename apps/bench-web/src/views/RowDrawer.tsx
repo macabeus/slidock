@@ -447,13 +447,18 @@ export function RowDrawer({ state, set, run, record, id, order, thresholds, base
 
       <Section title="Provenance">
         <Facts
-          items={[
-            ['Run', `${run.key}${loaded ? ` (${loaded.run.state})` : ''}`],
-            ['Compiler content', record.content],
-            ['Composed document', record.html ?? DASH],
-            ['Render', record.render ?? DASH],
-            ['Oracle page', String(record.oracle.page)],
-          ]}
+          items={
+            // A published report's records hold no run key or hash.
+            published
+              ? [['Oracle page', String(record.oracle.page)]]
+              : [
+                  ['Run', `${run.key}${loaded ? ` (${loaded.run.state})` : ''}`],
+                  ['Compiler content', record.content],
+                  ['Composed document', record.html ?? DASH],
+                  ['Render', record.render ?? DASH],
+                  ['Oracle page', String(record.oracle.page)],
+                ]
+          }
         />
         <details className="rounded-md border border-line/70">
           <summary className="cursor-pointer px-3 py-2 text-sm text-fg-secondary">The record as JSON</summary>

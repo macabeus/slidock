@@ -294,36 +294,95 @@ describe('the single-file report', () => {
   });
 });
 
-/** The sample report as `slidock-bench report --public` scopes one: the latest run alone, no parity, images of one row. */
+/** Deletes each `/`-separated path of `value` that exists. */
+function drop(value: unknown, paths: readonly string[]) {
+  for (const path of paths) {
+    const parts = path.split('/');
+    const leaf = parts.pop() ?? '';
+    let at = value as Record<string, unknown> | undefined;
+    for (const part of parts) {
+      at = at?.[part] as Record<string, unknown> | undefined;
+    }
+    if (at) {
+      delete at[leaf];
+    }
+  }
+}
+
+/**
+ * The sample report as `slidock-bench report --public` scopes and strips one (`crates/slidock-bench/src/public.rs`):
+ * the latest run alone, named `public`, with no run key, hash or base; no parity; images of one row.
+ */
 function publishedPayload(): ReportPayload {
   const sample = samplePayload(fixture);
-  const latestRun = sample.runs.runs.filter((run) => run.key === fixture.latest);
+  const run = 'public';
+  const entry = structuredClone(sample.runs.runs.find((r) => r.key === fixture.latest));
+  if (!entry) {
+    throw new Error('no latest run');
+  }
+  drop(entry, ['stamp', 'harness', 'compiler/content', 'baseline']);
+  entry.key = run;
+  const results = structuredClone(latest());
+  drop(results.stamp, [
+    'compiler/content',
+    'deps/cargoLock',
+    'renderer/recipe',
+    'renderer/platformDigest',
+    'renderer/imageId',
+    'fonts',
+    'harness',
+    'corpus',
+    'determinism',
+    'perf/wasmSha256',
+  ]);
+  const records = ['html', 'render', 'content'];
+  Object.values(results.rows).forEach((record) => drop(record, records));
   const rows = Object.fromEntries(
     Object.entries(sample.rows)
       .filter(([key]) => key.startsWith(`${fixture.latest} `))
-      .map(([key, detail]) => [
-        key,
-        key === rowKey(fixture.latest, 'demo-basics:od-p901:odp')
-          ? detail
-          : {
-              ...detail,
-              explain: detail.explain && { ...detail.explain, matchesRow: false },
-              images: {
-                oracle: { missing: 'Published for mismatch rows only.' },
-                render: { missing: 'Published for mismatch rows only.' },
-                heatmap: { missing: 'Published for mismatch rows only.' },
+      .map(([key, served]) => {
+        const id = key.slice(fixture.latest.length + 1);
+        const detail = structuredClone(served);
+        drop(detail, ['source', 'run', 'commands', 'explain/run']);
+        drop(detail.record, records);
+        Object.values(detail.images).forEach((image) => drop(image, ['run']));
+        return [
+          rowKey(run, id),
+          id === 'demo-basics:od-p901:odp'
+            ? detail
+            : {
+                ...detail,
+                explain: detail.explain && { ...detail.explain, matchesRow: false },
+                images: {
+                  oracle: { missing: 'Published for mismatch rows only.' },
+                  render: { missing: 'Published for mismatch rows only.' },
+                  heatmap: { missing: 'Published for mismatch rows only.' },
+                },
               },
-            },
-      ]),
+        ];
+      }),
   );
   return {
     ...sample,
-    runs: { ...sample.runs, runs: latestRun },
-    results: { [fixture.latest]: latest() },
+    runs: { ...sample.runs, runs: [entry] },
+    results: { [run]: results },
     parity: {},
     rows,
+    images: {},
     public: { images: ['mismatch'] },
   };
+}
+
+/**
+ * What a published page may not show: a hash, the run's key, or wording about a base run. (An element's `moved`
+ * finding is the row's own, against its oracle.)
+ */
+function expectNoRunIdOrBase() {
+  const page = document.body.cloneNode(true) as HTMLElement;
+  page.querySelectorAll('style').forEach((style) => style.remove());
+  expect(page.innerHTML).not.toMatch(/[0-9a-f]{64}/);
+  expect(page.innerHTML).not.toContain(fixture.latest.slice(0, 8));
+  expect(page.textContent).not.toMatch(/baseline|\bbase\b|regress|improved|delta/i);
 }
 
 describe('a published report', () => {
@@ -359,6 +418,35 @@ describe('a published report', () => {
     await user.click(screen.getByRole('tab', { name: 'Methodology' }));
     expect(screen.getByRole('link', { name: "The bench's README" })).toBeTruthy();
     expect(screen.queryByText('slidock-bench regression --base HEAD')).toBeNull();
+  });
+
+  it('names its run by the commit, linked, and shows no run key, hash or base anywhere', async () => {
+    const commit = fixture.runs.runs.find((r) => r.key === fixture.latest)?.compiler.commit ?? '';
+    const { user } = renderApp('', reportSource(publishedPayload()));
+    const run = await screen.findByRole('region', { name: 'Run' });
+    expect(
+      within(run)
+        .getByRole('link', { name: commit.slice(0, 7) })
+        .getAttribute('href'),
+    ).toBe(`https://github.com/macabeus/slidock/commit/${commit}`);
+    expect(within(run).getByText(/Chromium 148\.0\.7778\.0/)).toBeTruthy();
+    expect(within(run).queryByText(/font set/)).toBeNull();
+    expect(screen.getByText(/Per frontend: the median and 10th percentile/)).toBeTruthy();
+    expectNoRunIdOrBase();
+    await user.click(screen.getByRole('tab', { name: 'Explorer' }));
+    expect(screen.queryByRole('columnheader', { name: 'Δ base' })).toBeNull();
+    await user.click(screen.getByRole('checkbox', { name: 'Include reference and known-loss rows' }));
+    await user.click(screen.getByRole('button', { name: 'Open demo-basics:od-p901:odp' }));
+    const dialog = await screen.findByRole('dialog');
+    expect(await within(dialog).findByRole('img', { name: 'Oracle' })).toBeTruthy();
+    expect(within(dialog).queryByText('Compiler content')).toBeNull();
+    expectNoRunIdOrBase();
+    await user.keyboard('{Escape}');
+    await user.click(screen.getByRole('tab', { name: 'Methodology' }));
+    expect(screen.getAllByRole('link', { name: commit.slice(0, 7) })).toHaveLength(2);
+    expect(screen.queryByText('Regression policy')).toBeNull();
+    expect(screen.queryByText('Run key')).toBeNull();
+    expectNoRunIdOrBase();
   });
 
   it('keeps every view of a report that holds every lane', async () => {
